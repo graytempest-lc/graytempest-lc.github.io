@@ -1,6 +1,6 @@
 import {civilDateAt} from './date-contract.mjs';
 import {initialDate,shiftMonth,shiftDay,supported,dayFacts,LATEST_EDITION} from './month-model.mjs';
-import {renderMonth,renderDetails} from './month-render.mjs?v=3';
+import {renderMonth,renderDetails} from './month-render.mjs?v=4';
 import {renderRuleSummary} from './home-almanac.mjs?v=2';
 const root=document.getElementById('sol3-calendar');
 const table=document.getElementById('month-table'),details=document.getElementById('calendar-details');
