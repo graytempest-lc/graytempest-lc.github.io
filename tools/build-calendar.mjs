@@ -38,7 +38,7 @@ if(oldMenuStart!==-1){
 page=page.replace('</head>','<link rel="stylesheet" href="sol3/month.css?v=2"></head>');
 page=page.replace(/<title>[\s\S]*?<\/title>/,'<title>L星团快讯 · Sol3 本土日历与计算机快讯</title>');
 page=page.replace('<main ',renderCalendar(selected,null,calculateDay(selected))+'\n<main ');
-if(!page.includes('data-build="sol3-month-2026-v2"'))throw Error('Homepage insert failed');
-page=page.replace('</body>','<script type="module" src="sol3/month-ui.mjs?v=2"></script></body>');
+if(!page.includes('data-build="sol3-month-2026-v3"'))throw Error('Homepage insert failed');
+page=page.replace('</body>','<script type="module" src="sol3/month-ui.mjs?v=3"></script></body>');
 fs.writeFileSync(path.join(root,'index.html'),page);
 console.log(`Built homepage from ${files.at(-1)}; preserved ${files.length} dated editions.`);

@@ -1,7 +1,7 @@
 import {civilDateAt} from './date-contract.mjs';
 import {initialDate,shiftMonth,shiftDay,supported,dayFacts,LATEST_EDITION} from './month-model.mjs';
-import {renderMonth,renderDetails} from './month-render.mjs?v=2';
-import {renderRuleSummary} from './home-almanac.mjs?v=1';
+import {renderMonth,renderDetails} from './month-render.mjs?v=3';
+import {renderRuleSummary} from './home-almanac.mjs?v=2';
 const root=document.getElementById('sol3-calendar');
 const table=document.getElementById('month-table'),details=document.getElementById('calendar-details');
 const prev=document.getElementById('month-prev'),next=document.getElementById('month-next'),select=document.getElementById('month-select'),todayButton=document.getElementById('calendar-today'),status=document.getElementById('calendar-status');
@@ -10,11 +10,11 @@ let selected=start.date,solar=null,today=civilDateAt(now),almanac=null,almanacFa
 function enhanceAlmanac(){
  const node=document.getElementById('home-rule-extra');if(!node||node.dataset.almanacDate!==selected)return;
  try{if(almanac){const day=almanac.calculateDay(selected);node.innerHTML=renderRuleSummary(day);node.dataset.state='ready';}else if(almanacFailed)throw Error('Optional model unavailable');}
- catch{node.textContent='更多条款暂未加载，当前仅显示本日基础原文；未保留其他日期的结果。';node.dataset.state='unavailable';}
+ catch{node.textContent='相关条款暂未加载，基础条文仍可查看。';node.dataset.state='unavailable';}
 }
 function estimate(){
  const node=document.getElementById('term-estimate'),term=solar?.find(t=>t.civilDate===selected);
- if(node&&term)node.textContent=` · 约 ${term.displayMinuteUtc8.slice(11)}（东八区，本地模型估算，非精确时刻）`;
+ if(node&&term)node.textContent=` · 约 ${term.displayMinuteUtc8.slice(11)}（东八区）`;
 }
 function show(date,{focus=false,url=true,note=''}={}){
  if(!supported(date))return;
