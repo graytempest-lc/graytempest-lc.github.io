@@ -25,12 +25,20 @@ fs.writeFileSync(data,fs.readFileSync(data,'utf8').replace(/export const edition
 const {renderCalendar}=await import(pathToFileURL(path.join(root,'sol3/month-render.mjs')));
 const supported=files.map(f=>f.slice(0,10)).filter(d=>d>='2026-01-01'&&d<='2026-12-31');
 const selected=supported.at(-1)||'2026-01-01';
+const {calculateDay}=await import(pathToFileURL(path.join(root,'sol3/almanac.mjs')));
 let page=fs.readFileSync(path.join(root,files.at(-1)),'utf8');
 if(page.includes('id="sol3-calendar"'))throw Error('Dated archive must not contain the homepage calendar');
-page=page.replace('</head>','<link rel="stylesheet" href="sol3/month.css?v=1"></head>');
+const oldMenuStart=page.indexOf('<details class="archive-menu">');
+if(oldMenuStart!==-1){
+ const tokens=page.slice(oldMenuStart).matchAll(/<\/?details\b[^>]*>/g);let depth=0,end=-1;
+ for(const t of tokens){depth+=t[0].startsWith('</')?-1:1;if(depth===0){end=oldMenuStart+t.index+t[0].length;break;}}
+ if(end===-1)throw Error('Unclosed archive navigation');
+ page=page.slice(0,oldMenuStart)+page.slice(end);
+}
+page=page.replace('</head>','<link rel="stylesheet" href="sol3/month.css?v=2"></head>');
 page=page.replace(/<title>[\s\S]*?<\/title>/,'<title>L星团快讯 · Sol3 本土日历与计算机快讯</title>');
-page=page.replace('<main ',renderCalendar(selected,null)+'\n<main ');
-if(!page.includes('data-build="sol3-month-2026-v1"'))throw Error('Homepage insert failed');
-page=page.replace('</body>','<script type="module" src="sol3/month-ui.mjs"></script></body>');
+page=page.replace('<main ',renderCalendar(selected,null,calculateDay(selected))+'\n<main ');
+if(!page.includes('data-build="sol3-month-2026-v2"'))throw Error('Homepage insert failed');
+page=page.replace('</body>','<script type="module" src="sol3/month-ui.mjs?v=2"></script></body>');
 fs.writeFileSync(path.join(root,'index.html'),page);
 console.log(`Built homepage from ${files.at(-1)}; preserved ${files.length} dated editions.`);
