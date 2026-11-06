@@ -1,0 +1,28 @@
+---
+import sources from '../../data/feed-sources.json';
+import cache from '../../data/feeds-cache.json';
+import {visibleItems,safeUrl} from '../../tools/feed-core.mjs';
+const {compact=false}=Astro.props;
+const now=Date.now();
+const dateLabel=(s)=>new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date(s));
+---
+<section class="rss-window" id="rss-window" aria-labelledby="rss-title" data-pagefind-ignore>
+ <div class="rss-heading"><div><p class="rss-eyebrow">ELSEWHERE · 技术订阅</p><h2 id="rss-title">RSS 视窗</h2></div>{compact&&<a href="/feeds.html">全部来源与订阅 →</a>}</div>
+ <p class="rss-intro">官方技术订阅快照 · 保留原文标题 · 时间为东八区</p>
+ <div class="rss-grid">{sources.map(source=>{const state=cache[source.id],items=visibleItems(state,now).slice(0,compact?2:5);return <section class="rss-source" data-feed-id={source.id} data-cache-success={state?.lastSuccessAt||''}>
+  <div class="rss-source-title"><div><p>{source.topic}</p><h3><a href={source.url} rel="noopener noreferrer" referrerpolicy="no-referrer">{source.name}</a></h3></div><a class="rss-subscribe" href={source.feed} aria-label={`订阅${source.name}RSS`} rel="noopener noreferrer" referrerpolicy="no-referrer">RSS ↗</a></div>
+  {items.length?<ol>{items.map(item=><li><a href={safeUrl(item.url)||source.url} rel="noopener noreferrer" referrerpolicy="no-referrer">{item.title}</a><div class="rss-meta">{item.publishedAt?<time datetime={item.publishedAt} title={item.dateOriginal||''}>{dateLabel(item.publishedAt)}</time>:<span>源未提供有效发布时间</span>}{item.author&&<span class="rss-author">{item.author}</span>}</div></li>)}</ol>:<p class="rss-empty">{state?.lastSuccessAt?'订阅快照超过 7 天，暂不展示旧条目。':'暂未取得有效订阅内容。'} 可前往原站阅读。</p>}
+  <p class="rss-status" role="status">{state?.lastSuccessAt?<>最近成功获取：<time datetime={state.lastSuccessAt}>{dateLabel(state.lastSuccessAt)}</time></>:'尚无成功获取记录'}{state?.status!=='ok'&&<span> · 获取暂不可用{items.length?'，保留最近成功快照':''}</span>}</p>
+  {!compact&&<p class="rss-license">标题与署名来自原始订阅。<a href={source.licenseUrl} rel="noopener noreferrer">{source.license}</a> · <a href={source.policyUrl} rel="noopener noreferrer">来源许可</a>，特别标注除外。</p>}
+ </section>})}</div>
+ {compact&&<p class="rss-attribution"><a href="/feeds.html">来源、署名与许可</a> · <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener noreferrer">CC BY 4.0</a>，特别标注除外。</p>}
+</section>
+<script is:inline>
+ // Build-time cache age is also checked at read time if no rebuild has happened.
+ for(const card of document.querySelectorAll('[data-cache-success]')){
+  const age=Date.now()-Date.parse(card.dataset.cacheSuccess);
+  if(!Number.isFinite(age)||age>7*86400000||age< -86400000){
+   const list=card.querySelector('ol');if(list){const p=document.createElement('p');p.className='rss-empty';p.textContent='订阅快照超过 7 天，暂不展示旧条目。可前往原站阅读。';list.replaceWith(p);}
+  }
+ }
+</script>

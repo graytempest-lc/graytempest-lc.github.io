@@ -1,0 +1,427 @@
+{
+  "id": "2026-11-05",
+  "editionDate": "2026-11-05",
+  "status": "published",
+  "title": "L星团快讯 · 11月5日",
+  "description": "L星团快讯 · 2026年11月5日：15条计算机热点，涵盖本地AI、开发工具、操作系统、网络安全、芯片与计算研究。",
+  "editionLabel": "2026 年 11 月 5 日 · 星期四",
+  "dateBasis": "edition-publication-date",
+  "legacyDateNote": "sourceDate and dateLabel preserve the original displayed date; eventDate/sourcePublishedAt were not inferred.",
+  "introduction": [
+    "精选15条：11条为11月4日的新发布或公告，另补充4条近7天未报道的进展。预览功能、拟收购、厂商自测与研究方案均注明限制；安全更新请结合实际版本与部署条件判断。"
+  ],
+  "overview": [
+    {
+      "id": "llama-cpp",
+      "title": "llama.cpp 0.9.0 增强量化与多序列推理",
+      "category": "本地 AI"
+    },
+    {
+      "id": "vscode",
+      "title": "VS Code 1.145 扩充远程智能体预览和本地定时任务",
+      "category": "开发工具"
+    },
+    {
+      "id": "cuda",
+      "title": "CUDA 13.5 正式支持 Vera Rubin",
+      "category": "芯片算力"
+    },
+    {
+      "id": "ubuntu-tzdata",
+      "title": "Ubuntu 更新时区库，ICU 应用也需检查数据包",
+      "category": "操作系统"
+    }
+  ],
+  "items": [
+    {
+      "id": "rails",
+      "title": "Rails 修复 21 项安全问题",
+      "titleId": "rails-title",
+      "paragraphs": [
+        {
+          "text": "Rails 8.0.5.2 与 8.1.4.1 修补 Active Storage 文件访问、代码执行风险，以及 XSS、会话、缓存和拒绝服务等问题。",
+          "variant": ""
+        },
+        {
+          "text": "官方建议尽快升级；部分问题仅影响 8.1。8.0 系列安全支持将于11月7日结束，维护者还应安排后续版本迁移。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-04",
+      "dateLabel": "11月4日 · 安全更新",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Rails 官方公告",
+          "url": "https://rubyonrails.org/2026/11/4/Rails-8.0.5.2-and-8.1.4.1-have-been-released",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "llama-cpp",
+      "title": "llama.cpp 0.9.0 增强量化与多序列推理",
+      "titleId": "llama-cpp-title",
+      "paragraphs": [
+        {
+          "text": "新版本加入 OCP FP8 E4M3 量化支持和更高效的统一 KV 缓存操作，并扩展模型架构、语音生成与转写支持。",
+          "variant": ""
+        },
+        {
+          "text": "本地推理开发者可关注对应模型和后端的改进；新版也包含 API 变更，升级后应回归集成，不能把局部优化当作所有模型整体提速。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-04",
+      "dateLabel": "11月4日 · 发布",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "llama.cpp 发布说明",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/v0.9.0",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "vscode",
+      "title": "VS Code 1.145 扩充远程智能体预览和本地定时任务",
+      "titleId": "vscode-title",
+      "paragraphs": [
+        {
+          "text": "稳定版加入通过远程智能体主机预览应用与画布的选项，并让本地自动化支持五段式 cron 表达式和工作区自定义智能体。",
+          "variant": ""
+        },
+        {
+          "text": "远程浏览与画布仍为需开启设置的预览功能；cron 不适用于云端自动化，不能混同为所有任务都支持的新调度能力。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-04",
+      "dateLabel": "11月4日 · 稳定版，部分功能预览",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "VS Code 发布说明",
+          "url": "https://code.visualstudio.com/updates/v1_145",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "cuda",
+      "title": "CUDA 13.5 正式支持 Vera Rubin",
+      "titleId": "cuda-title",
+      "paragraphs": [
+        {
+          "text": "Vera Rubin 支持从早期开发者访问转为正式可用，MPS 增加加权时间片、资源借用和 cgroup 路由等控制。",
+          "variant": ""
+        },
+        {
+          "text": "Rubin 及后续 GPU 在 Windows 上不再支持 TCC，部署工具需选择 WDDM 或 MCDM；Tile 与 SIMT 库互操作仍属公共预览。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-04",
+      "dateLabel": "11月4日 · 发布",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "NVIDIA 官方说明",
+          "url": "https://developer.nvidia.com/blog/nvidia-cuda-13-5-brings-nvidia-vera-rubin-ga-support/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "ubuntu-tzdata",
+      "title": "Ubuntu 更新时区库，ICU 应用也需检查数据包",
+      "titleId": "ubuntu-tzdata-title",
+      "paragraphs": [
+        {
+          "text": "Ubuntu 公布受支持版本的时区数据库更新，纳入加拿大部分地区改用固定 UTC 偏移等调整，避免跨地区排程继续沿用旧夏令时规则。",
+          "variant": ""
+        },
+        {
+          "text": "24.04 LTS 及更新版本使用 ICU 的应用还需更新或安装 tzdata-icu；不能只更新系统 tzdata 就假定所有运行时的时区数据一致。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-04",
+      "dateLabel": "11月4日 · 维护公告",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Ubuntu 官方社区公告",
+          "url": "https://discourse.ubuntu.com/t/automatic-time-zone-updates-for-canadian-and-global-schedules/91008",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "xcode",
+      "title": "Xcode 内置编码助手接入 GitHub Copilot 公共预览",
+      "titleId": "xcode-title",
+      "paragraphs": [
+        {
+          "text": "Copilot 可直接用于 Xcode 内置编码助手，所有 Copilot 计划均支持；原有 Copilot for Xcode 扩展仍作为独立选项保留。",
+          "variant": ""
+        },
+        {
+          "text": "新集成需 Xcode 27.3 beta，以及 macOS Tahoe 26.6 或更高版本；它不是现有稳定版 Xcode 无条件获得的功能。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-04",
+      "dateLabel": "11月4日 · 公共预览",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "GitHub 官方说明",
+          "url": "https://github.blog/changelog/2026-11-04-github-copilot-is-now-available-in-xcodes-coding-assistant/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "pierre",
+      "title": "OpenAI 拟收购 Pierre，扩充 Codex 的 Git 工具",
+      "titleId": "pierre-title",
+      "paragraphs": [
+        {
+          "text": "OpenAI 宣布将收购 Code Storage 及 Trees、Diffs 等开发工具背后的 Pierre，计划将更多源代码管理能力引入 Codex。",
+          "variant": ""
+        },
+        {
+          "text": "交易仍待惯常交割条件和监管批准，双方目前独立运营；官方表示开源项目将保持开源，Code Storage 客户可继续使用服务。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-04",
+      "dateLabel": "11月4日 · 拟收购",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "OpenAI 官方公告",
+          "url": "https://openai.com/index/openai-to-acquire-pierre/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "supabase",
+      "title": "Supabase Realtime 修复节点断连时的订阅保留",
+      "titleId": "supabase-title",
+      "paragraphs": [
+        {
+          "text": "Realtime 2.153.2 修正订阅节点断开连接时 Postgres Changes 订阅未能保留的问题。",
+          "variant": ""
+        },
+        {
+          "text": "依赖数据库变更流的部署可重点回归节点掉线与重连场景；本次发布是定向修复，不代表所有断线恢复问题都已解决。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-04",
+      "dateLabel": "11月4日 · 修复发布",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Supabase Realtime 发布说明",
+          "url": "https://github.com/supabase/realtime/releases/tag/v2.153.2",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "n8n",
+      "title": "n8n 2.46.6 恢复跨平台 npm 安装",
+      "titleId": "n8n-title",
+      "paragraphs": [
+        {
+          "text": "维护者发布 2.46.6，修复导致 n8n 通过 npm 安装无法在所有支持平台正常工作的回归。",
+          "variant": ""
+        },
+        {
+          "text": "近期遇到 npm 安装失败的用户可检查此版本；本次说明仅列出安装修复，不宜把它描述成新的安全补丁。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-04",
+      "dateLabel": "11月4日 · 修复发布",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "n8n 发布说明",
+          "url": "https://github.com/n8n-io/n8n/releases/tag/n8n%402.46.6",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "dharma",
+      "title": "Dharma 用 2B 模型从文档图像提取结构化字段",
+      "titleId": "dharma-title",
+      "paragraphs": [
+        {
+          "text": "Dharma 展示基于 2B OCR 模型与 LoRA 的字段提取器，可按给定结构输出 JSON，也可自动识别页面中的字段。",
+          "variant": ""
+        },
+        {
+          "text": "效果与成本来自厂商自测，成本按单张 L40S 的 GPU 时间估算，不是服务报价；原文未明确提供该提取器的开放权重。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-04",
+      "dateLabel": "11月4日 · 厂商技术报告",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Dharma-AI 技术原文",
+          "url": "https://huggingface.co/blog/Dharma-AI/dharma-field-extractor",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "nemo",
+      "title": "NeMo 教程把智能体失败记录变成回归测试",
+      "titleId": "nemo-title",
+      "paragraphs": [
+        {
+          "text": "NVIDIA 演示用 Compass 从运行记录找问题，再用 Eval Author 构建评测、修改智能体指令，并比较开发集与保留集结果。",
+          "variant": ""
+        },
+        {
+          "text": "示例针对未经确认发送消息等具体失败，任务数很少；可借鉴测试闭环，但不能据此认定生产智能体已普遍可靠。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-04",
+      "dateLabel": "11月4日 · 技术教程",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "NVIDIA 官方教程",
+          "url": "https://developer.nvidia.com/blog/use-nvidia-nemo-to-turn-agent-failures-into-tests-and-harness-fixes/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "codeql",
+      "title": "CodeQL 2.27.4 防止打包跟随符号链接越出根目录",
+      "titleId": "codeql-title",
+      "paragraphs": [
+        {
+          "text": "CodeQL 在 bundle 与 publish 打包时检查符号链接解析后的路径，跳过包根目录之外的文件并发出警告，也修复机器可读输出被 JVM 消息污染的问题。",
+          "variant": ""
+        },
+        {
+          "text": "升级时还需留意 JavaScript/TypeScript 提取器不再支持 SEMMLE_TYPESCRIPT_HOME，统一使用内置编译器。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-02",
+      "dateLabel": "11月2日 · 发布 · 近7日补充",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "CodeQL 官方变更日志",
+          "url": "https://codeql.github.com/docs/codeql-overview/codeql-changelog/codeql-cli-2.27.4/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "nextjs",
+      "title": "Next.js 安全更新修补条件性缓存泄露等问题",
+      "titleId": "nextjs-title",
+      "paragraphs": [
+        {
+          "text": "Next.js 16.4.5 与 15.5.29 修复多项漏洞，包括特定 Cache Components 用法下的跨租户缓存泄露，以及部分自托管响应处理问题。",
+          "variant": ""
+        },
+        {
+          "text": "应按使用的版本升级并核对部署条件；缓存、反向代理及 Edge 路由问题各有前提，并非所有 Next.js 应用都受同样影响。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-03",
+      "dateLabel": "11月3日 · 安全更新 · 近7日补充",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Next.js 官方安全公告",
+          "url": "https://nextjs.org/blog/november-2026-security-release",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "palette",
+      "title": "IBM Palette 研究用小模型生成可检查的幻灯片",
+      "titleId": "palette-title",
+      "paragraphs": [
+        {
+          "text": "IBM 将 20B 模型的工作拆成规划与绘制，再渲染幻灯片、检测重叠和越界，仅保留检查后确有改善的修复。",
+          "variant": ""
+        },
+        {
+          "text": "这是研究方案，原文未明确开放训练后权重；评测中的初始计划由另一个前沿模型生成，不等于单个小模型独立完成全部流程。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-03",
+      "dateLabel": "11月3日 · 研究报告 · 近7日补充",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "IBM Research 技术原文",
+          "url": "https://huggingface.co/blog/ibm-research/palette-deck-building",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "statebench",
+      "title": "StateBench 细分长程状态追踪能力",
+      "titleId": "statebench-title",
+      "paragraphs": [
+        {
+          "text": "研究提出四级状态追踪基准，比较不同模型架构在长上下文中维护变量和状态的能力，所测预训练模型仍存在明显短板。",
+          "variant": ""
+        },
+        {
+          "text": "这是预印本与受控基准，不是所有真实任务的能力排名；构建长期运行的智能体时，状态正确性值得单独测试。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-02",
+      "dateLabel": "11月2日 · 预印本 · 近7日补充",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "StateBench 论文",
+          "url": "https://arxiv.org/abs/2611.03094v1",
+          "icon": true
+        }
+      ]
+    }
+  ]
+}

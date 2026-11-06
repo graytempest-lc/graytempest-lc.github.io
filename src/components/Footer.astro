@@ -1,0 +1,6 @@
+---
+import {issueUrl,shortDate} from '../lib/editions';
+const {issues,issue}=Astro.props;
+const idx=issues.findIndex(i=>i.data.editionDate===issue.editionDate),prev=issues[idx-1],next=issues[idx+1];
+---
+<footer><span>L星团快讯 <span class="copyright">© {issue.editionDate.slice(0,4)}</span></span><nav class="issue-pager" aria-label="期刊翻页">{prev&&<a href={issueUrl(prev.data.editionDate)}>← 上一期 · {shortDate(prev.data.editionDate)}</a>}{next&&<a href={issueUrl(next.data.editionDate)}>下一期 · {shortDate(next.data.editionDate)} →</a>}<a href="/">最新一期</a></nav><a href="#top">回到顶部 ↑</a></footer>

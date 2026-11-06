@@ -1,0 +1,42 @@
+{
+  "2026-10-28": {
+    "articleCount": 6,
+    "sha256": "5d60ff785766033f9bc96c0126e3ad937ab88d93f857d802d87f3c131dbbbe0b"
+  },
+  "2026-10-29": {
+    "articleCount": 6,
+    "sha256": "52a9faf346cb114469bf69b50cf2c23cd88dfcdf8080a67a0c44ee1b5ff5dc33"
+  },
+  "2026-10-30": {
+    "articleCount": 10,
+    "sha256": "2b0a086367da98aeeae95660a820d2e8ecd4c1fb22af1ead29ec7727154ca087"
+  },
+  "2026-10-31": {
+    "articleCount": 10,
+    "sha256": "d2c558610504a9cfce59f68f8f4b57d41120cd5690a031da5f05323ac7904e24"
+  },
+  "2026-11-01": {
+    "articleCount": 5,
+    "sha256": "fee4a6fe9a016beef0d5901f63b1f1f4f5613a413265e2a97a7428aadc616589"
+  },
+  "2026-11-02": {
+    "articleCount": 15,
+    "sha256": "e0a693656b86be431ae7c7382b65112b32a83d4e2f678596f7261d7a6e20a03e"
+  },
+  "2026-11-03": {
+    "articleCount": 15,
+    "sha256": "9672baecda77f7df42b188879d11d9ba0c8b77bdd2dd7927f64dbed7959e5bcf"
+  },
+  "2026-11-04": {
+    "articleCount": 15,
+    "sha256": "76435548d6019c627a23935fabf327de16fd6501c671e27c0d34a524f1ff68a6"
+  },
+  "2026-11-05": {
+    "articleCount": 15,
+    "sha256": "a5b2ed0e7165a7e88a1faccc7f5ad970e38862e96f4709a4ddc821b40acdd2e4"
+  },
+  "2026-11-06": {
+    "articleCount": 15,
+    "sha256": "3772e55f474c9461b3192695a3a082713c55ae4996fc56800cddb64f24fd8cc8"
+  }
+}

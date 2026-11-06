@@ -1,0 +1,327 @@
+{
+  "id": "2026-10-31",
+  "editionDate": "2026-10-31",
+  "status": "published",
+  "title": "L星团快讯 · 10月31日",
+  "description": "L星团快讯 · 2026年10月31日：开发工具供应链安全、自托管智能体、私网源站、证书防护、AI训练偏好与在轨TPU研究。",
+  "editionLabel": "2026 年 10 月 31 日 · 星期六",
+  "dateBasis": "edition-publication-date",
+  "legacyDateNote": "sourceDate and dateLabel preserve the original displayed date; eventDate/sourcePublishedAt were not inferred.",
+  "introduction": [
+    "今日精选 10 条：关注开发工具供应链安全、本地语音角色、智能体研究和基础设施更新。原始资料核对，未安装或实测。"
+  ],
+  "overview": [
+    {
+      "id": "nemoclaw",
+      "title": "NemoClaw 展示自托管智能体的完整技术栈",
+      "category": "本地 AI"
+    },
+    {
+      "id": "origins",
+      "title": "Cloudflare Private Origins 正式可用",
+      "category": "基础设施"
+    },
+    {
+      "id": "emudhra",
+      "title": "内嵌浏览器与自动化客户端，也要更新证书防护",
+      "category": "网络安全"
+    },
+    {
+      "id": "aipref",
+      "title": "网站 AI 训练偏好拟采用共享信号",
+      "category": "标准草案"
+    },
+    {
+      "id": "suncatcher",
+      "title": "Google 在轨 TPU 完成首次 AI 响应",
+      "category": "前沿研究"
+    },
+    {
+      "id": "monsterhouse",
+      "title": "本地语音角色有了完整参考案例",
+      "category": "本地 AI"
+    },
+    {
+      "id": "evalpath",
+      "title": "目录叫“eval”，并不会自动让智能体更诚实",
+      "category": "智能体研究"
+    },
+    {
+      "id": "trustedpublishing",
+      "title": "VS Code 扩展发布可以不再保存长期令牌",
+      "category": "开发工具"
+    },
+    {
+      "id": "azd",
+      "title": "Azure 开发工具修正高风险部署确认流程",
+      "category": "基础设施"
+    }
+  ],
+  "items": [
+    {
+      "id": "cursor",
+      "title": "Cursor 扩展市场发现恶意 Claude Code 包",
+      "titleId": "cursor-title",
+      "paragraphs": [
+        {
+          "text": "Cursor 通报被篡改的 Claude Code 扩展尝试植入 SSH 后门，并更新受影响版本与检测指标。",
+          "variant": "dek"
+        },
+        {
+          "text": "相关用户应核对安装记录，按官方指引检查和处置；仅卸载扩展可能清不掉独立持久化组件。暂无证据表明 Anthropic 官方分发渠道受影响，不能泛化为所有 Claude Code 用户中招。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-30",
+      "dateLabel": "10 月 29 日事件 · 30 日更新",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Cursor 安全公告",
+          "url": "https://cursor.com/blog/claude-code-extension-security-notice",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "nemoclaw",
+      "title": "NemoClaw 展示自托管智能体的完整技术栈",
+      "titleId": "nemoclaw-title",
+      "paragraphs": [
+        {
+          "text": "NVIDIA 说明如何把 OpenClaw、Hermes 或 LangChain Deep Agents，与模型优化、遥测及 OpenShell 权限控制组合。",
+          "variant": ""
+        },
+        {
+          "text": "实用点是为文件、网络和凭据访问加上运行时约束；它是配套部署蓝图，不是替代现有智能体框架的新运行时，也不是本日首次发布。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-30",
+      "dateLabel": "10 月 30 日技术文章",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "NVIDIA 技术文章",
+          "url": "https://developer.nvidia.com/blog/?p=124341",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "origins",
+      "title": "Cloudflare Private Origins 正式可用",
+      "titleId": "origins-title",
+      "paragraphs": [
+        {
+          "text": "通过 Cloudflare One 连接，可让代理 DNS 指向私网源站，同时使用边缘防护和缓存，适合需要公开入口的自托管 API。",
+          "variant": ""
+        },
+        {
+          "text": "需要账户服务权限及相应网络配置，不是所有用户改一条 DNS 就能启用；隐藏源站也不能替代应用鉴权。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-30",
+      "dateLabel": "10 月 30 日发布",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Cloudflare 公告",
+          "url": "https://blog.cloudflare.com/private-origins-public-to-private/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "emudhra",
+      "title": "内嵌浏览器与自动化客户端，也要更新证书防护",
+      "titleId": "emudhra-title",
+      "paragraphs": [
+        {
+          "text": "Cloudflare 观察到利用 eMudhra 泄露密钥伪造的证书，但尚未发现其用于拦截自身连接。新测量显示部分旧客户端和内嵌浏览器仍未及时修补。",
+          "variant": ""
+        },
+        {
+          "text": "开发者需检查应用实际使用的证书信任链；样本偏向机器人且采样调整过，不能把统计比例当作全网风险比例。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-30",
+      "dateLabel": "10 月 30 日后续测量",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Cloudflare 测量报告",
+          "url": "https://blog.cloudflare.com/emudhra-patching/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "aipref",
+      "title": "网站 AI 训练偏好拟采用共享信号",
+      "titleId": "aipref-title",
+      "paragraphs": [
+        {
+          "text": "OpenAI 计划未来数月支持 robots.txt 中的共同训练偏好信号，减少站长逐家维护规则的负担。",
+          "variant": ""
+        },
+        {
+          "text": "现有爬虫控制继续有效，目前不要撤掉旧规则；相关 Internet-Draft 仍是草案，不是已获 IETF 批准的标准。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-30",
+      "dateLabel": "10 月 30 日预告",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "OpenAI 公告",
+          "url": "https://openai.com/index/helping-websites-express-ai-training-preferences/",
+          "icon": true
+        },
+        {
+          "label": "Internet-Draft",
+          "url": "https://datatracker.ietf.org/doc/draft-kelley-aipref-training-preference-signal/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "suncatcher",
+      "title": "Google 在轨 TPU 完成首次 AI 响应",
+      "titleId": "suncatcher-title",
+      "paragraphs": [
+        {
+          "text": "10 月 1 日发射的 Project Suncatcher 原型卫星，本周用 Gemma 4 生成短诗，完成“Hello World”。",
+          "variant": ""
+        },
+        {
+          "text": "这是验证太空计算可行性的研究里程碑，后续仍需测试辐射、热环境和互联；不是商用太空数据中心上线，也未证明成本或能效优势。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-30",
+      "dateLabel": "10 月 30 日披露",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Google 研究更新",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/project-suncatcher-satellite-response/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "monsterhouse",
+      "title": "本地语音角色有了完整参考案例",
+      "titleId": "monsterhouse-title",
+      "paragraphs": [
+        {
+          "text": "NVIDIA 员工展示 MonsterHouse，把语音识别、Bolt E4B 对话、零样本 TTS 和 Audio2Face-3D 面部动画接成互动角色。",
+          "variant": ""
+        },
+        {
+          "text": "对制作本地虚拟角色有参考价值，但整套案例使用两张专业显卡，项目代码尚未打包发布，真实访客测试也未完成，不能理解成普通单卡开箱即用。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-30",
+      "dateLabel": "10 月 30 日案例",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "NVIDIA 作者原文",
+          "url": "https://huggingface.co/blog/nvidia/nemotron-halloween",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "evalpath",
+      "title": "目录叫“eval”，并不会自动让智能体更诚实",
+      "titleId": "evalpath-title",
+      "paragraphs": [
+        {
+          "text": "微软在 macOS 的 Copilot CLI 上，对四种模型进行约 900 轮实验：测试目录名会增加模型“正在被评测”的判断，但未测出行为的显著改善。",
+          "variant": ""
+        },
+        {
+          "text": "做智能体验收仍应检查代码差异、测试与执行日志，不能只相信“已完成”；结论限于这套日常工程场景，也不能排除小效应。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-30",
+      "dateLabel": "10 月 30 日研究",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "微软研究",
+          "url": "https://developer.microsoft.com/blog/does-eval-in-the-workspace-path-change-what-your-agent-does/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "trustedpublishing",
+      "title": "VS Code 扩展发布可以不再保存长期令牌",
+      "titleId": "trustedpublishing-title",
+      "paragraphs": [
+        {
+          "text": "Visual Studio Marketplace 支持通过 GitHub Actions 或 Azure Pipelines 的联合身份发布扩展；GitHub 流程使用 15 分钟有效的临时凭据。",
+          "variant": ""
+        },
+        {
+          "text": "扩展作者可减少长期 PAT 泄露风险，但必须先配置受信工作流，验证首次发布成功后再移除旧令牌；它不能替代代码审查。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-28",
+      "dateLabel": "10 月 28 日发布 · 补充",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "微软官方公告",
+          "url": "https://developer.microsoft.com/blog/trusted-publishing-visual-studio-marketplace/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "azd",
+      "title": "Azure 开发工具修正高风险部署确认流程",
+      "titleId": "azd-title",
+      "paragraphs": [
+        {
+          "text": "azd 1.37.2 把关键部署警告默认设为拒绝，无交互或未确认时返回错误，并修复取消流程和 Deployment Stacks 配置校验。",
+          "variant": ""
+        },
+        {
+          "text": "用脚本部署 Azure 服务的开发者应重新检查失败与取消分支，避免把中止误当成功；不是新增一套部署功能。版本正文标 10 月 28 日，GitHub 实际发布于 29 日，微软汇总文章为 30 日。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-29",
+      "dateLabel": "10 月 29 日发布 · 补充",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "azd 1.37.2 发布说明",
+          "url": "https://github.com/Azure/azure-dev/releases/tag/azure-dev-cli_1.37.2",
+          "icon": true
+        }
+      ]
+    }
+  ]
+}

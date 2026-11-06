@@ -1,0 +1,201 @@
+{
+  "id": "2026-10-28",
+  "editionDate": "2026-10-28",
+  "status": "published",
+  "title": "L星团快讯 · 10月28日",
+  "description": "L星团快讯 · 2026年10月28日：LFM3开放权重、Windows App SDK 2.6.4、GPU显存共享、Genie 4、MoE推理与MotionBricks。",
+  "editionLabel": "2026 年 10 月 28 日 · 星期三",
+  "dateBasis": "edition-publication-date",
+  "legacyDateNote": "sourceDate and dateLabel preserve the original displayed date; eventDate/sourcePublishedAt were not inferred.",
+  "introduction": [],
+  "overview": [
+    {
+      "id": "windows",
+      "title": "Windows App SDK 简化语言模型接入",
+      "category": "开发工具"
+    },
+    {
+      "id": "gpu",
+      "title": "共享 GPU 的显存边界",
+      "category": "算力"
+    },
+    {
+      "id": "genie",
+      "title": "Genie 4 加入声音与对话",
+      "category": "研究预览"
+    },
+    {
+      "id": "moe",
+      "title": "MoE 推理优化：别只看峰值跑分",
+      "category": "本地 AI"
+    },
+    {
+      "id": "motionbricks",
+      "title": "MotionBricks 更新角色动作工具",
+      "category": "研究代码"
+    }
+  ],
+  "items": [
+    {
+      "id": "lfm3",
+      "title": "LFM3：面向本地任务的轻量模型",
+      "titleId": "lfm3-title",
+      "paragraphs": [
+        {
+          "text": "Liquid AI 发布首批约 2B 参数模型，覆盖文本、视觉、音频、全模态与决策任务。",
+          "variant": "dek"
+        },
+        {
+          "text": "分类、信息提取和语音处理，多了面向专门任务的轻量选择。实际部署仍需确认模型许可、推理框架与设备支持。",
+          "variant": ""
+        }
+      ],
+      "sourceDate": "2026-10-27",
+      "dateLabel": "10 月 27 日发布",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Liquid AI 原文",
+          "url": "https://www.liquid.ai/blog/lfm3",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "windows",
+      "title": "Windows App SDK 2.6.4 简化语言模型 API 接入",
+      "titleId": "windows-title",
+      "paragraphs": [
+        {
+          "text": "使用新版本，无需再解锁语言模型的 Limited Access Feature；旧版本的 LAF 要求仍保留。更新还修复了应用关闭与 WebView2 焦点处理等场景中的崩溃。",
+          "variant": ""
+        },
+        {
+          "text": "接入前仍要核对目标 Windows 版本与硬件要求。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-27",
+      "dateLabel": "10 月 27 日发布",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Microsoft 发布说明",
+          "url": "https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/release-notes/windows-app-sdk-2-0#version-264",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "gpu",
+      "title": "共享一张 GPU， 为每个服务划定显存边界",
+      "titleId": "gpu-title",
+      "paragraphs": [
+        {
+          "text": "NVIDIA 介绍 CUDA 13.4 配合 GPU Fractioning Operator 与 KAI Scheduler，在 Kubernetes 中设置显存保底、上限与弹性配额。超额分配会失败，而非继续挤占其他服务。",
+          "variant": ""
+        },
+        {
+          "text": "适合多推理服务共卡；SM-sharing 仍共享错误域，不等同于 MIG 硬件隔离。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-27",
+      "dateLabel": "10 月 27 日技术文章",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "NVIDIA 技术原文",
+          "url": "https://developer.nvidia.com/blog/memory-enforced-gpu-sharing-in-kubernetes-with-nvidia-cuda-13-4/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "genie",
+      "title": "Genie 4 为实时生成世界 加入声音与对话",
+      "titleId": "genie-title",
+      "paragraphs": [
+        {
+          "text": "DeepMind 展示带原生环境音、对话及文字修改能力的交互场景。目前仅面向可信测试者，Ultra 与 API 开放仍属后续计划。",
+          "variant": ""
+        },
+        {
+          "text": "物体一致性、物理与长期稳定性仍有限，暂不能当作可本地部署的游戏引擎。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-27",
+      "dateLabel": "10 月 27 日公布",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "DeepMind 原文",
+          "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "moe",
+      "title": "MoE 推理优化，别只看峰值跑分",
+      "titleId": "moe-title",
+      "paragraphs": [
+        {
+          "text": "NVIDIA 展示 DGX Spark 上结合 MoE 内核、FP8 输出与多词元预测（MTP）的优化：Ling 3.0 flash 的 GSM8K 解码吞吐提升 42.5%，合成负载提升 185.1%。",
+          "variant": ""
+        },
+        {
+          "text": "这是厂商特定配置结果。MTP 模块共享配置不当也可能变慢；复测要看真实任务耗时、首词延迟和接受率。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-27",
+      "dateLabel": "10 月 27 日技术文章",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "MoE 优化原文",
+          "url": "https://developer.nvidia.com/blog/3-ways-to-boost-moe-inference-on-nvidia-dgx-spark/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "motionbricks",
+      "title": "MotionBricks 更新角色动作工具",
+      "titleId": "motionbricks-title",
+      "paragraphs": [
+        {
+          "text": "MotionBricks 更新支持 SOMA 人体模型，提供权重、ONNX 模型及 Newton 交互参考，可探索由目标姿态驱动的连续行走、坐下与拾取动作。",
+          "variant": ""
+        },
+        {
+          "text": "仍是研究代码。演示中的 Unreal Engine 集成未包含在仓库中；官方 Windows / Linux RTX 4090 测试不代表所有设备表现。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-27",
+      "dateLabel": "10 月 27 日更新介绍",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "NVIDIA 更新介绍",
+          "url": "https://developer.nvidia.com/blog/nvidia-rtx-spark-powers-neural-rendering-and-ai-characters-in-games/",
+          "icon": true
+        },
+        {
+          "label": "MotionBricks 代码",
+          "url": "https://github.com/NVlabs/motionbricks",
+          "icon": true
+        }
+      ]
+    }
+  ]
+}

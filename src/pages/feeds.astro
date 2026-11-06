@@ -1,0 +1,9 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FeedWindow from '../components/FeedWindow.astro';
+import {publishedEditions} from '../lib/editions';
+const issues=await publishedEditions(),issue=issues.at(-1).data;
+---
+<Base title="RSS 视窗 · L星团快讯" description="Go、Kubernetes、web.dev的官方技术订阅，以及L星团快讯本站RSS。" canonical="/feeds.html"><Header issue={issue} issues={issues} section="feeds"/><main id="main" tabindex="-1"><h1 class="sr-only">技术 RSS 来源与快照</h1><FeedWindow/><section class="feed-about"><h2>订阅与更新</h2><p><a href="/rss.xml">订阅 L星团快讯 RSS →</a> 每期一条，包含简介与日报链接。</p><details><summary>更新、日期与内容权利</summary><p>外部订阅在发布时刷新，条目日期来自原始订阅，不是事件发生时间。获取失败时保留成功快照；超过 7 天隐藏条目。无 JavaScript 时请参考卡片的获取时间。</p><p>仅展示标题、已有署名与原文链接，不转载正文或图片。浏览器不直连 RSS；点击原文后进入第三方网站。各来源许可见卡片，特别标注及第三方素材除外。</p></details></section></main><Footer issue={issue} issues={issues}/></Base>

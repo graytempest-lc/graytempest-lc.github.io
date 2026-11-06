@@ -1,0 +1,9 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import {publishedEditions,issueUrl} from '../lib/editions';
+const issues=await publishedEditions(),issue=issues.at(-1).data;
+const months=[...new Set(issues.map(i=>i.data.editionDate.slice(0,7)))].sort().reverse();
+---
+<Base title="历史归档 · L星团快讯" description="按刊载日期浏览L星团快讯全部历史日报。" canonical="/archive.html"><Header issue={issue} issues={issues} section="archive"/><main id="main" tabindex="-1"><div class="issue-line"><h1>历史归档</h1><span>{issues.length} 期 · {issues.reduce((n,x)=>n+x.data.items.length,0)} 条快讯</span></div><p>按东八区刊载日归档，新闻的原始日期在每条正文中单独标明。</p>{months.map(m=><section class="archive-section"><h2>{m.slice(0,4)} 年 {Number(m.slice(5))} 月</h2><ol class="archive-issues">{issues.filter(i=>i.data.editionDate.startsWith(m)).reverse().map(({data:i})=><li><a href={issueUrl(i.editionDate)}><time datetime={i.editionDate}>{i.editionDate}</time><strong>{i.items[0].title}</strong><span>{i.items.length} 条</span></a></li>)}</ol></section>)}</main><Footer issue={issue} issues={issues}/></Base>

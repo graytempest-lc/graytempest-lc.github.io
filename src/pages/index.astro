@@ -1,0 +1,14 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Edition from '../components/Edition.astro';
+import Footer from '../components/Footer.astro';
+import FeedWindow from '../components/FeedWindow.astro';
+import {publishedEditions} from '../lib/editions';
+import {renderCalendar} from '../../public/sol3/month-render.mjs';
+import {calculateDay} from '../../public/sol3/almanac.mjs';
+const issues=await publishedEditions(),issue=issues.at(-1).data;
+const calendarDate=issues.map(i=>i.data.editionDate).filter(d=>d>='2026-01-01'&&d<='2026-12-31').at(-1)||'2026-01-01';
+const calendar=renderCalendar(calendarDate,null,calculateDay(calendarDate));
+---
+<Base title="L星团快讯 · Sol3 本土日历与计算机快讯" description={issue.description} canonical="/" calendar><Header issue={issue} issues={issues} home/><Fragment set:html={calendar}/><Edition issue={issue}/><FeedWindow compact/><Footer issue={issue} issues={issues}/><script is:inline type="module" src="/sol3/month-ui.mjs?v=3"></script></Base>

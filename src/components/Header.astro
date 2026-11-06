@@ -1,0 +1,16 @@
+---
+import ArchiveCalendar from './ArchiveCalendar.astro';
+const {issue,issues,home=false,section='edition'}=Astro.props;
+---
+<header class="masthead">
+ <div class="edition"><span>科技 · 开发 · 本地 AI</span><time datetime={issue.editionDate}>{issue.editionLabel}</time></div>
+ <div class="brandrow"><a href="/" class="brand" aria-label="L星团快讯首页">L<span>星团快讯</span><i aria-hidden="true"></i></a><span class="brand-en" aria-hidden="true">L CLUSTER DISPATCH</span></div>
+ <nav aria-label="网站导航">
+  <a class={section==='edition'?'nav-current':undefined} href={section==='edition'?'#main':'/#main'}>本期快讯</a>
+  {section==='edition'&&<a href="#edition-contents">全部 {issue.items.length} 条</a>}
+  {!home&&section==='edition'&&<ArchiveCalendar issues={issues} current={issue.editionDate} />}
+  <a class={section==='archive'?'nav-current':undefined} href="/archive.html">历史归档</a>
+  <a class={section==='feeds'?'nav-current':undefined} href="/feeds.html">RSS 视窗</a>
+  <a href="/rss.xml" aria-label="订阅L星团快讯RSS">订阅本站 ↗</a>
+ </nav>
+</header>

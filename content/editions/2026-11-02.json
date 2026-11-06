@@ -1,0 +1,427 @@
+{
+  "id": "2026-11-02",
+  "editionDate": "2026-11-02",
+  "status": "published",
+  "title": "L星团快讯 · 11月2日",
+  "description": "L星团快讯 · 2026年11月2日：15条计算机热点，涵盖AI、本地推理、芯片算力、开发工具、操作系统、可观测性与安全。",
+  "editionLabel": "2026 年 11 月 2 日 · 星期一",
+  "dateBasis": "edition-publication-date",
+  "legacyDateNote": "sourceDate and dateLabel preserve the original displayed date; eventDate/sourcePublishedAt were not inferred.",
+  "introduction": [
+    "精选 15 条：4 条 11 月 1 日新进展，11 条近 7 日未报道补充；每项标注原始日期。公开资料核验，非独立性能实测。"
+  ],
+  "overview": [
+    {
+      "id": "llama",
+      "title": "llama.cpp 为 OpenCL 加入初步 IQ3 支持",
+      "category": "本地 AI"
+    },
+    {
+      "id": "qwen",
+      "title": "Qwen Code 0.26.5 加强自动修复与验收约束",
+      "category": "开发工具"
+    },
+    {
+      "id": "linux",
+      "title": "Linux 7.2 系列结束上游维护",
+      "category": "操作系统"
+    },
+    {
+      "id": "protostar",
+      "title": "ProtoStar 推动公共科研数据复用",
+      "category": "开放研究"
+    }
+  ],
+  "items": [
+    {
+      "id": "hono",
+      "title": "Hono 4.13.16 修复五项安全问题",
+      "titleId": "hono-title",
+      "paragraphs": [
+        {
+          "text": "涉及挂载路径与默认路由器中间件绕过、表单验证遗漏、CSS HTML 注入及 CSRF 检查遗漏。",
+          "variant": "dek"
+        },
+        {
+          "text": "使用 Hono 开发 API 应优先评估升级并回归鉴权与表单流程；PreparedRegExpRouter 项目还需重新生成路由数据。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-01",
+      "dateLabel": "11 月 1 日发布",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Hono 发布说明",
+          "url": "https://github.com/honojs/hono/releases/tag/v4.13.16",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "llama",
+      "title": "llama.cpp 为 OpenCL 加入初步 IQ3 支持",
+      "titleId": "llama-title",
+      "paragraphs": [
+        {
+          "text": "b12031 预发布新增 IQ3_S、IQ3_XXS 量化计算路径，包含 Adreno 实现，对 Snapdragon／Adreno 本地推理开发者更有参考价值。",
+          "variant": ""
+        },
+        {
+          "text": "这不是 CUDA 提速更新，实际速度及兼容性仍需按设备验证。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-01",
+      "dateLabel": "11 月 1 日 · 预发布",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "llama.cpp 发布说明",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12031",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "qwen",
+      "title": "Qwen Code 0.26.5 加强自动修复与验收约束",
+      "titleId": "qwen-title",
+      "paragraphs": [
+        {
+          "text": "PR 验证仅在工作树干净且对应 PR head 时复用目录；产物检查失败或无法运行会标为“结论不确定”。",
+          "variant": ""
+        },
+        {
+          "text": "自动修复在三次修复推送后检查仍失败时交给人工，有助于避免无人值守编码反复修改却无法验收。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-01",
+      "dateLabel": "11 月 1 日发布",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Qwen Code 发布说明",
+          "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.26.5",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "linux",
+      "title": "Linux 7.2 系列结束上游维护",
+      "titleId": "linux-title",
+      "paragraphs": [
+        {
+          "text": "kernel.org 已将 7.2.15 标为 EOL；同日 7.4-rc1 是候选版，不是稳定版替代。",
+          "variant": ""
+        },
+        {
+          "text": "自行维护内核的开发者应规划转向受支持分支；发行版用户仍以发行版自身维护承诺为准。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-01",
+      "dateLabel": "11 月 1 日",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Linux 内核官方发布页",
+          "url": "https://www.kernel.org/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "protostar",
+      "title": "ProtoStar 推动公共科研数据复用",
+      "titleId": "protostar-title",
+      "paragraphs": [
+        {
+          "text": "Hugging Face 与高校等伙伴公布计划，改善公开科研数据、模型和代码的可发现性与复用。首场 CMU 气候挑战计划 11 月 2—13 日举行，使用 210 座美国城市数据，将 AI 预测与简单统计基线比较。",
+          "variant": ""
+        },
+        {
+          "text": "适合寻找开放数据实践项目的开发者；目前是计划与挑战设计，并非已证明 AI 优于传统方法。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-29",
+      "dateLabel": "10 月 29 日公告 · 补充",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "ProtoStar 官方公告",
+          "url": "https://huggingface.co/blog/announcing-project-protostar",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "litert",
+      "title": "6. LiteRT 升级 Play services GPU 推理",
+      "titleId": "litert-title",
+      "paragraphs": [
+        {
+          "text": "Android 端侧推理通过 CompiledModel API 使用 ML Drift GPU 引擎，运行时由 Play services 共享，不必每个 APK 单独打包。",
+          "variant": ""
+        },
+        {
+          "text": "开发者可评估包体及兼容性收益；请求 GPU 和 CPU 时支持 CPU 回退，NPU 支持仍在开发，厂商速度数据不能当本机保证。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-28",
+      "dateLabel": "10 月 28 日 · 已发布 · 近 7 日补充",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Google Developers 官方文章",
+          "url": "https://developers.googleblog.com/en/smaller-apps-and-faster-gpu-inference-with-litert-in-google-play-services/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "openrouter",
+      "title": "7. OpenRouter 重构默认路由",
+      "titleId": "openrouter-title",
+      "paragraphs": [
+        {
+          "text": "综合真实价格、延迟、吞吐和错误率选择提供商，不再主要按低输入价格选择。",
+          "variant": ""
+        },
+        {
+          "text": "响应可能更快，费用也可能上升；预算敏感者可显式按 price 排序，已有 provider.order 和显式排序仍优先。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-28",
+      "dateLabel": "10 月 28 日 · 已上线 · 近 7 日补充",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "OpenRouter 官方公告",
+          "url": "https://openrouter.ai/blog/announcements/how-we-rebuilt-provider-routing/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "macbook",
+      "title": "8. 苹果发布触控 OLED MacBook Pro",
+      "titleId": "macbook-title",
+      "paragraphs": [
+        {
+          "text": "新款采用串联 OLED PROLED XDR、M5 Pro／Max，最高 128GB 统一内存，已开放预订，11 月 6 日起交付。",
+          "variant": ""
+        },
+        {
+          "text": "桌面开发者需关注触控与键鼠共存，本地 AI 用户仍应等待具体模型、量化与持续推理实测，内存上限不是速度保证。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-28",
+      "dateLabel": "10 月 28 日 · 已发布预订 · 近 7 日补充",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Apple 官方公告",
+          "url": "https://www.apple.com/newsroom/2026/10/apple-unveils-groundbreaking-macbook-pro-with-proled-xdr-display/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "oci",
+      "title": "9. OCI 提供 Vera Rubin NVL72 与 Vera CPU",
+      "titleId": "oci-title",
+      "paragraphs": [
+        {
+          "text": "可将模型计算与 Agent 工具、代码执行分别扩容，为云端开发者提供 CPU／GPU 分开规划的选项。",
+          "variant": ""
+        },
+        {
+          "text": "多吉瓦扩建及八卡 HGX Rubin NVL8 仍为计划，不是已交付容量，也不能推断个人租用成本更低。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-27",
+      "dateLabel": "10 月 27 日 · 正式可用 · 近 7 日补充",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "NVIDIA 官方公告",
+          "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-and-Oracle-Expand-NVIDIA-Vera-Rubin-to-Multi-Gigawatt-Scale-and-Bring-NVIDIA-Vera-CPU-to-Oracle-Cloud-Infrastructure/default.aspx",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "synthetic",
+      "title": "10. 微软分享企业 Agent 合成评测方法",
+      "titleId": "synthetic-title",
+      "paragraphs": [
+        {
+          "text": "以虚构组织、邮件、会议及时间线构造可重复测试，不输入客户数据。",
+          "variant": ""
+        },
+        {
+          "text": "开发者可借鉴关联数据与跨时间任务夹具；这是内部平台经验分享，不是开放下载的评测产品。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-30",
+      "dateLabel": "10 月 30 日 · 技术文章 · 近 7 日补充",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Microsoft Research 官方文章",
+          "url": "https://www.microsoft.com/en-us/research/blog/from-synthetic-enterprise-data-evaluations-to-real-microsoft-copilot-ai-confidence/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "ottl",
+      "title": "11. OpenTelemetry 转换语言 OTTL 达到 v1",
+      "titleId": "ottl-title",
+      "paragraphs": [
+        {
+          "text": "自 Collector Contrib 0.164.0 起，日志、指标和链路的语法、标准函数及 Go API 获 1.x 向后兼容承诺，降低自托管监控规则升级风险。",
+          "variant": ""
+        },
+        {
+          "text": "跨版本升级需清理废弃开关；Lambda、profiles 仍实验性，transform processor 不能一并称稳定。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-27",
+      "dateLabel": "10 月 27 日 · 已发布 · 近 7 日补充",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "OpenTelemetry 官方公告",
+          "url": "https://opentelemetry.io/blog/2026/ottl-v1/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "secrets",
+      "title": "12. GitHub 按代码上下文拦截潜在密钥",
+      "titleId": "secrets-title",
+      "paragraphs": [
+        {
+          "text": "新 push protection 依据使用上下文补充固定格式匹配，在写入历史前拦截风险。",
+          "variant": ""
+        },
+        {
+          "text": "限符合 GHSP／GHAS 条件的组织，默认关闭，启用后消耗 AI 额度；团队评估时须同时考虑覆盖与费用。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-28",
+      "dateLabel": "10 月 28 日 · 公共预览 · 近 7 日补充",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "GitHub 官方发布说明",
+          "url": "https://github.blog/changelog/2026-10-28-push-protection-beyond-predefined-secret-patterns/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "obi",
+      "title": "13. OpenTelemetry OBI 1.0 发布",
+      "titleId": "obi-title",
+      "paragraphs": [
+        {
+          "text": "Linux 应用可用 eBPF 自动采集指标与链路，降低改源码埋点门槛，新版重点建立配置与升级兼容承诺。",
+          "variant": ""
+        },
+        {
+          "text": "适合自托管服务排障，但运行时指标仍实验性，1.0 不代表所有遥测字段稳定。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-30",
+      "dateLabel": "10 月 30 日 · 已发布 · 近 7 日补充",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "OpenTelemetry 官方公告",
+          "url": "https://opentelemetry.io/blog/2026/obi-v1-release/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "edge",
+      "title": "14. Edge 公布 Windows 加速启动机制",
+      "titleId": "edge-title",
+      "paragraphs": [
+        {
+          "text": "Windows 直接通知已运行的 Edge，减少再次打开浏览器或链接的中间进程开销。",
+          "variant": ""
+        },
+        {
+          "text": "已随 Edge 150+ 推出，需 Windows 11 25H2／26H1／26H2 及 KB5127936 或更新。应用开发者也可采用注册接口；不适用于 Windows 10，不是冷启动提速保证。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-29",
+      "dateLabel": "10 月 29 日 · 技术公告 · 近 7 日补充",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Microsoft Edge 官方文章",
+          "url": "https://blogs.windows.com/msedgedev/2026/10/29/edge-is-faster-on-windows-with-accelerated-app-launches/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "dependabot",
+      "title": "15. Dependabot 增加漏洞可达性分析",
+      "titleId": "dependabot-title",
+      "paragraphs": [
+        {
+          "text": "检查代码到有漏洞依赖函数的调用路径，帮助排序修复优先级。",
+          "variant": ""
+        },
+        {
+          "text": "限 Enterprise Cloud 的 JS／TS 项目，预览免费且默认关闭；“潜在可达”仍应按可达处理，结果不会自动关闭告警。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-28",
+      "dateLabel": "10 月 28 日 · 公共预览 · 近 7 日补充",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "GitHub 官方发布说明",
+          "url": "https://github.blog/changelog/2026-10-28-prioritize-dependabot-alerts-with-reachability-analysis/",
+          "icon": true
+        }
+      ]
+    }
+  ]
+}

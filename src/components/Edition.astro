@@ -1,0 +1,11 @@
+---
+import Article from './Article.astro';
+const {issue}=Astro.props;
+---
+<main id="main" tabindex="-1" data-pagefind-body>
+ <div class="issue-line"><h1>本期要闻</h1><span>{issue.items.length} 则快讯</span></div>
+ <details class="contents"><summary>本期完整目录 <span>{issue.items.length} 条</span></summary><ol id="edition-contents" tabindex="-1">{issue.items.map(i=><li><a href={`#${i.id}`}><span>{i.title}</span><small>{i.dateLabel}</small></a></li>)}</ol></details>
+ {issue.introduction.map(p=><p>{p}</p>)}
+ <Article item={issue.items[0]} lead overview={issue.overview} />
+ <section class="briefs" aria-label="更多快讯">{issue.items.slice(1).map(item=><Article item={item} />)}</section>
+</main>

@@ -1,0 +1,10 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Edition from '../components/Edition.astro';
+import Footer from '../components/Footer.astro';
+import {publishedEditions,issueUrl} from '../lib/editions';
+export async function getStaticPaths(){const issues=await publishedEditions();return issues.map(e=>({params:{date:e.data.editionDate},props:{issue:e.data,issues}}));}
+const {issue,issues}=Astro.props;
+---
+<Base title={issue.title} description={issue.description} canonical={issueUrl(issue.editionDate)}><Header issue={issue} issues={issues}/><Edition issue={issue}/><Footer issue={issue} issues={issues}/></Base>

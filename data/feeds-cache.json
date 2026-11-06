@@ -1,0 +1,137 @@
+{
+  "go": {
+    "status": "ok",
+    "lastAttemptAt": "2026-11-06T07:53:31.650Z",
+    "lastSuccessAt": "2026-11-06T07:53:31.650Z",
+    "etag": null,
+    "lastModified": null,
+    "items": [
+      {
+        "title": "A new Go API for JSON",
+        "url": "https://go.dev/blog/jsonv2",
+        "publishedAt": "2026-11-04T00:00:00.000Z",
+        "dateOriginal": "2026-11-04T00:00:00+00:00",
+        "author": "Michael Pratt, Joe Tsai, Daniel Martí, Johan Brandhorst-Satzkorn, Roger Peppe, Chris Hines, and Damien Neil"
+      },
+      {
+        "title": "Our Response To The eMudhra Key Disclosure Incident",
+        "url": "https://go.dev/blog/emudhra-incident",
+        "publishedAt": "2026-10-26T00:00:00.000Z",
+        "dateOriginal": "2026-10-26T00:00:00+00:00",
+        "author": "Roland Shoemaker, on behalf of the Go Security team"
+      },
+      {
+        "title": "Help set Go's priorities for next year",
+        "url": "https://go.dev/blog/survey2026-announce",
+        "publishedAt": "2026-10-21T00:00:00.000Z",
+        "dateOriginal": "2026-10-21T00:00:00+00:00",
+        "author": "Cameron Balahan, on behalf of the Go team"
+      },
+      {
+        "title": "Interactive refactoring in gopls",
+        "url": "https://go.dev/blog/interactive-refactoring",
+        "publishedAt": "2026-10-16T00:00:00.000Z",
+        "dateOriginal": "2026-10-16T00:00:00+00:00",
+        "author": "Hongxiang Jiang"
+      },
+      {
+        "title": "Better HTTP/1 connection reuse",
+        "url": "https://go.dev/blog/http-connection-reuse",
+        "publishedAt": "2026-10-14T00:00:00.000Z",
+        "dateOriginal": "2026-10-14T00:00:00+00:00",
+        "author": "Nicholas Husin and Damien Neil"
+      }
+    ],
+    "error": null
+  },
+  "kubernetes": {
+    "status": "ok",
+    "lastAttemptAt": "2026-11-06T07:53:31.650Z",
+    "lastSuccessAt": "2026-11-06T07:53:31.650Z",
+    "etag": "\"fc3f2bce29d0489844dc53ffd21cd327-ssl-df\"",
+    "lastModified": null,
+    "items": [
+      {
+        "title": "From Working Group to SIG Architecture: spotlight on AI Conformance",
+        "url": "https://kubernetes.io/blog/2026/10/29/sig-arch-ai-conformance-2026/",
+        "publishedAt": "2026-10-29T05:00:00.000Z",
+        "dateOriginal": "Thu, 29 Oct 2026 05:00:00 +0000",
+        "author": null
+      },
+      {
+        "title": "Announcing the Workload Conformance Working Group",
+        "url": "https://kubernetes.io/blog/2026/10/27/announcing-workload-conformance-wg/",
+        "publishedAt": "2026-10-27T04:30:00.000Z",
+        "dateOriginal": "Tue, 27 Oct 2026 04:30:00 +0000",
+        "author": null
+      },
+      {
+        "title": "Why Is My Kubernetes Job Still Pending? Tracing Kueue Admission with Headlamp",
+        "url": "https://kubernetes.io/blog/2026/10/14/tracing-kueue-admission-with-headlamp/",
+        "publishedAt": "2026-10-14T18:35:00.000Z",
+        "dateOriginal": "Wed, 14 Oct 2026 10:35:00 -0800",
+        "author": null
+      },
+      {
+        "title": "The Shift to cgroup v2 in Kubernetes: What You Need to Know",
+        "url": "https://kubernetes.io/blog/2026/10/06/kubernetes-cgroups-v2-shift/",
+        "publishedAt": "2026-10-06T18:00:00.000Z",
+        "dateOriginal": "Tue, 06 Oct 2026 10:00:00 -0800",
+        "author": null
+      },
+      {
+        "title": "Scaling Kubernetes Workloads with Node Swap",
+        "url": "https://kubernetes.io/blog/2026/10/05/scaling-kubernetes-workloads-with-node-swap/",
+        "publishedAt": "2026-10-05T18:00:00.000Z",
+        "dateOriginal": "Mon, 05 Oct 2026 10:00:00 -0800",
+        "author": null
+      }
+    ],
+    "error": null
+  },
+  "webdev": {
+    "status": "ok",
+    "lastAttemptAt": "2026-11-06T07:53:31.650Z",
+    "lastSuccessAt": "2026-11-06T07:53:31.650Z",
+    "etag": null,
+    "lastModified": "Mon, 12 Oct 2026 16:11:01 GMT",
+    "items": [
+      {
+        "title": "New to the web platform in September",
+        "url": "https://web.dev/blog/web-platform-09-2026?hl=en",
+        "publishedAt": "2026-10-02T07:00:00.000Z",
+        "dateOriginal": "Fri, 02 Oct 2026 07:00:00 GMT",
+        "author": null
+      },
+      {
+        "title": "August 2026 Baseline monthly digest",
+        "url": "https://web.dev/blog/baseline-digest-aug-2026?hl=en",
+        "publishedAt": "2026-09-28T07:00:00.000Z",
+        "dateOriginal": "Mon, 28 Sep 2026 07:00:00 GMT",
+        "author": null
+      },
+      {
+        "title": "Find features to support for Interop 2027 with your coding agent",
+        "url": "https://web.dev/blog/coding-agents-interop-proposals?hl=en",
+        "publishedAt": "2026-09-18T07:00:00.000Z",
+        "dateOriginal": "Fri, 18 Sep 2026 07:00:00 GMT",
+        "author": null
+      },
+      {
+        "title": "Submit your proposals for Interop 2027",
+        "url": "https://web.dev/blog/interop-2027-proposals?hl=en",
+        "publishedAt": "2026-09-03T07:00:00.000Z",
+        "dateOriginal": "Thu, 03 Sep 2026 07:00:00 GMT",
+        "author": null
+      },
+      {
+        "title": "New to the web platform in August",
+        "url": "https://web.dev/blog/web-platform-08-2026?hl=en",
+        "publishedAt": "2026-08-28T07:00:00.000Z",
+        "dateOriginal": "Fri, 28 Aug 2026 07:00:00 GMT",
+        "author": null
+      }
+    ],
+    "error": null
+  }
+}

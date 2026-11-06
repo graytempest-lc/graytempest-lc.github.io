@@ -1,0 +1,27 @@
+{
+  "name": "l-cluster-dispatch",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.23.4"
+  },
+  "scripts": {
+    "dev": "node tools/astro-cli.mjs dev --host 0.0.0.0",
+    "build": "node tools/prepare-data.mjs && node tools/astro-cli.mjs build",
+    "preview": "node tools/astro-cli.mjs preview --host 0.0.0.0",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node tools/prepare-data.mjs && npm test && npm run build && node tools/verify-build.mjs",
+    "feeds:refresh": "node tools/fetch-feeds.mjs",
+    "import:legacy": "node tools/import-legacy.mjs",
+    "publish:prepare": "npm run feeds:refresh && npm run check"
+  },
+  "dependencies": {
+    "astro": "7.4.7",
+    "@astrojs/rss": "4.0.19",
+    "fast-xml-parser": "5.12.0"
+  },
+  "devDependencies": {
+    "parse5": "8.1.0"
+  }
+}

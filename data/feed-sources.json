@@ -1,0 +1,5 @@
+[
+  {"id":"go","name":"Go Blog","topic":"语言与工具链","url":"https://go.dev/blog/","feed":"https://go.dev/blog/feed.atom","allowedHosts":["go.dev"],"license":"CC BY 4.0","licenseUrl":"https://creativecommons.org/licenses/by/4.0/","policyUrl":"https://go.dev/copyright"},
+  {"id":"kubernetes","name":"Kubernetes Blog","topic":"云原生与基础设施","url":"https://kubernetes.io/blog/","feed":"https://kubernetes.io/feed.xml","allowedHosts":["kubernetes.io"],"license":"CC BY 4.0","licenseUrl":"https://creativecommons.org/licenses/by/4.0/","policyUrl":"https://github.com/kubernetes/website/blob/main/LICENSE"},
+  {"id":"webdev","name":"web.dev","topic":"Web 平台与前端","url":"https://web.dev/blog","feed":"https://web.dev/feed.xml","allowedHosts":["web.dev"],"license":"CC BY 4.0","licenseUrl":"https://creativecommons.org/licenses/by/4.0/","policyUrl":"https://developers.google.com/terms/site-policies"}
+]

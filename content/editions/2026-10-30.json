@@ -1,0 +1,330 @@
+{
+  "id": "2026-10-30",
+  "editionDate": "2026-10-30",
+  "status": "published",
+  "title": "L星团快讯 · 10月30日",
+  "description": "L星团快讯 · 2026年10月30日：Mistral Large 4、模型仓库安全、本地语音、Granite、Claude、Gemini、Replica、Firefox补丁窗口、Suricata与AWS安全更新。",
+  "editionLabel": "2026 年 10 月 30 日 · 星期五",
+  "dateBasis": "edition-publication-date",
+  "legacyDateNote": "sourceDate and dateLabel preserve the original displayed date; eventDate/sourcePublishedAt were not inferred.",
+  "introduction": [],
+  "overview": [
+    {
+      "id": "security",
+      "title": "伪装成小模型的挖矿后门",
+      "category": "网络安全"
+    },
+    {
+      "id": "swift",
+      "title": "社区 Swift 工具扩充本地语音与分类",
+      "category": "本地 AI"
+    },
+    {
+      "id": "granite",
+      "title": "Granite Switch 4.1.1 更新适配器",
+      "category": "模型更新"
+    },
+    {
+      "id": "claude",
+      "title": "Claude 用量与成本统计 API 进入 Beta",
+      "category": "开发工具"
+    },
+    {
+      "id": "gemini",
+      "title": "Gemini 4 Carbon 公布，尚未全面开放",
+      "category": "有限开放"
+    },
+    {
+      "id": "replica",
+      "title": "GitHub 开源原型工具 Replica",
+      "category": "开源工具"
+    },
+    {
+      "id": "patchgap",
+      "title": "AI 利用补丁发布前的时间差攻击",
+      "category": "网络安全"
+    },
+    {
+      "id": "suricata",
+      "title": "Suricata 8.0.8 修复 32 个漏洞",
+      "category": "安全更新"
+    },
+    {
+      "id": "brotli",
+      "title": "AWS 更新 Brotli 修复，容器仍需重建",
+      "category": "基础设施"
+    }
+  ],
+  "items": [
+    {
+      "id": "mistral",
+      "title": "Mistral Large 4 开放改进版权重",
+      "titleId": "mistral-title",
+      "paragraphs": [
+        {
+          "text": "月初公测后，Mistral 开放改进版多模态权重，支持文本、图片、工具调用和百万 token 上下文。",
+          "variant": "dek"
+        },
+        {
+          "text": "自托管多一个选择，但约 1 万亿总参数并非消费级单卡目标；Hugging Face 的 2-bit 部署示例使用 512GB 统一内存。模型即服务业务另有许可限制。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-29",
+      "dateLabel": "10 月 29 日发布",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Mistral 公告",
+          "url": "https://mistral.ai/it/news/mistral-large-4-oss/",
+          "icon": true
+        },
+        {
+          "label": "部署说明",
+          "url": "https://huggingface.co/blog/mistral-large4",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "security",
+      "title": "伪装成小模型的挖矿后门",
+      "titleId": "security-title",
+      "paragraphs": [
+        {
+          "text": "Pluto 报告 31 个恶意模型仓库，通过用户允许执行仓库自定义代码，在权重加载前植入矿工或后门。活动始于 9 月，含关联仓库的 3.2 万余次是下载量而非感染人数。",
+          "variant": ""
+        },
+        {
+          "text": "尝试陌生模型要审查自定义代码、固定审查过的版本并隔离运行，扫描安全不等于代码可信。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-29",
+      "dateLabel": "10 月 29 日研究披露",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Pluto 研究报告",
+          "url": "https://pluto.security/blog/hugging-face-malware-campaign-load-mine/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "swift",
+      "title": "社区 Swift 工具扩充本地语音与分类",
+      "titleId": "swift-title",
+      "paragraphs": [
+        {
+          "text": "AnySpeechRecognizer 接入本地 Parakeet、Qwen3-ASR 并加入说话人分离；AnyDecisionModel 输出带概率的分类结果，适合录音整理与消息分类。",
+          "variant": ""
+        },
+        {
+          "text": "作者目前仅在 macOS 27 测试语音包，未验证 iPhone；Qwen 后端更适合文件转写，分类置信度也不等于正确率。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-29",
+      "dateLabel": "10 月 29 日社区介绍",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "作者说明",
+          "url": "https://huggingface.co/blog/anydecisionmodel",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "granite",
+      "title": "Granite Switch 4.1.1 更新适配器",
+      "titleId": "granite-title",
+      "paragraphs": [
+        {
+          "text": "IBM 公布向后兼容补丁，更新语音识别和 Decision 适配器，底座权重不变。",
+          "variant": ""
+        },
+        {
+          "text": "做语音转任务、分类服务可关注模块化升级；这是整合更新，并非当天首次推出语音模型。第三方 Adapter SDK 仍在准备中。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-29",
+      "dateLabel": "10 月 29 日公告",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "IBM 公告",
+          "url": "https://huggingface.co/blog/ibm-granite/granite-switch-4-1-1",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "claude",
+      "title": "Claude 用量与成本统计 API 进入 Beta",
+      "titleId": "claude-title",
+      "paragraphs": [
+        {
+          "text": "Console 与 Enterprise 组织可按模型、工作区、API key 或调用身份拆解费用，便于定位高成本自动化。",
+          "variant": ""
+        },
+        {
+          "text": "旧接口仍支持；新数据通常 4 小时内刷新、最长 24 小时，适合账单分析，不宜当实时熔断依据。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-29",
+      "dateLabel": "10 月 29 日 Beta 发布",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "发布说明",
+          "url": "https://platform.claude.com/docs/en/release-notes/overview",
+          "icon": true
+        },
+        {
+          "label": "API 文档",
+          "url": "https://platform.claude.com/docs/en/manage-claude/usage-cost-analytics-api",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "gemini",
+      "title": "Gemini 4 Carbon 公布，尚未全面开放",
+      "titleId": "gemini-title",
+      "paragraphs": [
+        {
+          "text": "Google 重点强调长流程编程和安全防御，先向部分安全团队与可信伙伴开放。",
+          "variant": ""
+        },
+        {
+          "text": "个人开发者暂不宜按已上线安排迁移；能力和安全提升属于厂商报告，非独立实测。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-28",
+      "dateLabel": "10 月 28 日公告 · 补充",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Google 公告",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "replica",
+      "title": "GitHub 开源原型工具 Replica",
+      "titleId": "replica-title",
+      "paragraphs": [
+        {
+          "text": "基于团队现有组件、交互规范和文档生成 AI 原型，MIT 许可，可本地制作交互原型，也可选自托管 Hub 收集反馈。",
+          "variant": ""
+        },
+        {
+          "text": "适合已有组件库的开发者和小团队，减少生成页面时样式另起一套的问题。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-28",
+      "dateLabel": "10 月 28 日发布 · 补充",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "GitHub 公告",
+          "url": "https://github.blog/changelog/2026-10-28-introducing-replica-an-open-source-ai-prototyping-tool/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "patchgap",
+      "title": "AI 利用补丁发布前的时间差攻击",
+      "titleId": "patchgap-title",
+      "paragraphs": [
+        {
+          "text": "Epoch AI 用 GLM 5.3 在实验中攻破 6 个近期 Firefox 版本。约 1000 美元是每版本边际 API 成本，研究总投入超过 10 万美元。",
+          "variant": ""
+        },
+        {
+          "text": "攻击依赖的一个漏洞已在 Firefox 159 修复，不能推断最新版仍受同样影响。用户应及时更新，开发者需缩短安全修复到正式发布的间隔。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-29",
+      "dateLabel": "10 月 29 日研究 · 补充",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Epoch AI 研究",
+          "url": "https://epoch.ai/publications/open-weight-models-patch-gap",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "suricata",
+      "title": "Suricata 8.0.8 修复 32 个漏洞",
+      "titleId": "suricata-title",
+      "paragraphs": [
+        {
+          "text": "其中 6 个被 OISF 列为高严重性。使用该网络入侵检测工具的家庭实验室和服务器应安排升级，7 系已停止维护。",
+          "variant": ""
+        },
+        {
+          "text": "CVE 编号因积压尚未分配，细节计划两周后公开，暂时搜不到编号不等于没有风险。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-29",
+      "dateLabel": "10 月 29 日发布 · 补充",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "OISF 发布说明",
+          "url": "https://forum.suricata.io/t/suricata-8-0-8-released/6548",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "brotli",
+      "title": "AWS 更新 Brotli 修复，容器仍需重建",
+      "titleId": "brotli-title",
+      "paragraphs": [
+        {
+          "text": "Lambda Node.js 和 .NET 容器基础镜像已更新，现有函数容器需重建并重新部署。",
+          "variant": ""
+        },
+        {
+          "text": "ZIP 托管运行时分阶段推送，Node.js 第二阶段目标 10 月 30 日、.NET 为 31 日，不代表所有地区已经完成；自行打包 Brotli 依赖也需另查。这是此前 Node 安全更新后新增部署要求。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-29",
+      "dateLabel": "10 月 29 日更新 · 补充",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "AWS 安全公告",
+          "url": "https://aws.amazon.com/security/security-bulletins/2026-155-aws/",
+          "icon": true
+        }
+      ]
+    }
+  ]
+}

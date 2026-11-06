@@ -1,0 +1,427 @@
+{
+  "id": "2026-11-03",
+  "editionDate": "2026-11-03",
+  "status": "published",
+  "title": "L星团快讯 · 11月3日",
+  "description": "L星团快讯 · 2026年11月3日：15条计算机热点，涵盖AI、本地推理、芯片算力、开发工具、操作系统、可观测性与安全。",
+  "editionLabel": "2026 年 11 月 3 日 · 星期二",
+  "dateBasis": "edition-publication-date",
+  "legacyDateNote": "sourceDate and dateLabel preserve the original displayed date; eventDate/sourcePublishedAt were not inferred.",
+  "introduction": [
+    "精选15条：11条新发布、更新、生效或技术复盘，另补充4条近7天未报道内容。发布日期与生效日期分别标注，预发布、研究结果和厂商报告不等同于独立实测。"
+  ],
+  "overview": [
+    {
+      "id": "actions",
+      "title": "GitHub 高风险 PR 工作流限制延期",
+      "category": "公告"
+    },
+    {
+      "id": "longcat",
+      "title": "LongCat-2.5 API 开放使用",
+      "category": "发布"
+    },
+    {
+      "id": "vllm",
+      "title": "vLLM 新候选版改变 CUDA 包支持",
+      "category": "预发布标签"
+    },
+    {
+      "id": "mineru",
+      "title": "MinerU 修正 PDF 公式混排",
+      "category": "发布"
+    }
+  ],
+  "items": [
+    {
+      "id": "linux",
+      "title": "Linux 宿主内核漏洞需优先排查",
+      "titleId": "linux-title",
+      "paragraphs": [
+        {
+          "text": "Red Hat 更新 CVE-2026-98432 指引：IPv4 TCP 处理存在可被远程未认证攻击者利用的释放后使用漏洞。",
+          "variant": ""
+        },
+        {
+          "text": "RHEL、OpenShift 管理者应核查受影响版本并更新内核；过滤特定报文只是临时缓解，不能替代修补。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-02",
+      "dateLabel": "11月2日 · 指引更新",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Red Hat 官方公告",
+          "url": "https://access.redhat.com/security/vulnerabilities/RHSB-2026-016",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "actions",
+      "title": "GitHub 高风险 PR 工作流限制延期",
+      "titleId": "actions-title",
+      "paragraphs": [
+        {
+          "text": "公有仓库 pull_request_target 默认封禁改至12月2日；11月9日、16日16:00–18:00 UTC先进行两次临时执行测试。",
+          "variant": ""
+        },
+        {
+          "text": "维护者应检查受影响工作流，避免届时突然失败；私有、内部仓库及GHES不受影响。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-02",
+      "dateLabel": "11月2日 · 公告",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "GitHub 变更说明",
+          "url": "https://github.blog/changelog/2026-11-02-pull_request_target-blocked-by-default-december-2/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "longcat",
+      "title": "LongCat-2.5 API 开放使用",
+      "titleId": "longcat-title",
+      "paragraphs": [
+        {
+          "text": "官方更新日志列出原生视觉理解、复杂代码库和长程工程任务支持，并提供Claude Code、Codex等接入方式。",
+          "variant": ""
+        },
+        {
+          "text": "编程Agent多了一个可测试后端，实际可靠性仍需用自己的项目验证；这里确认的是API可用，并非开放权重。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-02",
+      "dateLabel": "11月2日 · 发布",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "LongCat 官方日志",
+          "url": "https://longcat.chat/platform/docs/change-log",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "vllm",
+      "title": "vLLM 新候选版改变 CUDA 包支持",
+      "titleId": "vllm-title",
+      "paragraphs": [
+        {
+          "text": "v0.33.0rc3加入模型与推测解码改进，CUDA发行包转向13.0、不再提供12.9包，ROCm默认版本也升级。",
+          "variant": ""
+        },
+        {
+          "text": "自建推理服务应先核查驱动、镜像和依赖；虽然页面标题写0.33.0，此次标签仍为rc3，不按稳定版推荐升级。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-02",
+      "dateLabel": "11月2日 · 预发布标签",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "vLLM 发布说明",
+          "url": "https://github.com/vllm-project/vllm/releases/tag/v0.33.0rc3",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "mineru",
+      "title": "MinerU 修正 PDF 公式混排",
+      "titleId": "mineru-title",
+      "paragraphs": [
+        {
+          "text": "4.1.4改进行内公式识别与失败回退，修正普通美元符号被误判成公式、额外转义等问题，同时提高DocVortex最低版本。",
+          "variant": ""
+        },
+        {
+          "text": "做论文解析、知识库导入和RAG预处理时，可重点回归含公式的混合段落。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-02",
+      "dateLabel": "11月2日 · 发布",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "MinerU 发布说明",
+          "url": "https://github.com/opendatalab/MinerU/releases/tag/mineru-4.1.4-released",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "langchain",
+      "title": "LangChain 修复消息对象被意外修改",
+      "titleId": "langchain-title",
+      "paragraphs": [
+        {
+          "text": "Core 1.7.4修正Anthropic消息转换器修改原始content的问题，对复用消息对象、回放会话的应用尤其有用。",
+          "variant": ""
+        },
+        {
+          "text": "公告还提醒，后续core 1.8与langchain 1.5将停止支持Python 3.10，旧环境应提前安排迁移。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-02",
+      "dateLabel": "11月2日 · 发布",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "LangChain 发布说明",
+          "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-core==1.7.4",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "xai",
+      "title": "xAI 旧图像模型切换正式生效",
+      "titleId": "xai-title",
+      "paragraphs": [
+        {
+          "text": "grok-imagine-image-quality请求现由image-2.0的quality=low处理，接口结构不变。",
+          "variant": ""
+        },
+        {
+          "text": "旧程序仍能返回图片，不代表生成效果完全相同；使用该别名的开发者应检查质量参数并重跑视觉回归。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-02",
+      "dateLabel": "11月2日 · 此前公告生效",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "xAI 迁移指南",
+          "url": "https://docs.x.ai/developers/migration/imagine-image-quality-nov-2",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "antigravity",
+      "title": "Antigravity 加入 Google Cloud 开发插件",
+      "titleId": "antigravity-title",
+      "paragraphs": [
+        {
+          "text": "新插件将Google实时开发文档、按需技能发现及云资源操作约束放进一个安装入口。",
+          "variant": ""
+        },
+        {
+          "text": "对云应用开发者，价值是减少过时SDK或无效命令的猜测；官方称涉及计费API与基础设施修改会要求同意，但仍应自行审查实际操作。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-03",
+      "dateLabel": "11月3日 · 发布",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Google Cloud 官方公告",
+          "url": "https://cloud.google.com/blog/topics/developers-practitioners/google-cloud-developer-plugin-now-available-in-antigravity-marketplace",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "dns",
+      "title": "Cloudflare 公开 DNS 增量构建优化",
+      "titleId": "dns-title",
+      "paragraphs": [
+        {
+          "text": "新的planner选择最小安全构建，并合并同一区域的待办变更。Cloudflare报告全量构建约减少40%、峰值内存减少85%，为大型配置系统提供增量更新案例。",
+          "variant": ""
+        },
+        {
+          "text": "这里改善的是变更构建延迟，不是DNS查询延迟；数据来自厂商报告。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-02",
+      "dateLabel": "11月2日 · 工程复盘",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Cloudflare 技术原文",
+          "url": "https://blog.cloudflare.com/dns-targeted-zone-builds/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "risk",
+      "title": "GitHub 风险评估显示仓库保护缺口",
+      "titleId": "risk-title",
+      "paragraphs": [
+        {
+          "text": "代码与密钥风险评估新增“受保护／未受保护仓库”信息，方便组织判断发现漏洞的仓库是否已有安全工具覆盖。",
+          "variant": ""
+        },
+        {
+          "text": "Team和Enterprise Cloud可用；维护多个项目时，比只看告警总数更容易定位漏配的保护措施。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-02",
+      "dateLabel": "11月2日 · 已上线",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "GitHub 官方说明",
+          "url": "https://github.blog/changelog/2026-11-02-security-risk-assessments-include-repository-protection-status/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "workload",
+      "title": "Workload Map 统一描述 AI 集群任务",
+      "titleId": "workload-title",
+      "paragraphs": [
+        {
+          "text": "NVIDIA展示如何用YAML统一描述JobSet、Ray等Kubernetes任务，让调度和管理工具复用同一套结构定义，减少逐框架编写解析器。",
+          "variant": ""
+        },
+        {
+          "text": "该Apache 2.0组件已用于Run:ai生产环境；它不是当天首次发布，也不是单机推理加速工具。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-02",
+      "dateLabel": "11月2日 · 技术介绍",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "NVIDIA 技术原文",
+          "url": "https://developer.nvidia.com/blog/support-new-ai-frameworks-faster-using-nvidia-workload-map/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "pytorch",
+      "title": "PyTorch 2.15 扩充本地推理后端",
+      "titleId": "pytorch-title",
+      "paragraphs": [
+        {
+          "text": "Apple Silicon新增FP8及公开Stream接口，CUDA默认包转向13.2并提供13.4选项，torch.compile支持Python 3.15。",
+          "variant": ""
+        },
+        {
+          "text": "Mac与多种GPU开发环境都有可用更新，但部分新API仍不稳定，官方性能数字也不等于你的模型收益。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-28",
+      "dateLabel": "10月28日 · 发布 · 近7日补充",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "PyTorch 完整发布文章",
+          "url": "https://pytorch.org/blog/pytorch-2-15-release-blog/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "webhook",
+      "title": "GitHub Webhook 增加出口 IP 网段",
+      "titleId": "webhook-title",
+      "paragraphs": [
+        {
+          "text": "Meta API的hooks字段新增三个网段。",
+          "variant": ""
+        },
+        {
+          "text": "自建CI、机器人或通知服务若使用静态IP白名单，需要更新以避免漏收Webhook；已经自动同步Meta API的服务无需手工维护同一份列表。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-29",
+      "dateLabel": "10月29日 · 发布 · 近7日补充",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "GitHub 官方公告",
+          "url": "https://github.blog/changelog/2026-10-29-webhook-ip-ranges-added-to-the-meta-api/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "privacy",
+      "title": "研究提醒：工具日志也能暴露用户画像",
+      "titleId": "privacy-title",
+      "paragraphs": [
+        {
+          "text": "PrivacyTrace用1,000个合成画像、4,000条Agent轨迹研究MCP隐私：工具参数和返回值让画像推断明显强于盲猜。",
+          "variant": ""
+        },
+        {
+          "text": "对Agent开发者，日志内容、保留时间与跨会话关联都值得检查；这是合成实验，防护方案尚未验证有效。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-30",
+      "dateLabel": "10月30日 · 预印本 · 近7日补充",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "论文原文",
+          "url": "https://arxiv.org/html/2610.41885v1",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "eval",
+      "title": "AI 安全评分可能被数据集“提示答案”",
+      "titleId": "eval-title",
+      "paragraphs": [
+        {
+          "text": "研究发现，简单词频分类器在一套代码后门基准上超过20/24个开放权重监控模型，部分优势来自作者风格和标签问题。",
+          "variant": ""
+        },
+        {
+          "text": "做代码审查Agent评测时，应加入简单基线并验证后门确实有效；结果不等于证明所有监控模型都在作弊。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-30",
+      "dateLabel": "10月30日 · 论文 · 近7日补充",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "论文原文",
+          "url": "https://arxiv.org/html/2610.41713v1",
+          "icon": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+---
+const {item,lead=false,overview=[]}=Astro.props;
+---
+<article tabindex="-1" class={lead?'lead-story':'brief'} id={item.id} aria-labelledby={item.titleId}>
+ <div class={lead?'lead-copy':'brief-body'}>
+  <h2 id={item.titleId}>{item.title}</h2>
+  {item.paragraphs.map(p=><p class={p.variant||undefined}>{p.text}</p>)}
+  <div class="byline"><time datetime={item.sourceDate}>{item.dateLabel}</time>{item.sources.map(s=><a class="source" href={s.url}>{s.label}{s.icon&&<><span> </span><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M3 13 13 3M4 3h9v9"/></svg></>}</a>)}</div>
+ </div>
+ {lead&&overview.length>0&&<nav class="issue-index" aria-label="本期快讯索引"><h2>重点速览</h2><ul>{overview.map(x=><li><a href={`#${x.id}`}>{x.title}</a><span>{x.category}</span></li>)}</ul></nav>}
+</article>

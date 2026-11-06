@@ -1,0 +1,196 @@
+{
+  "id": "2026-10-29",
+  "editionDate": "2026-10-29",
+  "status": "published",
+  "title": "L星团快讯 · 10月29日",
+  "description": "L星团快讯 · 2026年10月29日：音频转写、Copilot Fusion、Actions锁文件、Node.js LTS、Windows与AI研究。",
+  "editionLabel": "2026 年 10 月 29 日 · 星期四",
+  "dateBasis": "edition-publication-date",
+  "legacyDateNote": "sourceDate and dateLabel preserve the original displayed date; eventDate/sourcePublishedAt were not inferred.",
+  "introduction": [],
+  "overview": [
+    {
+      "id": "fusion",
+      "title": "Copilot 尝试自动切换本地与云端模型",
+      "category": "实验预览"
+    },
+    {
+      "id": "lockfiles",
+      "title": "GitHub Actions 锁文件正式可用",
+      "category": "开发工具"
+    },
+    {
+      "id": "node",
+      "title": "Node.js 26 进入 LTS",
+      "category": "基础设施"
+    },
+    {
+      "id": "dpapi",
+      "title": "Windows 开发者需检查旧加密交互流程",
+      "category": "Windows"
+    },
+    {
+      "id": "ideas",
+      "title": "用 AI 筛“创新想法”，先检查评分是否稳定",
+      "category": "研究"
+    }
+  ],
+  "items": [
+    {
+      "id": "transcribe",
+      "title": "本地音频转写，多了一个开放权重选择",
+      "titleId": "transcribe-title",
+      "paragraphs": [
+        {
+          "text": "NVIDIA Nemotron 3.5 Transcribe 支持 40 种语言、最长 1 小时录音及最多 8 位说话人，适合自建会议记录和音频检索。",
+          "variant": "dek"
+        },
+        {
+          "text": "它不是实时流式模型；量化版本与 NeMo-Speech.cpp 仍待推出，4B 活跃参数也不等于 4B 模型的显存需求。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-28",
+      "dateLabel": "10 月 28 日发布",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "NVIDIA 官方发布",
+          "url": "https://huggingface.co/blog/nvidia/nemotron-transcribe-granary",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "fusion",
+      "title": "Copilot 尝试自动切换本地与云端模型",
+      "titleId": "fusion-title",
+      "paragraphs": [
+        {
+          "text": "Fusion 本地路由进入可选实验预览，CLI 可接本地 OpenAI 兼容服务中的指定模型。",
+          "variant": ""
+        },
+        {
+          "text": "能减少手动切换，但路由决策仍在云端，不能当作离线或纯本地隐私方案。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-28",
+      "dateLabel": "10 月 28 日公告",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "GitHub 官方说明",
+          "url": "https://github.blog/changelog/2026-10-28-github-copilot-fusion-now-supports-selection-of-local-models/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "lockfiles",
+      "title": "GitHub Actions 锁文件正式可用",
+      "titleId": "lockfiles-title",
+      "paragraphs": [
+        {
+          "text": "Free 计划也支持。工作流保留易读标签，实际执行锁定的提交，连传递依赖一起固定；Dependabot 可同步更新。",
+          "variant": ""
+        },
+        {
+          "text": "个人项目的 CI 和发布流程能少受上游标签移动影响，但锁定本身不代表依赖安全。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-28",
+      "dateLabel": "10 月 28 日发布",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "GitHub 发布说明",
+          "url": "https://github.blog/changelog/2026-10-28-github-actions-workflow-lockfiles-are-generally-available/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "node",
+      "title": "Node.js 26 进入 LTS",
+      "titleId": "node-title",
+      "paragraphs": [
+        {
+          "text": "26.13.0 代号 Lithium，支持到 2029 年 4 月底。相比 26.12.1 只调整 LTS 元数据，没有新增功能。",
+          "variant": ""
+        },
+        {
+          "text": "准备升级运行时或容器镜像可开始兼容性验证；从旧 LTS 迁移的 Linux 环境需留意 libatomic 依赖。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-28",
+      "dateLabel": "10 月 28 日发布",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Node.js 发布说明",
+          "url": "https://nodejs.org/uk/blog/release/v26.13.0",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "dpapi",
+      "title": "Windows 开发者需检查旧加密交互流程",
+      "titleId": "dpapi-title",
+      "paragraphs": [
+        {
+          "text": "Windows 11 26H1 可选预览更新 KB5127653 提示：DPAPI 带提示框的保护/解保护流程将在 2027 年 4 月退役，相关应用需提前迁移现有数据。",
+          "variant": ""
+        },
+        {
+          "text": "不使用该交互流程的 DPAPI 不受影响；这也不是 Windows 10 更新。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-28",
+      "dateLabel": "10 月 28 日预览更新",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "微软说明",
+          "url": "https://support.microsoft.com/en-us/servicing/os/windows-11/2026/10/kb5127653-windows-11-26h1-update",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "ideas",
+      "title": "用 AI 筛“创新想法”，先检查评分是否稳定",
+      "titleId": "ideas-title",
+      "paragraphs": [
+        {
+          "text": "Ai2 在 10 月 27 日介绍的研究中，同一批想法仅更换提示语，某组准确率就从 93.5% 降到 40.9%。做方案筛选时，值得加入多种提示对照和人工文献核查。",
+          "variant": ""
+        },
+        {
+          "text": "结论限于研究数据集，部分标签较弱；论文 10 月 1 日首发、26 日更新。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-27",
+      "dateLabel": "10 月 27 日研究介绍",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "原始论文",
+          "url": "https://arxiv.org/abs/2610.02022",
+          "icon": true
+        }
+      ]
+    }
+  ]
+}

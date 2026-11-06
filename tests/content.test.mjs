@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {parseCivilDate} from '../public/sol3/date-contract.mjs';
+import {newsByDate} from '../public/sol3/news-data.mjs';
+const issues=fs.readdirSync('content/editions').filter(f=>f.endsWith('.json')).sort().map(f=>JSON.parse(fs.readFileSync('content/editions/'+f)));
+test('All historical editions, distinct days and original article counts remain',()=>{assert.equal(issues.length>=10,true);const counts=[6,6,10,10,5,15,15,15,15,15];assert.deepEqual(issues.slice(0,10).map(i=>i.items.length),counts);assert.equal(new Set(issues.map(i=>i.id)).size,issues.length);});
+test('Each source date is a civil day and anchors are unique',()=>{for(const i of issues){assert.equal(parseCivilDate(i.editionDate).iso,i.id);assert.equal(new Set(i.items.map(n=>n.id)).size,i.items.length);for(const n of i.items)assert.equal(parseCivilDate(n.sourceDate).iso,n.sourceDate);}});
+test('Calendar points to publication date, not source event date',()=>{for(const i of issues.filter(i=>i.status==='published')){assert.equal(newsByDate[i.id].dateBasis,'edition-publication-date');assert.equal(newsByDate[i.id].href,i.id+'.html');assert.deepEqual(newsByDate[i.id].items.map(n=>n.href),i.items.slice(0,3).map(n=>i.id+'.html#'+n.id));}});
+test('Draft/backfill policy selects newest published civil day',()=>{const data=[{editionDate:'2026-11-06',status:'published'},{editionDate:'2026-11-02',status:'published'},{editionDate:'2026-11-10',status:'draft'}];const actual=data.filter(i=>i.status==='published').sort((a,b)=>a.editionDate.localeCompare(b.editionDate)).at(-1);assert.equal(actual.editionDate,'2026-11-06');});

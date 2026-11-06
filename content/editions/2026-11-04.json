@@ -1,0 +1,432 @@
+{
+  "id": "2026-11-04",
+  "editionDate": "2026-11-04",
+  "status": "published",
+  "title": "L星团快讯 · 11月4日",
+  "description": "L星团快讯 · 2026年11月4日：15条计算机热点，涵盖本地AI、开发工具、操作系统、网络安全、芯片与工程研究。",
+  "editionLabel": "2026 年 11 月 4 日 · 星期三",
+  "dateBasis": "edition-publication-date",
+  "legacyDateNote": "sourceDate and dateLabel preserve the original displayed date; eventDate/sourcePublishedAt were not inferred.",
+  "introduction": [
+    "精选15条：12条来自11月3日，另补充3条近7天未报道的研究进展。预发布、受控实验和厂商报告均单独说明，不等同于独立实测或生产部署结论。"
+  ],
+  "overview": [
+    {
+      "id": "ollama",
+      "title": "Ollama 修正兼容接口的采样默认值",
+      "category": "发布"
+    },
+    {
+      "id": "fedora",
+      "title": "Fedora 45 发布，升级前留意旧 VPN 插件",
+      "category": "发布"
+    },
+    {
+      "id": "psqlodbc",
+      "title": "psqlODBC 修补两项高危内存漏洞",
+      "category": "安全公告"
+    },
+    {
+      "id": "ple",
+      "title": "Google PLE 基准考查物理工程智能体",
+      "category": "研究发布"
+    }
+  ],
+  "items": [
+    {
+      "id": "open-webui",
+      "title": "Open WebUI 0.13.0 扩展智能体工作区",
+      "titleId": "open-webui-title",
+      "paragraphs": [
+        {
+          "text": "新版本加入终端、浏览器、桌面和 MCP Apps，让对话与工具操作集中在同一工作区。",
+          "variant": ""
+        },
+        {
+          "text": "升级前先备份数据库，多实例需同步升级；桌面能力还需连接启用桌面支持的 Open Terminal。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-03",
+      "dateLabel": "11月3日 · 发布",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Open WebUI 发布说明",
+          "url": "https://github.com/open-webui/open-webui/releases/tag/v0.13.0",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "ollama",
+      "title": "Ollama 修正兼容接口的采样默认值",
+      "titleId": "ollama-title",
+      "paragraphs": [
+        {
+          "text": "0.40.14 不再在客户端未传采样参数时覆盖模型默认值，并修复 Responses 接口对输入内容的处理。",
+          "variant": ""
+        },
+        {
+          "text": "使用 OpenAI 兼容端点的本地应用可重点回归输出行为；MLX 大词表 top-k 采样改进不等于所有模型整体提速。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-03",
+      "dateLabel": "11月3日 · 发布",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Ollama 发布说明",
+          "url": "https://github.com/ollama/ollama/releases/tag/v0.40.14",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "fedora",
+      "title": "Fedora 45 发布，升级前留意旧 VPN 插件",
+      "titleId": "fedora-title",
+      "paragraphs": [
+        {
+          "text": "安装器整合 Stratis，RPM 6.1 默认验证软件包签名；旧 vpnc 和 fortisslvpn 插件退役。",
+          "variant": ""
+        },
+        {
+          "text": "计划升级工作机时，应先检查现有 VPN 连接是否依赖这些插件，避免升级后远程访问中断。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-03",
+      "dateLabel": "11月3日 · 发布",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Fedora 官方公告",
+          "url": "https://fedoramagazine.org/announcing-fedora-linux-45/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "opensuse",
+      "title": "openSUSE Leap 16.1 结合传统与不可变模式",
+      "titleId": "opensuse-title",
+      "paragraphs": [
+        {
+          "text": "Leap 16.1 提供传统安装与不可变模式选择；不可变模式支持事务更新和回滚。",
+          "variant": ""
+        },
+        {
+          "text": "不同模式适合不同维护方式；从 Leap Micro 6.2 迁移的工具仍属实验性，生产迁移前应充分测试。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-03",
+      "dateLabel": "11月3日 · 发布",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "openSUSE 官方公告",
+          "url": "https://news.opensuse.org/2026/11/03/leap-unites-traditional-and-immutable/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "psqlodbc",
+      "title": "psqlODBC 修补两项高危内存漏洞",
+      "titleId": "psqlodbc-title",
+      "paragraphs": [
+        {
+          "text": "两项公告涉及大对象读取与 ODBC 转义解析的内存安全问题。18.00.0005 及更早版本受影响，18.00.0006 已修复。",
+          "variant": ""
+        },
+        {
+          "text": "应排查应用使用的客户端 ODBC 驱动，仅更新 PostgreSQL 服务器不能代替修复驱动。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-03",
+      "dateLabel": "11月3日 · 安全公告",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "大对象读取漏洞公告",
+          "url": "https://github.com/postgresql-interfaces/psqlodbc/security/advisories/GHSA-qhmr-5339-q33r",
+          "icon": true
+        },
+        {
+          "label": "转义解析漏洞公告",
+          "url": "https://github.com/postgresql-interfaces/psqlodbc/security/advisories/GHSA-hfm6-qfx8-v4xq",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "air",
+      "title": "GitHub Copilot 接入 JetBrains Air",
+      "titleId": "air-title",
+      "paragraphs": [
+        {
+          "text": "Air 的本地与云端任务可以使用 Copilot，云端任务需要 Air Teams。",
+          "variant": ""
+        },
+        {
+          "text": "Air 暂不显示 Copilot 额度或预算上限，使用前应另行检查订阅与用量，避免误以为界面已提供预算控制。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-03",
+      "dateLabel": "11月3日 · 发布",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "GitHub 官方说明",
+          "url": "https://github.blog/changelog/2026-11-03-github-copilot-is-now-available-in-jetbrains-air/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "zero-wire",
+      "title": "Cloudflare Zero Wire 汇集漏洞与攻击证据",
+      "titleId": "zero-wire-title",
+      "paragraphs": [
+        {
+          "text": "Zero Wire 将漏洞公告和攻击观测集中呈现，帮助维护者判断哪些问题值得优先处理。",
+          "variant": ""
+        },
+        {
+          "text": "WAF 命中次数不能当作受害系统数量；防火墙拦截也不能代替安装安全补丁。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-03",
+      "dateLabel": "11月3日 · 发布",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Cloudflare 官方文章",
+          "url": "https://blog.cloudflare.com/zero-wire/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "amd",
+      "title": "AMD 第三季度数据中心收入同比增长 97%",
+      "titleId": "amd-title",
+      "paragraphs": [
+        {
+          "text": "AMD 公布第三季度营收 133.77 亿美元，数据中心收入 85 亿美元，同比增长 97%。公司将增长归因于 EPYC 需求与 MI450 启动销售。",
+          "variant": ""
+        },
+        {
+          "text": "财报体现业务规模与需求变化，不能据此推导硬件的独立性能评测结论。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-03",
+      "dateLabel": "11月3日 · 财报",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "AMD 官方财报",
+          "url": "https://newsroom.amd.com/news/amd-reports-third-quarter-2026-earnings/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "ple",
+      "title": "Google PLE 基准考查物理工程智能体",
+      "titleId": "ple-title",
+      "paragraphs": [
+        {
+          "text": "Physical Engineering’s Last Exam 包含 85 项任务，公开其中 29 项及评分器，考查项目文件和工程约束。",
+          "variant": ""
+        },
+        {
+          "text": "这是评测基准，不是新模型。工程 Agent 的评估需要检查实际设计产物，而不仅看文字答案。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-03",
+      "dateLabel": "11月3日 · 研究发布",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Google Cloud 官方文章",
+          "url": "https://cloud.google.com/blog/products/ai-machine-learning/introducing-physical-engineerings-last-exam-for-agents",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "engineering",
+      "title": "OpenAI 展示 CAD、PCB 与工程工作进展",
+      "titleId": "engineering-title",
+      "paragraphs": [
+        {
+          "text": "OpenAI 介绍模型参与机械、电路及系统工程的案例，并宣布与 Mazda 的研究合作。",
+          "variant": ""
+        },
+        {
+          "text": "制造公差、装配等细节仍需人工审核与迭代；这些案例不等于已经实现自主量产。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-03",
+      "dateLabel": "11月3日 · 研究与合作",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "OpenAI 官方文章",
+          "url": "https://openai.com/index/accelerating-engineering-for-the-physical-world/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "kill-switch",
+      "title": "CrowdStrike 推出 AI 模型访问切断能力",
+      "titleId": "kill-switch-title",
+      "paragraphs": [
+        {
+          "text": "AI Kill Switch 可经受支持的网关切断模型访问，作为 Falcon Guardian 安全能力的一部分。",
+          "variant": ""
+        },
+        {
+          "text": "它不能被理解为关闭所有智能体的通用开关；部分扩展能力仍处于预发布阶段。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-03",
+      "dateLabel": "11月3日 · 产品公告",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "CrowdStrike 官方文章",
+          "url": "https://www.crowdstrike.com/en-us/blog/crowdstrike-advances-ai-security-and-safety-falcon-guardian/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "chemistry",
+      "title": "Antigravity Skills 演示化学信息学流程",
+      "titleId": "chemistry-title",
+      "paragraphs": [
+        {
+          "text": "Google 展示通过化学信息学 Skills 执行数据分析与合成路线探索的工作流。",
+          "variant": ""
+        },
+        {
+          "text": "预测结果受到数据质量限制，提出的候选仍需实验验证，不能把软件输出直接视作实验结论。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-03",
+      "dateLabel": "11月3日 · 技术演示",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Google DeepMind 官方文章",
+          "url": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "flashprove",
+      "title": "FlashProve 探索可验证推理，成本仍高",
+      "titleId": "flashprove-title",
+      "paragraphs": [
+        {
+          "text": "Anthropic 开源可验证推理原型：单张 H100 的证明生成速度约为每秒 110 tokens，但 GPU 成本约为 vLLM 的 70–95 倍。",
+          "variant": ""
+        },
+        {
+          "text": "目前限于短上下文和贪心解码，适合作为研究进展关注，尚不能视为低成本生产推理替代方案。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-02",
+      "dateLabel": "11月2日 · 研究原型 · 近7日补充",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Anthropic 研究原文",
+          "url": "https://www.anthropic.com/research/provable-inference",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "step-zero",
+      "title": "Step-Zero：模型读到内容前，工具已可能超预算",
+      "titleId": "step-zero-title",
+      "paragraphs": [
+        {
+          "text": "研究显示，文件解包等工具操作可在模型看到内容之前突破资源预算，使仅检查模型输入的防护来不及介入。",
+          "variant": ""
+        },
+        {
+          "text": "实验样本较小；其提示是应在工具执行层设置资源限额，并把读取与有副作用的处理分开考虑。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-01",
+      "dateLabel": "11月1日 · 预印本 · 近7日补充",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Step-Zero 论文原文",
+          "url": "https://arxiv.org/html/2611.01953v1",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "etude",
+      "title": "ETUDE 研究工具升级后的信任缺口",
+      "titleId": "etude-title",
+      "paragraphs": [
+        {
+          "text": "论文研究工具更新后继续沿用旧权限与信任的供应链风险：工具实现改变，模型可见的交互未必同步暴露变化。",
+          "variant": ""
+        },
+        {
+          "text": "研究使用自建工具和受控实验，不代表相关真实项目已遭攻击；工具升级后的复核与执行时约束值得关注。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-01",
+      "dateLabel": "11月1日 · 预印本 · 近7日补充",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "ETUDE 论文原文",
+          "url": "https://arxiv.org/html/2611.01976v1",
+          "icon": true
+        }
+      ]
+    }
+  ]
+}

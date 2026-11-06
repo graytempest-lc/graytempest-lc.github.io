@@ -1,0 +1,172 @@
+{
+  "id": "2026-11-01",
+  "editionDate": "2026-11-01",
+  "status": "published",
+  "title": "L星团快讯 · 11月1日",
+  "description": "L星团快讯 · 2026年11月1日：KDE桌面修复、Claude Code写入边界、n8n权限检查、Pika音视频与Raincheck推理研究。",
+  "editionLabel": "2026 年 11 月 1 日 · 星期日",
+  "dateBasis": "edition-publication-date",
+  "legacyDateNote": "sourceDate and dateLabel preserve the original displayed date; eventDate/sourcePublishedAt were not inferred.",
+  "introduction": [
+    "过去 24 小时的新进展较少：精选 1 条新消息，补充 4 条 10 月 29—30 日尚未报道的更新。以下为公开资料研究，未安装或实测。"
+  ],
+  "overview": [
+    {
+      "id": "claude",
+      "title": "Claude Code 加强工作目录写入限制",
+      "category": "开发工具"
+    },
+    {
+      "id": "n8n",
+      "title": "n8n 修补执行记录读取权限检查",
+      "category": "自动化"
+    },
+    {
+      "id": "pika",
+      "title": "Pika H3 Flex 开放适配器与推理代码",
+      "category": "本地 AI"
+    },
+    {
+      "id": "raincheck",
+      "title": "Raincheck：图片信息可以晚算，而非永久丢弃",
+      "category": "推理研究"
+    }
+  ],
+  "items": [
+    {
+      "id": "kde",
+      "title": "KDE 公布桌面稳定性修复进展",
+      "titleId": "kde-title",
+      "paragraphs": [
+        {
+          "text": "本周列出的修复涵盖 Discover 检查更新崩溃、Wayland 按应用切换键盘布局，以及 Flatpak 远程桌面偶发无法启动。",
+          "variant": "dek"
+        },
+        {
+          "text": "这三项列入 Plasma 6.8.2 修复清单；整份周报还含后续版本进展，不代表各发行版都已推送。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-31",
+      "dateLabel": "10 月 31 日 · 开发周报",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "KDE 开发周报",
+          "url": "https://blogs.kde.org/2026/10/31/this-week-in-plasma-an-avalanche-of-performance-improvements-and-bug-fixes/",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "claude",
+      "title": "Claude Code 加强工作目录写入限制",
+      "titleId": "claude-title",
+      "paragraphs": [
+        {
+          "text": "v2.1.314 新增配置，让 Write、Edit 和 NotebookEdit 在所有权限模式下拒绝写入工作目录之外；同时修复恢复会话进入 worktree 时沙箱保护未生效的问题。",
+          "variant": ""
+        },
+        {
+          "text": "使用自动化编码会话的开发者可检查升级与配置，但该开关并不等于限制所有 Shell 命令的完整文件系统沙箱。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-30",
+      "dateLabel": "10 月 30 日发布 · 补充",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Claude Code 发布说明",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.314",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "n8n",
+      "title": "n8n 修补执行记录读取权限检查",
+      "titleId": "n8n-title",
+      "paragraphs": [
+        {
+          "text": "稳定版 2.45.7 要求工作流范围的相关路由读取执行数据时具备 execution:read 权限，并修复 IMAP 触发器激活后的表达式解析。",
+          "variant": ""
+        },
+        {
+          "text": "自托管自动化用户可重点回归自定义角色、读取执行记录的集成和邮件触发流程；公告未宣称已有在野利用。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-30",
+      "dateLabel": "10 月 30 日发布 · 补充",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "n8n 2.45.7 发布说明",
+          "url": "https://github.com/n8n-io/n8n/releases/tag/n8n%402.45.7",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "pika",
+      "title": "Pika H3 Flex 开放适配器与推理代码",
+      "titleId": "pika-title",
+      "paragraphs": [
+        {
+          "text": "本地可生成 480p／768p 音视频，为视频工作流研究提供新选择；4K 上采样、五路音轨等仍属于托管功能。",
+          "variant": ""
+        },
+        {
+          "text": "官方代表性测试使用 H100 80GB，不能据此认为普通消费显卡可用；代码采用 Apache 2.0，模型适配器另受 MiniMax H3 社区许可约束。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-29",
+      "dateLabel": "10 月 29 日发布 · 补充",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Pika 官方文章",
+          "url": "https://creation.pika.art/blog/pika-h3-flex",
+          "icon": true
+        },
+        {
+          "label": "官方代码与说明",
+          "url": "https://github.com/Pika-Labs/Pika-H3-Flex",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "id": "raincheck",
+      "title": "Raincheck：图片信息可以晚算，而非永久丢弃",
+      "titleId": "raincheck-title",
+      "paragraphs": [
+        {
+          "text": "方法先处理部分视觉 token，回答期间及间隙再补算其余信息，试图兼顾首字响应和后续追问的细节。",
+          "variant": ""
+        },
+        {
+          "text": "适合多模态推理开发者关注，但实验仅覆盖两款 Qwen 模型、H20 上的单请求场景；视频测试中逐 token 生成变慢，不能当成通用提速开关。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-10-29",
+      "dateLabel": "10 月 29 日 · 预印本补充",
+      "eventDate": null,
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "原始论文",
+          "url": "https://arxiv.org/abs/2610.39562",
+          "icon": true
+        }
+      ]
+    }
+  ]
+}
