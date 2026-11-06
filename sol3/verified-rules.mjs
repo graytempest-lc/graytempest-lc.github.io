@@ -1,3 +1,6 @@
+import {dayCycle as calendarDayCycle,solarMonthState as calendarMonthState} from './calendar-core.mjs';
+import {heavenlyVirtueBoundary,soilWindow,nonOpposingClause,motherStorehouseClauses,lunarDateClauses,ruleHit,SOIL_JI} from './completion-rules.mjs';
+import {noSalaryClause} from './no-salary.mjs';
 // Independently transcribed rules from the public-domain Qing text.
 // No cnlunar code, modern daily database or vendor calendar table is embedded.
 // This is an incomplete, source-labelled rules layer, never a final daily verdict.
@@ -5,9 +8,9 @@ import {parseCivilDate} from './date-contract.mjs';
 import {collectAdditionalRules,ADDITIONAL_RULE_CATALOG} from './additional-rules.mjs';
 import {specialDayClauses,SPECIAL_DAY_NAMES} from './special-days.mjs';
 import {gradingCandidates} from './grade-policy.mjs';
-import {applyScopedEffects} from './scoped-effects.mjs';
+import {applyScopedEffects} from './scoped-effects.mjs?v=4';
 
-export const VERIFIED_RULE_VERSION = 'sol3-verified-rules-3';
+export const VERIFIED_RULE_VERSION = 'sol3-verified-rules-4';
 const source = (volume,revision) => `https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷${volume}&oldid=${revision}`;
 const S4=source('04',787340),S5=source('05',787341),S10=source('10',787351),S11=source('11',787353);
 const B='子丑寅卯辰巳午未申酉戌亥', T='甲乙丙丁戊己庚辛壬癸';
@@ -111,8 +114,9 @@ function validateInputs(civilDate,terms,baseRules){
   }
 }
 
-export function calculateVerifiedRules({civilDate,dayCycle,monthBranchIndex,officer,terms,baseRules=[]}){
+export function calculateVerifiedRules({civilDate,dayCycle,monthBranchIndex,officer,terms,baseRules=[],includeCalendarRules=false}){
   parseCivilDate(civilDate);
+  if(typeof includeCalendarRules!=='boolean')throw new TypeError('Calendar rule flag must be boolean.');
   const m=monthBranchIndex,d=dayCycle?.branchIndex,s=dayCycle?.stemIndex,n=dayCycle?.index;
   if(!Number.isInteger(m)||m<0||m>11||!Number.isInteger(n)||n<0||n>59||s!==n%10||d!==n%12||dayCycle.name!==T[s]+B[d])throw new RangeError('干支和月建上下文不一致。');
   const expectedOfficer=['建','除','满','平','定','执','破','危','成','收','开','闭'][mod(d-m,12)];
@@ -189,6 +193,24 @@ export function calculateVerifiedRules({civilDate,dayCycle,monthBranchIndex,offi
   if(d===3||stem==='壬')override('jx10-water-priority','开渠与穿井联动','suppress-dependent-yi','卯日忌穿井时不注宜开渠；壬日忌开渠时不注宜穿井。','铺注条例');
   if(officer==='开')override('jx10-open-burial','开日葬事取舍','suppress-yi-do-not-invent-ji','不注宜破土、安葬、启攒；不能只凭“不注宜”再新增忌，遇其他忌则仍注。','铺注条例');
 
+  const completion={virtueBoundary:heavenlyVirtueBoundary(m),soil:null,pendingHits:[],lunar:null,noSalary:null,suppressions:[]};
+  const nonOpposing=nonOpposingClause(m,dayCycle);
+  if(nonOpposing){if(nonOpposing.certainty)completion.pendingHits.push(nonOpposing);else gods.push(nonOpposing);}
+  if(includeCalendarRules){
+    if(!civilDate.startsWith('2026-')||calendarDayCycle(civilDate).index!==n||!calendarMonthState(civilDate).candidates.some(c=>c.monthBranchIndex===m))throw new RangeError('Calendar-dependent rules require the actual verified date and its month candidates.');
+    completion.soil=soilWindow(civilDate,terms);
+    if(completion.soil.status!=='outside'){
+      const soilHit=ruleHit('jx10-soil-king','土王用事',[],SOIL_JI,{invariantJi:[...SOIL_JI],conditionSource:completion.soil.source,certainty:completion.soil.status,reason:completion.soil.explanation});
+      if(soilHit.certainty==='certain')gods.push(soilHit);else completion.pendingHits.push(soilHit);
+    }
+    for(const mother of motherStorehouseClauses({monthBranchIndex:m,dayCycle,soil:completion.soil,godNames:gods.map(g=>g.name),officer})){
+      if(mother.certainty&&mother.certainty!=='certain')completion.pendingHits.push(mother);else gods.push(mother);
+    }
+    completion.lunar=lunarDateClauses(civilDate);gods.push(...completion.lunar.hits);completion.suppressions.push(...completion.lunar.suppressions);
+    completion.noSalary=noSalaryClause({civilDate,dayCycle,monthBranchIndex:m,terms,knownGodNames:gods.map(g=>g.name),heavenDeKnown:![0,3,6,9].includes(m)});
+    if(completion.noSalary.suppression)completion.suppressions.push(completion.noSalary.suppression);
+  }
+
   // Preserve provenance even where canonically equivalent activities overlap.
   const provenance=new Map();
   const allRules=[...baseRules,...gods,...seasonalHits.filter(x=>x.certainty==='certain')];
@@ -200,17 +222,17 @@ export function calculateVerifiedRules({civilDate,dayCycle,monthBranchIndex,offi
   const universe=[...ADDITIONAL_RULE_CATALOG.map(x=>x.name),...SPECIAL_DAY_NAMES,'平日','收日','闭日','满日','建日','破日','月德','月德合','天德合','天赦','天愿'];
   if(![0,3,6,9].includes(m))universe.push('天德');
   const gradeAnalysis=gradingCandidates({monthBranch:B[m],knownGodNames:[...gods.map(x=>x.name),officer+'日',...specialDays.map(x=>x.name)],verifiedGodUniverse:universe});
-  const scopedEffects=applyScopedEffects({rules:allRules,monthBranchIndex:m,dayCycle,officer,activityKeys});
+  const scopedEffects=applyScopedEffects({rules:allRules,monthBranchIndex:m,dayCycle,officer,activityKeys,suppressions:completion.suppressions});
   const missingRules=[
     '神煞尚未全量实现；当前只列已核定的直接条与部分并神条件。',
     '六等级按本条白名单及转从生成候选，来源级豁免已有可追溯执行；跨根优先级与全部铺注覆盖仍未闭合。',
-    '阴阳大小会、岁薄逐阵等专条已匹配；无禄、土王用事、农历日禁例及全部专条执行仍有未核定路径。',
+    '不将、母仓、土王与农历禁例已补已核部分；无禄年界及年/月干、土旺原季母仓保留、八月不将疑字、上朔年界仍未闭合。',
     '月份采用十二节月建；未另做农历月份变体，不保证与百度或其他通书一致。',
     '季节分界当天没有采用已许可的精确交节时刻，标为边界命中而非全天命中。',
     '古籍电子转录尚未逐条影印校勘；不将没有命中解释为诸事不忌。',
   ];
   if([0,3,6,9].includes(m))missingRules.unshift('本月天德涉及四维卦位及日支取法争议，本版不猜定天德日。');
-  return {status:'partial',version:VERIFIED_RULE_VERSION,godHits:gods,seasonalHits,overrides,conflicts,gradeAnalysis,scopedEffects,missingRules,
+  return {status:'partial',version:VERIFIED_RULE_VERSION,godHits:gods,seasonalHits,overrides,conflicts,gradeAnalysis,scopedEffects,completion,missingRules,
     knownVirtueHit:namedDe,finalGrade:null,finalYi:null,finalJi:null,
     sourceRevisions:{vol3:787338,vol4:787340,vol5:787341,vol6:787343,vol10:787351,vol11:787353}};
 }

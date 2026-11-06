@@ -2,7 +2,7 @@ import {calculateSolarTerms2026} from './solar-terms.mjs';
 import { parseCivilDate, civilDateAt } from './date-contract.mjs';
 import { lunar2026, terms2026, editions } from './calendar-data.mjs';
 import { RULES, OFFICERS, RULE_VERSION } from './rules.mjs';
-import { calculateVerifiedRules, VERIFIED_RULE_VERSION } from './verified-rules.mjs';
+import { calculateVerifiedRules, VERIFIED_RULE_VERSION } from './verified-rules.mjs?v=4';
 export { parseCivilDate, civilDateAt };
 import {SUPPORTED_RANGE,BRANCHES,STEMS,dayCycle,officerFor,solarMonthState} from './calendar-core.mjs';
 export {SUPPORTED_RANGE,BRANCHES,STEMS,dayCycle,officerFor,solarMonthState};
@@ -22,7 +22,7 @@ export function calculateDay(isoDate) {
     contexts:monthState.candidates.map(candidate=>{
       const context={...candidate,...officerFor(cycle.branchIndex,candidate.monthBranchIndex)};
       return {...context,verifiedRules:calculateVerifiedRules({civilDate:isoDate,dayCycle:cycle,
-        monthBranchIndex:context.monthBranchIndex,officer:context.name,terms:terms2026,baseRules:context.baseRuleHits})};
+        monthBranchIndex:context.monthBranchIndex,officer:context.name,terms:terms2026,baseRules:context.baseRuleHits,includeCalendarRules:true})};
     }),
     limitations:['已核神煞与局部取舍，不是完整黄历。','尚未完成全量神煞、当日六等级判定及全部覆盖；最终宜忌不输出。',
       '十二节交节日仅分交节前后，不给单一全天结论。','民俗文献参考，不是科学预测或医疗、财务、法律建议。']};

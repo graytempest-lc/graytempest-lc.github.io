@@ -1,5 +1,5 @@
-import {calculateDay, civilDateAt, parseCivilDate} from './almanac.mjs';
-import {SIX_GRADE_POLICY} from './verified-rules.mjs';
+import {calculateDay, civilDateAt, parseCivilDate} from './almanac.mjs?v=4';
+import {SIX_GRADE_POLICY} from './verified-rules.mjs?v=4';
 const result = document.getElementById('result');
 const input = document.getElementById('civil-date');
 const error = document.getElementById('error');
@@ -20,7 +20,7 @@ const effectLabels = {
 };
 function ruleEvidence(hit) {
   const details=el('details');details.append(el('summary',hit.name+' · 查看规则原条'));
-  if(hit.certainty==='boundary')details.append(el('p','季节边界未定：只有节气日期，没有精确时刻；本条件仅可能命中，不视为全天确定生效。','notice'));
+  if(hit.certainty==='boundary')details.append(el('p','日界或季节交接条件待定：本条件仅可能命中，不视为全天确定生效。','notice'));
   if(hit.originalText||hit.quote)details.append(el('p',hit.originalText||hit.quote));
   details.append(el('p',(hit.ruleId?'规则 '+hit.ruleId+' · ':'')+(hit.sourceSection||'原文出处')));
   if(hit.coverage)details.append(el('p',hit.coverage==='direct-clause-only'?'已核范围：仅直接条文，尚非全部条件。':typeof hit.coverage==='string'?hit.coverage:JSON.stringify(hit.coverage)));
@@ -40,6 +40,18 @@ function verifiedSection(rules) {
   for(const [heading,hits] of [['神煞命中',rules.godHits],['季节条件',rules.seasonalHits],['局部覆盖',rules.overrides]]) {
     box.append(el('h4',heading),el('p',hits.length?hits.map(hit=>hit.name+(hit.certainty==='boundary'?'（边界待定）':'')).join('、'):'已核范围内无命中；不代表完整规则无此项。','muted'));
     for(const hit of hits)box.append(ruleEvidence(hit));
+  }
+  if(rules.completion){
+    const c=rules.completion,extra=el('details');extra.append(el('summary','新核条款、日界与待定输入'));
+    if(c.virtueBoundary)extra.append(el('p','本月天德取 '+c.virtueBoundary.direction+' 卦位；日支未定义，不擅换成流行日支表。四仲天德合无合。','notice'));
+    if(c.soil?.status!=='outside'&&c.soil)extra.append(el('p','土王条件：'+(c.soil.status==='boundary'?'起止当天待核':'两种边界解释共同覆盖的完整日期')+'。'+c.soil.explanation));
+    if(c.lunar?.context){const l=c.lunar.context;extra.append(el('p','农历第 '+l.dayNumber+' 日，本月朔日 '+l.firstCivilDate+'；'+(l.lastDay?'本日为晦日。':'本日非晦日。')));}
+    for(const p of c.lunar?.phases||[])extra.append(el('p','天文'+p.name+'：约 '+p.timestampUtc8.slice(11,16)+'（东八区，本地模型估算，非精确时刻）。不用固定初八、十五、廿三替代实际弦望日。'));
+    if(c.noSalary?.candidate){const n=c.noSalary,labels={active:'本条限制生效',relieved:'已知条件解除本条',pending:'解除条件仍待核'};extra.append(el('p','无禄候选：'+labels[n.status]+'。'+n.reason));for(const item of n.relief)extra.append(el('p','已核解除：'+item));if(n.status==='pending')for(const item of n.unknown)extra.append(el('p','未决：'+item));}
+    for(const clause of c.suppressions)extra.append(el('p',clause.name+'：'+clause.reason));
+    if(c.pendingHits.length)extra.append(el('p','以下仅待核或边界候选，未进入确定活动账本：','notice'));
+    for(const hit of c.pendingHits)extra.append(ruleEvidence(hit));
+    extra.append(el('p','本轮仍不输出最终宜忌。古籍中的医疗词语只作历史展示，不应据此延误诊疗。','muted'));box.append(extra);
   }
   const conflicts=el('details');conflicts.append(el('summary','已知条文冲突 · '+rules.conflicts.length+' 项（未裁成最终宜忌）'));
   for(const conflict of rules.conflicts)conflicts.append(el('p',conflict.activity+'：宜见 '+conflict.yiRules.join('、')+'；忌见 '+conflict.jiRules.join('、')));
@@ -76,6 +88,7 @@ function show(isoDate, updateUrl=false) {
   }
   try {
     const day=calculateDay(isoDate);
+    result.setAttribute('data-rule-version',day.verifiedRuleVersion);
     if(day.resolutionStatus==='unavailable') {
       result.append(el('p','此日期不在已核对的 2026 年范围内。未生成农历、建除或宜忌，不沿用旧数据。','notice'));
     } else {

@@ -4,11 +4,13 @@ const S='https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四�
 const B='子丑寅卯辰巳午未申酉戌亥',T='甲乙丙丁戊己庚辛壬癸';
 const DE=['天德','月德','天德合','月德合'];
 const MILITARY=['安撫邊境','選將訓兵','出師'];
-export function applyScopedEffects({rules,monthBranchIndex,dayCycle,officer,activityKeys}){
+export function applyScopedEffects({rules,monthBranchIndex,dayCycle,officer,activityKeys,suppressions=[]}){
  if(!Array.isArray(rules)||typeof activityKeys!=='function')throw new TypeError('须提供可追溯规则数组和活动归一函数。');
  if(!Number.isInteger(monthBranchIndex)||monthBranchIndex<0||monthBranchIndex>11||!dayCycle||!Number.isInteger(dayCycle.index)||dayCycle.index<0||dayCycle.index>59||dayCycle.stemIndex!==dayCycle.index%10||dayCycle.branchIndex!==dayCycle.index%12||dayCycle.name!==T[dayCycle.stemIndex]+B[dayCycle.branchIndex])throw new RangeError('局部豁免上下文无效。');
  if(officer!==['建','除','满','平','定','执','破','危','成','收','开','闭'][(dayCycle.branchIndex-monthBranchIndex+12)%12])throw new RangeError('局部豁免值日不一致。');
  const names=new Set(rules.map(r=>r.name)), has=xs=>xs.some(x=>names.has(x)),m=monthBranchIndex;
+ if(!Array.isArray(suppressions)||suppressions.some(x=>!x||typeof x.ruleId!=='string'||!x.ruleId.trim()||!Array.isArray(x.allowedYi)||typeof x.source!=='string'))throw new TypeError('Suppression clauses require source IDs and allow lists.');
+ if(new Set(suppressions.map(x=>x.ruleId)).size!==suppressions.length)throw new TypeError('Duplicate suppression clause ID.');
  const trace=[],state=rules.map(r=>{
   if(!r||typeof r.ruleId!=='string'||!Array.isArray(r.directYi)||(r.directJi!==null&&!Array.isArray(r.directJi)))throw new TypeError('规则须含来源 ID 和活动数组。');
   return {...r,yi:new Set(r.directYi.flatMap(activityKeys)),ji:new Set((r.directJi||[]).flatMap(activityKeys)),originalJi:new Set((r.directJi||[]).flatMap(activityKeys))};
@@ -42,6 +44,13 @@ export function applyScopedEffects({rules,monthBranchIndex,dayCycle,officer,acti
  if(dayCycle.name[1]==='卯')suppress(['開渠'],'卯日忌穿井，不注宜开渠');
  if(dayCycle.name[0]==='壬')suppress(['穿井'],'壬日忌开渠，不注宜穿井');
  if(officer==='开')suppress(['破土','安葬','啟攢'],'开日不注葬事宜，已有忌另依其来源');
+ // Source-backed allow lists suppress recommendations only; never create or remove prohibitions.
+ for(const clause of suppressions){
+  const allowed=new Set(clause.allowedYi.flatMap(activityKeys));
+  for(const r of state){const removed=[...r.yi].filter(x=>!allowed.has(x));for(const x of removed)r.yi.delete(x);
+   if(removed.length)trace.push({operation:'suppress-source-yi',targetRuleId:r.ruleId,clauseRuleId:clause.ruleId,activities:removed,reason:clause.reason,source:clause.source});
+  }
+ }
  const ledger=new Map();
  for(const r of state)for(const side of ['yi','ji'])for(const act of r[side]){
   if(!ledger.has(act))ledger.set(act,{activity:act,yiRules:[],jiRules:[]});ledger.get(act)[side+'Rules'].push(r.ruleId);
