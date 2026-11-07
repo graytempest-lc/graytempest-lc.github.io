@@ -1,7 +1,8 @@
 ---
 const {item,lead=false,overview=[]}=Astro.props;
 ---
-<article tabindex="-1" class={lead?'lead-story':'brief'} id={item.id} aria-labelledby={item.titleId}>
+<article tabindex="-1" class={lead?'lead-story':'brief'} id={item.id} aria-labelledby={item.titleId}
+ data-event-date={item.eventDate} data-source-published-at={item.sourcePublishedAt}>
  <div class={lead?'lead-copy':'brief-body'}>
   <h2 id={item.titleId}>{item.title}</h2>
   {item.paragraphs.map(p=><p class={p.variant||undefined}>{p.text}</p>)}

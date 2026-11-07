@@ -1,0 +1,456 @@
+{
+  "id": "2026-11-07",
+  "editionDate": "2026-11-07",
+  "status": "published",
+  "title": "L星团快讯 · 11月7日",
+  "description": "L星团快讯 · 2026-11-07：15条计算机热点。精选15条：7条11月6日新进展，另补充8条11月2—5日尚未报道的更新与研究。事件日期、适用范围与研究限制逐条注明。",
+  "editionLabel": "2026 年 11 月 7 日 · 星期六",
+  "dateBasis": "edition-publication-date",
+  "introduction": [
+    "精选15条：7条11月6日新进展，另补充8条11月2—5日尚未报道的更新与研究。事件日期、适用范围与研究限制逐条注明。"
+  ],
+  "overview": [
+    {
+      "id": "ollama-04015",
+      "title": "Ollama 0.40.15 加入 MiMo V2.6 与决策模型支持",
+      "category": "本地 AI"
+    },
+    {
+      "id": "linux-xen-fixes",
+      "title": "Linux 7.3.3 修补 Xen 后端内存安全问题",
+      "category": "系统安全"
+    },
+    {
+      "id": "ai2-toyblocks",
+      "title": "Ai2发布ToyBlocks，让机器人实验在可控积木世界中复现",
+      "category": "AI研究"
+    },
+    {
+      "id": "dlss-hogwarts-rollout",
+      "title": "《霍格沃茨之遗》上线 DLSS 5 神经渲染",
+      "category": "计算机图形"
+    }
+  ],
+  "items": [
+    {
+      "id": "google-genai-js-3",
+      "title": "Google Gen AI JS 3.0 升级须检查默认 API 与别名",
+      "titleId": "google-genai-js-3-title",
+      "paragraphs": [
+        {
+          "text": "Gemini Developer API 默认版本由 v1beta 改为 v1，Node.js 最低版本升至 22。gemini-flash-latest 等部分别名仅存在于 v1beta。",
+          "variant": ""
+        },
+        {
+          "text": "个人项目升级前应检查 Node.js 版本、模型别名与 TypeScript 类型。需要测试版专属模型别名时，可显式选择 v1beta；Vertex AI 的默认版本不受这次切换影响。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-06",
+      "dateLabel": "11月6日 · 破坏性更新",
+      "eventDate": "2026-11-06",
+      "sourcePublishedAt": "2026-11-06",
+      "sources": [
+        {
+          "label": "Google 官方 v3.0.0 Release",
+          "url": "https://github.com/googleapis/js-genai/releases/tag/v3.0.0",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "linux-xen-fixes",
+      "title": "Linux 7.3.3 修补 Xen 后端内存安全问题",
+      "titleId": "linux-xen-fixes-title",
+      "paragraphs": [
+        {
+          "text": "Linux 7.3.3 修正 Xen 网络与块设备后端的统计读取和清理竞态，涉及释放后使用等问题，对应 XSA-526、527、528。",
+          "variant": ""
+        },
+        {
+          "text": "使用 Xen 运行开发机或推理服务时，应检查宿主机内核及发行版回补情况，而不只是更新虚拟机。这些修复针对 Xen 后端路径，不能泛化为所有 Linux 系统都可被远程攻击。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-06",
+      "dateLabel": "11月6日 · 安全更新",
+      "eventDate": "2026-11-06",
+      "sourcePublishedAt": "2026-11-06",
+      "sources": [
+        {
+          "label": "Linux 7.3.3 官方变更日志",
+          "url": "https://cdn.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.3.3",
+          "icon": false
+        },
+        {
+          "label": "Linux Kernel Archives",
+          "url": "https://www.kernel.org/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "ollama-04015",
+      "title": "Ollama 0.40.15 加入 MiMo V2.6 与决策模型支持",
+      "titleId": "ollama-04015-title",
+      "paragraphs": [
+        {
+          "text": "支持面向代码和智能体的9B MiMo V2.6，以及返回选择、概率和评分的AutoTrust决策模型；循环架构与视觉GGUF模型可并发服务多个请求。",
+          "variant": ""
+        },
+        {
+          "text": "为本地编程、分类与并发推理增加选择；本版本 autotrust-jev 支持 Apple Silicon。这是 0.40.15 的功能增量，与前期 0.40.14 的采样默认值修复不同。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-03",
+      "dateLabel": "11月3日 · 版本更新 · 近7日补充",
+      "eventDate": "2026-11-03",
+      "sourcePublishedAt": "2026-11-03T22:52:31Z",
+      "sources": [
+        {
+          "label": "Ollama 官方 v0.40.15 Release",
+          "url": "https://github.com/ollama/ollama/releases/tag/v0.40.15",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "copilot-review-api",
+      "title": "Copilot代码审查设置开放API管理与来源标注",
+      "titleId": "copilot-review-api-title",
+      "paragraphs": [
+        {
+          "text": "REST和GraphQL可管理Copilot代码审查设置；评论和审查增加明确归属字段，并可查看评论报告使用的skills、MCP和自定义指令来源。",
+          "variant": ""
+        },
+        {
+          "text": "有利于维护者自动化审查配置与追踪AI评论依据。适用付费Copilot计划；企业及组织设置端点暂不支持GitHub Apps或细粒度PAT，仓库端点仍需相应Administration权限。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-06",
+      "dateLabel": "11月6日 · 开发工具",
+      "eventDate": "2026-11-06",
+      "sourcePublishedAt": "2026-11-06",
+      "sources": [
+        {
+          "label": "GitHub 官方更新",
+          "url": "https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "ubuntu-tegra-kernel",
+      "title": "Ubuntu 更新 NVIDIA Tegra 内核安全补丁",
+      "titleId": "ubuntu-tegra-kernel-title",
+      "paragraphs": [
+        {
+          "text": "Ubuntu 发布 USN-9002-1，为 24.04 LTS 的 linux-nvidia-tegra 内核包修补多项问题，包括可能让本地攻击者导致系统崩溃的 io_uring 漏洞。",
+          "variant": ""
+        },
+        {
+          "text": "使用相关 Tegra 内核包运行边缘推理或开发服务时，应核对更新版本，升级后重启，并检查第三方内核模块的重编译需求。公告适用范围不能直接扩大到所有 Jetson 或 JetPack 设备。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-06",
+      "dateLabel": "11月6日 · 安全更新",
+      "eventDate": "2026-11-06",
+      "sourcePublishedAt": "2026-11-06",
+      "sources": [
+        {
+          "label": "Ubuntu 官方安全公告",
+          "url": "https://ubuntu.com/security/notices/USN-9002-1",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "github-slack-teams-ga",
+      "title": "Slack和Teams中的@GitHub正式可用",
+      "titleId": "github-slack-teams-ga-title",
+      "paragraphs": [
+        {
+          "text": "可从会话调查bug、创建issue、实现改动及开PR；Teams Canvas支持查看计划、代码改动和预览，创建内容附会话发起人归属信息。",
+          "variant": ""
+        },
+        {
+          "text": "小团队可减少聊天和代码平台切换。Canvas是Teams特定能力；仓库操作仍依赖登录、应用及仓库访问权限。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-06",
+      "dateLabel": "11月6日 · 正式可用",
+      "eventDate": "2026-11-06",
+      "sourcePublishedAt": "2026-11-06",
+      "sources": [
+        {
+          "label": "GitHub 官方GA公告",
+          "url": "https://github.blog/changelog/2026-11-06-github-copilot-in-slack-and-teams-is-generally-available/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "ai2-toyblocks",
+      "title": "Ai2发布ToyBlocks，让机器人实验在可控积木世界中复现",
+      "titleId": "ai2-toyblocks-title",
+      "paragraphs": [
+        {
+          "text": "开放桌面机械臂与积木仿真框架，自动生成任务与示范，研究推、翻、叠等动作及高层规划。",
+          "variant": ""
+        },
+        {
+          "text": "开发者可在接触实体机器人前测试规划与控制方法。框架限定于桌面积木场景，不能由此推断家庭机器人的通用能力，仿真结果仍需实机验证。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-06",
+      "dateLabel": "11月6日 · 仿真框架",
+      "eventDate": "2026-11-06",
+      "sourcePublishedAt": "2026-11-06",
+      "sources": [
+        {
+          "label": "Ai2 官方团队介绍",
+          "url": "https://huggingface.co/blog/allenai/toyblocks",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "freebsd-beta-build",
+      "title": "FreeBSD 15.2 开始首轮 Beta 构建",
+      "titleId": "freebsd-beta-build-title",
+      "paragraphs": [
+        {
+          "text": "FreeBSD 官方发布日程确认，15.2的发布工程分支已于11月6日创建，首轮 BETA1 构建也在当天开始。",
+          "variant": ""
+        },
+        {
+          "text": "维护 FreeBSD 服务、驱动或跨平台软件的开发者可准备测试升级兼容性。当前证据只确认开始构建，不代表测试镜像已经可下载；正式版公告仍计划在12月8日发布。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-06",
+      "dateLabel": "11月6日 · Beta 构建",
+      "eventDate": "2026-11-06",
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "FreeBSD 官方发布日程",
+          "url": "https://www.freebsd.org/releases/15.2R/schedule/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "lerobot-070",
+      "title": "LeRobot 0.7 支持交互式执行与远程策略推理",
+      "titleId": "lerobot-070-title",
+      "paragraphs": [
+        {
+          "text": "新交互执行流程可更改子任务、询问视觉内容及自动选择子任务。训练支持流式读取 Hub、Bucket 或 LanceDB 数据，策略可运行在远程 GPU。",
+          "variant": ""
+        },
+        {
+          "text": "控制设备与GPU工作站可分开部署。视觉问答和自动规划需要文本生成策略或外部VLM；旧async_inference模块及async extra被移除，需迁移remote extra，并分别检查模型许可。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-05",
+      "dateLabel": "11月5日 · 版本更新 · 近7日补充",
+      "eventDate": "2026-11-05",
+      "sourcePublishedAt": "2026-11-05",
+      "sources": [
+        {
+          "label": "LeRobot 官方团队发布说明",
+          "url": "https://huggingface.co/blog/lerobot/lerobot-release-v070",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "gpt-image-26",
+      "title": "GPT-Image 2.6 加入 SVG 和动图生成",
+      "titleId": "gpt-image-26-title",
+      "paragraphs": [
+        {
+          "text": "Sunburst 与 Flare 支持图像生成编辑、复杂度调节、SVG 和动画 GIF；部分 GPT Image 2.5 与 2.6 模型同时加入标记引导编辑。",
+          "variant": ""
+        },
+        {
+          "text": "网站和设计工具可探索矢量素材、动效与局部改图。这是云端计费服务，并非本地开放权重；动画GIF能力不能概括为通用视频模型。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-04",
+      "dateLabel": "11月4日 · 模型更新 · 近7日补充",
+      "eventDate": "2026-11-04",
+      "sourcePublishedAt": "2026-11-04",
+      "sources": [
+        {
+          "label": "OpenAI API更新日志",
+          "url": "https://developers.openai.com/api/docs/changelog",
+          "icon": false
+        },
+        {
+          "label": "Sunburst模型页",
+          "url": "https://developers.openai.com/api/docs/models/gpt-image-2.6-sunburst",
+          "icon": false
+        },
+        {
+          "label": "Flare模型页",
+          "url": "https://developers.openai.com/api/docs/models/gpt-image-2.6-flare",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "openbsd-november-errata",
+      "title": "OpenBSD 修复 IKE、网络队列与桌面库问题",
+      "titleId": "openbsd-november-errata-title",
+      "paragraphs": [
+        {
+          "text": "OpenBSD 8.0 的新勘误修复构造 IKEv1 消息导致 isakmpd 崩溃、X.Org 客户端库安全问题，以及特定 FQ-CoDel 队列和 unveil 使用场景下的内核故障。",
+          "variant": ""
+        },
+        {
+          "text": "使用 OpenBSD 作网关、开发桌面或隔离环境时，可按官方补丁渠道更新，重点回归 VPN 与队列配置。其中三项被官方列为可靠性修复，不宜全部称为高危远程漏洞。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-05",
+      "dateLabel": "11月5日 · 系统补丁 · 近7日补充",
+      "eventDate": "2026-11-05",
+      "sourcePublishedAt": "2026-11-05",
+      "sources": [
+        {
+          "label": "OpenBSD 8.0 官方勘误",
+          "url": "https://www.openbsd.org/errata80.html",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "netbsd-cross-build",
+      "title": "NetBSD 11.1 修正 Apple Silicon 交叉构建",
+      "titleId": "netbsd-cross-build-title",
+      "paragraphs": [
+        {
+          "text": "NetBSD 11分支首个小版本以安全和缺陷修复为主，修正从 Apple Silicon macOS 交叉构建、树莓派部分 USB 稳定性，以及兆芯 KX-7000 等处理器上的崩溃问题。",
+          "variant": ""
+        },
+        {
+          "text": "在 Mac 上做多架构构建或维护 NetBSD 设备时，可检查本次修复是否覆盖现有问题。若不使用安装镜像升级，官方要求先更新内核和模块，重启后再更新用户空间。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-02",
+      "dateLabel": "11月2日 · 维护版本 · 近7日补充",
+      "eventDate": "2026-11-02",
+      "sourcePublishedAt": "2026-11-02",
+      "sources": [
+        {
+          "label": "NetBSD 11.1 官方发布公告",
+          "url": "https://www.netbsd.org/releases/formal-11/NetBSD-11.1.html",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "dlss-hogwarts-rollout",
+      "title": "《霍格沃茨之遗》上线 DLSS 5 神经渲染",
+      "titleId": "dlss-hogwarts-rollout-title",
+      "paragraphs": [
+        {
+          "text": "NVIDIA 官方博客确认，《霍格沃茨之遗》在 GeForce NOW 收到 DLSS 5 的3D引导神经渲染更新，在原有几何和纹理基础上增强光照、材质，并由开发者调节视觉风格。",
+          "variant": ""
+        },
+        {
+          "text": "可用来观察神经渲染接入现有游戏管线后的画面一致性与艺术控制。此次确认的是 GeForce NOW 上线，云游戏的效果与性能不能直接当作本地显卡测试结果。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-05",
+      "dateLabel": "11月5日 · 云端上线 · 近7日补充",
+      "eventDate": "2026-11-05",
+      "sourcePublishedAt": "2026-11-05",
+      "sources": [
+        {
+          "label": "NVIDIA 11月5日上线公告",
+          "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-hogwarts-legacy-dlss-5/",
+          "icon": false
+        },
+        {
+          "label": "NVIDIA 官方技术预告",
+          "url": "https://www.nvidia.com/en-us/geforce/news/dlss-5-faster-ai-model-hogwarts-legacy-rtx-spark-laptops/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "gpt-6-cyber",
+      "title": "GPT-6-Cyber 面向获批安全研究组织提供",
+      "titleId": "gpt-6-cyber-title",
+      "paragraphs": [
+        {
+          "text": "用于调查漏洞、在授权测试环境复现问题及验证修复。",
+          "variant": ""
+        },
+        {
+          "text": "适合已有安全研发流程的组织评估；使用前必须取得 Daybreak Red 访问资格与批准，普通个人账号不能直接按通用模型接入。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-05",
+      "dateLabel": "11月5日 · 受限访问 · 近7日补充",
+      "eventDate": "2026-11-05",
+      "sourcePublishedAt": "2026-11-05",
+      "sources": [
+        {
+          "label": "OpenAI API更新日志",
+          "url": "https://developers.openai.com/api/docs/changelog",
+          "icon": false
+        },
+        {
+          "label": "GPT-6-Cyber模型页",
+          "url": "https://developers.openai.com/api/docs/models/gpt-6-cyber",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "dory-looped-4b",
+      "title": "Dory 4B 研究用循环深度调节推理计算量",
+      "titleId": "dory-looped-4b-title",
+      "paragraphs": [
+        {
+          "text": "Dory1.0-4B 让同一组共享层重复执行，可按请求调整循环次数。论文提供 BF16、MXFP8、NVFP4 与 GGUF 权重，并用只保留末轮 KV 缓存的方法控制缓存体积。",
+          "variant": ""
+        },
+        {
+          "text": "为本地小模型提供计算量与准确率之间的可调选项。增加循环仍会增加每个 token 的计算成本，作者的基准结果不代表所有设备更快；这是预印本研究，部署兼容性需实测。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-02",
+      "dateLabel": "11月2日 · 预印本研究 · 近7日补充",
+      "eventDate": "2026-11-02",
+      "sourcePublishedAt": "2026-11-02T21:38:49Z",
+      "sources": [
+        {
+          "label": "Dory 原始论文",
+          "url": "https://arxiv.org/abs/2611.03998v1",
+          "icon": false
+        },
+        {
+          "label": "论文全文与测试配置",
+          "url": "https://arxiv.org/html/2611.03998v1",
+          "icon": false
+        }
+      ]
+    }
+  ]
+}

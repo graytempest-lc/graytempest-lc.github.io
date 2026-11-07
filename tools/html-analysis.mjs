@@ -20,7 +20,8 @@ export function analyzeLegacyEdition(html,date){
     return {id:attr(a,'id'),title:clean(heading),titleId:attr(heading,'id'),
       paragraphs:paras.map(p=>({text:clean(p),variant:attr(p,'class')||''})),
       sourceDate:attr(tag(byline,'time'),'datetime'),dateLabel:clean(tag(byline,'time')),
-      eventDate:null,sourcePublishedAt:null,
+      // Read only explicit metadata; legacy display/publication dates do not imply these dates.
+      eventDate:attr(a,'data-event-date')??null,sourcePublishedAt:attr(a,'data-source-published-at')??null,
       sources:children(byline).filter(n=>n.tagName==='a').map(n=>({label:clean(n),url:attr(n,'href'),icon:!!tag(n,'svg')}))};
   });
   const header=tag(doc,'header');
