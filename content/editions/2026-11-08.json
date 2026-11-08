@@ -1,0 +1,446 @@
+{
+  "id": "2026-11-08",
+  "editionDate": "2026-11-08",
+  "status": "published",
+  "title": "L星团快讯 · 11月8日",
+  "description": "L星团快讯 · 2026-11-08：15条计算机热点。精选15条：3条11月7日进展，另补充12条11月4—6日尚未报道的更新、技术说明与研究。已对照近7期去重；日期沿用原始来源，预发布、开发中与研究限制分别注明。",
+  "editionLabel": "2026 年 11 月 8 日 · 星期日",
+  "dateBasis": "edition-publication-date",
+  "introduction": [
+    "精选15条：3条11月7日进展，另补充12条11月4—6日尚未报道的更新、技术说明与研究。已对照近7期去重；日期沿用原始来源，预发布、开发中与研究限制分别注明。"
+  ],
+  "overview": [
+    {
+      "id": "plasma",
+      "title": "KDE 列出 DisplayLink 与多屏桌面修复",
+      "category": "操作系统"
+    },
+    {
+      "id": "transformers-jinja-hardening",
+      "title": "Transformers 5.22.2 加固聊天模板沙箱",
+      "category": "本地 AI"
+    },
+    {
+      "id": "go-json-v2",
+      "title": "Go 官方梳理 JSON v2 迁移与流式处理",
+      "category": "编程语言"
+    },
+    {
+      "id": "baya-compile-execute",
+      "title": "Baya 用先编译后执行限制网页提示注入",
+      "category": "AI安全研究"
+    }
+  ],
+  "items": [
+    {
+      "id": "llama-metal-groupnorm",
+      "title": "llama.cpp 修正 Metal 分组归一化的批次计算",
+      "titleId": "llama-metal-groupnorm-title",
+      "paragraphs": [
+        {
+          "text": "b12189 修复 Metal 后端 GROUP_NORM 在多批次输入时只写入首批数据的问题，并处理带步长的输入与输出，明确限定 F32 数据类型。",
+          "variant": ""
+        },
+        {
+          "text": "在 Mac 上运行涉及该算子的模型时，可用固定样例比对更新前后的输出。这是预发布构建中的正确性修复，不是所有模型都会受益的提速更新。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-07",
+      "dateLabel": "11月7日 · 预发布修复",
+      "eventDate": "2026-11-07",
+      "sourcePublishedAt": "2026-11-07T12:15:59Z",
+      "sources": [
+        {
+          "label": "官方发布说明",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12189",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "plasma",
+      "title": "KDE 列出 DisplayLink 与多屏桌面修复",
+      "titleId": "plasma-title",
+      "paragraphs": [
+        {
+          "text": "本周 Plasma 周报将连接 DisplayLink 屏幕导致 KWin 崩溃、多屏热插拔时桌面图标错位等修复列入 6.8.3，同时列出后续 6.9 的远程桌面与内存泄漏改进。",
+          "variant": ""
+        },
+        {
+          "text": "多屏和远程桌面用户可据此关注发行版更新；这是开发进展，不代表所有修复已经随稳定包推送。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-07",
+      "dateLabel": "11月7日 · 开发周报",
+      "eventDate": "2026-11-07",
+      "sourcePublishedAt": "2026-11-07",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://blogs.kde.org/2026/11/07/this-week-in-plasma-widgets-widgets-widgets/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "fastapi-ai-guide",
+      "title": "FastAPI 补充面向编码智能体的官方开发指南",
+      "titleId": "fastapi-ai-guide-title",
+      "paragraphs": [
+        {
+          "text": "0.162.2 补充 AI 开发与 FastAPI Cloud 使用指南；随 Python 包提供的官方技能按项目已安装版本给出用法和推荐模式，可通过 Library Skills 安装。",
+          "variant": ""
+        },
+        {
+          "text": "适合减少编码助手套用过时 API。此次版本主要更新文档与技能，不是服务运行时的新性能特性；生成代码仍需测试和审查。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-07",
+      "dateLabel": "11月7日 · 文档与技能更新",
+      "eventDate": "2026-11-07",
+      "sourcePublishedAt": "2026-11-07T15:41:00Z",
+      "sources": [
+        {
+          "label": "官方发布说明",
+          "url": "https://github.com/fastapi/fastapi/releases/tag/0.162.2",
+          "icon": false
+        },
+        {
+          "label": "官方 AI 开发指南",
+          "url": "https://fastapi.tiangolo.com/ai-development/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "transformers-jinja-hardening",
+      "title": "Transformers 5.22.2 加固聊天模板沙箱",
+      "titleId": "transformers-jinja-hardening-title",
+      "paragraphs": [
+        {
+          "text": "补丁限制 Jinja 模板可访问的字典方法与内部属性，并清洗消息输入，降低可访问对象属性带来的沙箱逃逸风险；同时修正分布式后端的 device_id 设置。",
+          "variant": ""
+        },
+        {
+          "text": "加载外部模型聊天模板的本地推理项目应检查升级，并回归自定义模板。公告没有声明已遭在野利用，也不意味着模板执行从此完全无风险。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-06",
+      "dateLabel": "11月6日 · 安全与兼容性更新 · 近7日补充",
+      "eventDate": "2026-11-06",
+      "sourcePublishedAt": "2026-11-06T15:43:27Z",
+      "sources": [
+        {
+          "label": "官方发布说明",
+          "url": "https://github.com/huggingface/transformers/releases/tag/v5.22.2",
+          "icon": false
+        },
+        {
+          "label": "官方沙箱加固 PR",
+          "url": "https://github.com/huggingface/transformers/pull/50431",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "secrets",
+      "title": "微软披露智能体加速利用公开仓库密钥",
+      "titleId": "secrets-title",
+      "paragraphs": [
+        {
+          "text": "微软报告攻击者使用智能体搜索 GitHub 暴露的凭据并继续访问云资源；其中一个观察案例从扫描到窃取 Azure Key Vault 数据仅五分钟。",
+          "variant": ""
+        },
+        {
+          "text": "公开密钥应撤销或轮换，单纯删除代码中的字符串并不足够；五分钟是个案，不是所有攻击的耗时，文章披露的是此前已观察到的活动。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-05",
+      "dateLabel": "11月5日 · 威胁报告 · 近7日补充",
+      "eventDate": "2026-11-05",
+      "sourcePublishedAt": "2026-11-05",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://www.microsoft.com/en-us/security/blog/2026/11/05/threat-actors-use-agentic-ai-tooling-to-find-and-abuse-exposed-secrets/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "go-json-v2",
+      "title": "Go 官方梳理 JSON v2 迁移与流式处理",
+      "titleId": "go-json-v2-title",
+      "paragraphs": [
+        {
+          "text": "Go 官方说明 Go 1.27 已稳定提供的 encoding/json/v2 与 jsontext：支持真正的流式处理，默认拒绝无效 UTF-8 与重复键，并调整 nil 容器和字段匹配行为。",
+          "variant": ""
+        },
+        {
+          "text": "维护 JSON 接口时应先回归边界输入和兼容性；原 encoding/json 继续长期支持，无需强制迁移。文中最高10倍仅指特定反序列化基准，序列化性能大致持平。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-04",
+      "dateLabel": "11月4日 · 官方技术说明 · 近7日补充",
+      "eventDate": "2026-11-04",
+      "sourcePublishedAt": "2026-11-04",
+      "sources": [
+        {
+          "label": "Go 官方原文",
+          "url": "https://go.dev/blog/jsonv2",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "claude-mcp-tasks",
+      "title": "Claude Code 加入后台 MCP 任务与直接拒绝权限选项",
+      "titleId": "claude-mcp-tasks-title",
+      "paragraphs": [
+        {
+          "text": "2.1.319 可把 MCP 服务器的任务型工具调用移至后台，完成后再交回结果；新增 denyInsteadOfPrompting，让原本等待授权的工具调用直接被拒绝并继续本轮。",
+          "variant": ""
+        },
+        {
+          "text": "适合长耗时工具和无人值守会话，但后台能力依赖 MCP 服务器以任务方式运行工具。该拒绝设置不会自动批准操作；自动模式在部分网关配置下的检查行为也有变化。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-06",
+      "dateLabel": "11月6日 · 版本更新 · 近7日补充",
+      "eventDate": "2026-11-06",
+      "sourcePublishedAt": "2026-11-06T17:04:01Z",
+      "sources": [
+        {
+          "label": "官方发布说明",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.319",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "langgraph-strict-resume",
+      "title": "LangGraph SDK 可拒绝已经失效的中断回复",
+      "titleId": "langgraph-strict-resume-title",
+      "paragraphs": [
+        {
+          "text": "Python SDK 0.4.14 为 runs.create、stream、wait 增加 strict_resume。开启后，回复已被其他窗口处理或 ID 错误的中断时，会以 UnknownInterruptError 失败并保持线程原状。",
+          "variant": ""
+        },
+        {
+          "text": "适合多人或多窗口审批的智能体流程，避免过期回复悄悄被忽略。该参数只用于有状态线程运行，需显式设置；不支持它的旧服务器会忽略字段。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-06",
+      "dateLabel": "11月6日 · SDK 更新 · 近7日补充",
+      "eventDate": "2026-11-06",
+      "sourcePublishedAt": "2026-11-06T03:03:34Z",
+      "sources": [
+        {
+          "label": "官方发布说明",
+          "url": "https://github.com/langchain-ai/langgraph/releases/tag/sdk==0.4.14",
+          "icon": false
+        },
+        {
+          "label": "官方参数说明 PR",
+          "url": "https://github.com/langchain-ai/langgraph/pull/9599",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "hermes-gateway-webapp",
+      "title": "Hermes Agent 0.23 统一多端会话并提供浏览器工作区",
+      "titleId": "hermes-gateway-webapp-title",
+      "paragraphs": [
+        {
+          "text": "新版本让同一机器的 CLI、桌面、编辑器和消息入口共用一个网关会话队列与历史；自托管网关还可在浏览器提供桌面工作区，并支持从早先消息重新分叉会话。",
+          "variant": ""
+        },
+        {
+          "text": "有利于减少多入口同时操作造成的重复消息和历史不一致。Webapp 默认关闭，公开访问需要配置登录；这不是无需部署即可使用的云端服务。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-05",
+      "dateLabel": "11月5日 · 版本更新 · 近7日补充",
+      "eventDate": "2026-11-05",
+      "sourcePublishedAt": "2026-11-05T21:32:33Z",
+      "sources": [
+        {
+          "label": "官方发布说明",
+          "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.23.0",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "kwi",
+      "title": "Kwi 终端补齐快捷键与进程管理，仍未正式发布",
+      "titleId": "kwi-title",
+      "paragraphs": [
+        {
+          "text": "新 KDE 终端本周修正字符渲染和向 zellij 转发 Ctrl 等问题，并支持把每个标签页的进程放入 systemd scope，改进屏幕阅读器与窗口缩放表现。",
+          "variant": ""
+        },
+        {
+          "text": "适合关注 Linux 终端的新实现；官方明确仍在 KDE Review，v0.1 和 Flathub 发布尚属计划，不宜写成稳定版上线。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-06",
+      "dateLabel": "11月6日 · 开发进展 · 近7日补充",
+      "eventDate": "2026-11-06",
+      "sourcePublishedAt": "2026-11-06",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://blogs.kde.org/2026/11/06/this-week-in-kwi-2026-w45/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "sixg",
+      "title": "NVIDIA 汇总开源 6G 工具的无线实验进展",
+      "titleId": "sixg-title",
+      "paragraphs": [
+        {
+          "text": "NVIDIA 介绍 Aerial 与 Sionna 支撑的机器人语义通信、神经接收机和基站节能实验；CTTC 还将 GPU 无线信道模型接入开源 5G-LENA，以缩短仿真时间。",
+          "variant": ""
+        },
+        {
+          "text": "通信研究者可沿文中论文与代码复现；节能、吞吐和任务速度数据来自不同受控实验，不代表商用 6G 已部署或普遍性能保证。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-06",
+      "dateLabel": "11月6日 · 研究进展 · 近7日补充",
+      "eventDate": "2026-11-06",
+      "sourcePublishedAt": "2026-11-06",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://blogs.nvidia.com/blog/telco-open-source-tools-research-6g-networks/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "dsx",
+      "title": "DSX OS 教程提醒 GPU 集群认证需显式设置性能阈值",
+      "titleId": "dsx-title",
+      "paragraphs": [
+        {
+          "text": "NVIDIA 展示用 AICR 固定集群配置、NVCRE 运行 NCCL 与训练测试、NVSentinel 监测和协调修复的流程，三个组件均为 Apache 2.0 开源项目。",
+          "variant": ""
+        },
+        {
+          "text": "默认认证不设性能阈值，慢节点可能通过；NVSentinel 默认仅监测，驱动等原地升级也不会自动触发复验，运维方需配置门槛与升级流程。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-05",
+      "dateLabel": "11月5日 · 技术教程 · 近7日补充",
+      "eventDate": "2026-11-05",
+      "sourcePublishedAt": "2026-11-05",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://developer.nvidia.com/blog/configure-certify-and-operate-kubernetes-gpu-clusters-with-nvidia-dsx-os/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "memory",
+      "title": "NVIDIA 解释用分层存储缓解推理显存压力",
+      "titleId": "memory-title",
+      "paragraphs": [
+        {
+          "text": "官方技术文章把权重量化、KV cache 压缩与卸载、GPU／CPU／共享存储间复用组合起来，解释为何增加 HBM 容量本身不等于提高长上下文服务吞吐。",
+          "variant": ""
+        },
+        {
+          "text": "部署者可把显存带宽、并发和响应时间一起评估；文中最高30倍性价比来自指定 AgentX 工作负载和不同系统比较，不是通用模型或单卡速度承诺。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-05",
+      "dateLabel": "11月5日 · 技术说明 · 近7日补充",
+      "eventDate": "2026-11-05",
+      "sourcePublishedAt": "2026-11-05",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://blogs.nvidia.com/blog/memory-full-stack-codesign/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "baya-compile-execute",
+      "title": "Baya 用先编译后执行限制网页提示注入",
+      "titleId": "baya-compile-execute-title",
+      "paragraphs": [
+        {
+          "text": "先把用户任务编译成调用可信网站 API 的程序，再处理网页内容。论文在581项有效 WebArena Verified 任务上报告77.8%综合完成率，并在 WASP 测试中观察到0%攻击成功率。",
+          "variant": ""
+        },
+        {
+          "text": "为可重复网站工作流提供可检查的执行方案；不是通用安全保证。测试依赖预先手工构建的可信 API，运行成本与延迟高于 ReAct，开放式探索仍受限制。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-04",
+      "dateLabel": "11月4日 · 研究预印本 · 近7日补充",
+      "eventDate": "2026-11-04",
+      "sourcePublishedAt": "2026-11-04T06:42:35Z",
+      "sources": [
+        {
+          "label": "arXiv 原始论文",
+          "url": "https://arxiv.org/abs/2611.06039v1",
+          "icon": false
+        },
+        {
+          "label": "论文正文与限制",
+          "url": "https://arxiv.org/html/2611.06039v1",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "cloudflare-pq-credentials",
+      "title": "Cloudflare 探索抗量子匿名凭证，仍待安全证明",
+      "titleId": "cloudflare-pq-credentials-title",
+      "paragraphs": [
+        {
+          "text": "Cloudflare 介绍基于多变量密码学与 VOLE-in-the-Head 的匿名令牌、凭证方案，目标是在抗滥用时保持用户隐私。VOLE-IHAT 与 VOLE-ACT 仍在开发。",
+          "variant": ""
+        },
+        {
+          "text": "为 Privacy Pass 类机制的抗量子迁移提供工程方向；不是已经上线的新安全标准。通信开销明显大于经典方案，作者明确表示仍需完成安全证明并等待参数分析成熟。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-06",
+      "dateLabel": "11月6日 · 密码学研究进展 · 近7日补充",
+      "eventDate": "2026-11-06",
+      "sourcePublishedAt": "2026-11-06",
+      "sources": [
+        {
+          "label": "Cloudflare 研究原文",
+          "url": "https://blog.cloudflare.com/vole-mole/",
+          "icon": false
+        }
+      ]
+    }
+  ]
+}
