@@ -1,0 +1,446 @@
+{
+  "id": "2026-11-09",
+  "editionDate": "2026-11-09",
+  "status": "published",
+  "title": "L星团快讯 · 11月9日",
+  "description": "L星团快讯 · 2026-11-09：15条计算机热点。精选15条：2条11月8日UTC发布的新进展，另补充13条11月3—7日尚未报道的更新、技术说明与研究。Open WebUI 的发布时间折合东八区为11月9日上午；来源日期与事件日期分开保留，已对照近7期去重。",
+  "editionLabel": "2026 年 11 月 9 日 · 星期一",
+  "dateBasis": "edition-publication-date",
+  "introduction": [
+    "精选15条：2条11月8日UTC发布的新进展，另补充13条11月3—7日尚未报道的更新、技术说明与研究。Open WebUI 的发布时间折合东八区为11月9日上午；来源日期与事件日期分开保留，已对照近7期去重。"
+  ],
+  "overview": [
+    {
+      "id": "sveltekit-boundary-fixes",
+      "title": "SvelteKit 2.70.4 修补路径处理与跨域加载边界",
+      "category": "网络安全"
+    },
+    {
+      "id": "kde-gear-vnc-fixes",
+      "title": "KDE Gear 26.08.3 修复桌面共享与应用崩溃",
+      "category": "操作系统"
+    },
+    {
+      "id": "google-a5x-general-availability",
+      "title": "Google Cloud A5X 实例进入正式可用阶段",
+      "category": "算力与云服务"
+    },
+    {
+      "id": "evocache-browser-model-reuse",
+      "title": "EvoCache 探索浏览器模型包的跨版本无损复用",
+      "category": "本地 AI 研究"
+    }
+  ],
+  "items": [
+    {
+      "id": "open-webui-agent-automation",
+      "title": "Open WebUI 0.13.3 把编码智能体接入定时自动化",
+      "titleId": "open-webui-agent-automation-title",
+      "paragraphs": [
+        {
+          "text": "自动化编辑器可以保存终端、工作目录和该终端提供的编码智能体，运行前检查它们是否仍可用；同时修复切换终端后文件标签与智能体列表串用旧数据的问题。",
+          "variant": ""
+        },
+        {
+          "text": "适合在指定项目中重复执行编码任务。智能体自动化结果只能发送到聊天，必须已有可用终端与智能体，不代表安装后自动获得本机访问能力。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-08",
+      "dateLabel": "11月8日 · 版本更新 · 东八区11月9日发布",
+      "eventDate": "2026-11-08",
+      "sourcePublishedAt": "2026-11-08T23:48:24Z",
+      "sources": [
+        {
+          "label": "官方发布说明",
+          "url": "https://github.com/open-webui/open-webui/releases/tag/v0.13.3",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "llama-spacemit-mxfp4",
+      "title": "llama.cpp 为 SpacemiT CPU 接通 MXFP4 加速路径",
+      "titleId": "llama-spacemit-mxfp4-title",
+      "paragraphs": [
+        {
+          "text": "b12210 接通已有的 MXFP4 稠密权重重排与 IME2 M1/M4 内核，让符合条件的稠密矩阵乘法不再落回标量实现。",
+          "variant": ""
+        },
+        {
+          "text": "仅适用于启用 IME2、满足对齐要求的二维权重等条件。性能测试来自 SpacemiT K3 A100 核与特定混合精度小模型，不能推广到普通 PC 或所有模型。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-08",
+      "dateLabel": "11月8日 · 预发布构建",
+      "eventDate": "2026-11-08",
+      "sourcePublishedAt": "2026-11-08T16:15:27Z",
+      "sources": [
+        {
+          "label": "官方发布说明",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12210",
+          "icon": false
+        },
+        {
+          "label": "官方实现与测试",
+          "url": "https://github.com/ggml-org/llama.cpp/pull/31776",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "sveltekit-boundary-fixes",
+      "title": "SvelteKit 2.70.4 修补路径处理与跨域加载边界",
+      "titleId": "sveltekit-boundary-fixes-title",
+      "paragraphs": [
+        {
+          "text": "修复 Windows 预览预渲染页面与数据时的路径穿越、双斜线开头路径导致服务端路由解析加载其他来源代码，以及服务端自请求回退跟随重定向等问题。",
+          "variant": ""
+        },
+        {
+          "text": "维护 SSR 或 Windows 预览流程的项目应检查升级并回归路由与预渲染。公告没有声明这些问题都已被利用，也不能把预览环境问题写成所有线上部署必然受影响。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-05",
+      "dateLabel": "11月5日 · 安全与正确性更新 · 近7日补充",
+      "eventDate": "2026-11-05",
+      "sourcePublishedAt": "2026-11-05T12:28:53Z",
+      "sources": [
+        {
+          "label": "官方发布说明",
+          "url": "https://github.com/sveltejs/kit/releases/tag/%40sveltejs/kit%402.70.4",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "sonicos-exploited-vulnerability",
+      "title": "SonicOS 漏洞已遭利用，应核对设备修补版本",
+      "titleId": "sonicos-exploited-vulnerability-title",
+      "paragraphs": [
+        {
+          "text": "加拿大网络安全中心通告指出，SonicWall 报告 CVE-2026-19868 已被利用，CISA 同日将其纳入已知遭利用漏洞目录；通告列出低于 7.3.4-7013 和 8.2.2-8015 的受影响版本分支。",
+          "variant": ""
+        },
+        {
+          "text": "相关防火墙维护团队应按设备型号和分支核对厂商更新。已有利用不等于所有设备均被入侵，不能只凭版本字符串替代厂商完整适用清单。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-06",
+      "dateLabel": "11月6日 · 安全通告 · 近7日补充",
+      "eventDate": "2026-11-06",
+      "sourcePublishedAt": "2026-11-06",
+      "sources": [
+        {
+          "label": "加拿大网络安全中心通告",
+          "url": "https://www.cyber.gc.ca/en/alerts-advisories/sonicwall-security-advisory-av26-1133",
+          "icon": false
+        },
+        {
+          "label": "厂商公告入口",
+          "url": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0014",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "playwright-bun-runner",
+      "title": "Playwright 1.65 支持 Bun 测试运行器",
+      "titleId": "playwright-bun-runner-title",
+      "paragraphs": [
+        {
+          "text": "可以用 Bun 直接运行测试，增加仅输出失败的报告模式和排他测试锁；TypeScript 类字段初始化现遵循 useDefineForClassFields。",
+          "variant": ""
+        },
+        {
+          "text": "Bun 模式需显式启用，尚不支持文件变化自动重跑、部分 tsconfig 配置和自定义 ESM loader。依赖构造参数属性初始化的 Page Object 字段可能需移入构造函数，升级前应回归测试。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-05",
+      "dateLabel": "11月5日 · 版本更新 · 近7日补充",
+      "eventDate": "2026-11-05",
+      "sourcePublishedAt": "2026-11-05T18:25:45Z",
+      "sources": [
+        {
+          "label": "官方发布说明",
+          "url": "https://github.com/microsoft/playwright/releases/tag/v1.65.0",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "pnpm-per-skill-approval",
+      "title": "pnpm 12.18 把智能体技能授权细化到单项",
+      "titleId": "pnpm-per-skill-approval-title",
+      "paragraphs": [
+        {
+          "text": "同一包提供多个技能时，pnpm approve 可以逐项选择要链接的技能，并记录目标智能体目录；还支持最多三层分类目录中的技能并处理同名冲突。",
+          "variant": ""
+        },
+        {
+          "text": "有助于避免为了一个技能引入整包的全部指令。授权只控制链接范围，不证明技能内容可信；开发者仍需检查来源和指令内容。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-05",
+      "dateLabel": "11月5日 · 版本更新 · 近7日补充",
+      "eventDate": "2026-11-05",
+      "sourcePublishedAt": "2026-11-05T00:56:45Z",
+      "sources": [
+        {
+          "label": "官方发布说明",
+          "url": "https://github.com/pnpm/pnpm/releases/tag/v12.18.0",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "opencode-mcp-worktree",
+      "title": "OpenCode 2.2.6 支持共享 MCP 连接与独立 worktree 运行",
+      "titleId": "opencode-mcp-worktree-title",
+      "paragraphs": [
+        {
+          "text": "可显式启用 MCP 连接池，在相同配置的项目间复用连接；脚本运行支持新建 Git worktree，并修复非交互运行在后台任务尚未结束时提前退出。",
+          "variant": ""
+        },
+        {
+          "text": "可减少重复服务进程并隔离脚本修改。连接池默认关闭；持续运行的开发服务器会让命令一直等待，CI 应设置超时，worktree 参数也不能与续接已有会话混用。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-06",
+      "dateLabel": "11月6日 · 版本更新 · 近7日补充",
+      "eventDate": "2026-11-06",
+      "sourcePublishedAt": "2026-11-06T23:37:20Z",
+      "sources": [
+        {
+          "label": "官方发布说明",
+          "url": "https://github.com/anomalyco/opencode/releases/tag/v2.2.6",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "uv-literal-workspace-paths",
+      "title": "uv 0.13.7 修正工作区路径识别并改进去重审计",
+      "titleId": "uv-literal-workspace-paths-title",
+      "paragraphs": [
+        {
+          "text": "uv init/add 新加入的工作区成员路径按字面值而非通配符解析，避免特殊目录名被误解释；预览中的 uv audit 将同一漏洞的 OSV 别名合并报告。",
+          "variant": ""
+        },
+        {
+          "text": "适合含特殊目录名的 Python 多包工程。审计去重可减少重复项，但仍属预览能力，也不等于漏洞已经修复。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-03",
+      "dateLabel": "11月3日 · 版本更新 · 近7日补充",
+      "eventDate": "2026-11-03",
+      "sourcePublishedAt": "2026-11-03T02:45:04Z",
+      "sources": [
+        {
+          "label": "官方发布说明",
+          "url": "https://github.com/astral-sh/uv/releases/tag/0.13.7",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "ruff-log-fix-diagnostics",
+      "title": "Ruff 0.17.4 改进日志自动修复与不可见字符提示",
+      "titleId": "ruff-log-fix-diagnostics-title",
+      "paragraphs": [
+        {
+          "text": "预览中的 G004 日志格式修复减少行为改变和语法错误风险；诊断修复差异显示更多不可打印字符，并修正带 BOM 文件导致诊断渲染崩溃。",
+          "variant": ""
+        },
+        {
+          "text": "代码审查更容易发现看不见的字符变化。G004 改进属于预览规则，不应宣称默认全面启用；自动修复仍应审查差异并运行测试。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-05",
+      "dateLabel": "11月5日 · 版本更新 · 近7日补充",
+      "eventDate": "2026-11-05",
+      "sourcePublishedAt": "2026-11-05T18:53:24Z",
+      "sources": [
+        {
+          "label": "官方发布说明",
+          "url": "https://github.com/astral-sh/ruff/releases/tag/0.17.4",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "kde-gear-vnc-fixes",
+      "title": "KDE Gear 26.08.3 修复桌面共享与应用崩溃",
+      "titleId": "kde-gear-vnc-fixes-title",
+      "paragraphs": [
+        {
+          "text": "KDE 为 180 多款应用及配套库发布维护版本，修复 Krfb 桌面共享的 VNC 监听启动、Akonadi 遇到未知 tracer 崩溃等问题。",
+          "variant": ""
+        },
+        {
+          "text": "桌面共享用户及发行版打包者可检查更新；实际到达用户取决于发行版打包。这是应用集合的维护发行，与此前报道的 Plasma 开发周报不是同一事件。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-05",
+      "dateLabel": "11月5日 · 维护发行 · 近7日补充",
+      "eventDate": "2026-11-05",
+      "sourcePublishedAt": "2026-11-05",
+      "sources": [
+        {
+          "label": "KDE 官方公告",
+          "url": "https://kde.org/announcements/gear/26.08.3/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "gnome-touch-input-fixes",
+      "title": "GNOME 合入触屏手势与屏幕键盘修复",
+      "titleId": "gnome-touch-input-fixes-title",
+      "paragraphs": [
+        {
+          "text": "本周 GNOME 周报记录 GTK 修复罕见滑动手势误判，并称 Mutter 已合入相关修复，使 GTK 输入框一次点击即可呼出屏幕键盘，不再需要点两次。",
+          "variant": ""
+        },
+        {
+          "text": "有助于改善触屏和移动 Linux 的输入体验。这是已合入的开发进展，具体合入日未核实，也不能宣称所有发行版稳定包已经获得修复。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-07",
+      "dateLabel": "11月7日 · 开发周报 · 近7日补充",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-07",
+      "sources": [
+        {
+          "label": "GNOME 官方周报",
+          "url": "https://thisweek.gnome.org/posts/2026/11/twig-273/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "google-a5x-general-availability",
+      "title": "Google Cloud A5X 实例进入正式可用阶段",
+      "titleId": "google-a5x-general-availability-title",
+      "paragraphs": [
+        {
+          "text": "Google 在10月21日基础设施公告顶部追加说明，基于 NVIDIA Vera Rubin NVL72 平台的 A5X 实例已于11月6日正式可用。",
+          "variant": ""
+        },
+        {
+          "text": "大型训练和推理团队可转入实际部署评估；地区、配额及配套存储网络功能需分别核对。这里只报道更新顶部确认的正式可用进展，不把原文路线图全部当作同步开放。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-06",
+      "dateLabel": "11月6日 · 11月6日公告更新 · 近7日补充",
+      "eventDate": "2026-11-06",
+      "sourcePublishedAt": "2026-10-21",
+      "sources": [
+        {
+          "label": "Google Cloud 官方更新",
+          "url": "https://cloud.google.com/blog/topics/ai-infrastructure/google-cloud-infrastructure-at-nvidia-gtc-berlin-2026",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "flux-klein-blackwell-optimization",
+      "title": "NVIDIA 展示 FLUX 3 Image Klein 的 Blackwell 推理优化",
+      "titleId": "flux-klein-blackwell-optimization-title",
+      "paragraphs": [
+        {
+          "text": "TensorRT LLM VisualGen 教程将编译、NVFP4 量化、融合内核与缓存组合用于 FLUX 3 Image Klein。其单张 B200、2048×2048 测试中，Base 版文生图和图生图相对未编译 BF16 分别最高提速3.46倍和4.45倍。",
+          "variant": ""
+        },
+        {
+          "text": "图像服务开发者可复用配置并同时回归画质。这些是厂商指定硬件、模型和精度条件下的数据，不是任意显卡或工作负载的速度保证。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-06",
+      "dateLabel": "11月6日 · 技术教程 · 近7日补充",
+      "eventDate": "2026-11-06",
+      "sourcePublishedAt": "2026-11-06",
+      "sources": [
+        {
+          "label": "NVIDIA 官方教程",
+          "url": "https://developer.nvidia.com/blog/speed-up-image-generation-with-flux-3-image-klein-on-nvidia-blackwell-gpus/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "chiron-cache-policies",
+      "title": "Chiron 用大模型建议、确定性程序执行缓存策略",
+      "titleId": "chiron-cache-policies-title",
+      "paragraphs": [
+        {
+          "text": "Chiron 在 JuiceFS 上异步判断访问模式：大模型只建议缓存策略，由确定性程序检查并执行。论文在三项多阶段工作流中，相对最佳基线报告完成时间缩短14.3%—41.2%。",
+          "variant": ""
+        },
+        {
+          "text": "为 AI 集群减少 I/O 等待提供可控制的优化方向。实验使用8张 A800、约250毫秒远端 S3 延迟及缩小的数据集，大规模部分为仿真，不能外推至所有生产集群。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-04",
+      "dateLabel": "11月4日 · 研究预印本 · 近7日补充",
+      "eventDate": "2026-11-04",
+      "sourcePublishedAt": "2026-11-04T08:59:30Z",
+      "sources": [
+        {
+          "label": "arXiv 原始论文",
+          "url": "https://arxiv.org/abs/2611.06179v1",
+          "icon": false
+        },
+        {
+          "label": "论文正文与限制",
+          "url": "https://arxiv.org/html/2611.06179v1",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "evocache-browser-model-reuse",
+      "title": "EvoCache 探索浏览器模型包的跨版本无损复用",
+      "titleId": "evocache-browser-model-reuse-title",
+      "paragraphs": [
+        {
+          "text": "EvoCache 利用与浏览历史无关的公共缓存基准包，在浏览器内重建不同发布者提供的同一模型文件。论文在240次端到端实验中，相对完整下载报告流量减少78.9%、页面就绪时间缩短64.2%。",
+          "variant": ""
+        },
+        {
+          "text": "为浏览器本地 AI 减少大模型下载提供方向。目前是特权 Chromium 扩展与 Rust/Wasm 研究原型，不是浏览器内置功能；缓存隐私设计仍依赖资源隔离等条件。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-03",
+      "dateLabel": "11月3日 · 研究预印本 · 近7日补充",
+      "eventDate": "2026-11-03",
+      "sourcePublishedAt": "2026-11-03T10:27:45Z",
+      "sources": [
+        {
+          "label": "arXiv 原始论文",
+          "url": "https://arxiv.org/abs/2611.04638v1",
+          "icon": false
+        },
+        {
+          "label": "论文正文与限制",
+          "url": "https://arxiv.org/html/2611.04638v1",
+          "icon": false
+        }
+      ]
+    }
+  ]
+}
