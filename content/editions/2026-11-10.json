@@ -1,0 +1,441 @@
+{
+  "id": "2026-11-10",
+  "editionDate": "2026-11-10",
+  "status": "published",
+  "title": "L星团快讯 · 2026-11-10",
+  "description": "L星团快讯 · 2026-11-10：15条计算机热点。精选15条：12条11月9—10日发布的新进展，补充3条11月6—7日尚未报道的数据库更新与研究。已对照近7期去重；预发布、研究原型和厂商测试分别注明，来源日期与东八区刊载日分开保留。",
+  "editionLabel": "2026 年 11 月 10 日 · 星期二",
+  "dateBasis": "edition-publication-date",
+  "introduction": [
+    "精选15条：12条11月9—10日发布的新进展，补充3条11月6—7日尚未报道的数据库更新与研究。已对照近7期去重；预发布、研究原型和厂商测试分别注明，来源日期与东八区刊载日分开保留。"
+  ],
+  "overview": [
+    {
+      "id": "ollama-04016-memory-responses",
+      "title": "Ollama 0.40.16 改善本地模型内存并停止默认静默截断",
+      "category": "本地 AI"
+    },
+    {
+      "id": "aws-nitro-sandboxes",
+      "title": "AWS Nitro Sandboxes 为 EKS、ECS 工作负载提供独立虚拟机边界",
+      "category": "云基础设施"
+    },
+    {
+      "id": "amd-halo-project-zenith",
+      "title": "AMD Ryzen AI Halo 开始预装 Project Zenith 开发环境",
+      "category": "本地 AI 与硬件"
+    },
+    {
+      "id": "foscar-low-bit-attention",
+      "title": "FOSCAR 用仿射折叠减少低比特 KV 缓存的解码开销",
+      "category": "计算机研究"
+    }
+  ],
+  "items": [
+    {
+      "id": "chrome-xml-exploited-fix",
+      "title": "Chrome 修补已遭利用的 XML 内存漏洞",
+      "titleId": "chrome-xml-exploited-fix-title",
+      "paragraphs": [
+        {
+          "text": "Chrome 桌面稳定版更新至 Windows、Mac 的157.0.8103.50/.51和Linux的157.0.8103.50，共修复9项安全问题。Google明确确认XML释放后使用漏洞CVE-2026-125350已有在野利用。",
+          "variant": ""
+        },
+        {
+          "text": "应优先检查浏览器更新并重启完成升级。本次属于11月9日新增安全修补；更新分批推送，已有利用不等于所有用户均受攻击，也不能将9项问题都称为零日漏洞。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-09",
+      "dateLabel": "11月9日 · 安全更新",
+      "eventDate": "2026-11-09",
+      "sourcePublishedAt": "2026-11-09",
+      "sources": [
+        {
+          "label": "Chrome 官方发布说明",
+          "url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_018223192.html",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "ollama-04016-memory-responses",
+      "title": "Ollama 0.40.16 改善本地模型内存并停止默认静默截断",
+      "titleId": "ollama-04016-memory-responses-title",
+      "paragraphs": [
+        {
+          "text": "正式版加入 Ripple Preview 65B 编码模型支持；官方称 Qwen3.8 Flash Next 在 Apple silicon 上约少用27 GiB内存。OpenAI兼容 Responses 接口现遵循 truncation 参数，不再默认静默截断输入，并加入 Windows ARM 的 CUDA 13.5 支持。",
+          "variant": ""
+        },
+        {
+          "text": "本地 AI 用户可检查内存占用与长输入行为，兼容客户端需回归原先依赖自动截断的请求。27 GiB是官方对特定模型平台的描述，不是所有模型的节省保证；Ripple 模型本身仍标为 Preview。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-09",
+      "dateLabel": "11月9日 · 正式版本 · 东八区11月10日发布",
+      "eventDate": "2026-11-09",
+      "sourcePublishedAt": "2026-11-09T18:21:19Z",
+      "sources": [
+        {
+          "label": "官方发布说明",
+          "url": "https://github.com/ollama/ollama/releases/tag/v0.40.16",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "claude-code-oauth-permission-fixes",
+      "title": "Claude Code 2.1.321 修复 OAuth 重定向与文件权限检查",
+      "titleId": "claude-code-oauth-permission-fixes-title",
+      "paragraphs": [
+        {
+          "text": "修复 MCP OAuth 请求在服务器重定向时把刷新令牌等秘密发往其他主机的问题，并修正部分 Bash 沙箱提示、写入目录判断，以及 cp／mv 目标文件的拒绝规则与保护提示。",
+          "variant": ""
+        },
+        {
+          "text": "使用 MCP 登录或让智能体操作文件的团队应优先核对更新并回归权限规则。发布说明未给出利用情况，不能据此断言已有数据泄露，也不代表升级后无需审核工具权限。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-09",
+      "dateLabel": "11月9日 · 版本更新 · 东八区11月10日发布",
+      "eventDate": "2026-11-09",
+      "sourcePublishedAt": "2026-11-09T19:22:30Z",
+      "sources": [
+        {
+          "label": "官方发布说明",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.321",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "llama-openai-speech",
+      "title": "llama.cpp 预发布构建加入 OpenAI 兼容语音生成接口",
+      "titleId": "llama-openai-speech-title",
+      "paragraphs": [
+        {
+          "text": "b12238 为服务端增加 /v1/audio/speech，并加入端到端测试；同时统一 WAV 与 PCM 的16位采样取整方式，调整语音表单字段的类型处理。",
+          "variant": ""
+        },
+        {
+          "text": "便于已有 OpenAI 风格语音客户端接入本地语音模型。它仍是预发布构建，接口兼容不等于支持所有语音参数或任意模型，部署前需用实际客户端和模型验证。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-10",
+      "dateLabel": "11月10日 · 预发布构建",
+      "eventDate": "2026-11-10",
+      "sourcePublishedAt": "2026-11-10T00:23:16Z",
+      "sources": [
+        {
+          "label": "官方发布说明",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12238",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "aws-nitro-sandboxes",
+      "title": "AWS Nitro Sandboxes 为 EKS、ECS 工作负载提供独立虚拟机边界",
+      "titleId": "aws-nitro-sandboxes-title",
+      "paragraphs": [
+        {
+          "text": "AWS 宣布 Nitro Sandboxes 可用，允许 EKS pod、ECS task 或轻量虚拟机在同一 EC2 实例内获得独立硬件隔离环境，并支持密码学证明。服务在全球商业区域的大多数 Nitro 实例上提供，不另收功能费。",
+          "variant": ""
+        },
+        {
+          "text": "适合隔离不可信代码和多租户智能体任务，但需核对实例支持并显式启用。隔离不等于独占物理核心；机密模式还须配置 KMS 验证策略，不能把默认隔离当成完整机密计算保证。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-09",
+      "dateLabel": "11月9日 · 正式可用",
+      "eventDate": "2026-11-09",
+      "sourcePublishedAt": "2026-11-09",
+      "sources": [
+        {
+          "label": "AWS 官方公告",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/nitro-sandboxes-eks-ecs-ec2/",
+          "icon": false
+        },
+        {
+          "label": "EKS 官方隔离与证明文档",
+          "url": "https://docs.aws.amazon.com/eks/latest/userguide/sandboxing.html",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "amd-halo-project-zenith",
+      "title": "AMD Ryzen AI Halo 开始预装 Project Zenith 开发环境",
+      "titleId": "amd-halo-project-zenith-title",
+      "paragraphs": [
+        {
+          "text": "AMD 宣布搭载 Ryzen AI Max+ PRO 495 的新款 Ryzen AI Halo 即日起提供预装 Project Zenith 的 Windows 11 环境，包含 VS Code、Git、Python、Node.js 和 WSL 等工具，并结合 AMD 本地 AI 开发指南。",
+          "variant": ""
+        },
+        {
+          "text": "可减少本地模型开发的初始配置。已有 Windows 版 Halo 可用微软 Windows Developer Config 配置相同环境；其他 Ryzen AI Max 设备仍是即将支持，不能写成已全面上线。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-09",
+      "dateLabel": "11月9日 · 产品与软件环境更新",
+      "eventDate": "2026-11-09",
+      "sourcePublishedAt": "2026-11-09",
+      "sources": [
+        {
+          "label": "AMD 官方公告",
+          "url": "https://www.amd.com/en/blogs/2026/project-zenith-comes-to-amd-ryzen-ai-halo-ready-to-code.html",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "github-actions-secret-logs",
+      "title": "GitHub 密钥扫描开始覆盖 Actions 日志，预览期不发通知",
+      "titleId": "github-actions-secret-logs-title",
+      "paragraphs": [
+        {
+          "text": "新的公共预览会在工作流运行完成后扫描日志中的受支持提供商密钥模式，将结果汇入仓库密钥警报；即使日志随后删除，警报仍会保留。",
+          "variant": ""
+        },
+        {
+          "text": "企业可补上CI日志泄密排查，但需 Enterprise Cloud 配套 Secret Protection 或 Advanced Security 并主动启用。旧日志不回扫，通用、自定义、AI检测模式及已被遮蔽密钥不在覆盖范围，预览期须自行查看警报列表。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-09",
+      "dateLabel": "11月9日 · 公共预览",
+      "eventDate": "2026-11-09",
+      "sourcePublishedAt": "2026-11-09",
+      "sources": [
+        {
+          "label": "GitHub 官方公告",
+          "url": "https://github.blog/changelog/2026-11-09-secret-scanning-detects-secrets-in-github-actions-workflow-logs/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "copilot-fable-52",
+      "title": "Copilot 开放 Claude Fable 5.2，企业需核对数据保留政策",
+      "titleId": "copilot-fable-52-title",
+      "paragraphs": [
+        {
+          "text": "GitHub 宣布 Claude Fable 5.2 在 Copilot 正式可用，面向 Pro+、Max、Business 与 Enterprise 用户，覆盖编辑器、CLI、编码智能体等入口，并逐步推送。",
+          "variant": ""
+        },
+        {
+          "text": "团队可以评估复杂代码任务，但 Business 与 Enterprise 管理员需启用默认关闭的模型策略。该模型默认保留提示与输出用于安全分类器，符合条件的企业才可获得零数据保留访问；不能把它当作所有席位默认可用。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-09",
+      "dateLabel": "11月9日 · 正式可用公告",
+      "eventDate": "2026-11-09",
+      "sourcePublishedAt": "2026-11-09",
+      "sources": [
+        {
+          "label": "GitHub 官方公告",
+          "url": "https://github.blog/changelog/2026-11-09-claude-fable-5-2-in-github-copilot/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "ubuntu-freerdp-security-refresh",
+      "title": "Ubuntu 更新 FreeRDP，修复远程桌面客户端安全问题",
+      "titleId": "ubuntu-freerdp-security-refresh-title",
+      "paragraphs": [
+        {
+          "text": "Ubuntu为24.04、26.04和26.10的freerdp3系列提供基于上游3.32.2的新修补包。公告涉及可能导致信息泄露、崩溃或任意代码执行的多项问题，同时带入额外缺陷修复。",
+          "variant": ""
+        },
+        {
+          "text": "通过FreeRDP连接远程Windows桌面的开发机可优先核对客户端包。此次采用新上游版本，升级后应回归连接、显示和输入行为；公告未声称存在在野利用。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-09",
+      "dateLabel": "11月9日 · 安全更新",
+      "eventDate": "2026-11-09",
+      "sourcePublishedAt": "2026-11-09",
+      "sources": [
+        {
+          "label": "Ubuntu 官方安全公告",
+          "url": "https://ubuntu.com/security/notices/USN-9007-1",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "ubuntu-libnfs-zdr-fix",
+      "title": "Ubuntu 修补 libnfs 网络解码越界写入",
+      "titleId": "ubuntu-libnfs-zdr-fix-title",
+      "paragraphs": [
+        {
+          "text": "USN-9008-1指出，libnfs在ZDR解码时未正确限制最大尺寸，可被构造网络流量触发越界写入，导致崩溃或可能执行任意代码；Ubuntu 22.04、24.04、26.04和26.10获得修补。",
+          "variant": ""
+        },
+        {
+          "text": "使用libnfs的NFS客户端应用应核对发行版修补包并更新。问题在客户端库，不能泛化为Linux内核NFS服务均受影响；公告没有宣称已遭在野利用。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-09",
+      "dateLabel": "11月9日 · 安全更新",
+      "eventDate": "2026-11-09",
+      "sourcePublishedAt": "2026-11-09",
+      "sources": [
+        {
+          "label": "Ubuntu 官方安全公告",
+          "url": "https://ubuntu.com/security/notices/USN-9008-1",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "ubuntu-java-ca-resync",
+      "title": "Ubuntu 旧 LTS 修正 Java 证书库与系统信任列表不同步",
+      "titleId": "ubuntu-java-ca-resync-title",
+      "paragraphs": [
+        {
+          "text": "USN-9001-2为Ubuntu 18.04和20.04补齐ca-certificates与ca-certificates-java修复：从系统证书包移除的CA此前可能仍留在Java JKS证书库中，更新会修正集成并重新同步。",
+          "variant": ""
+        },
+        {
+          "text": "仍维护旧LTS上的Java服务时，应检查Java信任库是否随系统更新同步。公告列出的这两条旧发行版修补包需要Ubuntu Pro，不能写成所有旧版本用户默认获得更新。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-09",
+      "dateLabel": "11月9日 · 证书信任修复",
+      "eventDate": "2026-11-09",
+      "sourcePublishedAt": "2026-11-09",
+      "sources": [
+        {
+          "label": "Ubuntu 官方更新公告",
+          "url": "https://ubuntu.com/security/notices/USN-9001-2",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "agensgraph-gql-rls",
+      "title": "AgensGraph 2.18 扩展 GQL 语法并强化行级权限",
+      "titleId": "agensgraph-gql-rls-title",
+      "paragraphs": [
+        {
+          "text": "AgensGraph团队发布2.18.6.1，基于PostgreSQL 18.6加入首批ISO GQL子句、图子查询与原生类型属性列；Cypher写入开始执行行级安全策略，固定长度匹配也补充相应权限检查。",
+          "variant": ""
+        },
+        {
+          "text": "适合需要在同一事务混用SQL和图查询的知识图谱项目评估。新增的是部分GQL支持，不代表完全符合标准；向量检索需另装pgvector，厂商特定图数据上的毫秒级性能不能泛化。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-07",
+      "dateLabel": "11月7日 · 数据库更新 · 近7日补充",
+      "eventDate": "2026-11-07",
+      "sourcePublishedAt": "2026-11-07",
+      "sources": [
+        {
+          "label": "开发团队官方发布公告",
+          "url": "https://www.postgresql.org/about/news/agensgraph-218-released-graph-database-on-postgresql-18-with-expanded-iso-gql-support-3437/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "holoscan-gravity-control",
+      "title": "Holoscan 5 教程展示低抖动机器人重力补偿回路",
+      "titleId": "holoscan-gravity-control-title",
+      "paragraphs": [
+        {
+          "text": "NVIDIA 用 Seeed reBot Arm 与 Pinocchio 展示由读取关节状态、逆动力学计算和下发力矩组成的控制图，并用 Nsight Systems 检查延迟。将控制线程固定到 CPU 核后，其厂商测试中的 p99.99 延迟明显下降。",
+          "variant": ""
+        },
+        {
+          "text": "为边缘机器人控制提供可复现起点。测试延迟不含电机命令传输，绑核仍不能排除全部中断；这是重力补偿基础教程，不是完整控制器或硬实时保证。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-09",
+      "dateLabel": "11月9日 · 技术教程",
+      "eventDate": "2026-11-09",
+      "sourcePublishedAt": "2026-11-09",
+      "sources": [
+        {
+          "label": "NVIDIA 官方教程",
+          "url": "https://developer.nvidia.com/blog/make-a-robot-arm-feel-weightless-with-nvidia-holoscan-5/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "foscar-low-bit-attention",
+      "title": "FOSCAR 用仿射折叠减少低比特 KV 缓存的解码开销",
+      "titleId": "foscar-low-bit-attention-title",
+      "paragraphs": [
+        {
+          "text": "研究预印本 FOSCAR 把量化缩放与偏移移出逐元素重建路径，为 H100、B200 设计专用注意力内核。作者在 H100 上报告，INT2 内核相对 FlashInfer BF16 的几何平均加速为3.36倍，并接入 SGLang 评估服务吞吐。",
+          "variant": ""
+        },
+        {
+          "text": "为长上下文推理减少缓存读取与重建成本。服务实验使用单卡 Qwen3-8B、10万输入和1000输出 token、95%或99%前缀命中；结果不适用于所有模型、显卡或低命中负载，也不表示量化没有精度代价。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-06",
+      "dateLabel": "11月6日 · 研究预印本 · 近7日补充",
+      "eventDate": "2026-11-06",
+      "sourcePublishedAt": "2026-11-06T17:00:25Z",
+      "sources": [
+        {
+          "label": "arXiv 原始论文",
+          "url": "https://arxiv.org/abs/2611.09722v1",
+          "icon": false
+        },
+        {
+          "label": "论文实验正文",
+          "url": "https://arxiv.org/html/2611.09722v1",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "nebula-distributed-pic",
+      "title": "Nebula 将位置无关 KV 缓存扩展到分布式推理",
+      "titleId": "nebula-distributed-pic-title",
+      "paragraphs": [
+        {
+          "text": "Nebula 预印本把可跨前缀复用的文本片段缓存纳入集群管理，通过远端复用、动态缓存分配和并行预填充减少首 token 等待。作者在四种模型与四类 RAG、智能体工作负载中，相对 Local-PIC + Dynamo 报告中位首 token 延迟平均下降61.4%。",
+          "variant": ""
+        },
+        {
+          "text": "适合研究重复文档和工具内容的跨节点复用。实验为两台服务器共8张 H20-3e，7个预填充worker和1个解码worker；每请求仅输出1个token，不能把结果当作完整长回答吞吐提升。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-06",
+      "dateLabel": "11月6日 · 研究预印本 · 近7日补充",
+      "eventDate": "2026-11-06",
+      "sourcePublishedAt": "2026-11-06T13:54:49Z",
+      "sources": [
+        {
+          "label": "arXiv 原始论文",
+          "url": "https://arxiv.org/abs/2611.09474v1",
+          "icon": false
+        },
+        {
+          "label": "论文实验正文",
+          "url": "https://arxiv.org/html/2611.09474v1",
+          "icon": false
+        }
+      ]
+    }
+  ]
+}
