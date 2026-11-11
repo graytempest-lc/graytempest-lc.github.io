@@ -1,0 +1,486 @@
+{
+  "id": "2026-11-11",
+  "editionDate": "2026-11-11",
+  "status": "published",
+  "title": "L星团快讯 · 2026-11-11",
+  "description": "L星团快讯 · 2026-11-11：15条计算机热点。精选15条11月10日公开的新进展，覆盖本地 AI、开发工具、操作系统、安全、计算研究与边缘硬件。已对照近7期及历史来源去重；预发布、未来政策和研究边界分别注明，来源日期与东八区刊载日分开保留。",
+  "editionLabel": "2026 年 11 月 11 日 · 星期三",
+  "dateBasis": "edition-publication-date",
+  "introduction": [
+    "精选15条11月10日公开的新进展，覆盖本地 AI、开发工具、操作系统、安全、计算研究与边缘硬件。已对照近7期及历史来源去重；预发布、未来政策和研究边界分别注明，来源日期与东八区刊载日分开保留。"
+  ],
+  "overview": [
+    {
+      "id": "ollama-04017",
+      "title": "Ollama 预发布版加入 MLX 并发与 Vulkan 集显内存修复",
+      "category": "本地 AI"
+    },
+    {
+      "id": "opencode-227",
+      "title": "OpenCode 2.2.7 加入 Copilot 自动选模并调整 SDK",
+      "category": "开发工具"
+    },
+    {
+      "id": "alphaproof-code-signal-verification",
+      "title": "AlphaProof Code 将部分 Signal 安全性质验证到机器码",
+      "category": "计算机研究"
+    },
+    {
+      "id": "intel-altera-sensor-bridge",
+      "title": "Intel 与 Altera 合作开发可编程实时传感器桥",
+      "category": "边缘硬件"
+    }
+  ],
+  "items": [
+    {
+      "id": "git-six-security-fixes",
+      "title": "Git 2.56.1 修补递归克隆等六项安全漏洞",
+      "titleId": "git-six-security-fixes-title",
+      "paragraphs": [
+        {
+          "text": "Git 发布 2.56.1 及多个维护分支补丁，修复恶意仓库递归克隆可能执行代码、引用处理异常写入，以及合并、二进制补丁和导入中的内存或文件访问问题。",
+          "variant": ""
+        },
+        {
+          "text": "应检查本机、自动化环境及内嵌 Git 的应用。GitHub 云端已部署修复，但部分客户端更新仍在协调；只避开不可信仓库不能代替安装补丁。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-10",
+      "dateLabel": "11月10日 · 安全更新",
+      "eventDate": "2026-11-10",
+      "sourcePublishedAt": "2026-11-10",
+      "sources": [
+        {
+          "label": "GitHub 官方安全公告",
+          "url": "https://github.blog/open-source/git/git-security-vulnerabilities-announced-7/",
+          "icon": false
+        },
+        {
+          "label": "Git 2.56.1 原始发布说明",
+          "url": "https://github.com/git/git/blob/v2.56.1/Documentation/RelNotes/2.56.1.adoc",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "ollama-04017",
+      "title": "Ollama 预发布版加入 MLX 并发与 Vulkan 集显内存修复",
+      "titleId": "ollama-04017-title",
+      "paragraphs": [
+        {
+          "text": "0.40.17-rc0 让 MLX 后端并发处理生成请求，并让 Vulkan 集显使用 mmap 加载，缓解共享内存重复占用导致的加载失败。",
+          "variant": ""
+        },
+        {
+          "text": "仍是预发布版，并发默认维持单请求。提高并发会增加内存需求，且多请求期间暂停推测解码；更快开始输出不等于全部请求更快结束。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-10",
+      "dateLabel": "11月10日 · 预发布 · 东八区11月11日发布",
+      "eventDate": "2026-11-10",
+      "sourcePublishedAt": "2026-11-10T22:25:00Z",
+      "sources": [
+        {
+          "label": "Ollama 发布说明",
+          "url": "https://github.com/ollama/ollama/releases/tag/v0.40.17-rc0",
+          "icon": false
+        },
+        {
+          "label": "MLX 并发说明与限制",
+          "url": "https://github.com/ollama/ollama/pull/19197",
+          "icon": false
+        },
+        {
+          "label": "Vulkan 集显修复说明",
+          "url": "https://github.com/ollama/ollama/pull/19640",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "windows-november-ntlm-fixes",
+      "title": "Windows 11 更新启动 NTLM 默认签名协商",
+      "titleId": "windows-november-ntlm-fixes-title",
+      "paragraphs": [
+        {
+          "text": "微软为 Windows 11 25H2、26H2 及24H2企业/教育版发布 KB5132061，修复 USB 音频、打印和部分远程桌面问题，并让非匿名 NTLM 客户端默认提出消息签名协商。",
+          "variant": ""
+        },
+        {
+          "text": "首阶段服务器仍接受未签名连接，不能视为已强制阻断所有中继攻击。PowerShell 也收紧签名编码检查，旧脚本可能需另存为有效 UTF-8 BOM 后重新签名。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-10",
+      "dateLabel": "11月10日 · 安全与质量更新",
+      "eventDate": "2026-11-10",
+      "sourcePublishedAt": "2026-11-10",
+      "sources": [
+        {
+          "label": "微软 KB5132061 发布说明",
+          "url": "https://support.microsoft.com/en-gb/servicing/os/windows-11/2026/11/kb5132061-windows-11-24h2-25h2-26h2-security-update",
+          "icon": false
+        },
+        {
+          "label": "NTLM 分阶段签名说明",
+          "url": "https://support.microsoft.com/en-us/servicing/os/windows/docs/2026/11/kb5135557-ntlm-signing-security-improvements",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "firefox-160-metal-security",
+      "title": "Firefox 160 在 macOS 改用 Metal 渲染 WebGL",
+      "titleId": "firefox-160-metal-security-title",
+      "paragraphs": [
+        {
+          "text": "Firefox 160 正式发布，macOS 的 WebGL 渲染转用 Metal，加入40种语言的本机语音识别，并修复内网 NTLM、Kerberos 登录时短暂卡死等问题。",
+          "variant": ""
+        },
+        {
+          "text": "新版同时修补高危内存与沙箱问题，值得安排更新。Metal 的性能收益因网站而异；迷你置顶窗口仍是早期功能，不能把发布说明理解为所有页面都提速。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-10",
+      "dateLabel": "11月10日 · 稳定版发布",
+      "eventDate": "2026-11-10",
+      "sourcePublishedAt": "2026-11-10",
+      "sources": [
+        {
+          "label": "Firefox 160 官方发布说明",
+          "url": "https://www.firefox.com/en-US/firefox/160.0/releasenotes/",
+          "icon": false
+        },
+        {
+          "label": "Mozilla 安全公告 MFSA 2026-125",
+          "url": "https://www.mozilla.org/en-US/security/advisories/mfsa2026-125/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "llama-tool-json",
+      "title": "llama.cpp 修复工具参数中的控制字符转义",
+      "titleId": "llama-tool-json-title",
+      "paragraphs": [
+        {
+          "text": "b12253 修正 Python 风格工具调用转为 JSON 时原样复制换行等控制字符的问题。此前返回的参数可能不是合法 JSON，重放对话历史也会失败。",
+          "variant": ""
+        },
+        {
+          "text": "这是预发布构建中的解析修复，作者在 LFM2.5 路径发现问题。依赖工具调用的本地应用可重点回归多行字符串与历史重放，不宜理解为推理性能升级。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-10",
+      "dateLabel": "11月10日 · 预发布 · 东八区11月11日发布",
+      "eventDate": "2026-11-10",
+      "sourcePublishedAt": "2026-11-10T18:36:18Z",
+      "sources": [
+        {
+          "label": "llama.cpp 发布说明",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12253",
+          "icon": false
+        },
+        {
+          "label": "参数解析修复与复现",
+          "url": "https://github.com/ggml-org/llama.cpp/pull/31937",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "opencode-227",
+      "title": "OpenCode 2.2.7 加入 Copilot 自动选模并调整 SDK",
+      "titleId": "opencode-227-title",
+      "paragraphs": [
+        {
+          "text": "2.2.7 可为具备 Auto 模型池的 Copilot 账户自动选模，路由失败则退回账户默认模型；同时修复多个客户端同时刷新 MCP 登录时意外退出的问题。",
+          "variant": ""
+        },
+        {
+          "text": "直接导入 @opencode/ai 的代码需将图像读取改为 images[0]；SDK 部分接口不再等插件加载完毕，插件提供的条目应在更新事件后重新读取。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-10",
+      "dateLabel": "11月10日 · 正式发布，含破坏性变更",
+      "eventDate": "2026-11-10",
+      "sourcePublishedAt": "2026-11-10T10:37:15Z",
+      "sources": [
+        {
+          "label": "OpenCode 完整发布说明",
+          "url": "https://github.com/anomalyco/opencode/releases/tag/v2.2.7",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "openai-python349",
+      "title": "OpenAI Python SDK 补齐异步工具字段并修正录音编码",
+      "titleId": "openai-python349-title",
+      "paragraphs": [
+        {
+          "text": "3.49.0 为会话和持久化智能体的函数工具补齐异步设置类型，并修复麦克风录音写成 WAV 时的样本编码，避免浮点与有符号 8 位音频被按错误格式解释。",
+          "variant": ""
+        },
+        {
+          "text": "返回的函数工具配置以 async_ 表示异步字段；序列化时注意保留“未设置”和 false 的区别。本次是 SDK 类型与音频处理修复，不能等同于新增模型能力。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-10",
+      "dateLabel": "11月10日 · 正式发布 · 近7日补充",
+      "eventDate": "2026-11-10",
+      "sourcePublishedAt": "2026-11-10T06:47:04Z",
+      "sources": [
+        {
+          "label": "Python SDK 发布说明",
+          "url": "https://github.com/openai/openai-python/releases/tag/v3.49.0",
+          "icon": false
+        },
+        {
+          "label": "异步字段兼容说明",
+          "url": "https://github.com/openai/openai-python/pull/4264",
+          "icon": false
+        },
+        {
+          "label": "录音编码修复",
+          "url": "https://github.com/openai/openai-python/pull/3900",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "copilot-gemini-carbon",
+      "title": "GitHub Copilot 开放 Gemini 4 Carbon，按量计费",
+      "titleId": "copilot-gemini-carbon-title",
+      "paragraphs": [
+        {
+          "text": "GitHub 宣布 Gemini 4 Carbon 在 Copilot 正式可用，面向 Pro+、Max、Business 和 Enterprise 账户，覆盖编辑器、CLI、编码智能体及移动端等入口。",
+          "variant": ""
+        },
+        {
+          "text": "功能正逐步放量，未必立即出现在每个账户；费用按供应商目录价计入按量账单。企业管理员应核对模型策略，默认启用新模型的设置可能自动开放它。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-10",
+      "dateLabel": "11月10日 · 正式可用，逐步推出",
+      "eventDate": "2026-11-10",
+      "sourcePublishedAt": "2026-11-10",
+      "sources": [
+        {
+          "label": "GitHub 官方公告",
+          "url": "https://github.blog/changelog/2026-11-10-gemini-4-carbon-in-github-copilot/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "cpp-msbuild",
+      "title": "Copilot CLI 的 C++ 语言服务自动配置 MSBuild 项目",
+      "titleId": "cpp-msbuild-title",
+      "paragraphs": [
+        {
+          "text": "微软 C++ 语言服务把编译命令提取器直接打包，在打开 MSBuild 项目时自动生成编译数据库，省去智能体先发现并执行配置技能的步骤。",
+          "variant": ""
+        },
+        {
+          "text": "语言服务仍处预览阶段，需有效 Copilot 订阅并接受许可。自动配置针对 MSBuild；CMake 和自定义构建仍需提供编译数据库或使用相应技能。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-10",
+      "dateLabel": "11月10日 · 预览产品更新",
+      "eventDate": "2026-11-10",
+      "sourcePublishedAt": "2026-11-10",
+      "sources": [
+        {
+          "label": "GitHub 官方更新说明",
+          "url": "https://github.blog/changelog/2026-11-10-c-language-server-now-auto-configures-msbuild-builds/",
+          "icon": false
+        },
+        {
+          "label": "微软语言服务仓库",
+          "url": "https://github.com/microsoft/cpp-language-server",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "dependabot-inactive-repositories",
+      "title": "Dependabot 将暂停一年未活动仓库的告警",
+      "titleId": "dependabot-inactive-repositories-title",
+      "paragraphs": [
+        {
+          "text": "GitHub 宣布从12月8日起，关闭大多数一年无活动仓库的 Dependabot 告警，现有告警归档而非删除。推送任何分支或标签，或在设置中重新开启，即可恢复并重新计时。",
+          "variant": ""
+        },
+        {
+          "text": "长期不改代码但仍运行的项目也需关注。强制安全配置等情形可豁免；政策覆盖 GitHub 云端各计划，不适用于 Enterprise Server，目前尚未生效。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-10",
+      "dateLabel": "11月10日 · 政策预告；12月8日起实施",
+      "eventDate": "2026-12-08",
+      "sourcePublishedAt": "2026-11-10",
+      "sources": [
+        {
+          "label": "GitHub 官方变更公告",
+          "url": "https://github.blog/changelog/2026-11-10-dependabot-alerts-will-pause-on-inactive-repositories/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "alphaproof-code-signal-verification",
+      "title": "AlphaProof Code 将部分 Signal 安全性质验证到机器码",
+      "titleId": "alphaproof-code-signal-verification-title",
+      "paragraphs": [
+        {
+          "text": "DeepMind 发布 AlphaProof Code 研究：在指定 AArch64 构建上，为 libsignal 握手与棘轮流程生成 Lean 证明，把部分协议安全性质连接到编译后的机器码，并开放验证产物。",
+          "variant": ""
+        },
+        {
+          "text": "证明仍依赖人工审核规格及底层密码原语假设；范围不是完整 Signal 应用，不覆盖群聊和全部后量子安全性，不能解读为整个产品绝对安全。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-10",
+      "dateLabel": "11月10日 · 研究论文与验证产物发布",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-10",
+      "sources": [
+        {
+          "label": "DeepMind 官方研究公告",
+          "url": "https://deepmind.google/blog/introducing-alphaproof-code/",
+          "icon": false
+        },
+        {
+          "label": "原始论文完整正文与证明链接",
+          "url": "https://google-deepmind.github.io/code-verification/",
+          "icon": false
+        },
+        {
+          "label": "原始论文 PDF",
+          "url": "https://deepmind.google/documents/36/Formal_Verification_of_Signal_4.pdf",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "windows-23h2-enterprise-end",
+      "title": "Windows 11 23H2 企业与教育版收到最后月度更新",
+      "titleId": "windows-23h2-enterprise-end-title",
+      "paragraphs": [
+        {
+          "text": "微软随11月补丁确认，Windows 11 23H2 企业与教育版已到服务终点。KB5131087、版本号22631.7711，是这两个版本最后一轮月度安全更新。",
+          "variant": ""
+        },
+        {
+          "text": "仍运行23H2的单位设备应安排迁移到受支持版本，不能只装本月补丁便继续长期使用。这里是特定版本停止维护，不代表 Windows 11 整体停更或电脑马上无法启动。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-10",
+      "dateLabel": "11月10日 · 最终月度更新；版本结束服务",
+      "eventDate": "2026-11-10",
+      "sourcePublishedAt": "2026-11-10",
+      "sources": [
+        {
+          "label": "微软 KB5131087 与结束服务说明",
+          "url": "https://support.microsoft.com/en-us/servicing/os/windows-11/2026/11/kb5131087-windows-11-23h2-security-update",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "nvke-nvkr-public-preview",
+      "title": "NVIDIA 开源 Kubernetes 集群引擎与构建配方预览",
+      "titleId": "nvke-nvkr-public-preview-title",
+      "paragraphs": [
+        {
+          "text": "NVIDIA 发布 NVKE 与 NVKR 公共预览，分别负责 GPU 基础设施上的 Kubernetes 集群管理，以及固定版本软件的可复现镜像构建。两者采用 Apache 2.0 许可，可分开使用。",
+          "variant": ""
+        },
+        {
+          "text": "目前不建议生产使用：管理 API 默认无认证、无 TLS，且缺少授权隔离和管理面备份恢复流程。评估应隔离网络、配置认证与 TLS，并仅向可信集群管理员开放。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-10",
+      "dateLabel": "11月10日 · 公共预览；不建议生产使用",
+      "eventDate": "2026-11-10",
+      "sourcePublishedAt": "2026-11-10",
+      "sources": [
+        {
+          "label": "NVIDIA 官方介绍与教程",
+          "url": "https://developer.nvidia.com/blog/manage-kubernetes-clusters-for-gpu-infrastructure-with-nvidia-kubernetes-engine/",
+          "icon": false
+        },
+        {
+          "label": "官方预览状态与已知限制",
+          "url": "https://github.com/dsx-ai-factory/nvke/blob/main/docs/overview/preview-status.md",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "agent-substrate-stateful-sandboxes",
+      "title": "Agent Substrate 用快照复用 Kubernetes 智能体沙箱",
+      "titleId": "agent-substrate-stateful-sandboxes-title",
+      "paragraphs": [
+        {
+          "text": "NVIDIA 介绍已进入 CNCF Sandbox 的 Agent Substrate：把有状态智能体映射到较小的常驻 Pod 池，空闲时保存内存和文件系统，下次调用再恢复，以减少每轮创建 Pod 的成本。",
+          "variant": ""
+        },
+        {
+          "text": "适合研究编码智能体和强化学习环境的高频启停。GPU 设备接入与暂停恢复仍在开发或设计中，所述方案还受GPU型号、驱动匹配限制，尚非通用GPU迁移能力。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-10",
+      "dateLabel": "11月10日 · 开源项目技术说明；部分GPU能力仍在开发",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-10",
+      "sources": [
+        {
+          "label": "NVIDIA 官方技术正文",
+          "url": "https://developer.nvidia.com/blog/agent-substrate-advancing-kubernetes-for-agents-at-scale/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "intel-altera-sensor-bridge",
+      "title": "Intel 与 Altera 合作开发可编程实时传感器桥",
+      "titleId": "intel-altera-sensor-bridge-title",
+      "paragraphs": [
+        {
+          "text": "Intel 与 Altera 宣布联合开发模块化传感器桥参考方案，结合 Intel 计算和软件与 Altera FPGA，处理边缘设备多种传感器的连接、数据传输及实时控制需求。",
+          "variant": ""
+        },
+        {
+          "text": "面向机器人等需要确定性时序的系统，计划通过 Open Edge Platform 和 Altera SDK 提供能力。公告属于合作开发计划，未给出上市日期、量产规格或独立性能结果。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-10",
+      "dateLabel": "11月10日 · 合作开发计划；非量产产品发布",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-10",
+      "sources": [
+        {
+          "label": "Intel 官方合作公告",
+          "url": "https://www.intel.com/content/www/us/en/newsroom/news/artificial-intelligence/altera-sensor-integration-edge-physical-ai.html",
+          "icon": false
+        }
+      ]
+    }
+  ]
+}
