@@ -1,0 +1,451 @@
+{
+  "id": "2026-11-12",
+  "editionDate": "2026-11-12",
+  "status": "published",
+  "title": "L星团快讯 · 2026-11-12",
+  "description": "15条精选：Qwen、ERNIE与本地智能体，开发工具更新，以及云端与桌面安全修补。",
+  "editionLabel": "2026 年 11 月 12 日 · 星期四",
+  "dateBasis": "edition-publication-date",
+  "introduction": [
+    "本期精选15条：10条11月11日进展，另补充5条11月10日未报道的重要更新。日期按来源标明，不将预览、研究或厂商测试当作正式产品与独立实测。"
+  ],
+  "overview": [
+    {
+      "id": "qwen4-max-preview",
+      "title": "Qwen4-Max 限时预览",
+      "category": "人工智能"
+    },
+    {
+      "id": "botpsy-local-agent",
+      "title": "0.8B 本地工具调用",
+      "category": "本地 AI"
+    },
+    {
+      "id": "aws-emulator-local",
+      "title": "AWS 本机模拟测试",
+      "category": "开发工具"
+    },
+    {
+      "id": "aws-mcp-policy-fix",
+      "title": "MCP 与虚拟化安全修补",
+      "category": "网络安全"
+    }
+  ],
+  "items": [
+    {
+      "id": "qwen4-max-preview",
+      "title": "Qwen4-Max 开放限时预览",
+      "titleId": "qwen4-max-preview-title",
+      "paragraphs": [
+        {
+          "text": "QwenCloud 上线 qwen4-max-preview，提供百万 token 上下文、图像与视频理解、工具调用和结构化输出。目前仅通过 Token Plan 提供，不支持按量付费；预览期为北京时间11月11日10:00至25日24:00，随后退役。",
+          "variant": ""
+        },
+        {
+          "text": "适合测试多模态编码与智能体流程，不宜绑定为长期生产依赖。max_tokens 与 max_completion_tokens 都包含思考和最终答案，沿用旧预算可能截断回答。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-11",
+      "dateLabel": "11月11日 · 预览",
+      "eventDate": "2026-11-11",
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "QwenCloud 模型文档",
+          "url": "https://docs.qwencloud.com/developer-guides/getting-started/latest-model",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "ernie-55-flash-preview",
+      "title": "ERNIE 5.5 Flash Preview 上线 API，权重仍待发布",
+      "titleId": "ernie-55-flash-preview-title",
+      "paragraphs": [
+        {
+          "text": "百度发布基于 Flash Base 的后训练中间版本，总参数280B、激活参数14B，支持百万 token 上下文，API 已上千帆；中文公告承诺11月25日前开放权重。",
+          "variant": ""
+        },
+        {
+          "text": "可先评估编程与工具调用，但不能当作已经能下载的本地模型。训练仍在继续，演示和评测均为厂商报告，并非独立验证。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-11",
+      "dateLabel": "11月11日 · 预览",
+      "eventDate": "2026-11-11",
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "百度中文公告",
+          "url": "https://ernie.baidu.com/zh/release/ernie-5-5-flash-preview/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "botpsy-local-agent",
+      "title": "BotPsy 以 0.8B 参数探索本地工具调用",
+      "titleId": "botpsy-local-agent-title",
+      "paragraphs": [
+        {
+          "text": "Tether AI Research 发布基于 Qwen3.5-0.8B 的 BotPsy，提供 Apache 2.0 权重、BF16、8-bit 及 llama.cpp 用 GGUF，面向低至中等难度的工具调用任务。",
+          "variant": ""
+        },
+        {
+          "text": "适合手机或个人电脑上的小型智能体原型，但仍需应用提供并执行工具。训练测试以英语为主；官方提示不用于高风险自动决策，其提示注入测试仍有31%不安全率。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-11",
+      "dateLabel": "11月11日 · 开放权重",
+      "eventDate": "2026-11-11",
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "QVAC 官方介绍",
+          "url": "https://qvac.tether.io/blog/on-device-ai-agent-botpsy",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "gemini-decisions-api",
+      "title": "Gemini Decisions API 用候选项评分处理分类与路由",
+      "titleId": "gemini-decisions-api-title",
+      "paragraphs": [
+        {
+          "text": "Google 推出 Gemini Decision 1，可针对共享多模态输入，一次评估最多1,000个是非、选择或量表评分问题，返回概率而非长文本。官方价格为每百万输入 token 0.10美元，输出不计费。",
+          "variant": ""
+        },
+        {
+          "text": "适合工具选择、模型路由和内容筛选，低置信度结果仍应交给后续模型或人工。官方150–250毫秒延迟不是任意输入的保证；Google Cloud 接入尚待上线。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-11",
+      "dateLabel": "11月11日 · API 发布",
+      "eventDate": "2026-11-11",
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Google 公告",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+          "icon": false
+        },
+        {
+          "label": "Java SDK 2.2.0",
+          "url": "https://github.com/googleapis/java-genai/releases/tag/v2.2.0",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "aws-emulator-local",
+      "title": "AWS Emulator 把云服务交互测试搬到本机",
+      "titleId": "aws-emulator-local-title",
+      "paragraphs": [
+        {
+          "text": "AWS 发布本地模拟器，现有 CLI、SDK 和编码智能体可连接本机 HTTPS 端点，离线测试 S3、DynamoDB 等交互。Linux 提供安装包；Windows、macOS 需按文档自行构建 Docker 镜像。",
+          "variant": ""
+        },
+        {
+          "text": "不产生云服务调用费用，但不是完整 AWS 替身：未实现操作返回501，应查看逐服务一致性测试结果，部署前仍需云端验证。默认匿名遥测可以关闭。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-11",
+      "dateLabel": "11月11日 · 已发布",
+      "eventDate": "2026-11-11",
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "AWS 完整公告",
+          "url": "https://aws.amazon.com/blogs/aws/test-your-applications-against-aws-locally-with-aws-emulator/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "zed-1281-agent-workflows",
+      "title": "Zed 1.28.1 修正长智能体会话与远程工作区问题",
+      "titleId": "zed-1281-agent-workflows-title",
+      "paragraphs": [
+        {
+          "text": "Zed 改善 Agent Client Protocol 兼容，修复长轮次中自动压缩只执行一次、外部智能体漏加载 MCP 配置，以及远程项目技能写到本机等问题；同时加入可选后台 Git fetch。",
+          "variant": ""
+        },
+        {
+          "text": "长期运行编码智能体或使用 SSH 工作区的开发者值得回归升级。自动 fetch 默认关闭，默认间隔60秒，只获取远端状态，不会自动合并修改。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-11",
+      "dateLabel": "11月11日 · 稳定版",
+      "eventDate": "2026-11-11",
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Zed 1.28.1 发布说明",
+          "url": "https://github.com/zed-industries/zed/releases/tag/v1.28.1",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "github-personal-issue-fields",
+      "title": "GitHub 个人仓库也能使用 Issue 类型与自定义字段",
+      "titleId": "github-personal-issue-fields-title",
+      "paragraphs": [
+        {
+          "text": "GitHub 将 Issue types 和 fields 扩展至个人账号仓库，可定义 Bug、Task、Feature 等类型，以及优先级、工作量和日期字段，并通过 Projects、REST、GraphQL 与 webhook 管理。",
+          "variant": ""
+        },
+        {
+          "text": "个人维护者无需迁入组织就能统一多个仓库的跟踪结构。每个账号最多25种类型和25个字段；这些功能不会替代任务分类与验收。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-11",
+      "dateLabel": "11月11日 · 正式可用",
+      "eventDate": "2026-11-11",
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "GitHub 官方公告",
+          "url": "https://github.blog/changelog/2026-11-11-issue-types-and-fields-are-available-for-personal-accounts/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "llamacpp-b12284-ocp-fp8",
+      "title": "llama.cpp 预发布构建加入 CUDA OCP FP8 支持",
+      "titleId": "llamacpp-b12284-ocp-fp8-title",
+      "paragraphs": [
+        {
+          "text": "llama.cpp b12284 为 CUDA 后端加入 OCP FP8 支持，补充转换、矩阵运算及相关回退路径，扩展本地低精度推理选择。",
+          "variant": ""
+        },
+        {
+          "text": "NVIDIA GPU 用户可针对匹配模型与 CUDA 环境评估兼容性。特定 Blackwell 显卡实验不能推导为所有显卡或模型都加速，仍需检查精度与真实工作负载。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-11",
+      "dateLabel": "11月11日 · 预发布",
+      "eventDate": "2026-11-11",
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "b12284 发布说明",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12284",
+          "icon": false
+        },
+        {
+          "label": "实现 PR",
+          "url": "https://github.com/ggml-org/llama.cpp/pull/28413",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "depi-agent-ci-supply-chain",
+      "title": "Depi 披露从 GitHub Issue 通向发布流水线的攻击链",
+      "titleId": "depi-agent-ci-supply-chain-title",
+      "paragraphs": [
+        {
+          "text": "Depi 研究者展示，处理外部 Issue 的智能体工作流，可经提示注入、沙箱边界问题和 Actions 缓存污染触及 npm 发布权限。研究者称已向 OpenAI 报告，核心问题已经修复。",
+          "variant": ""
+        },
+        {
+          "text": "维护智能体 CI 应检查不可信文本任务与发布任务之间的权限、缓存和凭据隔离。这是研究者披露，不是 Codex 安装包已被恶意投毒的证据；研究者表示普通用户没有需安装的专项补丁。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-11",
+      "dateLabel": "11月11日 · 安全研究",
+      "eventDate": "2026-11-11",
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "研究者原始披露",
+          "url": "https://depi.security/blog/20261111-backdooring-codex/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "nvidia-aicr-ai-inventory",
+      "title": "NVIDIA AICR 加入 AI 运行负载清单",
+      "titleId": "nvidia-aicr-ai-inventory-title",
+      "paragraphs": [
+        {
+          "text": "NVIDIA AICR 1.2.0 将 k8s-aibom 1.6.2 纳入指定 GPU Kubernetes 配置，记录模型、推理框架与容器，并标注属性来自声明、推断还是验证，帮助追踪依赖漂移。",
+          "variant": ""
+        },
+        {
+          "text": "适合多模型集群，不能把清单当作模型成功运行的证明。示例针对 GKE、H100 与 Container-Optimized OS；命名空间选择只控制输出，控制器仍读取集群范围工作负载规格，应先审核访问范围。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-11",
+      "dateLabel": "11月11日 · 开源工具集成",
+      "eventDate": "2026-11-11",
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "NVIDIA 技术原文",
+          "url": "https://developer.nvidia.com/blog/validating-gpu-platforms-with-runtime-ai-inventory-via-the-nvidia-dsx-ai-factory/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "aws-mcp-policy-fix",
+      "title": "AWS API MCP Server 修复自定义拒绝规则绕过",
+      "titleId": "aws-mcp-policy-fix-title",
+      "paragraphs": [
+        {
+          "text": "AWS 公告 CVE-2026-125271：0.2.13至1.5.0错误规范化含连续大写字母的操作名，可能让自定义 denyList、elicitList 未生效。1.5.1已修复，官方没有升级以外的替代修复。",
+          "variant": ""
+        },
+        {
+          "text": "让本地 AI 管理 AWS 的用户应更新服务端并以 IAM 限制真实权限。问题限于受影响自定义策略的本地服务；远程托管服务及 READ_OPERATIONS_ONLY、REQUIRE_MUTATION_CONSENT 设置不受影响。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-10",
+      "dateLabel": "11月10日 · 安全更新 · 近7日补充",
+      "eventDate": "2026-11-10",
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "AWS 安全公告",
+          "url": "https://aws.amazon.com/security/security-bulletins/2026-176-aws/",
+          "icon": false
+        },
+        {
+          "label": "项目安全通告",
+          "url": "https://github.com/awslabs/mcp/security/advisories/GHSA-4wq9-grf3-qg2p",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "xen-orchestra-auth-bypass",
+      "title": "Xen Orchestra 严重认证绕过已遭利用",
+      "titleId": "xen-orchestra-auth-bypass-title",
+      "paragraphs": [
+        {
+          "text": "Vates 确认 Xen Orchestra 认证绕过正在被利用，攻击者可能取得管理员权限并控制受管 XCP-ng 主机。稳定分支6.9.2、最新分支6.10.1已修复。",
+          "variant": ""
+        },
+        {
+          "text": "自建虚拟化环境应优先更新并隔离管理入口。未发现所列攻击指标不代表安全；确认入侵后官方建议重装并轮换相关凭据，补丁不能清除既有后门。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-10",
+      "dateLabel": "11月10日 · 已修补、在野利用 · 近7日补充",
+      "eventDate": "2026-11-10",
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Vates VSA-2026-062",
+          "url": "https://docs.vates.tech/security-advisories/advisories/2026/vates-sa-2026-062/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "zoom-windows-security",
+      "title": "Zoom Workplace Windows 版修补严重提权问题",
+      "titleId": "zoom-windows-security-title",
+      "paragraphs": [
+        {
+          "text": "Zoom ZSB-26023 修复 Windows 客户端输入验证问题 CVE-2026-108186；7.1.0至低于7.1.8受影响，官方 CVSS 3.1 评级9.6。",
+          "variant": ""
+        },
+        {
+          "text": "Windows 用户应检查并升级至7.1.8或更高版本。公告描述网络触发提权，但评分向量明确需要用户交互；未说明在野利用，也不能泛化至 macOS、Linux。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-10",
+      "dateLabel": "11月10日 · 安全更新 · 近7日补充",
+      "eventDate": "2026-11-10",
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "Zoom 官方安全公告",
+          "url": "https://www.zoom.com/en/trust/security-bulletin/zsb-26023/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "nvidia-snapshot-gpu",
+      "title": "NVIDIA Snapshot 复用初始化后的 GPU 进程状态",
+      "titleId": "nvidia-snapshot-gpu-title",
+      "paragraphs": [
+        {
+          "text": "NVIDIA Snapshot 为 Kubernetes GPU 工作负载提供检查点恢复，复用 CPU 与 GPU 内存状态，避免扩容时重新加载权重、编译内核与捕获 CUDA 图；项目提供 vLLM、SGLang 和 TensorRT LLM 示例。",
+          "variant": ""
+        },
+        {
+          "text": "适合评估推理扩容和故障恢复。厂商在 B200 与 VAST NFS 上报告3.6至42.7秒恢复，不含基础设施准备、镜像拉取和容器运行时设置；恢复要求相同 GPU 型号与驱动，不代表消费显卡收益，也不保留正在处理的会话。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-10",
+      "dateLabel": "11月10日 · 开源工具、厂商测试 · 近7日补充",
+      "eventDate": "2026-11-10",
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "NVIDIA 原文与测试表",
+          "url": "https://developer.nvidia.com/blog/start-and-restore-gpu-workloads-in-seconds-with-nvidia-snapshot/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "pan2-world-model",
+      "title": "PAN 2 开放世界模型，视频模拟仍会遗漏动作",
+      "titleId": "pan2-world-model-title",
+      "paragraphs": [
+        {
+          "text": "IFM 于11月10日公布 PAN 2 世界模型发布成果，11月11日大学新闻继续介绍：先由语言模型规划事件，再由视频模型模拟动作后果，并提供权重及预训练、SFT 代码。奖励学习等流程不包含在所提供训练代码中。",
+          "variant": ""
+        },
+        {
+          "text": "可用于机器人与智能体的“先模拟再执行”研究，但逼真画面不等于物理正确。官方模型卡称约三分之二多步模拟计划至少遗漏一步，长时间一致性仍是难题；研究结果不是安全的现实控制器。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-10",
+      "dateLabel": "11月10日 · 研究发布 · 近7日补充",
+      "eventDate": "2026-11-10",
+      "sourcePublishedAt": null,
+      "sources": [
+        {
+          "label": "IFM 公告",
+          "url": "https://ifm.ai/pan2/press-release/",
+          "icon": false
+        },
+        {
+          "label": "官方模型卡",
+          "url": "https://huggingface.co/IFM/PAN2",
+          "icon": false
+        },
+        {
+          "label": "官方代码",
+          "url": "https://github.com/ifm-ai/PAN2",
+          "icon": false
+        }
+      ]
+    }
+  ]
+}
