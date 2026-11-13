@@ -1,0 +1,446 @@
+{
+  "id": "2026-11-13",
+  "editionDate": "2026-11-13",
+  "status": "published",
+  "title": "计算机热点日报 · 2026年11月13日",
+  "description": "14条精选：PostgreSQL安全维护、Gemini 4 Hydrogen、本地语音与稀疏模型、编码工具和系统更新。",
+  "editionLabel": "2026年11月13日 · 精选14条",
+  "dateBasis": "edition-publication-date",
+  "introduction": [
+    "本期精选14条，已对比近7期去重；未为达到15条加入低价值消息。以11月12日新进展为主，11月11日补充及11月13日模型发布均逐条标注。",
+    "版本发布、预览、退役预告和研究能力分别标明；厂商测试不等于本站实测。刊载日按东八区，事件日与来源日期独立记录。"
+  ],
+  "overview": [
+    {
+      "id": "postgresql-nov-security",
+      "title": "数据库升级不止换程序",
+      "category": "基础设施"
+    },
+    {
+      "id": "gemini4-hydrogen",
+      "title": "Gemini新模型与调用成本",
+      "category": "人工智能"
+    },
+    {
+      "id": "edge0-local-moe",
+      "title": "本地模型的硬件与许可",
+      "category": "本地 AI"
+    },
+    {
+      "id": "claude-code-21323",
+      "title": "编码代理权限边界修补",
+      "category": "开发工具"
+    }
+  ],
+  "items": [
+    {
+      "id": "postgresql-nov-security",
+      "title": "PostgreSQL 安全更新后，还需检查扩展、索引和备份",
+      "titleId": "postgresql-nov-security-title",
+      "paragraphs": [
+        {
+          "text": "PostgreSQL 发布18.7、17.12、16.16、15.20、14.25，修补52项安全漏洞和超过140项缺陷；14.25是14分支最后一次更新。",
+          "variant": ""
+        },
+        {
+          "text": "自建应用与知识库不能只替换程序：复合类型防护要求重编C扩展，部分还需修改源码；受影响索引需重建，使用增量备份者应重新做完整备份。18.x小版本升级本身不要求导出重建全部数据库。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-12",
+      "dateLabel": "11月12日 · 已发布；19 RC2仍为候选版",
+      "eventDate": "2026-11-12",
+      "sourcePublishedAt": "2026-11-12",
+      "sources": [
+        {
+          "label": "官方公告",
+          "url": "https://www.postgresql.org/about/news/postgresql-187-1712-1616-1520-1425-and-19-rc-2-released-3442/",
+          "icon": false
+        },
+        {
+          "label": "18.7迁移与修复说明",
+          "url": "https://www.postgresql.org/docs/release/18.7/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "gemini4-hydrogen",
+      "title": "Gemini 4 Hydrogen 面向日常编码与智能体任务发布",
+      "titleId": "gemini4-hydrogen-title",
+      "paragraphs": [
+        {
+          "text": "Google发布Gemini 4 Hydrogen，提供百万token上下文与四档思考预算；API每百万输入、输出token分别为1.50、7.50美元。",
+          "variant": ""
+        },
+        {
+          "text": "开发者可按任务复杂度平衡延迟与费用，与Carbon分工。Google公布的提速、安全与基准结果属于厂商报告，不是本站独立实测；不同入口仍有账号和套餐限制。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-12",
+      "dateLabel": "11月12日 · 正式发布、逐步上线",
+      "eventDate": "2026-11-12",
+      "sourcePublishedAt": "2026-11-12",
+      "sources": [
+        {
+          "label": "Google官方公告",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "sov-transcribe1",
+      "title": "Salesforce 开放可按指令调整格式的语音转写模型",
+      "titleId": "sov-transcribe1-title",
+      "paragraphs": [
+        {
+          "text": "SOV-Transcribe-1面向非流式语音转写，总参数26.6B、激活4.6B，可用提示控制逐字稿、数字格式与专业词汇。",
+          "variant": ""
+        },
+        {
+          "text": "可自托管处理音频，但已列出的七种语言不含中文。原生框架支持仍在整合，目前需指定vLLM插件或Transformers自定义代码；厂商96GB显卡测速不能代表普通显卡表现。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-12",
+      "dateLabel": "11月12日 · Apache 2.0开放权重",
+      "eventDate": "2026-11-12",
+      "sourcePublishedAt": "2026-11-12",
+      "sources": [
+        {
+          "label": "团队公告",
+          "url": "https://huggingface.co/blog/salesforce-sovereign-intelligence/sov-transcribe-1",
+          "icon": false
+        },
+        {
+          "label": "官方模型卡",
+          "url": "https://huggingface.co/salesforce-sovereign-intelligence/SOV-Transcribe-1",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "edge0-local-moe",
+      "title": "Edge0 发布大型本地稀疏模型，商用边界需单独检查",
+      "titleId": "edge0-local-moe-title",
+      "paragraphs": [
+        {
+          "text": "Edge0官方README将145B/120B latent-MoE模型发布日列为11月13日，提供Q3_K、NVFP4格式及本地兼容API，基于Qwen3.8-Flash-Next。",
+          "variant": ""
+        },
+        {
+          "text": "当前发布面向Linux/Windows、NVIDIA GPU及CUDA 13；macOS性能表不等于macOS版本已发布。模型服务和独立商业编程助手需额外书面许可，不能把框架Apache 2.0当成模型无限制商用。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-13",
+      "dateLabel": "11月13日 · 模型与引擎发布",
+      "eventDate": "2026-11-13",
+      "sourcePublishedAt": "2026-11-13",
+      "sources": [
+        {
+          "label": "官方README",
+          "url": "https://github.com/Edge0-AI/Edge0/blob/main/README.md",
+          "icon": false
+        },
+        {
+          "label": "145B模型卡",
+          "url": "https://huggingface.co/Edge0/Edge0-145B-q3k",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "claude-code-21323",
+      "title": "Claude Code 2.1.323 加入实验性 Code Mode，并修正权限边界",
+      "titleId": "claude-code-21323-title",
+      "paragraphs": [
+        {
+          "text": "新增让 Claude 编写 JavaScript 调用工具的实验性 Code Mode，同时修复沙箱可能在会话中关闭、部分包装命令漏过 deny/ask 规则等问题。",
+          "variant": ""
+        },
+        {
+          "text": "依赖编码代理运行本地工具的用户应回归自己的权限规则。新版还改变了未知模型的默认上下文估计；第三方小窗口模型需要检查相关配置，不能把新模式当作额外安全隔离。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-12",
+      "dateLabel": "11月12日 · 已发布；Code Mode 需主动启用",
+      "eventDate": "2026-11-12",
+      "sourcePublishedAt": "2026-11-12T22:12:13Z",
+      "sources": [
+        {
+          "label": "官方 v2.1.323 发布说明",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.323",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "uv-0138-variants",
+      "title": "uv 0.13.8 改进硬件变体选择与并发环境复用",
+      "titleId": "uv-0138-variants-title",
+      "paragraphs": [
+        {
+          "text": "新版避免多个 uvx 或 uv run --with 同时请求相同环境时重复构建，并把 Unix 明文凭据文件限制为仅所有者访问。预览功能扩展到 CPU 微架构、AArch64 版本及 Google TPU 检测。",
+          "variant": ""
+        },
+        {
+          "text": "本地 AI 的 Python 环境可减少重复准备，并评估更匹配硬件的 wheel；硬件变体选择仍属预览，不代表所有包都有优化构建。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-12",
+      "dateLabel": "11月12日 · 已发布；wheel variants 仍为预览",
+      "eventDate": "2026-11-12",
+      "sourcePublishedAt": "2026-11-12T17:03:07Z",
+      "sources": [
+        {
+          "label": "uv 官方发布说明",
+          "url": "https://github.com/astral-sh/uv/releases/tag/0.13.8",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "nodejs-nov-security",
+      "title": "Node.js 修补 HTTP/2、TLS 与权限模型问题",
+      "titleId": "nodejs-nov-security-title",
+      "paragraphs": [
+        {
+          "text": "Node.js 22.23.5、24.22.3、26.13.1已发布，修复16项漏洞，涉及HTTP/2崩溃、内存泄漏、TLS认证边界、代理凭据进入错误日志及文件权限模型。",
+          "variant": ""
+        },
+        {
+          "text": "运行Node后端、本地AI网关或工具服务时，应更新对应维护分支并回归连接中断、文件响应和mTLS。各漏洞的触发条件不同，不能概括为所有Node应用都能被远程接管。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-11",
+      "dateLabel": "11月11日 · 已发布 · 近7日补充",
+      "eventDate": "2026-11-11",
+      "sourcePublishedAt": "2026-11-11",
+      "sources": [
+        {
+          "label": "Node.js官方安全公告",
+          "url": "https://nodejs.org/en/blog/vulnerability/november-2026-security-releases",
+          "icon": false
+        },
+        {
+          "label": "官方公告完整源码",
+          "url": "https://github.com/nodejs/nodejs.org/blob/main/apps/site/pages/en/blog/vulnerability/november-2026-security-releases.md",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "ubuntu-glibc-security",
+      "title": "Ubuntu 更新 glibc，修补加载器与 DNS 安全边界",
+      "titleId": "ubuntu-glibc-security-title",
+      "paragraphs": [
+        {
+          "text": "USN-9065-1覆盖Ubuntu 22.04、24.04、26.04 LTS和26.10，修复文件编码处理、DNS、动态加载器及gettext路径问题，部分条件下可导致代码执行或本地提权。",
+          "variant": ""
+        },
+        {
+          "text": "本地推理主机应更新系统运行库，而非只升级Python或npm依赖。24.04的修补版libc6为2.39-0ubuntu8.12，22.04为2.35-0ubuntu3.18；公告未声称在野利用。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-12",
+      "dateLabel": "11月12日 · 安全更新",
+      "eventDate": "2026-11-12",
+      "sourcePublishedAt": "2026-11-12",
+      "sources": [
+        {
+          "label": "Ubuntu官方公告",
+          "url": "https://ubuntu.com/security/notices/USN-9065-1",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "mcp-gateway-registry-security",
+      "title": "MCP Gateway Registry 升级后仍需清理旧授权和地址",
+      "titleId": "mcp-gateway-registry-security-title",
+      "paragraphs": [
+        {
+          "text": "AWS披露MCP Gateway Registry提权和SSRF问题。前者影响1.0.9–1.24.7，早在6月27日的1.25.0修复；后者影响1.0.3–1.34.0，需要至少1.35.0。",
+          "variant": ""
+        },
+        {
+          "text": "集中管理AI工具的用户应审查已有分组授权、上游服务器地址与日志：升级不会撤销旧管理员映射或修正旧地址。此产品不同于昨日已报的AWS API MCP Server；1.35.0的实际发布日期未由公告明确。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-11",
+      "dateLabel": "11月11日 · 安全披露 · 近7日补充",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-11",
+      "sources": [
+        {
+          "label": "AWS提权公告",
+          "url": "https://aws.amazon.com/security/security-bulletins/2026-179-aws/",
+          "icon": false
+        },
+        {
+          "label": "AWS SSRF公告",
+          "url": "https://aws.amazon.com/security/security-bulletins/2026-180-aws/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "ubuntu-hwe-kernel-security",
+      "title": "Ubuntu 22.04 HWE 内核修补后需检查 GPU 模块",
+      "titleId": "ubuntu-hwe-kernel-security-title",
+      "paragraphs": [
+        {
+          "text": "USN-9066-1将Ubuntu 22.04的linux-hwe-6.8更新至6.8.0-149.149~22.04.1，覆盖内存、网络与驱动安全修补，并处理特定AMD SEV-SNP和Arm内存保护问题。",
+          "variant": ""
+        },
+        {
+          "text": "工作站和虚拟化开发环境应核对实际内核包，更新后重启。本次ABI变化要求重编、安装第三方内核模块，GPU驱动兼容性应纳入维护检查；并非新的上游Linux大版本。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-12",
+      "dateLabel": "11月12日 · 安全更新",
+      "eventDate": "2026-11-12",
+      "sourcePublishedAt": "2026-11-12",
+      "sources": [
+        {
+          "label": "Ubuntu官方公告",
+          "url": "https://ubuntu.com/security/notices/USN-9066-1",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "github-arm32-retirement",
+      "title": "GitHub Actions 预告停止托管环境中的 ARM32 执行",
+      "titleId": "github-arm32-retirement-title",
+      "paragraphs": [
+        {
+          "text": "GitHub 宣布托管 runner 将于12月8日前停止 Windows、Linux 的 ARM32 作业执行支持，包括原生 AArch32 用户空间执行；原因是迁移后的 Node 24 不支持 ARM32。",
+          "variant": ""
+        },
+        {
+          "text": "维护32位 ARM 软件的开发者应检查 CI 架构与执行方式，提前验证替代测试路径。这不是 ARM64 runner 或全部 ARM 软件支持一并退役。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-12",
+      "dateLabel": "11月12日 · 退役预告；12月8日前结束支持",
+      "eventDate": "2026-12-08",
+      "sourcePublishedAt": "2026-11-12",
+      "sources": [
+        {
+          "label": "GitHub 官方退役公告",
+          "url": "https://github.blog/changelog/2026-11-12-actions-for-arm32-linux-windows-retirement/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "github-cloudflare-tokens",
+      "title": "GitHub 密钥扫描新增 Cloudflare Access 服务令牌检测",
+      "titleId": "github-cloudflare-tokens-title",
+      "paragraphs": [
+        {
+          "text": "GitHub secret scanning 新增 cloudflare_access_service_token 检测，扩展仓库中可识别的机器访问凭据类型。",
+          "variant": ""
+        },
+        {
+          "text": "使用 Cloudflare Access 保护开发服务或本地 AI 接口的维护者，可检查仓库扫描配置与新告警；发现泄漏仍需吊销或轮换，扫描不等于令牌已经失效。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-12",
+      "dateLabel": "11月12日 · 功能已上线",
+      "eventDate": "2026-11-12",
+      "sourcePublishedAt": "2026-11-12",
+      "sources": [
+        {
+          "label": "GitHub 官方公告",
+          "url": "https://github.blog/changelog/2026-11-12-secret-scanning-adds-a-detector-for-cloudflare/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "ci-proto-timeseries",
+      "title": "ci-proto 开放长历史时间序列预测",
+      "titleId": "ci-proto-timeseries-title",
+      "paragraphs": [
+        {
+          "text": "Continuous Intelligence推出ci-proto，可在CPU/GPU本地做多变量预测，输出九个分位数，支持超过两百万步历史。",
+          "variant": ""
+        },
+        {
+          "text": "可用于负载、需求预测原型，但长上下文演示使用模拟停电数据，排名属团队报告。许可允许研究和商用，对外产品与再分发另有公开署名和一次通知要求，不是标准Apache 2.0。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-12",
+      "dateLabel": "11月12日 · 代码与权重发布",
+      "eventDate": "2026-11-12",
+      "sourcePublishedAt": "2026-11-12",
+      "sources": [
+        {
+          "label": "官方日期目录",
+          "url": "https://www.continuousintelligence.co.uk/news/",
+          "icon": false
+        },
+        {
+          "label": "产品说明",
+          "url": "https://www.continuousintelligence.co.uk/products/",
+          "icon": false
+        },
+        {
+          "label": "官方代码",
+          "url": "https://github.com/continuousintelligence/ci/blob/main/README.md",
+          "icon": false
+        },
+        {
+          "label": "许可证",
+          "url": "https://github.com/continuousintelligence/ci/blob/main/LICENCE",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "praxis1-open-weights",
+      "title": "Runway Praxis-1 正式开放权重与微调代码",
+      "titleId": "praxis1-open-weights-title",
+      "paragraphs": [
+        {
+          "text": "Runway将27B MoE世界动作模型Praxis-1的权重、推理和微调代码以Apache 2.0开放，支持联合预测视频与机器人动作，并提供LeRobot接入和LoRA。",
+          "variant": ""
+        },
+        {
+          "text": "机器人研究者可针对自己的相机与硬件适配。9月只是最初介绍，本次才是开放发布；厂商限定评测中的成功率不能视为真实设备安全保证。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-11",
+      "dateLabel": "11月11日 · 已发布 · 近7日补充",
+      "eventDate": "2026-11-11",
+      "sourcePublishedAt": "2026-11-11",
+      "sources": [
+        {
+          "label": "Runway正式发布公告",
+          "url": "https://runway.com/news/company-news/praxis-1-is-now-available",
+          "icon": false
+        },
+        {
+          "label": "官方代码",
+          "url": "https://github.com/runwayml/praxis-1-oss",
+          "icon": false
+        }
+      ]
+    }
+  ]
+}
