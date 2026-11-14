@@ -1,0 +1,442 @@
+{
+  "id": "2026-11-14",
+  "editionDate": "2026-11-14",
+  "status": "published",
+  "title": "计算机热点日报 · 2026年11月14日",
+  "description": "15条精选：llama.cpp 1.0、本地语音与模型安全研究、Rust与开发工具、系统维护及AI扫描。",
+  "editionLabel": "2026年11月14日 · 精选15条",
+  "dateBasis": "edition-publication-date",
+  "introduction": [
+    "本期精选15条：5条11月13日新进展，另补充10条近7天内尚未报道的更新与研究，已与近7期及对话去重。",
+    "正式发布、退役预告、预览和研究分别标明。日期依原始来源；厂商测试不等于本站独立实测，刊载日按东八区。"
+  ],
+  "overview": [
+    {
+      "id": "llamacpp-100",
+      "title": "本地推理库的兼容承诺",
+      "category": "本地 AI"
+    },
+    {
+      "id": "rust-1100",
+      "title": "Rust与依赖管理升级",
+      "category": "开发工具"
+    },
+    {
+      "id": "ubuntu-apache-9090",
+      "title": "Apache服务安全维护",
+      "category": "网络安全"
+    },
+    {
+      "id": "tng-moe-experts",
+      "title": "可组合专家的研究边界",
+      "category": "AI研究"
+    }
+  ],
+  "items": [
+    {
+      "id": "llamacpp-100",
+      "title": "llama.cpp / ggml 进入1.0：本地推理库明确兼容边界",
+      "titleId": "llamacpp-100-title",
+      "paragraphs": [
+        {
+          "text": "两个项目启用语义版本管理，公开 C API/ABI 的不兼容变更用主版本号表示。",
+          "variant": ""
+        },
+        {
+          "text": "嵌入本地推理库的开发者可更明确地管理依赖；本次也删除部分弃用接口，旧集成仍需迁移。版本号不代表推理提速，不重复计算此前构建已有的功能。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-13",
+      "dateLabel": "11月13日 · 正式发布",
+      "eventDate": "2026-11-13",
+      "sourcePublishedAt": "2026-11-13",
+      "sources": [
+        {
+          "label": "官方团队原文",
+          "url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1",
+          "icon": false
+        },
+        {
+          "label": "官方版本或模型资料",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/v1.0.0",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "pnpm-1221-offline",
+      "title": "pnpm 12.21 扩展离线依赖准备并稳定 peer 选择",
+      "titleId": "pnpm-1221-offline-title",
+      "paragraphs": [
+        {
+          "text": "pnpm store add 可为锁文件中的 tarball 和带 integrity 的 Git 依赖预备离线内容，并修复重复安装改变 peer 依赖选择、v13 锁文件及部署问题。",
+          "variant": ""
+        },
+        {
+          "text": "隔离环境重建项目更可控，但 Git 依赖仍须满足锁文件记录条件，不是所有远程依赖自动离线可用。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-13",
+      "dateLabel": "11月13日 · 正式发布",
+      "eventDate": "2026-11-13",
+      "sourcePublishedAt": "2026-11-13",
+      "sources": [
+        {
+          "label": "官方发布说明",
+          "url": "https://github.com/pnpm/pnpm/releases/tag/v12.21.0",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "copilot-dec-retirement",
+      "title": "Copilot 预告 12月14日退役六款旧模型",
+      "titleId": "copilot-dec-retirement-title",
+      "paragraphs": [
+        {
+          "text": "GitHub 将于12月14日移除 Claude Fable 5、Haiku 4.5、Gemini 3.8 Flash、Gemini 4 Argon、Grok 4.6 和 Kimi K3。",
+          "variant": ""
+        },
+        {
+          "text": "固定模型的工作流应提前测试替代选项；个人年度订阅的 Haiku 4.5 有例外，Kimi K3 的建议替代仍待公布。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-13",
+      "dateLabel": "11月13日 · 退役预告",
+      "eventDate": "2026-12-14",
+      "sourcePublishedAt": "2026-11-13",
+      "sources": [
+        {
+          "label": "官方发布说明",
+          "url": "https://github.blog/changelog/2026-11-13-upcoming-deprecation-of-selected-github-copilot-models-in-december/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "decider-13-locate",
+      "title": "Perplexity Decider 1.3 增加原文片段定位",
+      "titleId": "decider-13-locate-title",
+      "paragraphs": [
+        {
+          "text": "Decider 及 Flash 版本开放权重，新增 locate，可按描述返回文本片段和字符位置，并与分类、评分共用一次请求。",
+          "variant": ""
+        },
+        {
+          "text": "个人项目可尝试文档字段提取与请求路由；概率阈值仍须用自己的标注样本校准，模型别名更新后应重新验证，厂商评测不能替代业务测试。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-12",
+      "dateLabel": "11月12日 · 已发布 · 近7日补充",
+      "eventDate": "2026-11-12",
+      "sourcePublishedAt": "2026-11-12",
+      "sources": [
+        {
+          "label": "官方团队原文",
+          "url": "https://www.perplexity.ai/en-GB/hub/blog/perplexity-decider",
+          "icon": false
+        },
+        {
+          "label": "官方版本或模型资料",
+          "url": "https://docs.perplexity.ai/docs/resources/changelog",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "granite-llmon-preview",
+      "title": "Granite LLMON 预览让模型区分指令与外来数据",
+      "titleId": "granite-llmon-preview-title",
+      "paragraphs": [
+        {
+          "text": "IBM 发布 Granite 4.1 的3B/8B LLMON模型，以专用标记表达指令、数据及约束关系，支持本地 RAG 和工具调用的抗提示注入实验。",
+          "variant": ""
+        },
+        {
+          "text": "这些边界是学习到的行为，不是强制隔离；官方不建议生产使用。静态基准尚未覆盖自适应多轮攻击，不能据此宣称解决提示注入。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-12",
+      "dateLabel": "11月12日 · 实验预览 · 近7日补充",
+      "eventDate": "2026-11-12",
+      "sourcePublishedAt": "2026-11-12",
+      "sources": [
+        {
+          "label": "官方团队原文",
+          "url": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "rust-1100",
+      "title": "Rust 1.100 稳定分配器 API，Cargo 加入依赖冷却期",
+      "titleId": "rust-1100-title",
+      "paragraphs": [
+        {
+          "text": "Rust 1.100 稳定自定义内存分配器与 never type；Cargo 加入可配置依赖最小发布年龄和未使用依赖检查，cargo install 默认采用包内锁文件。",
+          "variant": ""
+        },
+        {
+          "text": "升级改变 never type 回退和中间构建目录布局，旧代码类型推断及读取 target 目录的脚本需回归。依赖冷却期需要配置，并非默认自动拦截。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-12",
+      "dateLabel": "11月12日 · 正式发布 · 近7日补充",
+      "eventDate": "2026-11-12",
+      "sourcePublishedAt": "2026-11-12",
+      "sources": [
+        {
+          "label": "官方发布说明",
+          "url": "https://github.com/rust-lang/rust/releases/tag/1.100.0",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "compose-571-cache",
+      "title": "Docker Compose 5.7.1 加固远程项目缓存",
+      "titleId": "compose-571-cache-title",
+      "paragraphs": [
+        {
+          "text": "新版校验下载的 OCI manifest 与摘要是否一致，只使用完整缓存，并修正中断、并发访问及 Git 远程资源缓存问题。",
+          "variant": ""
+        },
+        {
+          "text": "使用远程 Compose 项目启动开发环境或本地 AI 服务时，可减少半成品缓存与资源混用；另修复 down 影响未选服务镜像的问题，不能称所有 OCI 风险已经消除。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-11",
+      "dateLabel": "11月11日 · 正式发布 · 近7日补充",
+      "eventDate": "2026-11-11",
+      "sourcePublishedAt": "2026-11-11",
+      "sources": [
+        {
+          "label": "官方发布说明",
+          "url": "https://github.com/docker/compose/releases/tag/v5.7.1",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "terminal-125-ga",
+      "title": "Windows Terminal 1.25 正式推送，修正键盘与终端兼容",
+      "titleId": "terminal-125-ga-title",
+      "paragraphs": [
+        {
+          "text": "Windows Terminal 1.25 修正意外加载美式键盘、Unicode 文件链接，以及主/备用屏幕切换时 Kitty Keyboard Protocol 状态丢失。",
+          "variant": ""
+        },
+        {
+          "text": "Windows 命令行代理与 TUI 用户可关注兼容改善；本条对应1.25.3131.0，不混入同日1.26 Preview的新开关。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-11",
+      "dateLabel": "11月11日 · 正式版逐步推送 · 近7日补充",
+      "eventDate": "2026-11-11",
+      "sourcePublishedAt": "2026-11-11",
+      "sources": [
+        {
+          "label": "官方发布说明",
+          "url": "https://github.com/microsoft/terminal/releases/tag/v1.25.3131.0",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "google-edge-speech",
+      "title": "Google AI Edge Gallery 加入离线语音输入输出",
+      "titleId": "google-edge-speech-title",
+      "paragraphs": [
+        {
+          "text": "Google 提供流式语音识别、语音合成及 MediaPipe/LiteRT 参考路径，为本地聊天应用接入离线语音。",
+          "variant": ""
+        },
+        {
+          "text": "旗舰 Android 的 ML Kit 系统模型与跨平台开放模型是不同路径，语言、加速和延迟须逐端验证。11月12日的再刊不算新发布，团队测速不等于本站实测。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-10",
+      "dateLabel": "11月10日原始发布 · 近7日补充",
+      "eventDate": "2026-11-10",
+      "sourcePublishedAt": "2026-11-10",
+      "sources": [
+        {
+          "label": "官方团队原文",
+          "url": "https://developers.googleblog.com/on-device-speech-recognition-and-text-to-speech-in-google-ai-edge-gallery/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "zonos3-mini",
+      "title": "ZONOS3-Mini 开放端侧语音模型与运行路径",
+      "titleId": "zonos3-mini-title",
+      "paragraphs": [
+        {
+          "text": "Zyphra 以 Apache 2.0 开放约800M总参数、100M激活参数的 ZONOS3-Mini，提供浏览器与本地运行路径。",
+          "variant": ""
+        },
+        {
+          "text": "可尝试低算力配音和获得授权的声音克隆；音色、情绪与语速控制仍需逐样本试听。延迟为团队测量，不代表所有手机均实时；11月12日介绍文章不是首发日。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-09",
+      "dateLabel": "11月9日官网发布 · 近7日补充",
+      "eventDate": "2026-11-09",
+      "sourcePublishedAt": "2026-11-09",
+      "sources": [
+        {
+          "label": "官方团队原文",
+          "url": "https://www.zyphra.com/our-work/zonos3-mini",
+          "icon": false
+        },
+        {
+          "label": "官方版本或模型资料",
+          "url": "https://huggingface.co/Zyphra/ZONOS3-Mini",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "ruff-0175-fixes",
+      "title": "Ruff 0.17.5 修正自动修复生成错误代码的边界",
+      "titleId": "ruff-0175-fixes-title",
+      "paragraphs": [
+        {
+          "text": "Ruff 修正导入别名自动修复遮蔽已有名称，以及带括号参数、格式字符串相关修复错误；预览模式将日志 f-string 转换规则 G004 的修复标为 unsafe。",
+          "variant": ""
+        },
+        {
+          "text": "Python 项目升级后仍应检查自动修改的差异；新增预览规则不能当作默认启用，也不能把自动修复一概视为无风险。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-12",
+      "dateLabel": "11月12日 · 正式发布 · 近7日补充",
+      "eventDate": "2026-11-12",
+      "sourcePublishedAt": "2026-11-12",
+      "sources": [
+        {
+          "label": "官方发布说明",
+          "url": "https://github.com/astral-sh/ruff/releases/tag/0.17.5",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "ubuntu-apache-9090",
+      "title": "Ubuntu 为 Apache HTTP Server 发布安全修补",
+      "titleId": "ubuntu-apache-9090-title",
+      "paragraphs": [
+        {
+          "text": "USN-9090-1 修补 WebDAV、虚拟主机、HTTP/2 与 CGI 重定向路径问题，部分条件下可能导致远程代码执行。",
+          "variant": ""
+        },
+        {
+          "text": "自建服务应按启用模块核对：24.04修补包为2.4.58-1ubuntu8.19，22.04为2.4.52-1ubuntu4.27。CGI重定向问题在本公告中仅影响26.04与26.10；公告未称在野利用。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-12",
+      "dateLabel": "11月12日 · 安全更新 · 近7日补充",
+      "eventDate": "2026-11-12",
+      "sourcePublishedAt": "2026-11-12",
+      "sources": [
+        {
+          "label": "官方发布说明",
+          "url": "https://ubuntu.com/security/notices/USN-9090-1",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "github-ai-scan-api",
+      "title": "GitHub AI Scan 支持 REST API 批量配置",
+      "titleId": "github-ai-scan-api-title",
+      "paragraphs": [
+        {
+          "text": "AI Scan 新增 repository_scan API 设置，可在组织与仓库层级统一启停，方便多仓库维护者把扫描配置纳入脚本。",
+          "variant": ""
+        },
+        {
+          "text": "启用不会立即扫描，按需扫描仍消耗 Code Security AI credits；适用范围受组织、仓库可见性及许可限制，不支持 GHES。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-13",
+      "dateLabel": "11月13日 · 公共预览",
+      "eventDate": "2026-11-13",
+      "sourcePublishedAt": "2026-11-13",
+      "sources": [
+        {
+          "label": "官方发布说明",
+          "url": "https://github.blog/changelog/2026-11-13-manage-ai-scan-for-repositories-using-the-rest-api/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "gtk-macos-week274",
+      "title": "GTK 合入 macOS 窗口、手势与自定义链接修复",
+      "titleId": "gtk-macos-week274-title",
+      "paragraphs": [
+        {
+          "text": "GTK 本周合入启动空窗口闪烁、最大化动画内容同步等修复，并支持鼠标前后键、触控板返回手势和应用自定义 URL scheme。",
+          "variant": ""
+        },
+        {
+          "text": "跨平台桌面开发者可据此准备回归。这是代码合入进展，不代表所有已安装 GTK 应用都已获得修复。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-13",
+      "dateLabel": "11月13日周报 · 当周合入",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-13",
+      "sources": [
+        {
+          "label": "官方发布说明",
+          "url": "https://thisweek.gnome.org/posts/2026/11/twig-274/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "tng-moe-experts",
+      "title": "TNG 研究把独立领域专家组合进 MoE 模型",
+      "titleId": "tng-moe-experts-title",
+      "paragraphs": [
+        {
+          "text": "TNG 在冻结的 Qwen MoE 基座上增加领域专家，演示分别训练 Rust、Haskell 专家后组合，为 LoRA 合并之外的定制提供思路。",
+          "variant": ""
+        },
+        {
+          "text": "实验使用8张B200，当前只做持续预训练；完整后训练、多领域扩张与推理负载均衡仍待验证。组合后部分指标下降，不是消费显卡即用或无损合并方案。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-10",
+      "dateLabel": "11月10日 · 研究演示 · 近7日补充",
+      "eventDate": "2026-11-10",
+      "sourcePublishedAt": "2026-11-10",
+      "sources": [
+        {
+          "label": "官方团队原文",
+          "url": "https://huggingface.co/blog/tngtech/bring-your-own-expert-extending-moe-models-with-ne",
+          "icon": false
+        }
+      ]
+    }
+  ]
+}
