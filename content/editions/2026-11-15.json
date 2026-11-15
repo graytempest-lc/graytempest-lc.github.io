@@ -1,0 +1,411 @@
+{
+  "id": "2026-11-15",
+  "editionDate": "2026-11-15",
+  "status": "published",
+  "title": "计算机热点日报 · 2026年11月15日",
+  "description": "14条精选：桌面代理权限与会话修复、MCP可靠性、FreeBSD与Wayland进展，以及本地AI部署和研究边界。",
+  "editionLabel": "2026年11月15日 · 精选14条",
+  "dateBasis": "edition-publication-date",
+  "introduction": [
+    "本期精选14条：4条11月14日进展，另补充10条近7天内尚未报道的更新与研究，已与近7期及对话去重。未为达到15条硬凑内容。",
+    "正式发布、开发版、预告与研究分别标明。来源日期不等于事件发生日期；厂商基准不代表本站独立实测，刊载日按东八区。"
+  ],
+  "overview": [
+    {
+      "id": "cherry-222-permissions",
+      "title": "桌面代理的权限边界",
+      "category": "AI工具"
+    },
+    {
+      "id": "freebsd-152-beta2",
+      "title": "系统与兼容层进展",
+      "category": "操作系统"
+    },
+    {
+      "id": "glm53-two-stations",
+      "title": "跨机本地推理的现实条件",
+      "category": "本地AI"
+    },
+    {
+      "id": "ai2-xybench",
+      "title": "评测真实目标与证明成本",
+      "category": "AI研究"
+    }
+  ],
+  "items": [
+    {
+      "id": "freebsd-152-beta2",
+      "title": "FreeBSD 15.2-BETA2 更新 SSH 与虚拟机兼容",
+      "titleId": "freebsd-152-beta2-title",
+      "paragraphs": [
+        {
+          "text": "更新 OpenSSH 10.6p2，默认生成 ML-DSA-44/Ed25519 SSH 主机密钥，并修复现代 virtio PCI 随机数设备及远程 pkgbase 安装问题。",
+          "variant": ""
+        },
+        {
+          "text": "维护 BSD 虚拟机的开发者可提前验证；这是测试版，不是生产稳定版。镜像构建于11月13日，14日才公告可用。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-14",
+      "dateLabel": "11月14日 · 测试版",
+      "eventDate": "2026-11-14",
+      "sourcePublishedAt": "2026-11-14",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://lists.freebsd.org/archives/freebsd-stable/2026-November/004379.html",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "plasma-xwayland-demand",
+      "title": "Plasma 6.9 开发进展：按需启动 XWayland",
+      "titleId": "plasma-xwayland-demand-title",
+      "paragraphs": [
+        {
+          "text": "KDE 周报介绍 XWayland 改为按需启动，相关系统服务也已迁离旧 X11 接口。",
+          "variant": ""
+        },
+        {
+          "text": "原生 Wayland 桌面可减少不必要的兼容组件常驻，旧 X11 应用仍需要它。尚待 Plasma 6.9 发布，没有独立资源节省测量，不能据此宣称性能提升。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-14",
+      "dateLabel": "11月14日 · 开发进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-14",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://blogs.kde.org/2026/11/14/this-week-in-plasma-xwayland-on-demand/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "litellm-110610",
+      "title": "LiteLLM 1.106.10 修复 Google MCP 反复登录",
+      "titleId": "litellm-110610-title",
+      "paragraphs": [
+        {
+          "text": "修复 Google MCP 访问令牌过期后再次要求用户登录的问题。",
+          "variant": ""
+        },
+        {
+          "text": "用 LiteLLM 接入 Google MCP 的个人 AI 工作流可减少认证中断；本版本正文只有此项修复，不混入其他版本的连接和依赖更新。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-14",
+      "dateLabel": "11月14日 · 已发布",
+      "eventDate": "2026-11-14",
+      "sourcePublishedAt": "2026-11-14",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://github.com/BerriAI/litellm/releases/tag/v1.106.10",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "orcaslicer-251",
+      "title": "OrcaSlicer 2.5.1 修补恶意文件与插件依赖风险",
+      "titleId": "orcaslicer-251-title",
+      "paragraphs": [
+        {
+          "text": "恢复 Windows/macOS 的 AMF XML 实体展开保护，避免恶意文件耗尽内存；更新插件安装所用 uv 并移除受影响的证书信任。",
+          "variant": ""
+        },
+        {
+          "text": "还修复打印机连接与上传问题。用自定义 HTTPS CA 连接 Bambu LAN 打印机者，升级后需要重新选择 CA 文件。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-14",
+      "dateLabel": "11月14日 · 维护版",
+      "eventDate": "2026-11-14",
+      "sourcePublishedAt": "2026-11-14",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://github.com/OrcaSlicer/OrcaSlicer/releases/tag/v2.5.1",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "claude-code-21325",
+      "title": "Claude Code 2.1.325 修复会话恢复与后台计费",
+      "titleId": "claude-code-21325-title",
+      "paragraphs": [
+        {
+          "text": "修补 zstd 响应解码安全问题、异常退出后恢复会话遗漏近期轮次，以及 claude.ai 登录的后台会话误用环境中的 API 密钥并计费。",
+          "variant": ""
+        },
+        {
+          "text": "长任务及同时使用订阅/API 的开发者值得优先关注。公告未披露解码问题的详细攻击条件，不据此推断在野利用。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-13",
+      "dateLabel": "11月13日 · 已发布 · 近7日补充",
+      "eventDate": "2026-11-13",
+      "sourcePublishedAt": "2026-11-13",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.325",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "cherry-222-permissions",
+      "title": "Cherry Studio 2.2.2 改动桌面代理权限默认值",
+      "titleId": "cherry-222-permissions-title",
+      "paragraphs": [
+        {
+          "text": "Computer Use 改为默认开启，访问各应用前可长期批准、仅本会话批准或拒绝；新安装默认不向外部代理导出技能。",
+          "variant": ""
+        },
+        {
+          "text": "升级后应复查权限：Bypass 模式仍会跳过提示，已有技能导出配置保留原设置。默认开启不等于所有应用自动获准访问。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-13",
+      "dateLabel": "11月13日 · 已发布 · 近7日补充",
+      "eventDate": "2026-11-13",
+      "sourcePublishedAt": "2026-11-13",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://github.com/CherryHQ/cherry-studio/releases/tag/v2.2.2",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "wine-1122-arm-avx",
+      "title": "Wine 11.22 为 ARM64 上的 x86 仿真加入 AVX",
+      "titleId": "wine-1122-arm-avx-title",
+      "paragraphs": [
+        {
+          "text": "本版加入 AVX 指令支持与地址空间随机化，并包含34项修复。",
+          "variant": ""
+        },
+        {
+          "text": "在 ARM64 上运行 x86 Windows 程序的用户可测试兼容性；这是开发版，不代表所有程序可运行或获得原生性能。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-13",
+      "dateLabel": "11月13日 · 开发版 · 近7日补充",
+      "eventDate": "2026-11-13",
+      "sourcePublishedAt": "2026-11-13",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://list.winehq.org/hyperkitty/list/wine-releases@list.winehq.org/message/UJZYR43HEI63YL2QO3KWZVQCUGSZHKVO/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "llama-b12344-mcp",
+      "title": "llama.cpp 修补 MCP 请求取消链路",
+      "titleId": "llama-b12344-mcp-title",
+      "paragraphs": [
+        {
+          "text": "llama-server 在客户端断开连接或请求超时时，取消对应 MCP 工具调用。",
+          "variant": ""
+        },
+        {
+          "text": "自建本地智能体服务可减少用户离开后仍继续执行的任务；已经发生的外部操作不会因此回滚，MCP 服务端也须正确响应取消。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-13",
+      "dateLabel": "11月13日 · 预发行 b12344 · 近7日补充",
+      "eventDate": "2026-11-13",
+      "sourcePublishedAt": "2026-11-13",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12344",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "cublas-fp64-algorithms",
+      "title": "cuBLAS 用整数 Tensor Core 处理部分双精度计算",
+      "titleId": "cublas-fp64-algorithms-title",
+      "paragraphs": [
+        {
+          "text": "NVIDIA 介绍 CUDA Toolkit 13.4.2 中的 Ozaki-II 与 2M 算法，通过拆分、重组数值，让部分 FP64 矩阵运算利用整数 Tensor Core。",
+          "variant": ""
+        },
+        {
+          "text": "科学计算开发者应按自己的矩阵与误差要求测试；文中速度来自厂商特定基准，不是本地大模型的通用提速。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-13",
+      "dateLabel": "11月13日 · 官方技术说明 · 近7日补充",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-13",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://developer.nvidia.com/blog/faster-scientific-simulations-with-new-fp64-algorithms-in-nvidia-cublas/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "ai2-xybench",
+      "title": "AI2 XYBench 评测助手是否理解真正目标",
+      "titleId": "ai2-xybench-title",
+      "paragraphs": [
+        {
+          "text": "8,115道题测试助手能否识别用户选错的解决思路，并回到实际问题，而不只是照指令执行。",
+          "variant": ""
+        },
+        {
+          "text": "客服与编程助手可补充目标理解评测；多数题目由 WikiHow 内容生成，并使用模型裁判。单轮分数不能直接当作真实用户满意度。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-13",
+      "dateLabel": "11月13日 · 研究发布 · 近7日补充",
+      "eventDate": "2026-11-13",
+      "sourcePublishedAt": "2026-11-13",
+      "sources": [
+        {
+          "label": "原始研究资料",
+          "url": "https://allenai.org/blog/xybench",
+          "icon": false
+        },
+        {
+          "label": "数据与代码",
+          "url": "https://github.com/allenai/XYBench",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "glm53-two-stations",
+      "title": "双 DGX Station 运行 GLM-5.3：跨机部署参考",
+      "titleId": "glm53-two-stations-title",
+      "paragraphs": [
+        {
+          "text": "NVIDIA 给出两台 GB300 DGX Station 通过 RDMA 与 vLLM 部署 GLM-5.3 NVFP4 的配置，让约464GB权重全部驻留 GPU。",
+          "variant": ""
+        },
+        {
+          "text": "这是本地 AI 团队的高端部署参考，不是普通电脑的低成本方案，也非任何情况下都必须双机。厂商并发吞吐不等于单用户速度；教程默认 API 无鉴权，公开访问前须补访问保护。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-13",
+      "dateLabel": "11月13日 · 技术教程 · 近7日补充",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-13",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://developer.nvidia.com/blog/when-one-gpu-isnt-enough-serving-glm-5-3-across-two-nvidia-dgx-stations-with-vllm/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "verifiable-ai-costs",
+      "title": "新论文拆解可验证 AI 的端到端证明成本",
+      "titleId": "verifiable-ai-costs-title",
+      "paragraphs": [
+        {
+          "text": "研究逐段测量神经网络推理与微调的密码学证明开销，强调显存、数据传输与证明系统选择同样决定可行性。",
+          "variant": ""
+        },
+        {
+          "text": "准备做可验证推理服务时，应测完整链路，不能只用 GPU 算力或单内核成绩估成本；部分长测量只跑一次，不宜视为一般硬件排名。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-12",
+      "dateLabel": "11月12日 · 预印本 · 近7日补充",
+      "eventDate": "2026-11-12",
+      "sourcePublishedAt": "2026-11-12",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://arxiv.org/abs/2611.17042",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "rustdesk-153",
+      "title": "RustDesk 1.5.3 修复远程控制安全边界",
+      "titleId": "rustdesk-153-title",
+      "paragraphs": [
+        {
+          "text": "限制中继仅连接对端提供的地址，修复 Windows IPC 认证及安装器临时目录问题，并支持通过 DRM 显示 greetd Wayland 登录界面。",
+          "variant": ""
+        },
+        {
+          "text": "自托管远程维护者可关注此版。发布说明未给统一严重性评级，不能把所有问题都描述为可远程利用。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-09",
+      "dateLabel": "11月9日 · 已发布 · 近7日补充",
+      "eventDate": "2026-11-09",
+      "sourcePublishedAt": "2026-11-09",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://github.com/rustdesk/rustdesk/releases/tag/1.5.3",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "groot2-research",
+      "title": "GR00T 2 研究探索人类视频到机器人动作迁移",
+      "titleId": "groot2-research-title",
+      "paragraphs": [
+        {
+          "text": "NVIDIA 的 GR00T 2 联合预测视频与动作，尝试从人类视频学习机器人技能。",
+          "variant": ""
+        },
+        {
+          "text": "适合跟踪复现，不是现在就能部署的通用控制器：代码预计12月提供，演示成功率只适用于论文任务与训练条件，不代表跨场景可靠性。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-09",
+      "dateLabel": "11月9日 · 研究预告 · 近7日补充",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-09",
+      "sources": [
+        {
+          "label": "11月9日原始公告",
+          "url": "https://blogs.nvidia.com/blog/robotics-simulation-advancements-corl/",
+          "icon": false
+        },
+        {
+          "label": "原始研究资料",
+          "url": "https://research.nvidia.com/labs/gear/gr00t-2/",
+          "icon": false
+        }
+      ]
+    }
+  ]
+}
