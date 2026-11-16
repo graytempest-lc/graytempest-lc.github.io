@@ -1,0 +1,338 @@
+{
+  "id": "2026-11-16",
+  "editionDate": "2026-11-16",
+  "status": "published",
+  "title": "计算机热点日报 · 2026年11月16日",
+  "description": "11条精选：自托管仓库安全、本地语音模板、开发工具权限，以及RAG压缩与可验证动画。",
+  "editionLabel": "2026年11月16日 · 精选11条",
+  "dateBasis": "edition-publication-date",
+  "introduction": [
+    "本期精选11条：2条15日至16日新进展，补充9条近7天尚未报道的更新、工具与研究。已对照近7期去重，未为达到15条硬凑内容。",
+    "日期按来源标注，刊载日按东八区；正式发布、预览与教程分别标明。研究与厂商效果不是本站独立实测。"
+  ],
+  "overview": [
+    {
+      "id": "gitea-2840",
+      "title": "自托管与删除安全",
+      "category": "开发基础设施"
+    },
+    {
+      "id": "llama-jinja-kokoro",
+      "title": "本地语音模板",
+      "category": "本地AI"
+    },
+    {
+      "id": "vscode-1146",
+      "title": "代理权限与迁移",
+      "category": "开发工具"
+    },
+    {
+      "id": "token-pooling-training",
+      "title": "压缩与任务验收",
+      "category": "研究实践"
+    }
+  ],
+  "items": [
+    {
+      "id": "gitea-2840",
+      "title": "Gitea 28.4.0 收紧镜像凭据与账号保护",
+      "titleId": "gitea-2840-title",
+      "paragraphs": [
+        {
+          "text": "拉取镜像换用新主机时不再复用原凭据，并限制单账号 TOTP 失败尝试；同时修复并发通知死锁和乱序钩子造成的分支回退。",
+          "variant": ""
+        },
+        {
+          "text": "自托管代码仓库者值得关注认证边界与推送可靠性；公告未给这些修复统一严重性评级，不应全部描述为已遭利用。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-15",
+      "dateLabel": "11月15日 · 已发布",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-15",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://github.com/go-gitea/gitea/releases/tag/v28.4.0",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "llama-jinja-kokoro",
+      "title": "llama.cpp 补齐语音模板需要的 Jinja 运算",
+      "titleId": "llama-jinja-kokoro-title",
+      "paragraphs": [
+        {
+          "text": "加入整除、字符串比较、关键字后的负号及 sum 过滤器，为 Kokoro TTS 的数字读法、词性与分词模板减少兼容绕行。",
+          "variant": ""
+        },
+        {
+          "text": "面向本地语音集成者，不等于完整 Kokoro 新版已交付。合并发生于15日，构建发布于16日；作者尚未验证改用 sum 后的输出等价性。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-16",
+      "dateLabel": "11月16日 · 预发行 b12428",
+      "eventDate": "2026-11-15",
+      "sourcePublishedAt": "2026-11-16",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12428",
+          "icon": false
+        },
+        {
+          "label": "相关原始资料",
+          "url": "https://github.com/ggml-org/llama.cpp/pull/32352",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "gh-21040-forks",
+      "title": "GitHub CLI 2.104.0 防止误删私有 fork",
+      "titleId": "gh-21040-forks-title",
+      "paragraphs": [
+        {
+          "text": "删除私有或内部仓库会连带删除 fork 时，现在即使使用 --yes 也要求额外明确确认。",
+          "variant": ""
+        },
+        {
+          "text": "自动化维护脚本需显式处理级联删除，不能再把 --yes 当作覆盖全部后果的授权；另修复认证状态隐藏网络和限流错误的问题。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-12",
+      "dateLabel": "11月12日 · 已发布 · 近7日补充",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-12",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://github.com/cli/cli/releases/tag/v2.104.0",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "vscode-1146",
+      "title": "VS Code 1.146 调整代理权限与迁移时间表",
+      "titleId": "vscode-1146-title",
+      "paragraphs": [
+        {
+          "text": "代理权限提示默认细化到域名、命令和目录；旧 Local harness 宣布弃用，计划于2027年2月移除。",
+          "variant": ""
+        },
+        {
+          "text": "开发者应检查自定义工作流兼容性。会话收件箱仍属实验功能，模型比较和独立聊天窗口仍属预览，不能把整份说明都视为默认启用。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-11",
+      "dateLabel": "11月11日 · 稳定版 · 近7日补充",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-11",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://code.visualstudio.com/updates/v1_146",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "powertoys-1033151",
+      "title": "PowerToys 开发预览改进 CPU 监控与锁屏行为",
+      "titleId": "powertoys-1033151-title",
+      "paragraphs": [
+        {
+          "text": "Command Palette 的 CPU 卡新增60秒历史、逻辑处理器负载及最忙进程；Awake 增加锁屏后是否继续请求亮屏的选项。",
+          "variant": ""
+        },
+        {
+          "text": "Windows 本地开发和推理时更容易定位占用来源。此版非稳定版，Modern Standby 设备仍可能由系统关闭屏幕，不能视作保活保证。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-13",
+      "dateLabel": "11月13日 · 开发预览 · 近7日补充",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-13",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://github.com/microsoft/PowerToys/releases/tag/v0.103.3151",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "ty-00104",
+      "title": "ty 0.0.104 修正 Python 可哈希性判断",
+      "titleId": "ty-00104-title",
+      "paragraphs": [
+        {
+          "text": "类型检查现在尊重定义 __eq__ 后隐含的 __hash__ = None，并修复类对象比较收窄及多行 import 补全。",
+          "variant": ""
+        },
+        {
+          "text": "维护字典键、集合元素或自定义相等逻辑的 Python 项目，可减少类型检查与运行时语义的偏差；这不是 Python 语言行为变化。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-13",
+      "dateLabel": "11月13日 · 已发布 · 近7日补充",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-13",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://github.com/astral-sh/ty/releases/tag/0.0.104",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "token-pooling-training",
+      "title": "多向量 RAG 新增压缩感知训练示例",
+      "titleId": "token-pooling-training-title",
+      "paragraphs": [
+        {
+          "text": "Hugging Face 提供 Sentence Transformers 的 token pooling 训练与评估示例，让模型在训练时适应文档向量合并。",
+          "variant": ""
+        },
+        {
+          "text": "本地知识库可据此比较索引体积与检索质量。作者 NanoBEIR 实验约减少75%的文档向量，不代表任意语料都能保留同等效果，也不是当天新模型首发。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-11",
+      "dateLabel": "11月11日 · 教程 · 近7日补充",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-11",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://huggingface.co/blog/token-pooling",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "motiongraphicsbench",
+      "title": "MotionGraphicsBench 用程序检查动画任务",
+      "titleId": "motiongraphicsbench-title",
+      "paragraphs": [
+        {
+          "text": "Figma 与 Stanford 研究者公布100个 SVG 动画编辑任务，通过确定性程序检查姿态、路径和时序，无需额外模型调用来判分。",
+          "variant": ""
+        },
+        {
+          "text": "AI 前端工具可复用可定位失败原因的验收方法；程序判定仍有误拒和误放，不能直接当作用户审美满意度或真实项目成功率。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-10",
+      "dateLabel": "11月10日 · 研究基准 · 近7日补充",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-10",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://huggingface.co/blog/figma-ai/motion-graphics-bench",
+          "icon": false
+        },
+        {
+          "label": "相关原始资料",
+          "url": "https://arxiv.org/abs/2611.10592",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "trellis2-lora-guide",
+      "title": "TRELLIS.2 微调指南开放可复用流程",
+      "titleId": "trellis2-lora-guide-title",
+      "paragraphs": [
+        {
+          "text": "Hugging Face 提供数据预处理和 LoRA 微调容器，训练结构与几何阶段、保留材质阶段，支持本地 Docker 或 HF Jobs。",
+          "variant": ""
+        },
+        {
+          "text": "游戏资产及垂直3D生成开发者可少搭一套流水线。鞋类示例使用 A100 80GB，不能理解为普通消费显卡已验证；新的是指南和工具，不是 TRELLIS.2 首发。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-12",
+      "dateLabel": "11月12日 · 教程与工具 · 近7日补充",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-12",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://huggingface.co/blog/3d-lora-finetuning",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "nemotron-pii-japan",
+      "title": "日文合成 PII 数据集可用于本地脱敏验收",
+      "titleId": "nemotron-pii-japan-title",
+      "paragraphs": [
+        {
+          "text": "NVIDIA 发布10万份日文合成文档，覆盖8个领域、56类个人信息标签，采用 CC BY 4.0。",
+          "variant": ""
+        },
+        {
+          "text": "可测试本地脱敏器和日志过滤而不接触真实客户资料。但全部样本均含 PII，无敏感信息时的误报率需另备负样本，合成数据成绩不保证生产效果。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-09",
+      "dateLabel": "11月9日 · 数据集 · 近7日补充",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-09",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://huggingface.co/blog/nvidia/nemotron-pii-japan",
+          "icon": false
+        },
+        {
+          "label": "相关原始资料",
+          "url": "https://huggingface.co/datasets/nvidia/Nemotron-PII-Japan",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "simready-task-validation",
+      "title": "SimReady 教程把资产检查推进到抓取任务验收",
+      "titleId": "simready-task-validation-title",
+      "paragraphs": [
+        {
+          "text": "NVIDIA 在 Isaac Sim 6.2 中演示组装并验证抓取、抬起、搬运和释放流程，将资产配置检查与完整任务行为区分开。",
+          "variant": ""
+        },
+        {
+          "text": "机器人仿真开发者可参考验收拆分。演示使用固定位置、无视觉和有限碰撞检查，没有重规划或罐体变形模拟，不证明真实机器人的自主可靠性。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-13",
+      "dateLabel": "11月13日 · 教程 · 近7日补充",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-13",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://huggingface.co/blog/nvidia/simready-assets-robot-pick-and-place",
+          "icon": false
+        }
+      ]
+    }
+  ]
+}
