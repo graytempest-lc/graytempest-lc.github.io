@@ -1,0 +1,432 @@
+{
+  "id": "2026-11-17",
+  "editionDate": "2026-11-17",
+  "status": "published",
+  "title": "计算机热点日报 · 2026年11月17日",
+  "description": "15条精选：推理平台计费迁移、开发工具与系统修补，以及超算硬件和分布式训练进展。",
+  "editionLabel": "2026年11月17日 · 精选15条",
+  "dateBasis": "edition-publication-date",
+  "introduction": [
+    "本期精选15条：14条11月16日公告与发布，另补充1条11月13日研究。已对照近7期去重；同一产品仅选新增事件。",
+    "刊载日按东八区，事件日与来源日期分别记录。预览、预告与研究不等同正式可用；厂商结果不是本站独立实测。"
+  ],
+  "overview": [
+    {
+      "id": "hf-openrouter",
+      "title": "推理平台与账单迁移",
+      "category": "AI平台"
+    },
+    {
+      "id": "slint-119",
+      "title": "跨平台界面开发",
+      "category": "开发工具"
+    },
+    {
+      "id": "ubuntu-pillow-regression",
+      "title": "系统与媒体修补",
+      "category": "安全维护"
+    },
+    {
+      "id": "mlperf-training-61",
+      "title": "训练与超算进展",
+      "category": "计算研究"
+    }
+  ],
+  "items": [
+    {
+      "id": "hf-openrouter",
+      "title": "Hugging Face 语言模型推理改用 OpenRouter 路由",
+      "titleId": "hf-openrouter-title",
+      "paragraphs": [
+        {
+          "text": "语言模型 Inference Providers 接入自动路由与故障重试，原 API 和 Hugging Face token 保持可用。",
+          "variant": ""
+        },
+        {
+          "text": "语言模型不再支持自带提供商 API key，费用转由 HF 账户或组织承担，已有集成应检查账单路径；图像、视频、音频不走此路由，连接既有 OpenRouter 账户仍是后续计划。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-16",
+      "dateLabel": "11月16日 · 公告／发布",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-16",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://huggingface.co/blog/openrouter",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "copilot-nov16-retirement",
+      "title": "Copilot 退役一批旧模型，固定选模需迁移",
+      "titleId": "copilot-nov16-retirement-title",
+      "paragraphs": [
+        {
+          "text": "11月16日退役 Claude Opus 4.8、Opus 5 和 GPT-5.6 Terra，官方列出 Opus 5.5、GPT-6.1 Sol 或 GPT-6 Luna 等替代路径。",
+          "variant": ""
+        },
+        {
+          "text": "个人年度订阅的 Opus 4.8 有例外；Opus 5 仍可作为已有授权的运行时拒绝回退。这里不是12月14日那批退役预告，也不能概括为彻底删除全部调用路径。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-16",
+      "dateLabel": "11月16日 · 公告／发布",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-16",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://github.blog/changelog/2026-11-16-github-copilot-models-deprecated-on-november-16-2026/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "slint-119",
+      "title": "Slint 1.19 增加项目级版本选择与 TypeScript 类型生成",
+      "titleId": "slint-119-title",
+      "paragraphs": [
+        {
+          "text": "正式版引入项目文件和 edition，便于明确选择行为变化；新增 TypeScript 类型生成、ESM 导入、移动惯性滚动及动画图片支持。",
+          "variant": ""
+        },
+        {
+          "text": "跨平台桌面开发可更明确地控制升级兼容性；Node.js 最低要求为22.18。共享事件循环属于此前1.18功能，不算本次新增。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-16",
+      "dateLabel": "11月16日 · 公告／发布",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-16",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://slint.dev/blog/slint-1.19-released",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "ai-scan-bulk",
+      "title": "GitHub AI Scan 可一次启动最多20个仓库扫描",
+      "titleId": "ai-scan-bulk-title",
+      "paragraphs": [
+        {
+          "text": "公共预览增加批量启动扫描，针对默认分支，使用者不必具备 Copilot 许可证。",
+          "variant": ""
+        },
+        {
+          "text": "适合维护多仓库的团队统一排查；启动扫描与此前 REST API 批量启停配置不是同一步，仍须核对扫描消耗与许可条件。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-16",
+      "dateLabel": "11月16日 · 预览",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-16",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://github.blog/changelog/2026-11-16-bulk-start-ai-scan-for-repositories/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "rubin-hpc",
+      "title": "NVIDIA 预告 Rubin HPC，预计2028年供货",
+      "titleId": "rubin-hpc-title",
+      "paragraphs": [
+        {
+          "text": "新 HPC 方案宣称超过5万个 CUDA 核心，包含稀疏数据加速与 NVLink 7，面向科学计算。",
+          "variant": ""
+        },
+        {
+          "text": "这是未来产品路线，不是已经上市的消费显卡，也不能用硬件规格推断现有本地模型会立即提速。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-16",
+      "dateLabel": "11月16日 · 预告",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-16",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://blogs.nvidia.com/blog/rubin-hpc/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "slurm-quantum",
+      "title": "Slurm 26.11 计划统一量子处理器接入",
+      "titleId": "slurm-quantum-title",
+      "paragraphs": [
+        {
+          "text": "官方介绍通过 QRMI、QDMI 等接口整合 QPU 资源，并预告 Slurm 26.11 于本月稍晚发布。",
+          "variant": ""
+        },
+        {
+          "text": "超算与混合量子任务管理者可提前评估接口；目前属于版本预告，不等于所有集群或量子后端已经可用。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-16",
+      "dateLabel": "11月16日 · 预告",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-16",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://blogs.nvidia.com/blog/slurm-quantum-computing-supercomputing/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "win-passkey-preview",
+      "title": "Windows 11 预览支持逐条管理安全密钥中的 passkey",
+      "titleId": "win-passkey-preview-title",
+      "paragraphs": [
+        {
+          "text": "新 Insider 构建中，Experimental 通道增加 FIDO2 安全密钥的逐条 passkey 管理，减少只能重置整把密钥的麻烦。",
+          "variant": ""
+        },
+        {
+          "text": "此批为 Beta 26320.10003、Experimental 26340.10013 等预览构建；不能理解为稳定版 Windows 已普遍获得该能力。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-16",
+      "dateLabel": "11月16日 · 预览",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-16",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://blogs.windows.com/windows-insider/2026/11/16/announcing-new-builds-for-16-november-2026/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "ubuntu-pillow-regression",
+      "title": "Ubuntu 修正 Pillow 安全更新引入的缩放回归",
+      "titleId": "ubuntu-pillow-regression-title",
+      "paragraphs": [
+        {
+          "text": "新补丁修复此前安全更新导致的 NEAREST 缩放及1/P模式图片缩放失败，针对 Ubuntu 26.04 和26.10。",
+          "variant": ""
+        },
+        {
+          "text": "图像处理流水线可检查补丁版本并回归相关模式；这是安全修补后的功能回归修正，不是本日新发现一批旧漏洞。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-16",
+      "dateLabel": "11月16日 · 公告／发布",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-16",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://ubuntu.com/security/notices/USN-9064-2",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "ubuntu-sos",
+      "title": "Ubuntu 修补 SoS 诊断归档的链接目标校验",
+      "titleId": "ubuntu-sos-title",
+      "paragraphs": [
+        {
+          "text": "SoS 对归档软链接、硬链接目标检查不足，可能造成非预期文件创建或覆盖；公告覆盖多个 Ubuntu 版本的软件包。",
+          "variant": ""
+        },
+        {
+          "text": "使用系统诊断与归档清理流程者应按发行版核对修复包，部分旧版需要 Pro；公告不代表已确认在野利用。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-16",
+      "dateLabel": "11月16日 · 公告／发布",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-16",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://ubuntu.com/security/notices/USN-9093-1",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "ubuntu-gstreamer",
+      "title": "Ubuntu 更新 GStreamer 媒体解析安全补丁",
+      "titleId": "ubuntu-gstreamer-title",
+      "paragraphs": [
+        {
+          "text": "RTSP、AV1 和字幕处理问题可能导致拒绝服务；另有视频数据校验问题可能造成代码执行。",
+          "variant": ""
+        },
+        {
+          "text": "不同漏洞适用的发行版和触发条件不同，需逐项核对；不能把所有问题统一描述为远程代码执行。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-16",
+      "dateLabel": "11月16日 · 公告／发布",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-16",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://ubuntu.com/security/notices/USN-9094-1",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "obaleth-compiler",
+      "title": "Obaleth 把 GPU 网络通信纳入编译器优化",
+      "titleId": "obaleth-compiler-title",
+      "paragraphs": [
+        {
+          "text": "预印本提出在中间表示中表达 GPU 发起的网络通信，联合优化同步与批处理，面向分布式模型推理。",
+          "variant": ""
+        },
+        {
+          "text": "作者在16张 B200、Qwen3-235B 和 vLLM 配置下报告相对 DeepEP 的收益；这是集群研究结果，不是单卡通用加速，也不是本站独立复测。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-13",
+      "dateLabel": "11月13日 · 预印本 · 近7日补充",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-13",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://arxiv.org/abs/2611.18145",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "amd-world-labs",
+      "title": "AMD 宣布完成 World Labs 收购",
+      "titleId": "amd-world-labs-title",
+      "paragraphs": [
+        {
+          "text": "11月16日公告确认完成收购；SEC 文件记载交割日期为11月13日，李飞飞担任执行副总裁兼首席科学家。",
+          "variant": ""
+        },
+        {
+          "text": "这将模型研究与硬件协同进一步结合，但不表示已有消费显卡立即获得新的3D生成功能。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-16",
+      "dateLabel": "11月16日 · 公告／发布",
+      "eventDate": "2026-11-13",
+      "sourcePublishedAt": "2026-11-16",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://newsroom.amd.com/news/amd-completes-acquisition-world-labs/",
+          "icon": false
+        },
+        {
+          "label": "SEC交割文件",
+          "url": "https://ir.amd.com/financial-information/sec-filings/content/0001193125-26-462340/d105780d8ka.htm",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "rust-analyzer-3121",
+      "title": "rust-analyzer 修复类型分析崩溃与跨平台补全",
+      "titleId": "rust-analyzer-3121-title",
+      "paragraphs": [
+        {
+          "text": "v0.3.3121 修复 derive 配合高阶生命周期类型导致的 panic，以及大 u128 转负浮点问题；扩展 macOS、iOS、Android 和 musl 的 cfg 补全。",
+          "variant": ""
+        },
+        {
+          "text": "跨平台 Rust 开发者可减少错误提示和分析中断；这些是语言服务修正，不是 Rust 语言本身的新语法。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-16",
+      "dateLabel": "11月16日 · 公告／发布",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-16",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://rust-analyzer.github.io/thisweek/2026/11/16/changelog-354.html",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "mlperf-training-61",
+      "title": "MLPerf Training v6.1 加入大型模型 GRPO 后训练基准",
+      "titleId": "mlperf-training-61-title",
+      "paragraphs": [
+        {
+          "text": "MLPerf Training v6.1 公布新一轮结果，其中包含此前已宣布的 Qwen3.5 397B GRPO 后训练基准；NVIDIA 同时介绍 Rubin 与 Blackwell Ultra 的厂商提交。",
+          "variant": ""
+        },
+        {
+          "text": "比较必须保留同规模硬件、基准与目标质量条件；基准完成时间不是完整从零训练时间，也不代表单卡收益，另列的未核验重跑不能混作正式成绩。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-16",
+      "dateLabel": "11月16日 · 公告／发布",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-16",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://developer.nvidia.com/blog/nvidia-vera-rubin-nvl72-achieves-up-to-2x-blackwell-ultra-performance-in-mlperf-training-v6-1/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "amd-hpc-assistant",
+      "title": "AMD 开源 HPC Assistant，把作业与诊断接入自然语言",
+      "titleId": "amd-hpc-assistant-title",
+      "paragraphs": [
+        {
+          "text": "AMD 宣布开源 HPC Assistant，将站点知识库、作业提交监测、GPU 性能及能耗分析接入自然语言工具；已与 CSC/LUMI 合作开发，Frontier 集成仍在推进。",
+          "variant": ""
+        },
+        {
+          "text": "超算运维可参考其工具化路径；科学代理及 AIM 容器部署为 SC26 预览，不能把所有演示功能写成全面可用。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-16",
+      "dateLabel": "11月16日 · 公告／发布",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-16",
+      "sources": [
+        {
+          "label": "官方原文",
+          "url": "https://www.amd.com/en/blogs/2026/amd-brings-agentic-ai-to-supercomputing-with-open-source-amd-hpc.html",
+          "icon": false
+        }
+      ]
+    }
+  ]
+}
