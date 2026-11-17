@@ -1,4 +1,4 @@
-import {calculateDay, civilDateAt, parseCivilDate} from './almanac.mjs?v=4';
+import {calculateDay, civilDateAt, parseCivilDate} from './almanac.mjs?v=2027';
 const result=document.getElementById('result'),input=document.getElementById('civil-date'),error=document.getElementById('error');
 function el(tag,text,className){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(className)n.className=className;return n;}
 function link(text,href){const n=el('a',text);n.setAttribute('href',href);return n;}
@@ -37,12 +37,13 @@ function show(isoDate,updateUrl=false){
  try{parseCivilDate(isoDate);}catch{input.value='';error.textContent='日期无效，请选择真实的公历日期。';error.hidden=false;return;}
  try{
   const day=calculateDay(isoDate);result.setAttribute('data-rule-version',day.verifiedRuleVersion);
-  if(day.resolutionStatus==='unavailable')result.append(el('p','此日期不在 2026 年支持范围内。','notice'));
+  if(day.resolutionStatus==='unavailable')result.append(el('p','此日期不在 2026–2027 年日历支持范围内。','notice'));
   else{
    const heading=el('div',undefined,'day-heading'),title=el('div');title.append(el('h2',day.civilDate),el('p',`农历 ${day.lunar.lunarYear}${day.lunar.lunarMonth}${day.lunar.lunarDay}`));heading.append(title);
    if(day.edition)heading.append(link('阅读当日日报 →',day.edition));result.append(heading);
    const facts=el('dl',undefined,'day-facts');
-   for(const [label,value] of [['干支日',day.dayCycle.name+'日'],['月建',day.contexts.map(c=>c.monthBranch).join(' → ')],['节气',day.solarTerm?(day.solarTerm+(day.solarTermEstimate?' · 约 '+day.solarTermEstimate.displayMinuteUtc8.slice(11):'')):'—']]){const p=el('div');p.append(el('dt',label),el('dd',value));facts.append(p);}result.append(facts);
+   for(const [label,value] of [['干支日',day.dayCycle.name+'日'],['月建',day.contexts.map(c=>c.monthBranch).join(' → ')||'传统规则待核'],['节气',day.solarTerm?(day.solarTerm+(day.solarTermEstimate?' · 约 '+day.solarTermEstimate.displayMinuteUtc8.slice(11):'')):'—']]){const p=el('div');p.append(el('dt',label),el('dd',value));facts.append(p);}result.append(facts);
+   if(day.resolutionStatus==='calendar-only')result.append(el('p','此年传统规则尚未核验，暂不输出本条或综合宜忌。农历和节气日期已核对；不沿用 2026 年规则结论。','notice'));
    for(const context of day.contexts){
     const section=el('section',undefined,'rule-context'),title=el('h3',context.name+'日');title.append(el('span',`${context.phase==='before'?'交节前 · ':context.phase==='after'?'交节后 · ':''}${context.monthBranch}月建`,'rule-label'));section.append(title);
     const r=context.baseRuleHits[0];section.append(ruleLine('本条宜',r.directYi),ruleLine('本条忌',r.directJi));
@@ -53,6 +54,6 @@ function show(isoDate,updateUrl=false){
  }catch{result.replaceChildren();error.textContent='本地计算失败，请重试。';error.hidden=false;}
 }
 input.addEventListener('input',()=>{error.hidden=true;result.replaceChildren(el('p','日期已修改，请点击“查看”。','muted'));});
-input.addEventListener('invalid',()=>{result.replaceChildren();error.textContent='请选择 2026 年内的真实公历日期。';error.hidden=false;});
+input.addEventListener('invalid',()=>{result.replaceChildren();error.textContent='请选择 2026–2027 年内的真实公历日期。';error.hidden=false;});
 document.getElementById('date-form').addEventListener('submit',event=>{event.preventDefault();show(input.value,true);});
 show(new URL(location.href).searchParams.get('date')??civilDateAt(new Date().toISOString()));

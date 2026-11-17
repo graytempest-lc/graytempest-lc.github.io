@@ -18,7 +18,7 @@ for(const issue of source){
 }
 const homepage=fs.readFileSync('dist/index.html','utf8'),latest=source.at(-1);
 assert.deepEqual(analyzeLegacyEdition(homepage,latest.id).items,latest.items,'Homepage differs from latest edition');
-assert.ok(homepage.includes('data-build="sol3-month-2026-v3"'),'Repaired calendar missing');
+assert.ok(homepage.includes('data-build="sol3-month-2026-2027-v1"'),'Repaired calendar missing');
 assert.ok(homepage.includes('home-almanac'),'Inline almanac missing');
 assert.ok(!homepage.includes('class="archive-menu"'),'Removed homepage calendar menu returned');
 assert.ok(homepage.includes('RSS 视窗'));

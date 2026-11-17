@@ -4,6 +4,8 @@ import { lunar2026, terms2026, editions } from './calendar-data.mjs';
 import { RULES, OFFICERS, RULE_VERSION } from './rules.mjs';
 import { calculateVerifiedRules, VERIFIED_RULE_VERSION } from './verified-rules.mjs?v=4';
 export { parseCivilDate, civilDateAt };
+import {CALENDAR_RANGE} from './calendar-range.mjs';
+import {lunarFor,termFor} from './calendar-facts.mjs';
 import {SUPPORTED_RANGE,BRANCHES,STEMS,dayCycle,officerFor,solarMonthState} from './calendar-core.mjs';
 export {SUPPORTED_RANGE,BRANCHES,STEMS,dayCycle,officerFor,solarMonthState};
 export function calculateDay(isoDate) {
@@ -15,6 +17,7 @@ export function calculateDay(isoDate) {
       transition:'both sides shown; exact instant unavailable'},
     comparison:{baidu:'not-verified',matchesBaidu:null},
     edition:editions.includes(isoDate)?`${isoDate}.html`:null};
+  if(isoDate>SUPPORTED_RANGE.to&&isoDate<=CALENDAR_RANGE.to)return {...base,resolutionStatus:'calendar-only',reason:'traditional-rules-not-verified-for-year',lunar:{...lunarFor(isoDate)},solarTerm:termFor(isoDate),solarTermEstimate:null,dayCycle:dayCycle(isoDate),monthState:null,contexts:[]};
   if (isoDate<SUPPORTED_RANGE.from||isoDate>SUPPORTED_RANGE.to) return {...base,
     resolutionStatus:'unavailable',reason:'outside-verified-year',lunar:null,solarTerm:null,dayCycle:null,monthState:null,contexts:[]};
   const cycle=dayCycle(isoDate), monthState=solarMonthState(isoDate);

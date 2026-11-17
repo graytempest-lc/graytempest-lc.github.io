@@ -6,9 +6,10 @@ import Footer from '../components/Footer.astro';
 import FeedWindow from '../components/FeedWindow.astro';
 import {publishedEditions} from '../lib/editions';
 import {renderCalendar} from '../../public/sol3/month-render.mjs';
+import {RANGE} from '../../public/sol3/month-model.mjs';
 import {calculateDay} from '../../public/sol3/almanac.mjs';
 const issues=await publishedEditions(),issue=issues.at(-1).data;
-const calendarDate=issues.map(i=>i.data.editionDate).filter(d=>d>='2026-01-01'&&d<='2026-12-31').at(-1)||'2026-01-01';
+const calendarDate=issues.map(i=>i.data.editionDate).filter(d=>d>=RANGE.from&&d<=RANGE.to).at(-1)||RANGE.from;
 const calendar=renderCalendar(calendarDate,null,calculateDay(calendarDate));
 ---
-<Base title="L星团快讯 · Sol3 本土日历与计算机快讯" description={issue.description} canonical="/" calendar><Header issue={issue} issues={issues} home/><Fragment set:html={calendar}/><Edition issue={issue}/><FeedWindow compact/><Footer issue={issue} issues={issues}/><script is:inline type="module" src="/sol3/month-ui.mjs?v=4"></script></Base>
+<Base title="L星团快讯 · Sol3 本土日历与计算机快讯" description={issue.description} canonical="/" calendar><Header issue={issue} issues={issues} home/><Fragment set:html={calendar}/><Edition issue={issue}/><FeedWindow compact/><Footer issue={issue} issues={issues}/><script is:inline type="module" src="/sol3/month-ui.mjs?v=2027"></script></Base>

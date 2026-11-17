@@ -3,7 +3,7 @@ const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&g
 const phase=c=>`${c.phase==='before'?'交节前 · ':c.phase==='after'?'交节后 · ':''}${c.monthBranch}月建 · ${c.name}日`;
 const list=(label,items,empty)=>`<div class="home-rule-list"><dt>${label}</dt><dd>${items?.length?items.map(escape).join('、'):empty}</dd></div>`;
 export function renderRuleSummary(day){
- if(!day||day.resolutionStatus==='unavailable')return '<p class="calendar-small">此日规则不在已核范围，未生成结论。</p>';
+ if(!day||['unavailable','calendar-only'].includes(day.resolutionStatus))return '<p class="calendar-small">此日规则不在已核范围，未生成结论。</p>';
  return day.contexts.map(c=>{
   const r=c.verifiedRules,x=r.completion;
   const certain=[...r.godHits,...r.seasonalHits].filter(h=>!h.certainty||h.certainty==='certain');
@@ -19,6 +19,7 @@ export function renderRuleSummary(day){
  }).join('');
 }
 export function renderHomeAlmanac(facts,day=null){
+ if(facts.ruleSupported===false)return `<section class="home-almanac" aria-labelledby="home-almanac-title"><h4 id="home-almanac-title">黄历参考</h4><p class="calendar-warning">${facts.date.slice(0,4)} 年传统规则尚未核验，暂不输出本条或综合宜忌。农历、节气与放假安排可正常查看。</p><a href="almanac.html?date=${facts.date}">查看日期与范围说明 →</a></section>`;
  const contexts=facts.officers.map(c=>{
   const r=c.baseRuleHits[0];
   return `<div class="home-rule-context"><h5>${escape(phase(c))}</h5><dl>${list('本条宜',r.directYi,'本条未列。')}${list('本条忌',r.directJi,'本条未列。')}</dl></div>`;
