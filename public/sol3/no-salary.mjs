@@ -1,6 +1,6 @@
 // 无禄: determine clauses and source-scoped restrictions, never final daily advice.
-import {parseCivilDate} from './date-contract.mjs';
-import {ALLOWED_LUNAR_ACTIVITIES,checkedTermEntries} from './completion-rules.mjs';
+import {parseCivilDate} from './date-contract.mjs?v=1f1ae4ac7dab4dd1';
+import {ALLOWED_LUNAR_ACTIVITIES,checkedTermEntries} from './completion-rules.mjs?v=1f1ae4ac7dab4dd1';
 const B='子丑寅卯辰巳午未申酉戌亥',T='甲乙丙丁戊己庚辛壬癸';
 const S='https://zh.wikisource.org/w/index.php?oldid=787351';
 const salary=[2,3,5,6,5,6,8,9,11,0];

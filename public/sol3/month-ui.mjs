@@ -1,7 +1,7 @@
-import {civilDateAt} from './date-contract.mjs';
-import {initialDate,shiftMonth,shiftDay,supported,dayFacts,LATEST_EDITION,RANGE} from './month-model.mjs';
-import {renderMonth,renderDetails} from './month-render.mjs?v=2027';
-import {renderRuleSummary} from './home-almanac.mjs?v=2027';
+import {civilDateAt} from './date-contract.mjs?v=1f1ae4ac7dab4dd1';
+import {initialDate,shiftMonth,shiftDay,supported,dayFacts,LATEST_EDITION,RANGE} from './month-model.mjs?v=1f1ae4ac7dab4dd1';
+import {renderMonth,renderDetails} from './month-render.mjs?v=1f1ae4ac7dab4dd1';
+import {renderRuleSummary} from './home-almanac.mjs?v=1f1ae4ac7dab4dd1';
 const root=document.getElementById('sol3-calendar');
 const table=document.getElementById('month-table'),details=document.getElementById('calendar-details');
 const prev=document.getElementById('month-prev'),next=document.getElementById('month-next'),select=document.getElementById('month-select'),todayButton=document.getElementById('calendar-today'),status=document.getElementById('calendar-status');
@@ -46,7 +46,7 @@ select.disabled=false;todayButton.disabled=false;
 if(!supported(today))todayButton.textContent='最新刊载日';
 show(selected,{url:false,note:start.note});root.dataset.ready='true';
 // The calendar stays useful if the optional astronomical model cannot load.
-import('./solar-terms.mjs').then(m=>{solar=m.calculateSolarTerms2026();estimate();}).catch(()=>{});
+import("./solar-terms.mjs?v=1f1ae4ac7dab4dd1").then(m=>{solar=m.calculateSolarTerms2026();estimate();}).catch(()=>{});
 
 // Optional enhancement: failure must not break date switching or hide basic clauses.
-import('./almanac.mjs?v=2027').then(m=>{almanac=m;enhanceAlmanac();}).catch(()=>{almanacFailed=true;enhanceAlmanac();});
+import("./almanac.mjs?v=1f1ae4ac7dab4dd1").then(m=>{almanac=m;enhanceAlmanac();}).catch(()=>{almanacFailed=true;enhanceAlmanac();});

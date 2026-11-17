@@ -13,7 +13,7 @@ function harness(date,instant='2027-01-01T01:00:00Z'){
  for(const id of ['sol3-calendar','month-table','calendar-details','month-prev','month-next','month-select','calendar-today','calendar-status','term-estimate','home-rule-extra'])nodes.set(id,make(id));
  const location={href:'https://calendar.example/?date='+date};const loads={};
  const context={...dates,...model,...render,renderRuleSummary,URL,Date:class extends Date{constructor(value){super(value??instant);}},location,history:{replaceState(a,b,url){location.href=String(url);}},document:{getElementById(id){if(id==='home-rule-extra'){const html=nodes.get('calendar-details').html;if(!html.includes('home-rule-extra'))return null;nodes.get(id).dataset.almanacDate=html.match(/data-almanac-date="([^"]+)"/)[1];}return nodes.get(id);}},window:{addEventListener(name,fn){handlers['window:'+name]=fn;}},load(name){return new Promise((resolve,reject)=>{loads[name]={resolve,reject};});}};
- const source=fs.readFileSync(new URL('../public/sol3/month-ui.mjs',import.meta.url),'utf8').replace(/^import .*;\n/gm,'').replaceAll("import('./","load('./");
+ const source=fs.readFileSync(new URL('../public/sol3/month-ui.mjs',import.meta.url),'utf8').replace(/^import .*;\n/gm,'').replace(/\bimport\((['"])\.\//g,'load($1./');
  vm.runInNewContext(source,context);
  return {nodes,handlers,loads,location,get focus(){return focus;}};
 }

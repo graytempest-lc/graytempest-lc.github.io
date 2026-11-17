@@ -1,5 +1,5 @@
 // A pure, conditional policy evaluator. Does not compute gods or final activities.
-import {GRADE_ROWS,GRADE_POLICIES} from './grade-data.mjs';
+import {GRADE_ROWS,GRADE_POLICIES} from './grade-data.mjs?v=1f1ae4ac7dab4dd1';
 export {GRADE_ROWS,GRADE_POLICIES};
 const BRANCHES='子丑寅卯辰巳午未申酉戌亥';
 const ALIASES={'劫煞':'刼煞','灾煞':'災煞','月厌':'月厭','大时':'大時','闭日':'閉日','满日':'滿日','建日':'月建','破日':'月破','天愿':'天願','四废':'四廢','岁薄':'歲薄','逐阵':'逐陣','平':'平日','收':'收日','闭':'閉日','满':'滿日','建':'月建','破':'月破'};

@@ -12,4 +12,4 @@ const issues=await publishedEditions(),issue=issues.at(-1).data;
 const calendarDate=issues.map(i=>i.data.editionDate).filter(d=>d>=RANGE.from&&d<=RANGE.to).at(-1)||RANGE.from;
 const calendar=renderCalendar(calendarDate,null,calculateDay(calendarDate));
 ---
-<Base title="L星团快讯 · Sol3 本土日历与计算机快讯" description={issue.description} canonical="/" calendar><Header issue={issue} issues={issues} home/><Fragment set:html={calendar}/><Edition issue={issue}/><FeedWindow compact/><Footer issue={issue} issues={issues}/><script is:inline type="module" src="/sol3/month-ui.mjs?v=2027"></script></Base>
+<Base title="L星团快讯 · Sol3 本土日历与计算机快讯" description={issue.description} canonical="/" calendar><Header issue={issue} issues={issues} home/><Fragment set:html={calendar}/><Edition issue={issue}/><FeedWindow compact/><Footer issue={issue} issues={issues}/><script is:inline type="module" src="/sol3/month-ui.mjs?v=1f1ae4ac7dab4dd1"></script></Base>

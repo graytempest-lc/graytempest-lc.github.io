@@ -1,12 +1,12 @@
-import {calculateSolarTerms2026} from './solar-terms.mjs';
-import { parseCivilDate, civilDateAt } from './date-contract.mjs';
-import { lunar2026, terms2026, editions } from './calendar-data.mjs';
-import { RULES, OFFICERS, RULE_VERSION } from './rules.mjs';
-import { calculateVerifiedRules, VERIFIED_RULE_VERSION } from './verified-rules.mjs?v=4';
+import {calculateSolarTerms2026} from './solar-terms.mjs?v=1f1ae4ac7dab4dd1';
+import { parseCivilDate, civilDateAt } from './date-contract.mjs?v=1f1ae4ac7dab4dd1';
+import { lunar2026, terms2026, editions } from './calendar-data.mjs?v=1f1ae4ac7dab4dd1';
+import { RULES, OFFICERS, RULE_VERSION } from './rules.mjs?v=1f1ae4ac7dab4dd1';
+import { calculateVerifiedRules, VERIFIED_RULE_VERSION } from './verified-rules.mjs?v=1f1ae4ac7dab4dd1';
 export { parseCivilDate, civilDateAt };
-import {CALENDAR_RANGE} from './calendar-range.mjs';
-import {lunarFor,termFor} from './calendar-facts.mjs';
-import {SUPPORTED_RANGE,BRANCHES,STEMS,dayCycle,officerFor,solarMonthState} from './calendar-core.mjs';
+import {CALENDAR_RANGE} from './calendar-range.mjs?v=1f1ae4ac7dab4dd1';
+import {lunarFor,termFor} from './calendar-facts.mjs?v=1f1ae4ac7dab4dd1';
+import {SUPPORTED_RANGE,BRANCHES,STEMS,dayCycle,officerFor,solarMonthState} from './calendar-core.mjs?v=1f1ae4ac7dab4dd1';
 export {SUPPORTED_RANGE,BRANCHES,STEMS,dayCycle,officerFor,solarMonthState};
 export function calculateDay(isoDate) {
   parseCivilDate(isoDate);

@@ -17,11 +17,12 @@
     "publish:prepare": "npm run feeds:refresh && npm run check"
   },
   "dependencies": {
-    "astro": "7.4.7",
     "@astrojs/rss": "4.0.19",
+    "astro": "7.4.7",
     "fast-xml-parser": "5.12.0"
   },
   "devDependencies": {
+    "es-module-lexer": "3.0.4",
     "parse5": "8.1.0"
   }
 }

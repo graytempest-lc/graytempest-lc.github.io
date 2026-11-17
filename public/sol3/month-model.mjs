@@ -1,9 +1,9 @@
-import {parseCivilDate,civilDateAt} from './date-contract.mjs';
-import {lunarFor,termFor} from './calendar-facts.mjs';
-import {CALENDAR_RANGE,RULE_RANGE} from './calendar-range.mjs';
-import {dayCycle,solarMonthState,officerFor} from './calendar-core.mjs';
-import {newsByDate} from './news-data.mjs';
-import {holidayFor,holidaySource} from './holiday-data.mjs';
+import {parseCivilDate,civilDateAt} from './date-contract.mjs?v=1f1ae4ac7dab4dd1';
+import {lunarFor,termFor} from './calendar-facts.mjs?v=1f1ae4ac7dab4dd1';
+import {CALENDAR_RANGE,RULE_RANGE} from './calendar-range.mjs?v=1f1ae4ac7dab4dd1';
+import {dayCycle,solarMonthState,officerFor} from './calendar-core.mjs?v=1f1ae4ac7dab4dd1';
+import {newsByDate} from './news-data.mjs?v=1f1ae4ac7dab4dd1';
+import {holidayFor,holidaySource} from './holiday-data.mjs?v=1f1ae4ac7dab4dd1';
 export {holidaySource,newsByDate};
 export const RANGE=CALENDAR_RANGE;
 export const LATEST_EDITION=Object.keys(newsByDate).filter(d=>d>=RANGE.from&&d<=RANGE.to).sort().at(-1)||RANGE.from;

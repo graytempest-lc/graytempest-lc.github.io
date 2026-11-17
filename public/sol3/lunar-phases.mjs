@@ -1,5 +1,5 @@
-import {SearchMoonQuarter,NextMoonQuarter} from './vendor/astronomy.mjs';
-import {utc8Timestamp} from './solar-terms.mjs';
+import {SearchMoonQuarter,NextMoonQuarter} from './vendor/astronomy.mjs?v=1f1ae4ac7dab4dd1';
+import {utc8Timestamp} from './solar-terms.mjs?v=1f1ae4ac7dab4dd1';
 const NAMES=Object.freeze(['朔','上弦','望','下弦']);let cache;
 export function calculateLunarPhases2026(){
  if(cache)return cache;const out=[];let q=SearchMoonQuarter(new Date('2026-01-01T00:00:00+08:00'));

@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import {versionCalendarModules} from './version-calendar.mjs';
 import {parseCivilDate} from '../public/sol3/date-contract.mjs';
 const files=fs.readdirSync('content/editions').filter(f=>f.endsWith('.json')).sort();
 const issues=files.map(f=>{const x=JSON.parse(fs.readFileSync('content/editions/'+f));if(f!==x.editionDate+'.json'||x.id!==x.editionDate)throw Error('Filename/date mismatch: '+f);parseCivilDate(x.editionDate);return x;}).filter(x=>x.status==='published');
@@ -19,3 +20,5 @@ const p='public/sol3/calendar-data.mjs';const data=fs.readFileSync(p,'utf8');
 if(!/export const editions = \[[^\]]*\];/.test(data))throw Error('Calendar edition contract changed');
 fs.writeFileSync(p,data.replace(/export const editions = \[[^\]]*\];/,`export const editions = ${JSON.stringify(issues.map(i=>i.editionDate))};`));
 console.log(`Prepared ${issues.length} editions, ${issues.reduce((n,i)=>n+i.items.length,0)} articles; latest ${issues.at(-1).editionDate}.`);
+
+console.log('Calendar module revision: '+versionCalendarModules());

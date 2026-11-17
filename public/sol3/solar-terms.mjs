@@ -1,4 +1,4 @@
-import { SearchSunLongitude } from './vendor/astronomy.mjs';
+import { SearchSunLongitude } from './vendor/astronomy.mjs?v=1f1ae4ac7dab4dd1';
 
 // Deliberately restricted to the independently checked 2026 civil year.
 // A millisecond timestamp is a model output, not a claim of millisecond accuracy.

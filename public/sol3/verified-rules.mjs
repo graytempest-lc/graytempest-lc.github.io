@@ -1,14 +1,14 @@
-import {dayCycle as calendarDayCycle,solarMonthState as calendarMonthState} from './calendar-core.mjs';
-import {heavenlyVirtueBoundary,soilWindow,nonOpposingClause,motherStorehouseClauses,lunarDateClauses,ruleHit,SOIL_JI} from './completion-rules.mjs';
-import {noSalaryClause} from './no-salary.mjs';
+import {dayCycle as calendarDayCycle,solarMonthState as calendarMonthState} from './calendar-core.mjs?v=1f1ae4ac7dab4dd1';
+import {heavenlyVirtueBoundary,soilWindow,nonOpposingClause,motherStorehouseClauses,lunarDateClauses,ruleHit,SOIL_JI} from './completion-rules.mjs?v=1f1ae4ac7dab4dd1';
+import {noSalaryClause} from './no-salary.mjs?v=1f1ae4ac7dab4dd1';
 // Independently transcribed rules from the public-domain Qing text.
 // No cnlunar code, modern daily database or vendor calendar table is embedded.
 // This is an incomplete, source-labelled rules layer, never a final daily verdict.
-import {parseCivilDate} from './date-contract.mjs';
-import {collectAdditionalRules,ADDITIONAL_RULE_CATALOG} from './additional-rules.mjs';
-import {specialDayClauses,SPECIAL_DAY_NAMES} from './special-days.mjs';
-import {gradingCandidates} from './grade-policy.mjs';
-import {applyScopedEffects} from './scoped-effects.mjs?v=4';
+import {parseCivilDate} from './date-contract.mjs?v=1f1ae4ac7dab4dd1';
+import {collectAdditionalRules,ADDITIONAL_RULE_CATALOG} from './additional-rules.mjs?v=1f1ae4ac7dab4dd1';
+import {specialDayClauses,SPECIAL_DAY_NAMES} from './special-days.mjs?v=1f1ae4ac7dab4dd1';
+import {gradingCandidates} from './grade-policy.mjs?v=1f1ae4ac7dab4dd1';
+import {applyScopedEffects} from './scoped-effects.mjs?v=1f1ae4ac7dab4dd1';
 
 export const VERIFIED_RULE_VERSION = 'sol3-verified-rules-4';
 const source = (volume,revision) => `https://zh.wikisource.org/w/index.php?title=欽定協紀辨方書_(四庫全書本)/卷${volume}&oldid=${revision}`;

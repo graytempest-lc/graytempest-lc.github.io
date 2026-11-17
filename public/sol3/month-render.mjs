@@ -1,7 +1,7 @@
-import {renderHomeAlmanac} from './home-almanac.mjs?v=2027';
-import {dayFacts,monthCells,holidaySource} from './month-model.mjs';
-import {holidaySource2027} from './holiday-data.mjs';
-import {CALENDAR_YEARS} from './calendar-range.mjs';
+import {renderHomeAlmanac} from './home-almanac.mjs?v=1f1ae4ac7dab4dd1';
+import {dayFacts,monthCells,holidaySource} from './month-model.mjs?v=1f1ae4ac7dab4dd1';
+import {holidaySource2027} from './holiday-data.mjs?v=1f1ae4ac7dab4dd1';
+import {CALENDAR_YEARS} from './calendar-range.mjs?v=1f1ae4ac7dab4dd1';
 export const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const weekdays=['一','二','三','四','五','六','日'];
 // The legend and date cells share the same symbols and visual styles.

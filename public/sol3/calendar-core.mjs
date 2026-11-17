@@ -1,6 +1,6 @@
-import {parseCivilDate} from './date-contract.mjs';
-import {terms2026} from './calendar-data.mjs';
-import {RULES,OFFICERS} from './rules.mjs';
+import {parseCivilDate} from './date-contract.mjs?v=1f1ae4ac7dab4dd1';
+import {terms2026} from './calendar-data.mjs?v=1f1ae4ac7dab4dd1';
+import {RULES,OFFICERS} from './rules.mjs?v=1f1ae4ac7dab4dd1';
 export const SUPPORTED_RANGE = Object.freeze({from:'2026-01-01', to:'2026-12-31'});
 export const BRANCHES = Object.freeze([... '子丑寅卯辰巳午未申酉戌亥']);
 export const STEMS = Object.freeze([... '甲乙丙丁戊己庚辛壬癸']);

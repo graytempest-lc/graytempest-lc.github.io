@@ -1,7 +1,7 @@
 // Newly verified clauses. No final daily Yi/Ji is inferred from these matches.
-import {parseCivilDate} from './date-contract.mjs';
-import {lunarDayContext} from './lunar-context.mjs';
-import {calculateLunarPhases2026} from './lunar-phases.mjs';
+import {parseCivilDate} from './date-contract.mjs?v=1f1ae4ac7dab4dd1';
+import {lunarDayContext} from './lunar-context.mjs?v=1f1ae4ac7dab4dd1';
+import {calculateLunarPhases2026} from './lunar-phases.mjs?v=1f1ae4ac7dab4dd1';
 const S4='https://zh.wikisource.org/w/index.php?oldid=787340',S5='https://zh.wikisource.org/w/index.php?oldid=787341',S6='https://zh.wikisource.org/w/index.php?oldid=787343',S10='https://zh.wikisource.org/w/index.php?oldid=787351';
 const S1='https://zh.wikisource.org/wiki/欽定協紀辨方書_(四庫全書本)/卷01';
 const B='子丑寅卯辰巳午未申酉戌亥',T='甲乙丙丁戊己庚辛壬癸', split=s=>s?s.split(' '):[];

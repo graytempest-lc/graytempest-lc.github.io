@@ -1,4 +1,4 @@
-import {calculateDay, civilDateAt, parseCivilDate} from './almanac.mjs?v=2027';
+import {calculateDay, civilDateAt, parseCivilDate} from './almanac.mjs?v=1f1ae4ac7dab4dd1';
 const result=document.getElementById('result'),input=document.getElementById('civil-date'),error=document.getElementById('error');
 function el(tag,text,className){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(className)n.className=className;return n;}
 function link(text,href){const n=el('a',text);n.setAttribute('href',href);return n;}
