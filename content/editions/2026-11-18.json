@@ -1,0 +1,427 @@
+{
+  "id": "2026-11-18",
+  "editionDate": "2026-11-18",
+  "status": "published",
+  "title": "计算机热点日报 · 2026年11月18日",
+  "description": "15条精选：新模型与本地推理、浏览器安全、代理开发工具和芯片供应链。",
+  "editionLabel": "2026年11月18日 · 精选15条",
+  "dateBasis": "edition-publication-date",
+  "introduction": [
+    "本期精选15条：13条11月17日公告与发布，另补充2条11月16日进展。已对照近7期去重。",
+    "刊载日按东八区，预览、计划与研究不等同正式可用；厂商结果不是本站独立实测。"
+  ],
+  "overview": [
+    {
+      "id": "gpt62",
+      "title": "GPT-6.2 Astra 与 Sol 上线，Astra API 降价",
+      "category": "AI模型"
+    },
+    {
+      "id": "chrome158",
+      "title": "Chrome 158 稳定版包含 204 项安全修复",
+      "category": "浏览器安全"
+    },
+    {
+      "id": "copilot-evals",
+      "title": "Copilot Evals 为技能与 MCP 配置提供回归测试",
+      "category": "开发工具"
+    },
+    {
+      "id": "amd-mi350p-windows",
+      "title": "MI350P 宣布支持 Windows Server 推理",
+      "category": "算力平台"
+    }
+  ],
+  "items": [
+    {
+      "id": "gpt62",
+      "title": "GPT-6.2 Astra 与 Sol 上线，Astra API 降价",
+      "titleId": "gpt62-title",
+      "paragraphs": [
+        {
+          "text": "GPT-6.2 Astra 与 Sol 已进入 ChatGPT Work、Codex 和 API。Astra 标准 API 每百万输入／输出 token 为 8／40 美元，较 GPT-6 Astra 降低 20%；Sol 延续 2／10 美元。",
+          "variant": ""
+        },
+        {
+          "text": "Pro 200 也可使用 Sol Ultrafast，但 Work 与 Codex 共享用量；厂商任务效率不能换算成订阅固定 token 总额，也不等于个人项目实测。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-17",
+      "dateLabel": "11月17日 · 公告／发布",
+      "eventDate": "2026-11-17",
+      "sourcePublishedAt": "2026-11-17",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "copilot-fusion",
+      "title": "Copilot Fusion 预览把部分编程请求路由到本地模型",
+      "titleId": "copilot-fusion-title",
+      "paragraphs": [
+        {
+          "text": "微软介绍 Copilot Fusion 预览：GitHub Copilot 应用、CLI 和 VS Code 可把部分任务路由到 MAI Code 1.1 Flash 等本地模型。",
+          "variant": ""
+        },
+        {
+          "text": "公告列出 NVIDIA RTX Spark、AMD Ryzen AI Max／Max 400 等平台，为本地与云端混合工作流提供选择；不是所有 PC 或独立显卡都已获得支持。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-17",
+      "dateLabel": "11月17日 · 公告／发布",
+      "eventDate": "2026-11-17",
+      "sourcePublishedAt": "2026-11-17",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://blogs.windows.com/windowsexperience/2026/11/17/microsoft-ignite-2026-building-windows-for-the-next-era-of-work/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "chrome158",
+      "title": "Chrome 158 稳定版包含 204 项安全修复",
+      "titleId": "chrome158-title",
+      "paragraphs": [
+        {
+          "text": "Chrome 158 开始向 Windows、macOS 和 Linux 分批推送，官方列出 204 项安全修复，涉及 GPU、媒体和 WebView 等组件。",
+          "variant": ""
+        },
+        {
+          "text": "浏览器与依赖 Chromium 的测试环境应分别核对版本；第三方 Chromium 应用不会因此自动更新，也不能据公告推断所有漏洞已被利用。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-17",
+      "dateLabel": "11月17日 · 公告／发布",
+      "eventDate": "2026-11-17",
+      "sourcePublishedAt": "2026-11-17",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01699533288.html",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "firefox16001",
+      "title": "Firefox 160.0.1 修补两项高危问题",
+      "titleId": "firefox16001-title",
+      "paragraphs": [
+        {
+          "text": "Mozilla 修补 Android CanvasWebGL 权限提升和音视频播放组件的释放后使用问题，两项均标为 high。",
+          "variant": ""
+        },
+        {
+          "text": "浏览器更新值得优先处理；其中 Android 图形问题不能泛化为所有平台都受影响。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-17",
+      "dateLabel": "11月17日 · 公告／发布",
+      "eventDate": "2026-11-17",
+      "sourcePublishedAt": "2026-11-17",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://www.mozilla.org/en-US/security/advisories/mfsa2026-130/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "copilot-adaptive",
+      "title": "Copilot 代码审阅可按 PR 风险分配推理力度",
+      "titleId": "copilot-adaptive-title",
+      "paragraphs": [
+        {
+          "text": "Adaptive 公开预览在 Lite、Balanced、Max 中按 PR 复杂度和风险选择审阅力度，并受管理员上限约束；另加入公共仓库跨库上下文。",
+          "variant": ""
+        },
+        {
+          "text": "默认依然是 Balanced。新能力仍为预览，跨库上下文当前限公共仓库，不能当作已自动开启或替代人工审阅。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-17",
+      "dateLabel": "11月17日 · 公告／发布",
+      "eventDate": "2026-11-17",
+      "sourcePublishedAt": "2026-11-17",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.blog/changelog/2026-11-17-copilot-code-review-adaptive-effort-secret-detection-and-more/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "secret-scan",
+      "title": "Copilot 按需凭据扫描默认关闭且消耗额度",
+      "titleId": "secret-scan-title",
+      "paragraphs": [
+        {
+          "text": "秘密扫描公开预览接入 Copilot CLI、应用、SDK 和代码审阅，用 500 多种已知凭据模式及专用模型检查代码改动。",
+          "variant": ""
+        },
+        {
+          "text": "适合合并前补一道检查，但默认关闭，只扫本次改动而非仓库历史，扫描会消耗 AI credits。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-17",
+      "dateLabel": "11月17日 · 公告／发布",
+      "eventDate": "2026-11-17",
+      "sourcePublishedAt": "2026-11-17",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.blog/changelog/2026-11-17-secret-scanning-on-demand-for-developers-and-agents/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "copilot-evals",
+      "title": "Copilot Evals 为技能与 MCP 配置提供回归测试",
+      "titleId": "copilot-evals-title",
+      "paragraphs": [
+        {
+          "text": "公开预览支持为技能、自定义 agent 和 MCP 工具创建、重跑评估，对比修改前后的结果与执行过程。",
+          "variant": ""
+        },
+        {
+          "text": "本地 Vally 引擎每次运行先获用户批准，可检查提示词和工具配置是否退步；本地评估引擎不等于全流程离线。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-17",
+      "dateLabel": "11月17日 · 公告／发布",
+      "eventDate": "2026-11-17",
+      "sourcePublishedAt": "2026-11-17",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.blog/changelog/2026-11-17-github-copilot-evals-is-now-in-public-preview/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "github-event-streams",
+      "title": "GitHub Event Streams 预览减少本地代理轮询",
+      "titleId": "github-event-streams-title",
+      "paragraphs": [
+        {
+          "text": "通过保持连接接收 PR 审阅、推送、冲突、关闭和检查状态变化，无需公开 webhook 接收地址。",
+          "variant": ""
+        },
+        {
+          "text": "为笔记本自动化提供事件驱动路径；目前须候补名单批准，不能假设账号已可用，也不是所有仓库事件的无边界流。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-17",
+      "dateLabel": "11月17日 · 公告／发布",
+      "eventDate": "2026-11-17",
+      "sourcePublishedAt": "2026-11-17",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.blog/changelog/2026-11-17-github-event-streams-is-now-in-preview/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "buildstream-tar",
+      "title": "BuildStream 修补恶意源码包越界写入",
+      "titleId": "buildstream-tar-title",
+      "paragraphs": [
+        {
+          "text": "Ubuntu 为 BuildStream tar 源码解包发布补丁，避免恶意链接让构建过程以当前用户权限写入任意文件。",
+          "variant": ""
+        },
+        {
+          "text": "处理第三方源码包的本地构建和 CI 值得检查；公告覆盖 Ubuntu 20.04、22.04、24.04，所列补丁属于 Ubuntu Pro ESM Apps，并非无条件远程提权。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-17",
+      "dateLabel": "11月17日 · 公告／发布",
+      "eventDate": "2026-11-17",
+      "sourcePublishedAt": "2026-11-17",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://ubuntu.com/security/notices/USN-9095-1",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "llamacpp-opencl",
+      "title": "llama.cpp 预发行版补齐 OpenCL SiLU 算子支持",
+      "titleId": "llamacpp-opencl-title",
+      "paragraphs": [
+        {
+          "text": "b12466 加入 OpenCL f16 和非连续 f32 SiLU 支持，补齐相应张量布局与精度路径。",
+          "variant": ""
+        },
+        {
+          "text": "面向使用该后端的集成与兼容性测试；这是预发行构建，不能当作所有设备的通用加速或稳定版保证。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-17",
+      "dateLabel": "11月17日 · 公告／发布",
+      "eventDate": "2026-11-17",
+      "sourcePublishedAt": "2026-11-17",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12466",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "sparse-attention",
+      "title": "稀疏注意力教程强调索引与 GPU 内核协同",
+      "titleId": "sparse-attention-title",
+      "paragraphs": [
+        {
+          "text": "NVIDIA 分析长上下文稀疏注意力设计：索引器仍扫描全长上下文，须联合优化 Top-k、索引器和块粒度，而非只减少保留 token 数。",
+          "variant": ""
+        },
+        {
+          "text": "适合模型结构与内核开发者参考，不是任意模型的即插即用优化；文中 2.1–2.4 倍结果限于特定 Top-k 内核。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-17",
+      "dateLabel": "11月17日 · 公告／发布",
+      "eventDate": "2026-11-17",
+      "sourcePublishedAt": "2026-11-17",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://developer.nvidia.com/blog/co-designing-sparse-attention-for-efficient-long-context-inference/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "amd-mi350p-windows",
+      "title": "MI350P 宣布支持 Windows Server 推理",
+      "titleId": "amd-mi350p-windows-title",
+      "paragraphs": [
+        {
+          "text": "AMD 与微软宣布 Instinct MI350P 支持 Windows Server 2025 和即将推出的 2028，推出时支持 AIMs 部署与 GPU 分区。",
+          "variant": ""
+        },
+        {
+          "text": "为企业在本地共享模型服务增加选择，但不是消费级 Radeon 或普通 Windows 桌面兼容承诺；具体模型、分区与部署条件仍须逐项核对。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-17",
+      "dateLabel": "11月17日 · 公告／发布",
+      "eventDate": "2026-11-17",
+      "sourcePublishedAt": "2026-11-17",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://www.amd.com/en/blogs/2026/more-ai-more-control-amd-instinct-mi350p-comes-to-windows.html",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "nvidia-supply",
+      "title": "NVIDIA 扩充封装供应链，新增产能仍需数年",
+      "titleId": "nvidia-supply-title",
+      "paragraphs": [
+        {
+          "text": "NVIDIA 宣布与 Kinsus、Samsung Electro-Mechanics、SPIL 等扩大基板与先进封装安排，并确认 Vera Rubin NVL72 与 Vera CPU 已在第三季度开始量产出货。",
+          "variant": ""
+        },
+        {
+          "text": "Kinsus 新产线预计 2027 年下半年开始生产，额外产能目标为 2028 年第三季度；不能据此推断当前显卡立即降价或云算力已普遍可用。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-17",
+      "dateLabel": "11月17日 · 公告／发布",
+      "eventDate": "2026-11-17",
+      "sourcePublishedAt": "2026-11-17",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://nvidianews.nvidia.com/news/nvidia-expands-commitments-with-supply-chain-partners-to-support-ai-infrastructure-buildout",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "hy4-flash",
+      "title": "Hy4 flash 上线低价 API，开源仍是计划",
+      "titleId": "hy4-flash-title",
+      "paragraphs": [
+        {
+          "text": "腾讯 11 月 16 日发布 Hy4 flash，支持多模态与 1M 上下文，TokenHub 标准价每百万输入／输出 token 为 0.5／2 元。",
+          "variant": ""
+        },
+        {
+          "text": "可评估文档处理与日常代理成本；224B 总参数仅 12B 激活不等于只需存储 12B，公告中的开源仍是后续计划，速度与效果为厂商评测。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-16",
+      "dateLabel": "11月16日 · 近7日补充",
+      "eventDate": "2026-11-16",
+      "sourcePublishedAt": "2026-11-16",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://www.tencent.com/zh-cn/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "latent-feedback",
+      "title": "Latent Feedback 研究比较反馈状态与增加训练轮数",
+      "titleId": "latent-feedback-title",
+      "paragraphs": [
+        {
+          "text": "11 月 16 日提交的预印本将前一 token 的高层状态反馈到下一输入，比较同算力下多训几轮的效果。60M–778M 模型在足够数据密度下显示训练计算优势。",
+          "variant": ""
+        },
+        {
+          "text": "为数据受限预训练提供研究方向，但大模型收益仍是外推，稀少数据区间可能更贵，prefill 需要额外处理；不是现成 LoRA 加速方法。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-16",
+      "dateLabel": "11月16日 · 近7日补充",
+      "eventDate": "2026-11-16",
+      "sourcePublishedAt": "2026-11-16",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://arxiv.org/abs/2611.20404",
+          "icon": false
+        }
+      ]
+    }
+  ]
+}
