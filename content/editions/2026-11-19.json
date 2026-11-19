@@ -1,0 +1,442 @@
+{
+  "id": "2026-11-19",
+  "editionDate": "2026-11-19",
+  "status": "published",
+  "title": "计算机热点日报 · 2026年11月19日",
+  "description": "15条精选：新模型与低内存推理、服务器安全、代理配置、数据工程及芯片合作。",
+  "editionLabel": "2026年11月19日 · 精选15条",
+  "dateBasis": "edition-publication-date",
+  "introduction": [
+    "本期精选15条，均为11月18日发布的公告、工具介绍或研究进展；已对照近7期去重。",
+    "刊载日按东八区。预览、实验、研究预告与未来计划不等同正式生产可用；厂商测试不是本站独立实测。"
+  ],
+  "overview": [
+    {
+      "id": "gemini4-neon",
+      "title": "Gemini 4 Neon 增加复杂任务的速度与成本选项",
+      "category": "AI模型"
+    },
+    {
+      "id": "moe-streaming",
+      "title": "MoE 专家流式读取实验探索 32GB Mac 运行大型模型",
+      "category": "本地AI"
+    },
+    {
+      "id": "nginx-nov18",
+      "title": "NGINX 稳定版与主线同时发布安全更新",
+      "category": "系统安全"
+    },
+    {
+      "id": "recapture",
+      "title": "Recapture 为文档训练集合成拍照与扫描缺陷",
+      "category": "数据工具"
+    }
+  ],
+  "items": [
+    {
+      "id": "gemini4-neon",
+      "title": "Gemini 4 Neon 增加复杂任务的速度与成本选项",
+      "titleId": "gemini4-neon-title",
+      "paragraphs": [
+        {
+          "text": "Google 开始推出 Gemini 4 Neon，提供 1M 上下文，标准 API 每百万输入／输出 token 价格为 3／15 美元，覆盖付费 API 与部分订阅入口。",
+          "variant": ""
+        },
+        {
+          "text": "适合评估复杂编码与分析任务；上线分渠道推进，厂商基准和任务成本不能视作个人项目实测。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-18",
+      "dateLabel": "11月18日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-18",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "moe-streaming",
+      "title": "MoE 专家流式读取实验探索 32GB Mac 运行大型模型",
+      "titleId": "moe-streaming-title",
+      "paragraphs": [
+        {
+          "text": "Hugging Face 展示在 M5 32GB 上把 Qwen3.8-Flash-Next 的专家与 n-gram 表放入 SSD，以有界缓存和 Metal 内核运行；作者短解码测试为 13.9 token/s。",
+          "variant": ""
+        },
+        {
+          "text": "这是尚在讨论 API 的 Transformers 实验，不是正式版开箱即用，也不是把全部 180B 权重装进内存；速度、磁盘与平台代价不能外推到 Windows 或 NVIDIA 显卡。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-18",
+      "dateLabel": "11月18日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-18",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://huggingface.co/blog/moe-expert-streaming",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "daisyrose27b",
+      "title": "DaisyRose-27B 开放代理模型的多种精度权重",
+      "titleId": "daisyrose27b-title",
+      "paragraphs": [
+        {
+          "text": "RadixArk 发布基于 Qwen3.8-27B 后训练的代理模型，提供 Apache-2.0 许可的 BF16、FP8 和 NVFP4 权重，保留 256K 上下文。",
+          "variant": ""
+        },
+        {
+          "text": "可用于本地代理对照测试；所谓百万 token 训练会话依靠外部流程摘要延续，不是百万原生上下文，作者基准不能代表普遍优胜。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-18",
+      "dateLabel": "11月18日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-18",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "rumble2-flash",
+      "title": "Rumble-2-Flash 开放 0.5B 多语语音识别模型",
+      "titleId": "rumble2-flash-title",
+      "paragraphs": [
+        {
+          "text": "Reson8 发布 Apache-2.0 许可的 Rumble-2-Flash，支持 40 多种语言、自动语言检测与输出格式控制，并原生接入 Transformers 和 vLLM。",
+          "variant": ""
+        },
+        {
+          "text": "无需 trust_remote_code，便于语音工作流集成；厂商 7,000 倍实时速率指满批吞吐，不是普通电脑单条录音的速度保证。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-18",
+      "dateLabel": "11月18日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-18",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://huggingface.co/blog/rumble-2-flash",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "nginx-nov18",
+      "title": "NGINX 稳定版与主线同时发布安全更新",
+      "titleId": "nginx-nov18-title",
+      "paragraphs": [
+        {
+          "text": "NGINX 1.30.7 稳定版和 1.31.9 主线版发布，修补 HTTP/2 流控内存破坏、HTTP/3 与解析器释放后使用及 TLS 请求处理等问题。",
+          "variant": ""
+        },
+        {
+          "text": "反向代理维护者应按版本和启用模块检查；各漏洞影响范围不同，发行版回移补丁也不能只凭上游版本号判断。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-18",
+      "dateLabel": "11月18日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-18",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://nginx.org/2026.html",
+          "icon": false
+        },
+        {
+          "label": "官方安全列表",
+          "url": "https://nginx.org/en/security_advisories.html",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "wordpress715",
+      "title": "WordPress 7.1.5 修补权限提升与注入风险",
+      "titleId": "wordpress715-title",
+      "paragraphs": [
+        {
+          "text": "WordPress 发布核心安全更新，涉及未认证权限提升、SQL 注入、跨站脚本和 REST API 信息泄露。",
+          "variant": ""
+        },
+        {
+          "text": "运营站点者应核对核心更新；旧分支补丁正在回移，不能把仍在测试的 7.2 候选版当作生产替代方案。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-18",
+      "dateLabel": "11月18日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-18",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://wordpress.org/news/2026/11/wordpress-7-1-5-release/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "needrestart-nov18",
+      "title": "Ubuntu 修补 needrestart 本地提权路径",
+      "titleId": "needrestart-nov18-title",
+      "paragraphs": [
+        {
+          "text": "needrestart 更新修正 systemd cgroup 路径和进程名处理不当造成的本地提权风险，覆盖多个 Ubuntu 版本。",
+          "variant": ""
+        },
+        {
+          "text": "多用户服务器和共享开发机值得检查；需要本地攻击者，不是无条件远程入侵，部分旧版补丁属于 Ubuntu Pro ESM Apps。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-18",
+      "dateLabel": "11月18日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-18",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://ubuntu.com/security/notices/USN-9151-1",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "cloudinit-sssd",
+      "title": "cloud-init 修补特定 SSSD 配置下的无密码访问风险",
+      "titleId": "cloudinit-sssd-title",
+      "paragraphs": [
+        {
+          "text": "Ubuntu 26.04 和 26.10 修正密码配置错误处理：安装 SSSD 却未配置时，特定失败可能令受影响账户无密码访问。",
+          "variant": ""
+        },
+        {
+          "text": "制作云镜像与自动初始化脚本者应检查这一组合，不应泛化为所有云主机都受影响。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-18",
+      "dateLabel": "11月18日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-18",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://ubuntu.com/security/notices/USN-9153-1",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "copilot-team-plugins",
+      "title": "Copilot 团队插件默认配置正式可用",
+      "titleId": "copilot-team-plugins-title",
+      "paragraphs": [
+        {
+          "text": "Business 和 Enterprise 团队维护者或组织所有者可统一选择 Agent Plugins，覆盖 VS Code、Copilot app 和 CLI 的团队直接成员。",
+          "variant": ""
+        },
+        {
+          "text": "减少重复配置，但子团队不继承，组织政策仍优先；成员仅在允许时可关闭默认插件，不是个人订阅的新功能。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-18",
+      "dateLabel": "11月18日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-18",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.blog/changelog/2026-11-18-customize-github-copilot-for-your-team/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "github-risk-team",
+      "title": "GitHub Team 开始自动运行免费安全风险评估",
+      "titleId": "github-risk-team-title",
+      "paragraphs": [
+        {
+          "text": "Team 组织管理员和安全经理可查看暴露凭据与代码漏洞，为后续修复排序；代码风险评估最多覆盖 20 个仓库。",
+          "variant": ""
+        },
+        {
+          "text": "这是风险摸底，不等于持续全面扫描；代码评估可每隔 90 天重跑，不代表系统必定每 90 天自动重跑。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-18",
+      "dateLabel": "11月18日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-18",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.blog/changelog/2026-11-18-security-risk-assessments-run-automatically-on-github-team/",
+          "icon": false
+        },
+        {
+          "label": "评估范围",
+          "url": "https://docs.github.com/en/code-security/concepts/code-scanning/risk-assessment",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "recapture",
+      "title": "Recapture 为文档训练集合成拍照与扫描缺陷",
+      "titleId": "recapture-title",
+      "paragraphs": [
+        {
+          "text": "Nutrient 介绍把干净页面及布局标注转成带折痕、阴影和模糊的样本，并同步变换标注；二维扫描模式不需 GPU。",
+          "variant": ""
+        },
+        {
+          "text": "适合扩充 OCR 和文档视觉训练数据，但需要已有标注，合成样本不能替代真实数据验证；文中部分解析示例会上传页面，不应一概称全程本地。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-18",
+      "dateLabel": "11月18日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-18",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://huggingface.co/blog/nutrientdocs/recapture",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "finetuning-time",
+      "title": "微调耗时预测研究纳入评估与检查点开销",
+      "titleId": "finetuning-time-title",
+      "paragraphs": [
+        {
+          "text": "Dharma-AI 根据 272 次 H200 微调作业预告训练时长预测研究，将评估频率、检查点及 I/O 配置纳入，而不只估算 FLOPs。",
+          "variant": ""
+        },
+        {
+          "text": "提醒训练排期关注完整流水线；结果限单一 H200 环境，不含排队，不能直接换算消费显卡耗时，也不是已发表同行评审论文。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-18",
+      "dateLabel": "11月18日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-18",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://huggingface.co/blog/Dharma-AI/predicting-fine-tuning-time",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "flink-timeseries",
+      "title": "时序模型接入 Flink SQL，Cloud 预测仍是早期访问",
+      "titleId": "flink-timeseries-title",
+      "paragraphs": [
+        {
+          "text": "IBM 与 Confluent 展示流式 SQL 中的时序预测与异常检测，可采用 CPU 部署，减少另建 GPU 推理服务的需求。",
+          "variant": ""
+        },
+        {
+          "text": "官方文档将 Cloud AI_FORECAST 标为 Early Access，仅供评估与非生产测试、无 SLA；行业场景不等于已经验证的业务收益。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-18",
+      "dateLabel": "11月18日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-18",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://huggingface.co/blog/ibm-research/time-series-powered-streamhouse",
+          "icon": false
+        },
+        {
+          "label": "早期访问限制",
+          "url": "https://docs.confluent.io/cloud/current/ai/builtin-functions/forecast.html",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "intel-azure-emib",
+      "title": "微软为 Azure 自研芯片采用 Intel EMIB 封装",
+      "titleId": "intel-azure-emib-title",
+      "paragraphs": [
+        {
+          "text": "微软与 Intel 扩大长期合作，确认多年 Xeon 供货能力，包括下一代 Diamond Rapids，并协作 CXL 内存、QAT 与机密计算。",
+          "variant": ""
+        },
+        {
+          "text": "这是云基础设施供应和研发安排；不能把未来芯片合作当成今天即可购买的实例，也不能将特定配置的厂商性能数字泛化。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-18",
+      "dateLabel": "11月18日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-18",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://www.intel.com/content/www/us/en/newsroom/news/corporate/microsoft-azure-infrastructure-collaboration.html",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "cosmos-data-factory",
+      "title": "Cosmos 新教程串联物理 AI 数据生产流程",
+      "titleId": "cosmos-data-factory-title",
+      "paragraphs": [
+        {
+          "text": "NVIDIA 以五个蓝图和六项技能串联筛选、增强、生成、标注与评估，覆盖罕见场景和视觉缺陷的数据准备。",
+          "variant": ""
+        },
+        {
+          "text": "为集群数据流水线提供可复用参考，不是两句提示就保证训练数据质量；厂商吞吐和成本测算不能替代人工审查、存储及准备成本。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-18",
+      "dateLabel": "11月18日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-18",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://developer.nvidia.com/blog/build-training-ready-physical-ai-datasets-with-two-prompts-in-nvidia-cosmos/",
+          "icon": false
+        }
+      ]
+    }
+  ]
+}
