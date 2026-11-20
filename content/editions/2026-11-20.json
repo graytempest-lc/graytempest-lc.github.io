@@ -1,0 +1,457 @@
+{
+  "id": "2026-11-20",
+  "editionDate": "2026-11-20",
+  "status": "published",
+  "title": "计算机热点日报 · 2026年11月20日",
+  "description": "15条精选：本地NPU、PHP更新、代理API、迁移与安全，以及计算研究和工程实践。",
+  "editionLabel": "2026年11月20日 · 精选15条",
+  "dateBasis": "edition-publication-date",
+  "introduction": [
+    "本期精选15条，均有11月19日的一手发布或技术说明；已对照近7期去重，下游修补只报道新增落地与兼容变化。",
+    "刊载日按东八区。技术解读、预览与研究不等于当天首次正式发布；厂商测试并非本站独立实测。"
+  ],
+  "overview": [
+    {
+      "id": "amd-npu-unsloth",
+      "title": "Unsloth Desktop 接入 Ryzen AI NPU，本地代理新增推理路径",
+      "category": "本地AI"
+    },
+    {
+      "id": "php86",
+      "title": "PHP 8.6 正式发布，旧分支同步获得安全更新",
+      "category": "语言与安全"
+    },
+    {
+      "id": "ubuntu-kernel9165",
+      "title": "Ubuntu 26.10 内核修补后需重启并检查模块",
+      "category": "系统安全"
+    },
+    {
+      "id": "rlvr-interpolation",
+      "title": "权重插值研究探索单次正确率与采样覆盖的折中",
+      "category": "计算研究"
+    }
+  ],
+  "items": [
+    {
+      "id": "amd-npu-unsloth",
+      "title": "Unsloth Desktop 接入 Ryzen AI NPU，本地代理新增推理路径",
+      "titleId": "amd-npu-unsloth-title",
+      "paragraphs": [
+        {
+          "text": "AMD 与 Unsloth 宣布以 Lemonade 和 FastFlowLM 接入 XDNA 2 NPU，并通过 OpenAI 兼容 API 连接百余个兼容应用。",
+          "variant": ""
+        },
+        {
+          "text": "面向受支持的 Windows Ryzen AI PC 和模型，不是所有 AMD 设备通用；大型模型仍可能需要 64GB 系统内存，百余个应用不等于百余个模型。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-19",
+      "dateLabel": "11月19日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-19",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://newsroom.amd.com/news/amd-unsloth-bring-npu-support-agentic-ai-applications/",
+          "icon": false
+        },
+        {
+          "label": "范围与说明",
+          "url": "https://www.amd.com/en/blogs/2026/unlocking-the-amd-ryzen-ai-npu-for-unsloth-desktop.html",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "gemini-tool-retrieval",
+      "title": "Gemini Tool Retrieval 预览按需加载工具参数",
+      "titleId": "gemini-tool-retrieval-title",
+      "paragraphs": [
+        {
+          "text": "Google 在 Interactions API 中让工具完整参数结构按需进入上下文，名称和描述仍可见，并支持远程 MCP。",
+          "variant": ""
+        },
+        {
+          "text": "适合大型工具库；支持 Gemini 3.6 及以后版本，无单独功能费但 token 正常计费，不能保证所有工作流都省钱。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-19",
+      "dateLabel": "11月19日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-19",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "php86",
+      "title": "PHP 8.6 正式发布，旧分支同步获得安全更新",
+      "titleId": "php86-title",
+      "paragraphs": [
+        {
+          "text": "PHP 8.6 加入部分函数应用、Time\\Duration、Io\\Poll 与 readonly 属性默认值；8.5.13、8.4.28、8.3.37 和 8.2.36 则提供安全维护路径。",
+          "variant": ""
+        },
+        {
+          "text": "新版本涉及会话安全默认值及弃用项，升级应先做兼容测试；高危问题有配置条件，不是所有网站均可被直接接管，各分支修复集合也未必相同。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-19",
+      "dateLabel": "11月19日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-19",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://www.php.net/releases/8.6/en.php",
+          "icon": false
+        },
+        {
+          "label": "范围与说明",
+          "url": "https://www.php.net/ChangeLog-8.php#8.5.13",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "genie4-api",
+      "title": "Genie 4 接入 Gemini API 与 AI Studio",
+      "titleId": "genie4-api-title",
+      "paragraphs": [
+        {
+          "text": "11月18日发布的 Genie 4 于19日开放此次 API 接入，支持文本或参考图生成带原生音频的连续 720p、24fps 世界，并用键盘和提示改变场景。",
+          "variant": ""
+        },
+        {
+          "text": "可用于交互原型探索；此次新进展是开发者入口，演示效果不代表已验证的机器人仿真能力。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-19",
+      "dateLabel": "11月19日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-19",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/genie-4-in-gemini-api/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "gemini-mac-use",
+      "title": "Gemini Mac 版加入隔离后台电脑操作",
+      "titleId": "gemini-mac-use-title",
+      "paragraphs": [
+        {
+          "text": "Gemini 可在隔离后台窗口处理本地文件、桌面应用和网页，用户能观察、暂停并批准关键操作。",
+          "variant": ""
+        },
+        {
+          "text": "首发仅限美国英语、18岁以上个人账户的 AI Plus／Pro／Ultra 用户，需 Apple Silicon 与 macOS 15及以上；访问本地应用不等于模型本地运行。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-19",
+      "dateLabel": "11月19日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-19",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://blog.google/innovation-and-ai/products/gemini-app/computer-use-mac/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "rhel-runners",
+      "title": "GitHub Actions 的 RHEL 9／10 镜像正式可用",
+      "titleId": "rhel-runners-title",
+      "paragraphs": [
+        {
+          "text": "RHEL larger runner 镜像结束预览，可让 CI 更贴近生产系统，也可用作自定义镜像基础，原预览工作流无需迁移。",
+          "variant": ""
+        },
+        {
+          "text": "仅面向 Team 和 Enterprise Cloud 的 Linux x64 larger runners，不是免费标准 runner 全面新增 RHEL。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-19",
+      "dateLabel": "11月19日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-19",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.blog/changelog/2026-11-19-red-hat-enterprise-linux-runner-images-now-generally-available/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "azure-live-migration",
+      "title": "Azure DevOps 到 GitHub 的持续同步迁移正式上线",
+      "titleId": "azure-live-migration-title",
+      "paragraphs": [
+        {
+          "text": "Enterprise Live Migrations 支持 Azure DevOps Services 迁入带数据驻留的 GitHub Enterprise Cloud，迁移中持续同步 Git 历史、分支、标签与 PR。",
+          "variant": ""
+        },
+        {
+          "text": "最终切换仍有短暂只读窗口；不支持直接从 Azure DevOps Server 迁移，工作项、流水线定义和 Wiki 不会随仓库自动搬走。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-19",
+      "dateLabel": "11月19日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-19",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.blog/changelog/2026-11-19-enterprise-live-migrations-from-azure-devops-generally-available/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "ghe-oidc",
+      "title": "GHE.com 审计日志导出 S3 支持 OIDC",
+      "titleId": "ghe-oidc-title",
+      "paragraphs": [
+        {
+          "text": "带数据驻留的 GitHub Enterprise Cloud 可通过 OIDC 持续导出企业审计日志到 Amazon S3，无需在 GitHub 保存长期 AWS 凭据。",
+          "variant": ""
+        },
+        {
+          "text": "这是已有 github.com 能力扩展到 GHE.com；仍需配置身份信任和接收端，不是自动启用或零配置。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-19",
+      "dateLabel": "11月19日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-19",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.blog/changelog/2026-11-19-s3-audit-log-streaming-with-openid-connect-expands-to-ghe-com/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "ubuntu-kernel9165",
+      "title": "Ubuntu 26.10 内核修补后需重启并检查模块",
+      "titleId": "ubuntu-kernel9165-title",
+      "paragraphs": [
+        {
+          "text": "USN-9165-1 修补密码 API、文件系统、密钥管理、io_uring、PID namespace 等问题，通用内核修复版为 7.3.0-11.12。",
+          "variant": ""
+        },
+        {
+          "text": "公告仅覆盖 Ubuntu 26.10；更新后需重启，第三方模块应检查 ABI 变化后的重建，不能套用其他发行版本。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-19",
+      "dateLabel": "11月19日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-19",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://ubuntu.com/security/notices/USN-9165-1",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "npm2171",
+      "title": "Nginx Proxy Manager 2.17.1 落地修补并提醒证书插件兼容",
+      "titleId": "npm2171-title",
+      "paragraphs": [
+        {
+          "text": "下游 OpenResty 镜像纳入 nginx2root 回补修复，同时修正新建主机申请证书时 SSL 开关被重置的问题。",
+          "variant": ""
+        },
+        {
+          "text": "这是昨日 NGINX 安全进展的产品落地增量；Certbot 更新后应测试 DNS 验证和续签，同实例多个 DNS 插件可能发生 Python 依赖冲突。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-19",
+      "dateLabel": "11月19日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-19",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/NginxProxyManager/nginx-proxy-manager/releases/tag/v2.17.1",
+          "icon": false
+        },
+        {
+          "label": "范围与说明",
+          "url": "https://nginxproxymanager.com/certbot/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "daqiri-guide",
+      "title": "DAQIRI 技术解读把科学仪器数据直接送入 GPU",
+      "titleId": "daqiri-guide-title",
+      "paragraphs": [
+        {
+          "text": "NVIDIA 介绍 GPU 原生采集方案，利用硬件重排减轻 CPU 处理压力，展示电镜高带宽数据流实时处理。",
+          "variant": ""
+        },
+        {
+          "text": "文章发表于19日，所述版本实际10日已发布；硬件重排需 ConnectX-7 或更新，微秒级 loopback 测试不是端到端 AI 推理延迟。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-19",
+      "dateLabel": "11月19日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-19",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://developer.nvidia.com/blog/enabling-real-time-ai-for-scientific-instruments-with-gpu-native-data-acquisition/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "dynamo-rl",
+      "title": "Dynamo 教程拆解强化学习 rollout 瓶颈",
+      "titleId": "dynamo-rl-title",
+      "paragraphs": [
+        {
+          "text": "KV 路由平衡缓存复用与负载，ModelExpress 通过增量权重传输和恢复机制减少生成阶段等待。",
+          "variant": ""
+        },
+        {
+          "text": "这是工程实践解读而非新 RL 算法或首次正式发布；样本接纳与权重版本管理仍由训练框架负责。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-19",
+      "dateLabel": "11月19日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-19",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://developer.nvidia.com/blog/reducing-rollout-bottlenecks-in-reinforcement-learning-with-nvidia-dynamo/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "rlvr-interpolation",
+      "title": "权重插值研究探索单次正确率与采样覆盖的折中",
+      "titleId": "rlvr-interpolation-title",
+      "paragraphs": [
+        {
+          "text": "作者混合基础模型与 RLVR 模型权重，在一个 Qwen2.5-7B 配对的数学任务中探索无需重训的性能折中，19日公开研究说明。",
+          "variant": ""
+        },
+        {
+          "text": "仅单一模型配对，预注册的双端点超越检验失败；不能称为通用升级，作者还提醒低精度保存可能抹去微小更新。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-19",
+      "dateLabel": "11月19日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-19",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/Kim-Ai-gpu/rlvr-interp-passk",
+          "icon": false
+        },
+        {
+          "label": "范围与说明",
+          "url": "https://www.preprints.org/manuscript/202611.2034",
+          "icon": false
+        },
+        {
+          "label": "范围与说明",
+          "url": "https://discuss.huggingface.co/t/mixing-a-base-model-with-its-rlvr-model-gets-back-the-diversity-rl-takes-away-training-free/192144",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "theoremos",
+      "title": "TheoremOS 展示可审查的 Lean 4 证明工作台",
+      "titleId": "theoremos-title",
+      "paragraphs": [
+        {
+          "text": "作者介绍可视化命题、证明计划、失败尝试、依赖与编译反馈的工作流，公开证明档案可浏览并本地验证。",
+          "variant": ""
+        },
+        {
+          "text": "在线工作台仍为邀请制，运行时代码和公共 CLI 未公开，且需自备模型 API 费用；Lean 编译通过不代表命题忠实于人的数学意图。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-19",
+      "dateLabel": "11月19日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-19",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://discuss.huggingface.co/t/theoremos-a-visual-lean-4-workspace-for-mathematicians-and-ai-agents/192131",
+          "icon": false
+        },
+        {
+          "label": "范围与说明",
+          "url": "https://github.com/HuggingMath/TheoremOS",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "microsoft-ai-finops",
+      "title": "微软分享 AI 成本治理：按任务产出而非只按 token 衡量",
+      "titleId": "microsoft-ai-finops-title",
+      "paragraphs": [
+        {
+          "text": "微软介绍本月向内部员工和供应商展示 AI 用量与 token 花费，并配合提醒、限制和按应用归属成本。",
+          "variant": ""
+        },
+        {
+          "text": "这是内部实践分享，不是新的客户收费政策；Agent 365 更深入财务遥测仍在路线图，内部成本改善不能视作客户账单降价。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-19",
+      "dateLabel": "11月19日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-19",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://www.microsoft.com/insidetrack/blog/maximizing-return-on-token-spend-how-were-approaching-finops-for-ai/",
+          "icon": false
+        }
+      ]
+    }
+  ]
+}
