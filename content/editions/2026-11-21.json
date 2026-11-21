@@ -1,0 +1,462 @@
+{
+  "id": "2026-11-21",
+  "editionDate": "2026-11-21",
+  "status": "published",
+  "title": "计算机热点日报 · 2026年11月21日",
+  "description": "15条精选：本地代理适配、多模态模型、Windows预览、服务器安全和云平台更新。",
+  "editionLabel": "2026年11月21日 · 精选15条",
+  "dateBasis": "edition-publication-date",
+  "introduction": [
+    "15条精选均有11月20日的一手发布或技术说明，已对照近7期去重。",
+    "刊载日按东八区。版本实际发布日若不同，正文另行标明；厂商实验、案例与预览不等同普遍可用。"
+  ],
+  "overview": [
+    {
+      "id": "harness-adapters",
+      "title": "Qwen3.8-27B 发布面向三种编码代理的 LoRA",
+      "category": "本地AI"
+    },
+    {
+      "id": "windows-le-audio-winre",
+      "title": "Windows 预览测试双向 LE Audio 和新的 WinRE 更新方式",
+      "category": "操作系统"
+    },
+    {
+      "id": "gitlab1961",
+      "title": "GitLab 自托管版本应核对本轮安全更新",
+      "category": "系统安全"
+    },
+    {
+      "id": "ffmpeg91",
+      "title": "FFmpeg 9.1 加入 Vulkan 插帧和新编解码路径",
+      "category": "媒体工具"
+    }
+  ],
+  "items": [
+    {
+      "id": "harness-adapters",
+      "title": "Qwen3.8-27B 发布面向三种编码代理的 LoRA",
+      "titleId": "harness-adapters-title",
+      "paragraphs": [
+        {
+          "text": "Hugging Face 团队为 Pi、Hermes Agent 和 OpenCode 训练专用适配器。作者的 Hermes 测试中，SWE-bench Pro 困难子集通过率从 29.4% 升到 43.1%。",
+          "variant": ""
+        },
+        {
+          "text": "分数来自 BF16、vLLM、131K token 上限的实验；319 MB 仅是适配器，不含底模。GGUF 未重做同一套评测，不宜把成绩或节省的 token 直接套到本地设备。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-20",
+      "dateLabel": "11月20日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-20",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://huggingface.co/blog/harness-adapters-at-scale",
+          "icon": false
+        },
+        {
+          "label": "补充说明",
+          "url": "https://huggingface.co/harness-hub/Qwen3.8-27B-hermes-adapted-GGUF",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "inkling2-mini",
+      "title": "Inkling 2 Mini 开放多模态权重",
+      "titleId": "inkling2-mini-title",
+      "paragraphs": [
+        {
+          "text": "Thinking Machines 以 Apache 2.0 发布图文模型，总参数 26.4B，基础激活量 3.4B，循环层运行三遍后每 token 的等效激活量为 5.4B。",
+          "variant": ""
+        },
+        {
+          "text": "混合精度权重约 20GB，另有 llama.cpp 的 GGUF 量化版本。1M 是架构支持的上下文上限，不代表消费级显卡能跑满。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-20",
+      "dateLabel": "11月20日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-20",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+          "icon": false
+        },
+        {
+          "label": "补充说明",
+          "url": "https://huggingface.co/blog/inkling2mini",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "superfluid-fleet",
+      "title": "Superfluid 将异构本地设备接成一个推理入口",
+      "titleId": "superfluid-fleet-title",
+      "paragraphs": [
+        {
+          "text": "Fleet 模式把 Apple、AMD 和 NVIDIA 设备组成统一 API，按排队、速度和缓存情况分配完整会话。",
+          "variant": ""
+        },
+        {
+          "text": "适合多用户扩容；每节点要能装下完整模型，不能把多台机器的内存拼起来加载更大的模型。作者吞吐测试不是单人生成速度。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-20",
+      "dateLabel": "11月20日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-20",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://huggingface.co/blog/basecompute/superfluid-fleet",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "windows-le-audio-winre",
+      "title": "Windows 预览测试双向 LE Audio 和新的 WinRE 更新方式",
+      "titleId": "windows-le-audio-winre-title",
+      "paragraphs": [
+        {
+          "text": "Windows 11 Experimental 开始测试耳机麦克风使用时仍保持双声道 16 bit、48kHz 播放，并试行随累积更新重建恢复环境。",
+          "variant": ""
+        },
+        {
+          "text": "音频功能要求兼容的电脑和 LE Audio 设备。这是渐进推送的 Insider 预览；使用第三方磁盘加密时还需检查恢复环境驱动。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-20",
+      "dateLabel": "11月20日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-20",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://blogs.windows.com/windows-insider/2026/11/20/announcing-new-builds-for-20-november-2026/",
+          "icon": false
+        },
+        {
+          "label": "补充说明",
+          "url": "https://learn.microsoft.com/en-us/windows-insider/release-notes/experimental/preview-build-26340-10032",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "gitlab1961",
+      "title": "GitLab 自托管版本应核对本轮安全更新",
+      "titleId": "gitlab1961-title",
+      "paragraphs": [
+        {
+          "text": "GitLab 发布 CE／EE 19.6.1、19.5.8 和 19.4.10，更新随包附带的 Ruby；GitLab.com 和 Dedicated 已修补。",
+          "variant": ""
+        },
+        {
+          "text": "自行编译的部署应另核对 Ruby 支持版本和升级说明，不能假设安装 GitLab 更新包会修补外部运行时。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-20",
+      "dateLabel": "11月20日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-20",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-6-1-released/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "ghes323rc",
+      "title": "GHES 3.23 候选版试验在隔离环境扫描密钥",
+      "titleId": "ghes323rc-title",
+      "paragraphs": [
+        {
+          "text": "GitHub 20 日介绍 19 日发布的候选版：非结构化密钥检测在服务器 CPU 上运行，无须外网或托管模型；Dependabot 增加默认三天版本冷却期。",
+          "variant": ""
+        },
+        {
+          "text": "检测仍是公开预览并需 Secret Protection。整个候选版仅供测试，不能替代正式升级，也不支持从候选版原地升至正式版。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-20",
+      "dateLabel": "11月20日 · 公告／进展",
+      "eventDate": "2026-11-19",
+      "sourcePublishedAt": "2026-11-20",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.blog/changelog/2026-11-20-github-enterprise-server-3-23-release-candidate/",
+          "icon": false
+        },
+        {
+          "label": "补充说明",
+          "url": "https://docs.github.com/en/enterprise-server@3.23/admin/release-notes",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "ubuntu-pyjwt",
+      "title": "Ubuntu 修补 PyJWT 的令牌撤销检查问题",
+      "titleId": "ubuntu-pyjwt-title",
+      "paragraphs": [
+        {
+          "text": "USN-9177-1 为 22.04、24.04 和 26.04 回补 PyJWT 修复；使用发行版 python3-jwt 的鉴权服务值得核对补丁。",
+          "variant": ""
+        },
+        {
+          "text": "这不等于可任意伪造签名。pip 虚拟环境或独立容器仍应单独核对依赖，不能依赖宿主机更新。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-20",
+      "dateLabel": "11月20日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-20",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://ubuntu.com/security/notices/USN-9177-1",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "aurora-mysql8412",
+      "title": "Aurora MySQL 8.4.12 修复安全与实例重启问题",
+      "titleId": "aurora-mysql8412-title",
+      "paragraphs": [
+        {
+          "text": "AWS 发布兼容 MySQL 8.4.12 的 Aurora 更新，修复三项高严重度漏洞及读写实例在特定场景意外重启的问题。",
+          "variant": ""
+        },
+        {
+          "text": "仍受支持的 Aurora MySQL 3 集群可就地升级、用快照恢复升级或采用蓝绿部署；这是大版本迁移，应先做兼容性与回退验证。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-20",
+      "dateLabel": "11月20日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-20",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraMySQLReleaseNotes/AuroraMySQL.Updates.8412.html",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "vercel-body20mib",
+      "title": "Vercel Functions 预览 20 MiB 请求体",
+      "titleId": "vercel-body20mib-title",
+      "paragraphs": [
+        {
+          "text": "Node.js、Python 和 Bun 函数可在项目按环境开启更大的入站请求体，需 4GB 性能内存配置。",
+          "variant": ""
+        },
+        {
+          "text": "Edge 原限制不变；开启后路由中间件只收到请求头和元数据，不能读取正文。需读原始请求体的校验逻辑应先验证。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-20",
+      "dateLabel": "11月20日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-20",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://vercel.com/changelog/vercel-functions-now-support-request-bodies-up-to-20mib",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "aws-eventbridge-scheduler",
+      "title": "EventBridge Scheduler 扩展 AWS API 目标",
+      "titleId": "aws-eventbridge-scheduler-title",
+      "paragraphs": [
+        {
+          "text": "AWS 为 Scheduler 增加 81 个服务的 589 项 SDK 动作，可用模板直接向增强版自定义事件总线投递。",
+          "variant": ""
+        },
+        {
+          "text": "单纯转发的任务可减少中间函数，但仍需检查区域、具体 API 和执行角色权限。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-20",
+      "dateLabel": "11月20日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-20",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/eventbridge-scheduler-new-api-actions/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "github-advisory-role",
+      "title": "GitHub 可按仓库细分安全公告职责",
+      "titleId": "github-advisory-role-title",
+      "paragraphs": [
+        {
+          "text": "GitHub 正式开放安全公告自定义权限，可分别授予查看、编辑管理、收取私有漏洞报告和发布的权限。",
+          "variant": ""
+        },
+        {
+          "text": "需支持自定义仓库角色的套餐；不等于授予管理员权限，临时私有 fork 的合并仍有额外限制。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-20",
+      "dateLabel": "11月20日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-20",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.blog/changelog/2026-11-20-security-advisory-permissions-are-now-generally-available/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "ffmpeg91",
+      "title": "FFmpeg 9.1 加入 Vulkan 插帧和新编解码路径",
+      "titleId": "ffmpeg91-title",
+      "paragraphs": [
+        {
+          "text": "FFmpeg 9.1 Gauss 正式发布，加入基于 NVIDIA 光流的 Vulkan 插帧、APV Vulkan 编码和 NVDEC CUARRAY 支持。",
+          "variant": ""
+        },
+        {
+          "text": "具体支持取决于硬件与构建选项；D3D12 DirectML 零拷贝限 ONNX Runtime 的 DNN 后端，并不代表通用实时插帧。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-20",
+      "dateLabel": "11月20日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-20",
+      "sources": [
+        {
+          "url": "https://ffmpeg.org/download.html#release_9.1",
+          "label": "原始来源",
+          "icon": false
+        },
+        {
+          "url": "https://github.com/FFmpeg/FFmpeg/blob/n9.1/Changelog#L5",
+          "label": "补充说明",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "metric-armenian",
+      "title": "Metric-AI 补齐亚美尼亚语的文本与语音模型",
+      "titleId": "metric-armenian-title",
+      "paragraphs": [
+        {
+          "text": "Ayb 0.5 发布 0.8B、4B 和 9B 档；OhanASR 提供录音和流式转写版本，OhanTTS 可流式返回合成音频。",
+          "variant": ""
+        },
+        {
+          "text": "主要看东亚美尼亚语覆盖。语音模型为 CC BY-NC 4.0；TTS 需先提交完整文本，不是双向流式，使用参考声音须取得授权。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-20",
+      "dateLabel": "11月20日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-20",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://huggingface.co/blog/Metric-AI/ayb-05-intro",
+          "icon": false
+        },
+        {
+          "label": "补充说明",
+          "url": "https://huggingface.co/blog/Metric-AI/ohan-asr-v01",
+          "icon": false
+        },
+        {
+          "label": "补充说明",
+          "url": "https://huggingface.co/blog/Metric-AI/ohan-tts",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "uutils013",
+      "title": "Rust Coreutils 0.13.0 改善 GNU 兼容性",
+      "titleId": "uutils013-title",
+      "paragraphs": [
+        {
+          "text": "uutils 更新参数与边界行为，修正部分符号链接和文件处理差异。",
+          "variant": ""
+        },
+        {
+          "text": "项目本轮 GNU 套件记录 684 通过、23 失败、11 跳过；兼容率只涵盖执行用例，生产脚本替换前仍应对照实测。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-20",
+      "dateLabel": "11月20日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-20",
+      "sources": [
+        {
+          "url": "https://github.com/uutils/coreutils/releases/tag/0.13.0",
+          "label": "原始来源",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "kde-kwi010",
+      "title": "KDE 终端 Kwi 发布 0.1.0",
+      "titleId": "kde-kwi010-title",
+      "paragraphs": [
+        {
+          "text": "Kwi 完成 KDE Review 后发布首版，提供 Flathub 与源码发行，近期改进包括终端协议、KPart 嵌入和选项。",
+          "variant": ""
+        },
+        {
+          "text": "这是新的可尝试终端，不表示 Konsole 已被替换；有脚本依赖的终端行为仍应核对。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-20",
+      "dateLabel": "11月20日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-20",
+      "sources": [
+        {
+          "url": "https://blogs.kde.org/2026/11/20/this-week-in-kwi-2026-w47/",
+          "label": "原始来源",
+          "icon": false
+        }
+      ]
+    }
+  ]
+}
