@@ -1,0 +1,457 @@
+{
+  "id": "2026-11-22",
+  "editionDate": "2026-11-22",
+  "status": "published",
+  "title": "计算机热点日报 · 2026年11月22日",
+  "description": "15条精选：Lean 证明核验、开源系统维护、本地推理与创作工具。",
+  "editionLabel": "2026年11月22日 · 精选15条",
+  "dateBasis": "edition-publication-date",
+  "introduction": [
+    "本期15条：7条11月21日新进展，补充8条11月18日至20日未报道事项，各条标注原始日期。已对照近7期去重。",
+    "刊载日按东八区。已发布、测试版、技术核验和预印本分别标注，机器检查不能替代对结论适用范围的判断。"
+  ],
+  "overview": [
+    {
+      "id": "rh-lean-audit",
+      "title": "黎曼猜想 Lean 证明主张通过多项独立机器检查",
+      "category": "计算研究"
+    },
+    {
+      "id": "qwen-code0283",
+      "title": "Qwen Code 0.28.3 为监看的 PR 增加会话内通知",
+      "category": "开发工具"
+    },
+    {
+      "id": "orcaslicer252",
+      "title": "OrcaSlicer 2.5.2 修复切片崩溃、STEP 缺面与 Wayland 卡顿",
+      "category": "3D打印"
+    },
+    {
+      "id": "comfyui046",
+      "title": "ComfyUI 0.46.0 增加视频去闪烁并移除 DirectML",
+      "category": "图像工具"
+    }
+  ],
+  "items": [
+    {
+      "id": "rh-lean-audit",
+      "title": "黎曼猜想 Lean 证明主张通过多项独立机器检查",
+      "titleId": "rh-lean-audit-title",
+      "paragraphs": [
+        {
+          "text": "Levent Alpöge 11月20日公布 Claude 协助完成的 Lean 证明主张。Andrew Sutherland 次日更新：175,187 个模块逐一回放通过，两个独立内核接受完整导出，五项形式化陈述与核验目标相符。",
+          "variant": ""
+        },
+        {
+          "text": "截至核验页最新更新，端到端比较器及对导出文件的另一路 Lean 内核检查仍进行中；有限分辨率的 Weil 数值实验不是证明，相关广义结论只涉及 Dirichlet L 函数。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-21",
+      "dateLabel": "11月21日 · 公告／进展",
+      "eventDate": "2026-11-21",
+      "sourcePublishedAt": "2026-11-21",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://math.mit.edu/~drew/grh/",
+          "icon": false
+        },
+        {
+          "label": "补充说明",
+          "url": "https://alpo.ge/remark.pdf",
+          "icon": false
+        },
+        {
+          "label": "补充说明",
+          "url": "https://huggingface.co/blog/FINAL-Bench/seeing-the-riemann-hypothesis-hold-a-live-weil-pos",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "qwen-code0283",
+      "title": "Qwen Code 0.28.3 为监看的 PR 增加会话内通知",
+      "titleId": "qwen-code0283-title",
+      "paragraphs": [
+        {
+          "text": "发布说明列出：绑定的托管会话可在受监看的 PR 出现 CI 失败、新冲突或分支头变化时接收私有提示，休眠会话可被唤醒。",
+          "variant": ""
+        },
+        {
+          "text": "这一功能要求先绑定并监看 PR；事件不发布公开评论，通知也不等于自动修复、自动合并或后端已普遍开放。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-21",
+      "dateLabel": "11月21日 · 公告／进展",
+      "eventDate": "2026-11-21",
+      "sourcePublishedAt": "2026-11-21",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.28.3",
+          "icon": false
+        },
+        {
+          "label": "补充说明",
+          "url": "https://github.com/QwenLM/qwen-code/pull/17665",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "debian138",
+      "title": "Debian 13.8 汇总稳定版维护和安全更新",
+      "titleId": "debian138-title",
+      "paragraphs": [
+        {
+          "text": "Debian 13 的第八次点更新收录部分既有安全公告和关键缺陷修正，安装器也随新内核 ABI 重建。",
+          "variant": ""
+        },
+        {
+          "text": "这不是新大版本；既有 trixie 系统可按正常镜像更新，不用重装。已持续安装安全更新的系统待更新项通常较少。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-21",
+      "dateLabel": "11月21日 · 公告／进展",
+      "eventDate": "2026-11-21",
+      "sourcePublishedAt": "2026-11-21",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://www.debian.org/News/2026/20261121",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "orcaslicer252",
+      "title": "OrcaSlicer 2.5.2 修复切片崩溃、STEP 缺面与 Wayland 卡顿",
+      "titleId": "orcaslicer252-title",
+      "paragraphs": [
+        {
+          "text": "维护版修正部分 STEP 导入缺面、Linux Wayland AppImage 卡死及切片崩溃。Type 1 清洗塔新增按耗材配置的填充体积。",
+          "variant": ""
+        },
+        {
+          "text": "Type 2 清洗塔没有变化；旧项目默认切片行为保留，改清洗量或遇到切片警告时先核对预览。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-21",
+      "dateLabel": "11月21日 · 公告／进展",
+      "eventDate": "2026-11-21",
+      "sourcePublishedAt": "2026-11-21",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/OrcaSlicer/OrcaSlicer/releases/tag/v2.5.2",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "freebsd152beta3",
+      "title": "FreeBSD 15.2 第三个测试版更新存储与内核模块",
+      "titleId": "freebsd152beta3-title",
+      "paragraphs": [
+        {
+          "text": "BETA3 更新 Kerberos 1.22.3，纳入 OpenZFS 块克隆和 Direct I/O 修正，并调整按小版本发布的内核模块。",
+          "variant": ""
+        },
+        {
+          "text": "这与此前 BETA2 的 SSH 和虚拟机兼容更新不同，仍应在测试机验证存储与模块兼容，不宜视为正式版。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-21",
+      "dateLabel": "11月21日 · 公告／进展",
+      "eventDate": "2026-11-21",
+      "sourcePublishedAt": "2026-11-21",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://lists.freebsd.org/archives/freebsd-stable/2026-November/004393.html",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "dae213",
+      "title": "dae 2.1.3 改善 UDP 重建和 DNS 错误呈现",
+      "titleId": "dae213-title",
+      "paragraphs": [
+        {
+          "text": "新版本在重建过期端点时保留 UDP 连接状态，并将非成功 DNS 返回码明确传出，不再一概显示为空答案。",
+          "variant": ""
+        },
+        {
+          "text": "对排查连接与 DNS 失败更有用，但不是通用吞吐优化；部署前可用现有配置验证错误处理。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-21",
+      "dateLabel": "11月21日 · 公告／进展",
+      "eventDate": "2026-11-21",
+      "sourcePublishedAt": "2026-11-21",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/daeuniverse/dae/releases/tag/v2.1.3",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "system-one-agents",
+      "title": "本地代理研究用候选项约束工具调用",
+      "titleId": "system-one-agents-title",
+      "paragraphs": [
+        {
+          "text": "作者于11月21日介绍代码和数据：把工具选择及参数填写转成候选项。特定的 1,952 条请求基准中，最优配置有 97.0% 正确选工具或拒绝。",
+          "variant": ""
+        },
+        {
+          "text": "预印本 v1 于11月16日提交。候选项机制限制编造值，却不能防止选错；该成绩不是任意工作流的任务成功率。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-21",
+      "dateLabel": "11月21日 · 公告／进展",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-21",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://discuss.huggingface.co/t/system-1-agents-a-method-for-local-reliable-and-fast-agentic-ai/192267",
+          "icon": false
+        },
+        {
+          "label": "补充说明",
+          "url": "https://arxiv.org/abs/2611.21053",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "gpgme231",
+      "title": "GPGME 2.3.1 修复关键内存安全问题",
+      "titleId": "gpgme231-title",
+      "paragraphs": [
+        {
+          "text": "GnuPG 项目公布 CVE-2026-129975，并提供修复版 GPGME 2.3.1 以及相关桌面软件更新。",
+          "variant": ""
+        },
+        {
+          "text": "维护依赖该库的应用应确认发行版或供应商补丁；静态链接程序需更新构建产物，不能只更新共享库。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-20",
+      "dateLabel": "11月20日 · 近7日补充",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-20",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://lists.gnupg.org/pipermail/gnupg-announce/2026q4/000517.html",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "vmware-vmsa0009",
+      "title": "Broadcom 更新 VMware vCenter 安全公告",
+      "titleId": "vmware-vmsa0009-title",
+      "paragraphs": [
+        {
+          "text": "VMSA-2026-0009.1 涵盖 vCenter、Tools 和 SDDC Manager 多项漏洞；其中 vCenter 认证绕过最高评分 9.8，公告列有修补版本。",
+          "variant": ""
+        },
+        {
+          "text": "厂商未给此项临时规避方案。各产品分支适用补丁不同，应查官方矩阵，不能把某个修复版本套用到全部部署。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-20",
+      "dateLabel": "11月20日 · 近7日补充",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-20",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/39495",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "localai501",
+      "title": "LocalAI AMD 镜像默认改用 ROCm 10.1 构建",
+      "titleId": "localai501-title",
+      "paragraphs": [
+        {
+          "text": "LocalAI 5.0.1 将 AMD hipBLAS 镜像默认构建目标切至 ROCm 10.1，并更新桌面收件箱通知。",
+          "variant": ""
+        },
+        {
+          "text": "这一改动首先影响容器兼容性，而非通用性能承诺；已有 AMD 部署升级前应核对主机驱动、硬件和镜像。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-20",
+      "dateLabel": "11月20日 · 近7日补充",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-20",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/mudler/LocalAI/releases/tag/v5.0.1",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "obs3302",
+      "title": "OBS 33.0.2 修复录屏和混合 MP4 切分",
+      "titleId": "obs3302-title",
+      "paragraphs": [
+        {
+          "text": "维护版本处理 Intel Mac 屏幕采集、混合 MP4 按时长切分，并在 Windows 上加入浏览器来源的 WebGPU 支持。",
+          "variant": ""
+        },
+        {
+          "text": "官方提示部分旧 CPU 可能启动崩溃；遇到该问题可暂用 33.0.1 或 32.2.2，不必为新功能强行升级。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-20",
+      "dateLabel": "11月20日 · 近7日补充",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-20",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/obsproject/obs-studio/releases/tag/33.0.2",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "wemm-video",
+      "title": "腾讯 WeMM-Video 开放音视频理解模型",
+      "titleId": "wemm-video-title",
+      "paragraphs": [
+        {
+          "text": "项目发布 2B、4B、9B 稠密模型和 35B-A3B 混合专家模型，能接收视频及音频并输出文字。",
+          "variant": ""
+        },
+        {
+          "text": "项目原生运行时提供量化路径；不是视频生成模型，硬件门槛随模型、量化和视频长度变化。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-20",
+      "dateLabel": "11月20日 · 近7日补充",
+      "eventDate": "2026-11-20",
+      "sourcePublishedAt": "2026-11-20",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/Tencent/WeMM-Video",
+          "icon": false
+        },
+        {
+          "label": "补充说明",
+          "url": "https://arxiv.org/abs/2611.26409",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "tensorrt-llm130",
+      "title": "TensorRT-LLM 1.3 加入 VisualGen 并更换后端基线",
+      "titleId": "tensorrt-llm130-title",
+      "paragraphs": [
+        {
+          "text": "NVIDIA 新版加入图像和视频生成服务路径，扩展多个模型的支持，并开始预览 Rubin 支持。",
+          "variant": ""
+        },
+        {
+          "text": "旧 TensorRT 后端移除，PyTorch 成为唯一后端；不是整个项目停止维护。既有部署应先查看迁移指南与硬件支持表。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-20",
+      "dateLabel": "11月20日 · 近7日补充",
+      "eventDate": "2026-11-20",
+      "sourcePublishedAt": "2026-11-20",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/NVIDIA/TensorRT-LLM/releases/tag/v1.3.0",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "comfyui046",
+      "title": "ComfyUI 0.46.0 增加视频去闪烁并移除 DirectML",
+      "titleId": "comfyui046-title",
+      "paragraphs": [
+        {
+          "text": "新版加入视频去闪烁节点与更快的 RAFT 光流实现，同时移除 DirectML 支持。",
+          "variant": ""
+        },
+        {
+          "text": "原依赖 DirectML 的工作流升级前应保留可回退环境并核对其他计算后端。新节点改善的是具体工作流，不保证所有视频都无闪烁。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-18",
+      "dateLabel": "11月18日 · 近7日补充",
+      "eventDate": "2026-11-18",
+      "sourcePublishedAt": "2026-11-18",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.46.0",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "depth-pro2",
+      "title": "Apple Depth Pro 2 为单目图像和视频估算米制深度",
+      "titleId": "depth-pro2-title",
+      "paragraphs": [
+        {
+          "text": "Apple 公开了 Depth Pro 2 的推理代码和权重，用同一网络预测照片和视频的原分辨率深度图，着重保持物体边界与跨帧稳定。",
+          "variant": ""
+        },
+        {
+          "text": "适合评估单目视频处理的深度输入。论文是预印本，速度与质量随模型、分辨率、硬件和场景变化，不能直接视为通用实时方案。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-19",
+      "dateLabel": "11月19日 · 近7日补充",
+      "eventDate": "2026-11-19",
+      "sourcePublishedAt": "2026-11-19",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://arxiv.org/abs/2611.26603",
+          "icon": false
+        },
+        {
+          "label": "补充说明",
+          "url": "https://machinelearning.apple.com/research/depth-pro-2-monocular",
+          "icon": false
+        }
+      ]
+    }
+  ]
+}
