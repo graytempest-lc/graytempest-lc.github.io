@@ -1,0 +1,462 @@
+{
+  "id": "2026-11-23",
+  "editionDate": "2026-11-23",
+  "status": "published",
+  "title": "计算机热点日报 · 2026年11月23日",
+  "description": "15条精选：Lean 证明可复现构建、Linux 系统更新、本地推理、开发工具与维护补丁。",
+  "editionLabel": "2026年11月23日 · 精选15条",
+  "dateBasis": "edition-publication-date",
+  "introduction": [
+    "本期15条：10条在最近24小时公布或更新（来源日期为11月22日 UTC），另补5条11月19日和21日未报道事项。已对照近7期去重。",
+    "刊载日按东八区。候选版、预发行、研究核验和正式版分别说明，不把局部硬件支持当作普遍结论。"
+  ],
+  "overview": [
+    {
+      "id": "rh-lean-rebuild",
+      "title": "独立沙箱重建复现黎曼猜想 Lean 证明稿导出",
+      "category": "计算研究"
+    },
+    {
+      "id": "cachyos-261122",
+      "title": "CachyOS 11 月版增加可选 EAC 内核和 Btrfs 恢复环境",
+      "category": "操作系统"
+    },
+    {
+      "id": "llama-adreno-cdna3",
+      "title": "llama.cpp 更新 Adreno 850 OpenCL 和 CDNA3 HIP 路径",
+      "category": "本地 AI"
+    },
+    {
+      "id": "glinet-comet-1103",
+      "title": "GL.iNet 为两款 Comet 远程 KVM 发布 1.10.3 固件",
+      "category": "安全维护"
+    }
+  ],
+  "items": [
+    {
+      "id": "rh-lean-rebuild",
+      "title": "独立沙箱重建复现黎曼猜想 Lean 证明稿导出",
+      "titleId": "rh-lean-rebuild-title",
+      "paragraphs": [
+        {
+          "text": "11 月 22 日，Andrew Sutherland 更新核验记录：在另一台机器上从只读源文件离线重建，生成的约 61.57 GB 证明导出和原件逐字节相同。con-ron 也确认五项形式化陈述与挑战文件匹配。",
+          "variant": ""
+        },
+        {
+          "text": "有一个编译模块因生成名称不同而不完全一致，但不进入证明导出。主稿的 Lean 导出回放和端到端比较仍未结束，Clay 仍列为未解决。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-22",
+      "dateLabel": "11月22日 · 核验进展",
+      "eventDate": "2026-11-21",
+      "sourcePublishedAt": "2026-11-22",
+      "sources": [
+        {
+          "url": "https://math.mit.edu/~drew/grh/",
+          "label": "原始来源",
+          "icon": false
+        },
+        {
+          "url": "https://www.claymath.org/millennium/riemann-hypothesis/",
+          "label": "补充说明",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "cachyos-261122",
+      "title": "CachyOS 11 月版增加可选 EAC 内核和 Btrfs 恢复环境",
+      "titleId": "cachyos-261122-title",
+      "paragraphs": [
+        {
+          "text": "新版为 Easy Anti-Cheat Linux v2 增加单独的启动项，保留原内核。新的恢复环境可从引导器或 UEFI 启动，先试跑 Btrfs 快照，再决定是否回滚。",
+          "variant": ""
+        },
+        {
+          "text": "EAC 内核要求 Secure Boot、TPM 2.0 和 IOMMU，不支持 DKMS 模块，且不保证每款游戏都兼容。双启动或使用 TPM 解锁前先核对官方说明。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-22",
+      "dateLabel": "11月22日 · 版本更新",
+      "eventDate": "2026-11-22",
+      "sourcePublishedAt": "2026-11-22",
+      "sources": [
+        {
+          "url": "https://blog.cachyos.org/blog/2611-november-release/",
+          "label": "原始来源",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "linux74rc4",
+      "title": "Linux 7.4-rc4 调整 NVMe 命名空间的断开清理",
+      "titleId": "linux74rc4-title",
+      "paragraphs": [
+        {
+          "text": "上游 Linux 内核发布第四个候选版。其中，NVMe 主机驱动可并行清理同一控制器下的多个命名空间，影响 NVMe-oF 断开等路径。",
+          "variant": ""
+        },
+        {
+          "text": "变化针对断开时的资源清理，不代表日常磁盘读写变快。它仍是候选版，测试时保留发行版的可用内核。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-22",
+      "dateLabel": "11月22日 · 候选版",
+      "eventDate": "2026-11-22",
+      "sourcePublishedAt": "2026-11-22",
+      "sources": [
+        {
+          "url": "https://github.com/torvalds/linux/releases/tag/v7.4-rc4",
+          "label": "原始来源",
+          "icon": false
+        },
+        {
+          "url": "https://github.com/torvalds/linux/blob/v7.4-rc4/drivers/nvme/host/core.c#L4477-L4483",
+          "label": "补充说明",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "llama-adreno-cdna3",
+      "title": "llama.cpp 更新 Adreno 850 OpenCL 和 CDNA3 HIP 路径",
+      "titleId": "llama-adreno-cdna3-title",
+      "paragraphs": [
+        {
+          "text": "b12629 为 Adreno 850 的 OpenCL 后端增加 6 种量化格式的协作矩阵乘法；b12632 修复 AMD CDNA3 的 HIP 后端对 NVFP4 缩放重复减半的问题。",
+          "variant": ""
+        },
+        {
+          "text": "都是预发行构建，硬件和后端范围不同。不要把 Adreno 850 的优化外推到其他手机 GPU，也不要把 CDNA3 修复当作通用 Radeon 加速。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-22",
+      "dateLabel": "11月22日 · 预发行",
+      "eventDate": "2026-11-22",
+      "sourcePublishedAt": "2026-11-22",
+      "sources": [
+        {
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12629",
+          "label": "原始来源",
+          "icon": false
+        },
+        {
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12632",
+          "label": "补充说明",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "pnpm12230",
+      "title": "pnpm 12.23.0 增加依赖目录迁移并移除平台变体",
+      "titleId": "pnpm12230-title",
+      "paragraphs": [
+        {
+          "text": "新命令可把工作区中声明一致的依赖版本迁入统一 catalog。包发布恢复为每个版本一个归档，注册表凭据仅经 HTTPS 发送。",
+          "variant": ""
+        },
+        {
+          "text": "旧锁文件若记录平台变体，冻结安装会失败；发布者要改用独立平台包和可选依赖，使用者宜先在分支上重建并验证锁文件。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-22",
+      "dateLabel": "11月22日 · 版本更新",
+      "eventDate": "2026-11-22",
+      "sourcePublishedAt": "2026-11-22",
+      "sources": [
+        {
+          "url": "https://github.com/pnpm/pnpm/releases/tag/v12.23.0",
+          "label": "原始来源",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "codewhale0103",
+      "title": "Codewhale 0.10.3 统一插件入口与外部代理接入",
+      "titleId": "codewhale0103-title",
+      "paragraphs": [
+        {
+          "text": "新版可兼容未修改的 DeepSeek Harness 插件；外部会话改用官方 Agent Client Protocol SDK，涵盖 Qwen Code 和 GitHub Copilot CLI。",
+          "variant": ""
+        },
+        {
+          "text": "插件创作模式需要主动启用。新增工作区边界和单次重试审批不等于插件可信；Windows 安装器仍未签名。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-22",
+      "dateLabel": "11月22日 · 版本更新",
+      "eventDate": "2026-11-22",
+      "sourcePublishedAt": "2026-11-22",
+      "sources": [
+        {
+          "url": "https://github.com/codewhale-hq/Codewhale/releases/tag/v0.10.3",
+          "label": "原始来源",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "agentic-hil0280",
+      "title": "Agentic HIL 0.28.0 为共享硬件台架增加可恢复排队",
+      "titleId": "agentic-hil0280-title",
+      "paragraphs": [
+        {
+          "text": "新版让同一局域网的使用者排队使用台架，采用公平调度并在服务重启后保留队列。",
+          "variant": ""
+        },
+        {
+          "text": "MCP 入口只允许提交受台架策略约束的测试计划等操作，不直接向代理暴露原始硬件控制。不等于设备可以无人值守。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-22",
+      "dateLabel": "11月22日 · 版本更新",
+      "eventDate": "2026-11-22",
+      "sourcePublishedAt": "2026-11-22",
+      "sources": [
+        {
+          "url": "https://github.com/agentic-hil/agentic-hil/releases/tag/v0.28.0",
+          "label": "原始来源",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "glinet-comet-1103",
+      "title": "GL.iNet 为两款 Comet 远程 KVM 发布 1.10.3 固件",
+      "titleId": "glinet-comet-1103-title",
+      "paragraphs": [
+        {
+          "text": "GL-RM1 和 GL-RM1PE 的 1.10.3 稳定固件已列入下载表。厂商称已封堵已知云端攻击路径，但不代表所有设备已排除风险。",
+          "variant": ""
+        },
+        {
+          "text": "按具体型号更新，并按厂商通告检查设备。云端封堵不意味着已受入侵的设备自动恢复，也不能把这两款 KVM 的更新当成所有路由器的补丁。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-22",
+      "dateLabel": "11月22日 · 安全更新",
+      "eventDate": "2026-11-22",
+      "sourcePublishedAt": "2026-11-22",
+      "sources": [
+        {
+          "url": "https://dl.gl-inet.com/kvm/rm1/beta",
+          "label": "原始来源",
+          "icon": false
+        },
+        {
+          "url": "https://dl.gl-inet.com/kvm/rm1pe/beta",
+          "label": "补充说明",
+          "icon": false
+        },
+        {
+          "url": "https://www.gl-inet.com/blogs/blog/glinet-security-notice-2026-11-20",
+          "label": "补充说明",
+          "icon": false
+        },
+        {
+          "url": "https://forum.gl-inet.com/t/quickly-check-if-your-kvm-is-under-attack/73069",
+          "label": "补充说明",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "monai-label086",
+      "title": "MONAI Label 0.8.6 修复两处路径校验漏洞",
+      "titleId": "monai-label086-title",
+      "paragraphs": [
+        {
+          "text": "维护者发布安全更新，修复数据集上传和会话上传的路径校验问题；0.8.5 及更早版本受影响。",
+          "variant": ""
+        },
+        {
+          "text": "服务端应升级至 0.8.6、限制网络访问、启用认证并以低权限运行。若旧服务曾暴露给不受信网络，恢复服务前核查异常文件变动。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-22",
+      "dateLabel": "11月22日 · 版本更新",
+      "eventDate": "2026-11-22",
+      "sourcePublishedAt": "2026-11-22",
+      "sources": [
+        {
+          "url": "https://github.com/Project-MONAI/MONAILabel/releases/tag/0.8.6",
+          "label": "原始来源",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "openadapt0311",
+      "title": "OpenAdapt Desktop 0.31.1 提供原生安装候选版",
+      "titleId": "openadapt0311-title",
+      "paragraphs": [
+        {
+          "text": "桌面候选包打包了 Python 辅助进程和指定运行时，用于本地创建、录制教学和重放流程；浏览器流程首次运行可能还需下载 Chromium。",
+          "variant": ""
+        },
+        {
+          "text": "原生包仍是候选版。Windows 未签名、macOS 未公证，Linux 的 GitHub 构建证明也不是原生签名；评估前先核对哈希与构建证明。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-22",
+      "dateLabel": "11月22日 · 候选版",
+      "eventDate": "2026-11-22",
+      "sourcePublishedAt": "2026-11-22",
+      "sources": [
+        {
+          "url": "https://github.com/OpenAdaptAI/OpenAdapt/releases/tag/openadapt-desktop-v0.31.1",
+          "label": "原始来源",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "transformers524",
+      "title": "Transformers 5.24.0 将生成缓存参数统一为 cache",
+      "titleId": "transformers524-title",
+      "paragraphs": [
+        {
+          "text": "模型 forward、generate 和输出的 past_key_values 与 cache_params 统一为 cache。旧名暂可用，但并传会报错；PEFT 最低版本升至 0.22.0。",
+          "variant": ""
+        },
+        {
+          "text": "自定义模型和缓存封装应尽早迁移。旧名在 forward 和生成输入准备中保留至 5.40.0，在 generate 中保留至 6.0.0。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-21",
+      "dateLabel": "11月21日 · 近7日补充",
+      "eventDate": "2026-11-21",
+      "sourcePublishedAt": "2026-11-21",
+      "sources": [
+        {
+          "url": "https://github.com/huggingface/transformers/releases/tag/v5.24.0",
+          "label": "原始来源",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "cline-sdk021",
+      "title": "Cline SDK 0.2.1 改善长文件读取与会话恢复",
+      "titleId": "cline-sdk021-title",
+      "paragraphs": [
+        {
+          "text": "read_files 已按文件内容的 50k 上限传给模型，不再途经 8k 的二次截断。会话可按已保存 ID 恢复，宿主也可选择启用结构化界面验收报告。",
+          "variant": ""
+        },
+        {
+          "text": "命令、搜索、MCP 和自定义工具仍默认受 8k 结果上限约束；不是所有工具都能原样传递长输出。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-21",
+      "dateLabel": "11月21日 · 近7日补充",
+      "eventDate": "2026-11-21",
+      "sourcePublishedAt": "2026-11-21",
+      "sources": [
+        {
+          "url": "https://github.com/cline/cline/releases/tag/sdk/sdk/v0.2.1",
+          "label": "原始来源",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "restic0200",
+      "title": "restic 0.20.0 修复两项备份恢复安全问题",
+      "titleId": "restic0200-title",
+      "paragraphs": [
+        {
+          "text": "新版处理按用户和组名称恢复时的归属回退，并拒绝包含重复或顺序错误的树节点，减少错误恢复的风险。",
+          "variant": ""
+        },
+        {
+          "text": "使用高权限执行恢复、或要把备份还原到不同系统时，优先更新；先在隔离目录试恢复，再核对关键文件归属和权限。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-19",
+      "dateLabel": "11月19日 · 近7日补充",
+      "eventDate": "2026-11-19",
+      "sourcePublishedAt": "2026-11-19",
+      "sources": [
+        {
+          "url": "https://github.com/restic/restic/releases/tag/v0.20.0",
+          "label": "原始来源",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "neon-terraform-beta",
+      "title": "Neon 官方 Terraform Provider 进入公测",
+      "titleId": "neon-terraform-beta-title",
+      "paragraphs": [
+        {
+          "text": "官方 Provider 支持以临时资源获取 PostgreSQL 连接串，避免新生成的相关凭据写入 Terraform 状态文件。",
+          "variant": ""
+        },
+        {
+          "text": "临时资源需 Terraform 1.10+ 或 OpenTofu 1.11+，不会清理旧状态中已有的密钥。从社区 Provider 迁移时先审查计划和资源字段。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-19",
+      "dateLabel": "11月19日 · 近7日补充",
+      "eventDate": "2026-11-19",
+      "sourcePublishedAt": "2026-11-19",
+      "sources": [
+        {
+          "url": "https://neon.com/blog/official-neon-terraform-provider",
+          "label": "原始来源",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "google-alb-default-deny",
+      "title": "Google Cloud 部分应用负载均衡器的默认拒绝策略正式可用",
+      "titleId": "google-alb-default-deny-title",
+      "paragraphs": [
+        {
+          "text": "区域外部、区域内部及跨区域内部应用负载均衡器现在可在转发规则上关联默认拒绝授权策略，只有显式许可的流量才放行。",
+          "variant": ""
+        },
+        {
+          "text": "不会自动改动已有的负载均衡器。启用前在测试环境确认允许或自定义授权规则，以免挡住合法请求。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-19",
+      "dateLabel": "11月19日 · 近7日补充",
+      "eventDate": "2026-11-19",
+      "sourcePublishedAt": "2026-11-19",
+      "sources": [
+        {
+          "url": "https://docs.cloud.google.com/load-balancing/docs/release-notes#November_19_2026",
+          "label": "原始来源",
+          "icon": false
+        },
+        {
+          "url": "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb",
+          "label": "补充说明",
+          "icon": false
+        }
+      ]
+    }
+  ]
+}
