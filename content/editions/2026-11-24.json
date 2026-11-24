@@ -1,0 +1,462 @@
+{
+  "id": "2026-11-24",
+  "editionDate": "2026-11-24",
+  "status": "published",
+  "title": "计算机热点日报 · 2026年11月24日",
+  "description": "15条精选：GPT-6.2 聊天专版、Ladybird Alpha、Lean 核验进展与开源维护。",
+  "editionLabel": "2026年11月24日 · 精选15条",
+  "dateBasis": "edition-publication-date",
+  "introduction": [
+    "本期15条，均为截至 11 月 24 日 00:00 UTC 的近24小时公布或更新（来源日期为 11 月 23 日 UTC），无旧闻补充。已对照近7期去重。",
+    "刊载日按东八区。分批推送、预发行、研究核验及正式可用分别标注。"
+  ],
+  "overview": [
+    {
+      "id": "gpt62-chat-sol",
+      "title": "GPT-6.2 Sol 的聊天专版开始推送",
+      "category": "AI 模型"
+    },
+    {
+      "id": "wepocketmodel10",
+      "title": "腾讯公开 WePocketModel 1.0 的 2B 和 4B 权重",
+      "category": "本地 AI"
+    },
+    {
+      "id": "ladybird-alpha",
+      "title": "独立浏览器 Ladybird 发布首个公开 Alpha",
+      "category": "浏览器"
+    },
+    {
+      "id": "rh-lean-export-comparator",
+      "title": "黎曼猜想 Lean 证明稿通过两种内核的完整导出检查",
+      "category": "计算研究"
+    }
+  ],
+  "items": [
+    {
+      "id": "gpt62-chat-sol",
+      "title": "GPT-6.2 Sol 的聊天专版开始推送",
+      "titleId": "gpt62-chat-sol-title",
+      "paragraphs": [
+        {
+          "text": "OpenAI 开始向 ChatGPT Plus、Pro、Business 和 Enterprise 的聊天标签推送 GPT-6.2 Sol 专版，重点改善复杂指令、图像理解和网页检索。",
+          "variant": ""
+        },
+        {
+          "text": "这是分批推送，企业账号还取决于管理员设置；Work 和 Codex 的模型不随本次更新改变。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-23",
+      "dateLabel": "11月23日 · 分批推送",
+      "eventDate": "2026-11-23",
+      "sourcePublishedAt": "2026-11-23",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+          "icon": false
+        },
+        {
+          "label": "补充说明",
+          "url": "https://deploymentsafety.openai.com/gpt-6-2-chatgpt/gpt-6-2-chatgpt.pdf",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "glm54-loop",
+      "title": "GLM-5.4 用共享层的两轮循环处理 token",
+      "titleId": "glm54-loop-title",
+      "paragraphs": [
+        {
+          "text": "智谱发布 GLM-5.4：模型两次经过同一组 28 层，使用 token 级门控混合更新。现可在 Z.ai Chat、ZCode 和 Coding Plan 体验。",
+          "variant": ""
+        },
+        {
+          "text": "门控决定更新幅度，不代表每个 token 自选迭代次数。通用 API 仍标为即将推出，开放权重仍是计划。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-23",
+      "dateLabel": "11月23日 · 公告／发布",
+      "eventDate": "2026-11-23",
+      "sourcePublishedAt": "2026-11-23",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://z.ai/blog/glm-5.4",
+          "icon": false
+        },
+        {
+          "label": "补充说明",
+          "url": "https://zcode.z.ai/en/docs/qa",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "wepocketmodel10",
+      "title": "腾讯公开 WePocketModel 1.0 的 2B 和 4B 权重",
+      "titleId": "wepocketmodel10-title",
+      "paragraphs": [
+        {
+          "text": "同一个多模态骨干兼顾图文检索、OCR、问答、排序和结构化判断，发布 Transformers 与 GGUF 格式，可评估 CPU 上的量化推理。",
+          "variant": ""
+        },
+        {
+          "text": "4B 约 8 GB 是 BF16 权重占用，不是总运行内存；图像、上下文和推理框架还会增加开销。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-23",
+      "dateLabel": "11月23日 · 公告／发布",
+      "eventDate": "2026-11-23",
+      "sourcePublishedAt": "2026-11-23",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/Tencent/WePocketModel#news",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "ladybird-alpha",
+      "title": "独立浏览器 Ladybird 发布首个公开 Alpha",
+      "titleId": "ladybird-alpha-title",
+      "paragraphs": [
+        {
+          "text": "Ladybird 的自研网页引擎进入公开测试，提供 Linux 和 Apple Silicon macOS 下载，可用来复测真实站点的兼容性。",
+          "variant": ""
+        },
+        {
+          "text": "macOS 需 14.4 或更新；这是 Alpha，不适合用来替换承载账户或关键业务的主浏览器。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-23",
+      "dateLabel": "11月23日 · Alpha",
+      "eventDate": "2026-11-23",
+      "sourcePublishedAt": "2026-11-23",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://ladybird.org/posts/alpha/",
+          "icon": false
+        },
+        {
+          "label": "补充说明",
+          "url": "https://ladybird.org/download/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "rh-lean-export-comparator",
+      "title": "黎曼猜想 Lean 证明稿通过两种内核的完整导出检查",
+      "titleId": "rh-lean-export-comparator-title",
+      "paragraphs": [
+        {
+          "text": "MIT 核验更新显示，Lean 默认与 paranoid 内核均已接受完整导出；Comparator v4.33.0 针对原编译文件的端到端流程也已通过。",
+          "variant": ""
+        },
+        {
+          "text": "截至 11 月 23 日 23:45 UTC，从规范导出开始运行的 v4.36.0 比较流程还在最后的默认内核阶段。Clay 仍将其列为活动问题，未宣布接受证明。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-23",
+      "dateLabel": "11月23日 · 核验进展",
+      "eventDate": "2026-11-23",
+      "sourcePublishedAt": "2026-11-23",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://math.mit.edu/~drew/grh/",
+          "icon": false
+        },
+        {
+          "label": "补充说明",
+          "url": "https://www.claymath.org/millennium-problems/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "github-issue-status-boards",
+      "title": "GitHub 公开预览 Issue 状态与仓库看板",
+      "titleId": "github-issue-status-boards-title",
+      "paragraphs": [
+        {
+          "text": "GitHub 提供七种内置 Issue 状态，仓库看板可通过拖动或 API 更改状态，关联 PR 也能触发自动更新。",
+          "variant": ""
+        },
+        {
+          "text": "适合在单仓库内跟踪工作流，但仍是公测，不等同于跨仓库 GitHub Projects 或现有项目工作流的全面替代。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-23",
+      "dateLabel": "11月23日 · 公开预览",
+      "eventDate": "2026-11-23",
+      "sourcePublishedAt": "2026-11-23",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.blog/changelog/2026-11-23-issue-statuses-and-repository-boards-are-in-public-preview/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "opencode24-plugins",
+      "title": "OpenCode 2.4 改变跟随版本的插件更新规则",
+      "titleId": "opencode24-plugins-title",
+      "paragraphs": [
+        {
+          "text": "2.4.0 会在启动时和每隔 24 小时检查显式跟随版本的插件，如 @latest、版本范围、Git 分支或范围；没有版本的裸插件名和 @next 等标签不会自动更新。",
+          "variant": ""
+        },
+        {
+          "text": "需要可复现的环境仍应固定确定版本或提交。Copilot 改用专用令牌环境变量或 OAuth；当天的 2.4.1 修复 macOS 12 的 SQLite 和部分供应商未认证时的模型列表。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-23",
+      "dateLabel": "11月23日 · 公告／发布",
+      "eventDate": "2026-11-23",
+      "sourcePublishedAt": "2026-11-23",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/anomalyco/opencode/releases/tag/v2.4.0",
+          "icon": false
+        },
+        {
+          "label": "补充说明",
+          "url": "https://github.com/anomalyco/opencode/releases/tag/v2.4.1",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "ocria-nano1",
+      "title": "OCRia Nano 1 用小模型组合在 CPU 上解析文档",
+      "titleId": "ocria-nano1-title",
+      "paragraphs": [
+        {
+          "text": "LlamaIndex 将 7 个小模型（合计 810 万参数）组合到文档流程：有文本层时优先提取，必要时才做 OCR，同时识别版面和表格。",
+          "variant": ""
+        },
+        {
+          "text": "不支持图表转表格。426 毫秒每页是厂商单核测试，不是普遍速度；权重采用修改版 Open RAIL-M，代码则是 Apache 许可。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-23",
+      "dateLabel": "11月23日 · 公告／发布",
+      "eventDate": "2026-11-23",
+      "sourcePublishedAt": "2026-11-23",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://www.llamaindex.ai/blog/introducing-ocria-nano-1",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "wine-vkd3d22",
+      "title": "WineHQ vkd3d 2.2 增加 Shader Model 6.2 支持",
+      "titleId": "wine-vkd3d22-title",
+      "paragraphs": [
+        {
+          "text": "WineHQ 的 D3D12 到 Vulkan 转译库新增 Shader Model 6.2 支持，部分浮点控制能力取决于 Vulkan 驱动提供的功能。",
+          "variant": ""
+        },
+        {
+          "text": "这是 WineHQ vkd3d，不是 VKD3D-Proton，也不代表所有游戏都会有同样的兼容性或速度变化。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-23",
+      "dateLabel": "11月23日 · 公告／发布",
+      "eventDate": "2026-11-23",
+      "sourcePublishedAt": "2026-11-23",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://www.winehq.org/news/2026112301",
+          "icon": false
+        },
+        {
+          "label": "补充说明",
+          "url": "https://list.winehq.org/hyperkitty/list/wine-announce%40list.winehq.org/message/QBVNHPS2PLCJXA67ESIEY3XZP7BV4KRA/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "linux-stable-20261123",
+      "title": "Linux 七个维护分支发布新补丁版",
+      "titleId": "linux-stable-20261123-title",
+      "paragraphs": [
+        {
+          "text": "上游发布 7.3.6、6.18.65、6.12.119、6.6.163、6.1.193、5.15.226 和 5.10.275。以 7.3.6 为例，其中修复了 Bluetooth L2CAP 关闭及 Panfrost 重置中的并发问题。",
+          "variant": ""
+        },
+        {
+          "text": "不代表各分支都包含同一批改动，也不代表发行版已推送同版；核对正在运行的发行版补丁及重启要求。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-23",
+      "dateLabel": "11月23日 · 公告／发布",
+      "eventDate": "2026-11-23",
+      "sourcePublishedAt": "2026-11-23",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://www.kernel.org/",
+          "icon": false
+        },
+        {
+          "label": "补充说明",
+          "url": "https://cdn.kernel.org/pub/linux/kernel/v7.x/ChangeLog-7.3.6",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "zstd160-pre",
+      "title": "Zstandard 1.6.0 预发行修正压缩问题并改变旧格式默认设置",
+      "titleId": "zstd160-pre-title",
+      "paragraphs": [
+        {
+          "text": "1.6.0 预发行版包含压缩正确性和内存相关修复，并默认关闭对早期旧格式的解码支持。",
+          "variant": ""
+        },
+        {
+          "text": "有长期归档的团队应先用样本确认解码兼容性；这是预发行，不宜直接当作生产环境的普遍升级建议。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-23",
+      "dateLabel": "11月23日 · 预发行",
+      "eventDate": "2026-11-23",
+      "sourcePublishedAt": "2026-11-23",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/meta/zstd/releases/tag/v1.6.0",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "crowdstrike-zscaler",
+      "title": "CrowdStrike 拟以全股票交易收购 Zscaler",
+      "titleId": "crowdstrike-zscaler-title",
+      "paragraphs": [
+        {
+          "text": "双方公告给出的交易企业价值约为 439 亿美元，计划把端点安全和零信任网络能力纳入同一集团。",
+          "variant": ""
+        },
+        {
+          "text": "预计在 CrowdStrike 2028 财年下半年完成，仍需满足审批等交割条件。现有客户不能把公告视作产品已经合并。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-23",
+      "dateLabel": "11月23日 · 收购公告",
+      "eventDate": "2026-11-23",
+      "sourcePublishedAt": "2026-11-23",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-acquire-zscaler-bringing-network-security-and-zero/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "aws-ec2-g7-metal",
+      "title": "AWS 在北弗吉尼亚推出 EC2 G7 裸金属实例",
+      "titleId": "aws-ec2-g7-metal-title",
+      "paragraphs": [
+        {
+          "text": "新规格配八张各 32 GB 的 NVIDIA RTX PRO 4500 Blackwell Server Edition GPU，供需要裸金属控制和多 GPU 运算的任务使用。",
+          "variant": ""
+        },
+        {
+          "text": "目前公告仅列美国东部北弗吉尼亚。256 GB 是各卡容量相加，不等于一块共享显存。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-23",
+      "dateLabel": "11月23日 · 公告／发布",
+      "eventDate": "2026-11-23",
+      "sourcePublishedAt": "2026-11-23",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-g7-metal-size/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "aws-api-waf",
+      "title": "AWS API Portal 与 WAF 的 API 防护正式可用",
+      "titleId": "aws-api-waf-title",
+      "paragraphs": [
+        {
+          "text": "AWS 将 API 发现与 WAF 防护纳入正式功能，帮助维护者梳理 API 并选择防护；公告显示发现功能覆盖 32 个区域。",
+          "variant": ""
+        },
+        {
+          "text": "防护需要明确启用和配置。先核对 API 的实际流量、策略覆盖和误拦截，再扩展到生产。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-23",
+      "dateLabel": "11月23日 · 公告／发布",
+      "eventDate": "2026-11-23",
+      "sourcePublishedAt": "2026-11-23",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/api-security-with-waf/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "google-node26-python315",
+      "title": "Google Cloud 的 Node.js 26 和 Python 3.15 运行时正式可用",
+      "titleId": "google-node26-python315-title",
+      "paragraphs": [
+        {
+          "text": "Google 公告 App Engine 和 Cloud Run 的相关运行时进入正式可用阶段。",
+          "variant": ""
+        },
+        {
+          "text": "其中 Python 3.15 明确不支持第一代 Cloud Run functions。升级前先核对目标服务的运行时列表和项目依赖，已有部署不会自动完成语言迁移。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-23",
+      "dateLabel": "11月23日 · 公告／发布",
+      "eventDate": "2026-11-23",
+      "sourcePublishedAt": "2026-11-23",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://docs.cloud.google.com/release-notes#November_23_2026",
+          "icon": false
+        }
+      ]
+    }
+  ]
+}
