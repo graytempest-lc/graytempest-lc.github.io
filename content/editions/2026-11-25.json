@@ -1,0 +1,442 @@
+{
+  "id": "2026-11-25",
+  "editionDate": "2026-11-25",
+  "status": "published",
+  "title": "计算机热点日报 · 2026年11月25日",
+  "description": "15条精选：腾讯翻译模型、Workspace 代理接入、Firefox 新版、3D 打印与本地推理。",
+  "editionLabel": "2026年11月25日 · 精选15条",
+  "dateBasis": "edition-publication-date",
+  "introduction": [
+    "本期15条：14条在11月24日（UTC）发布或更新，另补1条11月23日未报道的进展。已对照近7期去重。",
+    "刊载日按东八区。模型权重发布、正式版本、测试版及分阶段生效的变更分别标注。"
+  ],
+  "overview": [
+    {
+      "id": "hy-mt3",
+      "title": "腾讯开放 Hy‑MT3 多尺寸翻译模型权重",
+      "category": "本地 AI"
+    },
+    {
+      "id": "google-workspace-mcp-cli",
+      "title": "Google Workspace 的 MCP 和 CLI 正式可用",
+      "category": "企业工具"
+    },
+    {
+      "id": "firefox161",
+      "title": "Firefox 161 正式版增加按网站切换浏览器 VPN",
+      "category": "浏览器"
+    },
+    {
+      "id": "bambu-p3c",
+      "title": "Bambu Lab P3C 将七槽换工具系统带到 P 系列",
+      "category": "3D打印"
+    }
+  ],
+  "items": [
+    {
+      "id": "hy-mt3",
+      "title": "腾讯开放 Hy‑MT3 多尺寸翻译模型权重",
+      "titleId": "hy-mt3-title",
+      "paragraphs": [
+        {
+          "text": "Hy‑MT3 公开 1.8B、7B、30B-A3B 权重，覆盖语言从 38 种增至 102 种，涵盖文本、结合 OCR 的图像文字翻译和游戏本地化。",
+          "variant": ""
+        },
+        {
+          "text": "11 月 20 日是预印本公开，24 日是权重可用。不同尺寸的运行成本不同；游戏项目仍要回归核对术语、占位符和富文本。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-24",
+      "dateLabel": "11月24日 · 公告／发布",
+      "eventDate": "2026-11-24",
+      "sourcePublishedAt": "2026-11-24",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/Tencent-Hunyuan/Hy-MT3#news",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "google-workspace-mcp-cli",
+      "title": "Google Workspace 的 MCP 和 CLI 正式可用",
+      "titleId": "google-workspace-mcp-cli-title",
+      "paragraphs": [
+        {
+          "text": "MCP 和 CLI 已覆盖 Gmail、Drive、Docs、Sheets、Slides、Calendar、Chat 和 Tasks。面向 Workspace 的代理客户端必须改用 MCP 或 CLI，Google 将于 2027 年 2 月 1 日起执行要求，4 月 1 日起计费。",
+          "variant": ""
+        },
+        {
+          "text": "普通 REST 应用不受影响。发送、分享或批量操作仍需确认，不等于代理可以自动批准。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-24",
+      "dateLabel": "11月24日 · 公告／发布",
+      "eventDate": "2026-11-24",
+      "sourcePublishedAt": "2026-11-24",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://cloud.google.com/blog/products/identity-security/deploying-agents-safely-in-your-enterprise",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "firefox161",
+      "title": "Firefox 161 正式版增加按网站切换浏览器 VPN",
+      "titleId": "firefox161-title",
+      "paragraphs": [
+        {
+          "text": "内置浏览器 VPN 可按网站开关；新增复制当前标签页网址的可配置快捷键，并修复部分 WebRTC H.264 通话低分辨率。",
+          "variant": ""
+        },
+        {
+          "text": "VPN 仅在功能已开放的地区和账号可用；复制网址功能没有默认快捷键。本版还包含安全修复，建议从正式更新渠道升级。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-24",
+      "dateLabel": "11月24日 · 公告／发布",
+      "eventDate": "2026-11-24",
+      "sourcePublishedAt": "2026-11-24",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://www.firefox.com/en-US/firefox/161.0/releasenotes/",
+          "icon": false
+        },
+        {
+          "label": "补充说明",
+          "url": "https://www.mozilla.org/en-US/security/advisories/mfsa2026-131/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "codex-cli01720",
+      "title": "Codex CLI 0.172.0 可从记录跳到历史会话或子代理",
+      "titleId": "codex-cli01720-title",
+      "paragraphs": [
+        {
+          "text": "新版可从会话搜索和历史跳到保存的会话或子代理；支持的命令参数可用 Tab 补全。Code Mode 的宿主连接统一使用 gRPC，旧开关已弃用。",
+          "variant": ""
+        },
+        {
+          "text": "有缓存工具列表的可选 stdio MCP 默认在首次调用时才启动，不代表所有 MCP 服务都会延迟启动。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-24",
+      "dateLabel": "11月24日 · 公告／发布",
+      "eventDate": "2026-11-24",
+      "sourcePublishedAt": "2026-11-24",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/openai/codex/releases/tag/rust-v0.172.0",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "ollama04018",
+      "title": "Ollama 0.40.18 优化 Metal 的 Inkling 2 推理并停止支持 JetPack 5",
+      "titleId": "ollama04018-title",
+      "paragraphs": [
+        {
+          "text": "新版更新到 llama.cpp b12651，并调整 Metal 上 Inkling 2 的预填充、解码和草稿轮次路径。",
+          "variant": ""
+        },
+        {
+          "text": "优化仅对应特定模型与后端。仍用 JetPack 5 的部署应先确认迁移方案，不要直接按原环境升级。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-24",
+      "dateLabel": "11月24日 · 公告／发布",
+      "eventDate": "2026-11-24",
+      "sourcePublishedAt": "2026-11-24",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/ollama/ollama/releases/tag/v0.40.18",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "nvidia-cosmos3-local",
+      "title": "NVIDIA 演示 Cosmos 3 Nano 利用系统内存做本地视频生成",
+      "titleId": "nvidia-cosmos3-local-title",
+      "paragraphs": [
+        {
+          "text": "Diffusers 可把权重分块放在系统内存，计算时再经 PCIe 按需送入 GPU。NVIDIA 在 RTX 5070 12GB、128GB 内存的 Linux 主机上，用 FP8 混合精度单次生成 720p 视频约用 37 分钟，峰值显存 9.16 GiB。",
+          "variant": ""
+        },
+        {
+          "text": "厂商用时不含加载和编码，不是实时方案。128GB 是测试机配置，不是最低内存要求，也不能外推到其他分辨率或显卡。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-24",
+      "dateLabel": "11月24日 · 公告／发布",
+      "eventDate": "2026-11-24",
+      "sourcePublishedAt": "2026-11-24",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://developer.nvidia.com/blog/how-to-run-nvidia-cosmos-3-on-local-ai-devices-using-hugging-face-diffusers/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "proton1103",
+      "title": "Proton 11.0‑3 让 15 款游戏新列为可玩",
+      "titleId": "proton1103-title",
+      "paragraphs": [
+        {
+          "text": "本次兼容更新包括 City Car Driving，并修复 Far Cry New Dawn 通过 Steam Input 使用控制器的问题，以及部分游戏睡眠唤醒后无声。",
+          "variant": ""
+        },
+        {
+          "text": "修复针对具体游戏和场景，不代表所有控制器、游戏或显卡都能复现相同结果。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-24",
+      "dateLabel": "11月24日 · 公告／发布",
+      "eventDate": "2026-11-24",
+      "sourcePublishedAt": "2026-11-24",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/ValveSoftware/Proton/releases/tag/proton-11.0-3",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "blender525-4517",
+      "title": "Blender 同步发布 5.2.5 与 4.5.17 LTS 维护版",
+      "titleId": "blender525-4517-title",
+      "paragraphs": [
+        {
+          "text": "5.2.5 修复 Grease Pencil 不透明度和材质预览卡顿，并分别处理 Cycles 纹理上传及视频序列编辑器尺寸问题。4.5 LTS 同时有独立维护更新。",
+          "variant": ""
+        },
+        {
+          "text": "这里列出的修复属于 5.2.5，不应套到 4.5.17。保留 LTS 工程环境时，按自己所在分支核对变更表。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-24",
+      "dateLabel": "11月24日 · 公告／发布",
+      "eventDate": "2026-11-24",
+      "sourcePublishedAt": "2026-11-24",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://www.blender.org/releases/5-2/",
+          "icon": false
+        },
+        {
+          "label": "补充说明",
+          "url": "https://www.blender.org/releases/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "godot48-beta5",
+      "title": "Godot 4.8 beta 5 修复音频输入、MetalFX 和 C# 插件问题",
+      "titleId": "godot48-beta5-title",
+      "paragraphs": [
+        {
+          "text": "第五个测试版调整 PulseAudio 输入延迟，修复 MetalFX 时间偏移；C# 翻译解析不再覆盖用户插件。",
+          "variant": ""
+        },
+        {
+          "text": "仍是 beta，不是候选或稳定版；导入真实项目验证前，先保留一份可回退的工程。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-24",
+      "dateLabel": "11月24日 · 测试版",
+      "eventDate": "2026-11-24",
+      "sourcePublishedAt": "2026-11-24",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://godotengine.org/article/dev-snapshot-godot-4-8-beta-5/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "zlib-rs069",
+      "title": "zlib‑rs 0.6.9 可选择不引入 Rust 标准库",
+      "titleId": "zlib-rs069-title",
+      "paragraphs": [
+        {
+          "text": "新版允许关闭 std 以适配 no_std，新增 PowerPC AltiVec 支持，并修复 inflateSync 的位对齐与空指针处理。",
+          "variant": ""
+        },
+        {
+          "text": "这是构建选项和特定路径修复，不意味着所有平台或压缩负载都会提速。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-24",
+      "dateLabel": "11月24日 · 公告／发布",
+      "eventDate": "2026-11-24",
+      "sourcePublishedAt": "2026-11-24",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/trifectatechfoundation/zlib-rs/releases/tag/v0.6.9",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "cloudflare-polish-avif",
+      "title": "Cloudflare Polish 可按需将 JPEG 和 PNG 转成 AVIF",
+      "titleId": "cloudflare-polish-avif-title",
+      "paragraphs": [
+        {
+          "text": "站点主动启用后，浏览器需在 Accept 中声明支持；只有转换后比原图更小，Polish 才会发送 AVIF。若同时开了 AVIF 和 WebP 且客户端均支持，优先考虑 AVIF。",
+          "variant": ""
+        },
+        {
+          "text": "不支持 AVIF 时回退到 WebP 或优化后的原格式。上线前应抽样核对实际传输体积与画质。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-24",
+      "dateLabel": "11月24日 · 公告／发布",
+      "eventDate": "2026-11-24",
+      "sourcePublishedAt": "2026-11-24",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://developers.cloudflare.com/changelog/post/2026-11-24-avif-in-polish/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "bambu-p3c",
+      "title": "Bambu Lab P3C 将七槽换工具系统带到 P 系列",
+      "titleId": "bambu-p3c-title",
+      "paragraphs": [
+        {
+          "text": "P3C 有七个工具槽，标配五件，可再扩展两个；集成 AMS 3P，FlexFeed 可使用 1.75 mm 和 2.85 mm 线材。",
+          "variant": ""
+        },
+        {
+          "text": "约 6 秒换料是厂商在预热条件下的数据，不代表每次换料所需时间。P3C 是新机型，不是 X2D 的固件更新。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-24",
+      "dateLabel": "11月24日 · 新品公告",
+      "eventDate": "2026-11-24",
+      "sourcePublishedAt": "2026-11-24",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://blog.bambulab.com/bambu-lab-p3c-brings-home-its-h3c-technology-at-half-the-price/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "sensenova-u16",
+      "title": "商汤 SenseNova U1.6 开放图像生成与编辑模型",
+      "titleId": "sensenova-u16-title",
+      "paragraphs": [
+        {
+          "text": "模型可根据提示查看并重绘图中的文字，开放权重采用 Apache 2.0，并提供 Native、GGUF 与 4 步／8 步 LoRA 加速选项。",
+          "variant": ""
+        },
+        {
+          "text": "官方对 Native 和 GGUF 的验证聚焦文生图，不应据此保证所有编辑任务的效果，也不能从模型名直接推算显存。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-24",
+      "dateLabel": "11月24日 · 公告／发布",
+      "eventDate": "2026-11-24",
+      "sourcePublishedAt": "2026-11-24",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://sensetime.com/cn/news/sensenova-u1-6-open-source-20261124-1152",
+          "icon": false
+        },
+        {
+          "label": "补充说明",
+          "url": "https://huggingface.co/sensenova/SenseNova-U1.6-8B-MoT",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "aws-cfn-coverage",
+      "title": "AWS CloudFormation 与 Cloud Control API 扩展 206 种资源类型",
+      "titleId": "aws-cfn-coverage-title",
+      "paragraphs": [
+        {
+          "text": "AWS 公布新增资源类型覆盖 88 个服务，团队可把更多资源纳入声明式部署和管理。",
+          "variant": ""
+        },
+        {
+          "text": "并非所有资源属性和区域同时可用。先核对目标资源的类型文档与实际支持范围，再推广至生产。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-24",
+      "dateLabel": "11月24日 · 公告／发布",
+      "eventDate": "2026-11-24",
+      "sourcePublishedAt": "2026-11-24",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/cloudformation-coverage-expansion/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "shirudo-live-guard",
+      "title": "OpenAI 与 Cisco 开源 Shirudo，为 Linux 打补丁前提供临时防护",
+      "titleId": "shirudo-live-guard-title",
+      "paragraphs": [
+        {
+          "text": "Shirudo 用 eBPF 在正式补丁或重启前为 Linux 提供临时防护。防护规则可以先观察影响，再由运维审批启用，并用签名验证来源。",
+          "variant": ""
+        },
+        {
+          "text": "它不是永久修复，仍应安排正式升级和必要重启；上线前先验证业务影响。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-23",
+      "dateLabel": "11月23日 · 近7日补充",
+      "eventDate": "2026-11-23",
+      "sourcePublishedAt": "2026-11-23",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://openai.com/index/introducing-shirudo/",
+          "icon": false
+        }
+      ]
+    }
+  ]
+}
