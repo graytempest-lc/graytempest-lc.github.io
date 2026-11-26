@@ -1,0 +1,437 @@
+{
+  "id": "2026-11-26",
+  "editionDate": "2026-11-26",
+  "status": "published",
+  "title": "计算机热点日报 · 2026年11月26日",
+  "description": "15条精选：Lean 核验、Claude Code、Blackwell 推理、Bambu Studio 与安全更新。",
+  "editionLabel": "2026年11月26日 · 精选15条",
+  "dateBasis": "edition-publication-date",
+  "introduction": [
+    "本期15条：11条在11月25日（UTC）发布或更新，另补4条11月24日未报道的进展。已对照近7期去重。",
+    "刊载日按东八区。机器核验、厂商测试、测试版与正式发布分别说明。"
+  ],
+  "overview": [
+    {
+      "id": "rh-canonical-pass",
+      "title": "黎曼猜想 Lean 证明稿通过规范导出的端到端核验",
+      "category": "计算研究"
+    },
+    {
+      "id": "claude-code21332",
+      "title": "Claude Code 2.1.332 开始测试由 MCP 提供技能",
+      "category": "开发工具"
+    },
+    {
+      "id": "nvidia-blackwell-register",
+      "title": "NVIDIA 与 Reactor 用寄存器复用优化 Blackwell NVFP4 注意力",
+      "category": "GPU 推理"
+    },
+    {
+      "id": "bambu-studio292-preview",
+      "title": "Bambu Studio 2.9.2 的切片预览可逐步查看喷嘴和耗材",
+      "category": "3D 打印"
+    }
+  ],
+  "items": [
+    {
+      "id": "rh-canonical-pass",
+      "title": "黎曼猜想 Lean 证明稿通过规范导出的端到端核验",
+      "titleId": "rh-canonical-pass-title",
+      "paragraphs": [
+        {
+          "text": "Andrew Sutherland 的 MIT 核验页报告，Lean v4.36.0 中，以规范挑战导出为基准的 Comparator 端到端核验于 11 月 25 日 21:49 UTC 通过。Lean 严格内核、nanoda 和 Lean 默认内核均接受完整导出，22:05 的更新确认所有检查已完成。",
+          "variant": ""
+        },
+        {
+          "text": "这补齐了此前仍在运行的一条机器核验，不能代替数学界对证明的审阅与共识。Clay 仍列为活动问题，未宣布认可该证明。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-25",
+      "dateLabel": "11月25日 · 核验进展",
+      "eventDate": "2026-11-25",
+      "sourcePublishedAt": "2026-11-25",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://math.mit.edu/~drew/grh/",
+          "icon": false
+        },
+        {
+          "label": "补充说明",
+          "url": "https://www.claymath.org/millennium/riemann-hypothesis/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "claude-code21332",
+      "title": "Claude Code 2.1.332 开始测试由 MCP 提供技能",
+      "titleId": "claude-code21332-title",
+      "paragraphs": [
+        {
+          "text": "MCP 服务端提供的技能可用 server:skill 出现在斜杠菜单。新钩子 PreSkillShellCommand 可在加载技能时阻止内嵌 Shell 命令。",
+          "variant": ""
+        },
+        {
+          "text": "此功能仍为测试版。把含该新钩子名称的设置给 2.1.331 或更早版本使用，会出现启动对话框，混用版本前先核对配置。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-25",
+      "dateLabel": "11月25日 · 公告／发布",
+      "eventDate": "2026-11-25",
+      "sourcePublishedAt": "2026-11-25",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.332",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "nvidia-blackwell-register",
+      "title": "NVIDIA 与 Reactor 用寄存器复用优化 Blackwell NVFP4 注意力",
+      "titleId": "nvidia-blackwell-register-title",
+      "paragraphs": [
+        {
+          "text": "在 RTX PRO 6000 Blackwell Server Edition 96 GB 上，LongLive 的 7040 token 注意力核心速度是旧 NVFP4 路径的 1.18–1.19 倍；1.64 倍来自合成基准。",
+          "variant": ""
+        },
+        {
+          "text": "另一个 LongLive 32 帧厂商测试从 BF16 切到部分 NVFP4 后，生成用时 5.13 秒降至 4.79 秒，约降 6.7%。注意力算子的涨幅不能当作整套模型的提速。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-25",
+      "dateLabel": "11月25日 · 公告／发布",
+      "eventDate": "2026-11-25",
+      "sourcePublishedAt": "2026-11-25",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://developer.nvidia.com/blog/how-to-optimize-nvfp4-attention-on-nvidia-rtx-blackwell-through-register-recycling/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "sakana-namazu-small",
+      "title": "Sakana AI 公布面向资料检索的 Namazu Small",
+      "titleId": "sakana-namazu-small-title",
+      "paragraphs": [
+        {
+          "text": "Namazu Small 是在 Nemotron 3 Nano 上改造的 30B 模型。Sakana 公布的 25 项测试中，优势主要集中在联网研究和需要引用的长文档问答，闭卷任务表现不一。",
+          "variant": ""
+        },
+        {
+          "text": "这是厂商评测，不代表所有问答都会改善。厂商预计 12 月上中旬补充本地部署细节，此次未开放权重。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-25",
+      "dateLabel": "11月25日 · 公告／发布",
+      "eventDate": "2026-11-25",
+      "sourcePublishedAt": "2026-11-25",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://sakana.ai/namazu-small/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "cloudflare-search-agents",
+      "title": "Cloudflare 测试让代理搜索已接入网站的内容",
+      "titleId": "cloudflare-search-agents-title",
+      "paragraphs": [
+        {
+          "text": "Search for Agents 向各套餐开放 beta。域名接入后，代理可查询索引并收到 Markdown 摘录，而不是平台生成的答案。",
+          "variant": ""
+        },
+        {
+          "text": "默认索引同步为 24 小时。各套餐开放不等于无限免费，使用前核对配额与计费。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-25",
+      "dateLabel": "11月25日 · 测试版",
+      "eventDate": "2026-11-25",
+      "sourcePublishedAt": "2026-11-25",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://developers.cloudflare.com/ai-search/how-to/search-for-agents/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "fastmcp426",
+      "title": "FastMCP 4.2.6 实验性聚合多个 MCP 服务的工具调用",
+      "titleId": "fastmcp426-title",
+      "paragraphs": [
+        {
+          "text": "客户端 CodeMode 可把既有 MCP 服务的工具搜索、查看参数结构和执行组织到一起。事件相关功能迁到独立包，接口也有变更。",
+          "variant": ""
+        },
+        {
+          "text": "升级前检查事件 API 迁移；依赖 Authlib 的项目应显式声明依赖，不能再假定会被间接安装。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-25",
+      "dateLabel": "11月25日 · 公告／发布",
+      "eventDate": "2026-11-25",
+      "sourcePublishedAt": "2026-11-25",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/PrefectHQ/fastmcp/releases/tag/v4.2.6",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "copilot-review-org-billing",
+      "title": "GitHub 将调整 Copilot 代码审查的默认付款方",
+      "titleId": "copilot-review-org-billing-title",
+      "paragraphs": [
+        {
+          "text": "在采用 Copilot Business 或 Enterprise 的组织里，若未设置这项策略，持有付费许可的成员产生的可计费审查，从 12 月 30 日起默认计入仓库所属组织。",
+          "variant": ""
+        },
+        {
+          "text": "仅在对应组织启用按量付费且审查符合计费条件时适用。希望保持由成员承担的组织应改选 Member；这不是个人套餐调价。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-25",
+      "dateLabel": "11月25日 · 公告／发布",
+      "eventDate": "2026-11-25",
+      "sourcePublishedAt": "2026-11-25",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.blog/changelog/2026-11-25-copilot-code-review-billing-will-default-to-the-organization/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "packer1163",
+      "title": "Packer 1.16.3 恢复路径补全并修复构建名与重试",
+      "titleId": "packer1163-title",
+      "paragraphs": [
+        {
+          "text": "新版恢复文件／目录的 Tab 补全；覆盖源名称后，PACKER_BUILD_NAME 使用覆盖后的值。PowerShell provisioner 重试时会重新上传完整环境变量文件。",
+          "variant": ""
+        },
+        {
+          "text": "依赖构建名生成工件标识的流水线，应核对升级前后的名称和发布规则。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-25",
+      "dateLabel": "11月25日 · 公告／发布",
+      "eventDate": "2026-11-25",
+      "sourcePublishedAt": "2026-11-25",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/hashicorp/packer/releases/tag/v1.16.3",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "ubuntu-expat-usn9196",
+      "title": "Ubuntu 为三个 LTS 版本回补 Expat 安全修复",
+      "titleId": "ubuntu-expat-usn9196-title",
+      "paragraphs": [
+        {
+          "text": "Canonical 发布 Expat 更新，覆盖 26.04、24.04 和 22.04 LTS。使用发行版 Expat 包的环境应安装对应安全更新。",
+          "variant": ""
+        },
+        {
+          "text": "容器或应用若自带 Expat 副本，不能假定宿主更新已经覆盖，需分别核对镜像和应用依赖。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-25",
+      "dateLabel": "11月25日 · 公告／发布",
+      "eventDate": "2026-11-25",
+      "sourcePublishedAt": "2026-11-25",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://ubuntu.com/security/notices/USN-9196-1",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "litellm11095",
+      "title": "LiteLLM 1.109.5 更新独立 UI 镜像并收紧查询范围",
+      "titleId": "litellm11095-title",
+      "paragraphs": [
+        {
+          "text": "稳定版把独立 UI 镜像更新至 nginx 1.31.10 与 zlib 1.4，并收紧刷新流程中的客户查询范围。",
+          "variant": ""
+        },
+        {
+          "text": "镜像依赖变更指独立 UI，不能据此推断代理服务的全部基础组件均已更新；先确认实际部署的镜像。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-25",
+      "dateLabel": "11月25日 · 公告／发布",
+      "eventDate": "2026-11-25",
+      "sourcePublishedAt": "2026-11-25",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/BerriAI/litellm/releases/tag/v1.109.5",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "strands-harness1670",
+      "title": "Strands Harness SDK 加入按模型估算费用的能力",
+      "titleId": "strands-harness1670-title",
+      "paragraphs": [
+        {
+          "text": "Python 1.67.0 为流式插件提供按模型估算费用的能力，也可选择在模型遥测跨度中记录 token 用量。",
+          "variant": ""
+        },
+        {
+          "text": "估算值不是账单。上下文的 stash 改为 archive 是不兼容变更，自定义扩展升级前需检查。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-25",
+      "dateLabel": "11月25日 · 公告／发布",
+      "eventDate": "2026-11-25",
+      "sourcePublishedAt": "2026-11-25",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/strands-agents/harness-sdk/releases/tag/python%2Fv1.67.0",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "bambu-studio292-preview",
+      "title": "Bambu Studio 2.9.2 的切片预览可逐步查看喷嘴和耗材",
+      "titleId": "bambu-studio292-preview-title",
+      "paragraphs": [
+        {
+          "text": "切片预览可查看每一步动作对应的喷嘴和耗材，也能显示每种耗材的使用时长；云端发送失败时可尝试直接经局域网发送。",
+          "variant": ""
+        },
+        {
+          "text": "这是发送回退，不代表支持完整离线配对或修复断连、刮件。本版列出的混合喷嘴直径支持指 H2D，不应套给 X2D。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-24",
+      "dateLabel": "11月24日 · 近7日补充",
+      "eventDate": "2026-11-24",
+      "sourcePublishedAt": "2026-11-24",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/bambulab/BambuStudio/releases/tag/v02.09.02.62",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "ernie55-flash-preview",
+      "title": "百度开放 ERNIE 5.5 Flash Preview 权重，vLLM 提供接入插件",
+      "titleId": "ernie55-flash-preview-title",
+      "paragraphs": [
+        {
+          "text": "这款文本模型共有约 280B 参数，每 token 激活约 14B，标称上下文上限 1M token。vLLM 公告提供加载预览权重的插件。",
+          "variant": ""
+        },
+        {
+          "text": "Apache 2.0 许可按所列 Preview 权重理解，不能套到 Base。激活参数量不等于需加载的总权重，也不能据此推断显存或吞吐。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-24",
+      "dateLabel": "11月24日 · 近7日补充",
+      "eventDate": "2026-11-24",
+      "sourcePublishedAt": "2026-11-24",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://vllm.ai/blog/2026-11-24-ernie-5-5-flash-preview",
+          "icon": false
+        },
+        {
+          "label": "补充说明",
+          "url": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Preview",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "thunderbird161",
+      "title": "Thunderbird 161 修复 Exchange 与离线邮件显示问题",
+      "titleId": "thunderbird161-title",
+      "paragraphs": [
+        {
+          "text": "在支持的 Linux 桌面上，新版可在任务栏显示未读徽标，并修复跨账户 Exchange 邮件错配、并发离线加载时可能显示错误正文的问题。",
+          "variant": ""
+        },
+        {
+          "text": "徽标取决于桌面环境。这是 Thunderbird 邮件客户端的更新，与 Firefox 161 是不同发行。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-24",
+      "dateLabel": "11月24日 · 近7日补充",
+      "eventDate": "2026-11-24",
+      "sourcePublishedAt": "2026-11-24",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://www.thunderbird.net/en-US/thunderbird/161.0/releasenotes/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "pydantic-ai274",
+      "title": "Pydantic AI 2.74.0 与 Harness 更新浏览器安全检查",
+      "titleId": "pydantic-ai274-title",
+      "paragraphs": [
+        {
+          "text": "Pydantic AI 2.74.0 和 pydantic-ai-harness 0.74.0 收紧浏览器对私有地址或域名的检查，并加强请求防护。",
+          "variant": ""
+        },
+        {
+          "text": "启用浏览器工具的部署应更新并继续限制网络访问范围；版本更新不能代替网络隔离。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-24",
+      "dateLabel": "11月24日 · 近7日补充",
+      "eventDate": "2026-11-24",
+      "sourcePublishedAt": "2026-11-24",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/pydantic/pydantic-ai/releases/tag/v2.74.0",
+          "icon": false
+        }
+      ]
+    }
+  ]
+}
