@@ -1,0 +1,442 @@
+{
+  "id": "2026-11-27",
+  "editionDate": "2026-11-27",
+  "status": "published",
+  "title": "计算机热点日报 · 2026年11月27日",
+  "description": "15条精选：Lean 精简复核、DFly2、Bambu S1、DXVK 和本地 AI。",
+  "editionLabel": "2026年11月27日 · 精选15条",
+  "dateBasis": "edition-publication-date",
+  "introduction": [
+    "本期15条：12条在11月26日（UTC）发布或更新，另补3条11月24日至25日未报道的进展。已对照近7期去重。",
+    "刊载日按东八区。机器核验、厂商基准、开发快照、Alpha 与正式版分别说明。"
+  ],
+  "overview": [
+    {
+      "id": "rh-short-lean",
+      "title": "黎曼猜想 Lean 证明的精简重写通过复核",
+      "category": "计算研究"
+    },
+    {
+      "id": "tencent-dfly2",
+      "title": "腾讯公开 DFly2 草稿模型权重与训练代码",
+      "category": "推理研究"
+    },
+    {
+      "id": "bambu-s1-scanner",
+      "title": "Bambu Lab 发布首款 3D 扫描仪 S1",
+      "category": "3D 扫描"
+    },
+    {
+      "id": "dxvk32-present",
+      "title": "DXVK 3.2 在部分场景改善画面呈现节奏",
+      "category": "游戏兼容"
+    }
+  ],
+  "items": [
+    {
+      "id": "rh-short-lean",
+      "title": "黎曼猜想 Lean 证明的精简重写通过复核",
+      "titleId": "rh-short-lean-title",
+      "paragraphs": [
+        {
+          "text": "作者 11 月 25 日公布对原来五项 RH／Dirichlet 广义 RH 陈述的精简重写。MIT 次日记录约 7.6 万行的紧凑稿在两台机器上通过沙箱 Comparator，约 30 万行的可读稿在较大机器上也通过。",
+          "variant": ""
+        },
+        {
+          "text": "滑铁卢大学的独立复核在非沙箱环境中用六种检查器通过紧凑稿。核验对象是同一组陈述的新稿，不是扩大数学结论；Clay 仍列为活动问题。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-26",
+      "dateLabel": "11月26日 · 核验进展",
+      "eventDate": "2026-11-26",
+      "sourcePublishedAt": "2026-11-26",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://math.mit.edu/~drew/shortgrh/",
+          "icon": false
+        },
+        {
+          "label": "补充说明",
+          "url": "https://www.math.uwaterloo.ca/~mrubinst/alpoge_claude_grh/",
+          "icon": false
+        },
+        {
+          "label": "补充说明",
+          "url": "https://www.claymath.org/millennium/riemann-hypothesis/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "tencent-dfly2",
+      "title": "腾讯公开 DFly2 草稿模型权重与训练代码",
+      "titleId": "tencent-dfly2-title",
+      "paragraphs": [
+        {
+          "text": "发布覆盖 Hy4 Flash、DeepSeek‑V4.1‑Flash 和 GLM‑5.3‑Flash 的草稿权重及报告。在 H20 高并发测试中，DeepSeek 与更强草稿基线的单用户解码速度相当时，CodeSpan64K 和 SWE64K 的总吞吐分别提高 62% 和 81%。",
+          "variant": ""
+        },
+        {
+          "text": "这些数字是特定长上下文负载的总吞吐，不是单用户加速，也不能外推到消费显卡。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-26",
+      "dateLabel": "11月26日 · 公告／发布",
+      "eventDate": "2026-11-26",
+      "sourcePublishedAt": "2026-11-26",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/Tencent/AngelSpec#latest-news",
+          "icon": false
+        },
+        {
+          "label": "补充说明",
+          "url": "https://arxiv.org/html/2611.34776v1",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "bambu-s1-scanner",
+      "title": "Bambu Lab 发布首款 3D 扫描仪 S1",
+      "titleId": "bambu-s1-scanner-title",
+      "paragraphs": [
+        {
+          "text": "官方标称最小扫描体积：蓝激光模式 5×5×5 毫米，红外模式 150×150×150 毫米。Bambu Scan 首发面向 Windows。",
+          "variant": ""
+        },
+        {
+          "text": "最小可扫描物体不等于能还原同尺寸细节；部分编辑工具需连接扫描仪，也不能据此判断整个流程可离线运行。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-26",
+      "dateLabel": "11月26日 · 公告／发布",
+      "eventDate": "2026-11-26",
+      "sourcePublishedAt": "2026-11-26",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://blog.bambulab.com/easy-in-hand-pro-in-every-scan-bambu-lab-introduces-the-s1-3d-scanner/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "llama-cpp110",
+      "title": "llama.cpp 1.1.0 扩充模型支持并弃用旧批处理接口",
+      "titleId": "llama-cpp110-title",
+      "paragraphs": [
+        {
+          "text": "稳定标签加入 Inkling 2 系列、Hy4 Flash 等模型支持，并拆分 DFlash 变体。旧的 llama_batch 仍可用，但已弃用，推荐迁移至 llama_batch_ext。",
+          "variant": ""
+        },
+        {
+          "text": "使用自定义绑定时先检查 API 兼容性；模型支持不等于每种量化和后端都获得同样的速度。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-26",
+      "dateLabel": "11月26日 · 公告／发布",
+      "eventDate": "2026-11-26",
+      "sourcePublishedAt": "2026-11-26",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/v1.1.0",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "dxvk32-present",
+      "title": "DXVK 3.2 在部分场景改善画面呈现节奏",
+      "titleId": "dxvk32-present-title",
+      "paragraphs": [
+        {
+          "text": "DXVK 接入 VK_EXT_present_timing，在启用垂直同步时改善部分非原生刷新率或限帧场景的呈现时序。",
+          "variant": ""
+        },
+        {
+          "text": "需要支持的驱动和合成器：新版 Gamescope 须启用 WSI，或在支持 commit-timing-v1 的 Wayland 合成器上运行支持 Wayland 的 Proton。XWayland 和 Windows 不适用，也不是普遍提高 FPS。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-26",
+      "dateLabel": "11月26日 · 公告／发布",
+      "eventDate": "2026-11-26",
+      "sourcePublishedAt": "2026-11-26",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/doitsujin/dxvk/releases/tag/v3.2",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "lutris0523",
+      "title": "Lutris 0.5.23 扩展 GOG 支持并新增游戏来源",
+      "titleId": "lutris0523-title",
+      "paragraphs": [
+        {
+          "text": "在现有 GOG 集成上增加 DLC 内容、增量更新和云存档支持，同时加入 GameJolt 与 DLsite。",
+          "variant": ""
+        },
+        {
+          "text": "这不是首次支持 GOG。已有游戏迁移前，先检查该游戏的存档同步和 DLC 识别，保留本地备份。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-26",
+      "dateLabel": "11月26日 · 公告／发布",
+      "eventDate": "2026-11-26",
+      "sourcePublishedAt": "2026-11-26",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/lutris/lutris/releases/tag/v0.5.23",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "opencode242-automation",
+      "title": "OpenCode 2.4.2 让一般自动化失败不再中断后续排程",
+      "titleId": "opencode242-automation-title",
+      "paragraphs": [
+        {
+          "text": "单次自动化失败会留下记录，之后仍按正常计划运行；无效配置、缺失会话或目录等问题仍会暂停。",
+          "variant": ""
+        },
+        {
+          "text": "新持久化网页读取许可按站点授予，已有许可不随升级自动改写。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-26",
+      "dateLabel": "11月26日 · 公告／发布",
+      "eventDate": "2026-11-26",
+      "sourcePublishedAt": "2026-11-26",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/anomalyco/opencode/releases/tag/v2.4.2",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "qwen-code0286-recovery",
+      "title": "Qwen Code 0.28.6 改善托管会话的等待和恢复",
+      "titleId": "qwen-code0286-recovery-title",
+      "paragraphs": [
+        {
+          "text": "支持的托管审批、提问或后台任务等待可挂起，执行框架故障后可恢复相关等待。",
+          "variant": ""
+        },
+        {
+          "text": "恢复并不会代替人工审批。这里是托管会话的容错更新，与旧版的 PR 监看通知不同。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-26",
+      "dateLabel": "11月26日 · 公告／发布",
+      "eventDate": "2026-11-26",
+      "sourcePublishedAt": "2026-11-26",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.28.6",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "nemotron-parse-open-data",
+      "title": "NVIDIA 开放三套文档解析合成数据及微调配方",
+      "titleId": "nemotron-parse-open-data-title",
+      "paragraphs": [
+        {
+          "text": "Nemotron 3.5 Parse 团队公开用于图表、表格和多语 OCR 的三套合成数据及微调配方。",
+          "variant": ""
+        },
+        {
+          "text": "本次新增的是数据及训练方法，原模型此前已经公开。用自己的页面测试小字、密集表格和非典型版式，再判断是否适合迁移。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-26",
+      "dateLabel": "11月26日 · 公告／发布",
+      "eventDate": "2026-11-26",
+      "sourcePublishedAt": "2026-11-26",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "ubuntu2704-snapshot1",
+      "title": "Ubuntu 27.04 发布首个开发快照",
+      "titleId": "ubuntu2704-snapshot1-title",
+      "paragraphs": [
+        {
+          "text": "Tenacious T Rex 的第一份快照面向开发测试和问题反馈，下一份快照计划在 12 月 17 日发布。",
+          "variant": ""
+        },
+        {
+          "text": "这不是稳定版，时间仍可能调整；有兴趣应在虚拟机或测试设备上运行。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-26",
+      "dateLabel": "11月26日 · 开发快照",
+      "eventDate": "2026-11-26",
+      "sourcePublishedAt": "2026-11-26",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://discourse.ubuntu.com/t/tenacious-snapshot-1-released/92461",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "node27-sqlite-alpha",
+      "title": "Node.js 27 Alpha 将内置 SQLite 模块标记为稳定",
+      "titleId": "node27-sqlite-alpha-title",
+      "paragraphs": [
+        {
+          "text": "在 27.0.0-alpha.0.2.0 中，node:sqlite 的接口状态标为稳定，新增 stmt.columnCount；未编入 SQLite 的构建会报 ERR_NO_SQLITE。",
+          "variant": ""
+        },
+        {
+          "text": "这里稳定的是模块接口状态，Node.js 27 本身仍是 Alpha，不能当作正式版部署。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-26",
+      "dateLabel": "11月26日 · Alpha",
+      "eventDate": "2026-11-26",
+      "sourcePublishedAt": "2026-11-26",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://nodejs.org/en/blog/release/v27.0.0-alpha.0.2.0",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "ubuntu-dav1d-usn9204",
+      "title": "Ubuntu 22.04 LTS 获得 dav1d 安全更新",
+      "titleId": "ubuntu-dav1d-usn9204-title",
+      "paragraphs": [
+        {
+          "text": "Canonical 为 Ubuntu 22.04 LTS 发布 AV1 解码器 dav1d 更新，libdav1d5 修复版本为 0.9.2-1ubuntu0.1。",
+          "variant": ""
+        },
+        {
+          "text": "使用发行版软件包的环境应更新；应用或镜像自行捆绑的副本需另查，不能假定宿主补丁会覆盖。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-26",
+      "dateLabel": "11月26日 · 公告／发布",
+      "eventDate": "2026-11-26",
+      "sourcePublishedAt": "2026-11-26",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://ubuntu.com/security/notices/USN-9204-1",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "proxmox93-lvm",
+      "title": "Proxmox VE 9.3 扩展共享 LVM SAN 管理",
+      "titleId": "proxmox93-lvm-title",
+      "paragraphs": [
+        {
+          "text": "9.3 集中管理共享 LVM SAN 的多路径和卷供应，厚置备 LVM 的快照卷链进入生产支持。",
+          "variant": ""
+        },
+        {
+          "text": "Ceph Tentacle 为稳定支持，Umbrella 仍属预览。现有集群迁移前先用小规模测试核对多路径与快照恢复。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-25",
+      "dateLabel": "11月25日 · 近7日补充",
+      "eventDate": "2026-11-25",
+      "sourcePublishedAt": "2026-11-25",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://proxmox.com/en/about/company-details/press-releases/proxmox-virtual-environment-9-3",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "niji8",
+      "title": "Niji 8 面向动漫图像，增加角色和背景参考工作流",
+      "titleId": "niji8-title",
+      "paragraphs": [
+        {
+          "text": "Niji 8 可从 Web 和 Discord 使用。它支持用角色图和背景图作参考，由提示指定新姿势，生成或编辑动漫画面。",
+          "variant": ""
+        },
+        {
+          "text": "参考图是控制线索，不保证仅靠相同文本就能复现，也不保证服饰纹样或多个视角完全一致。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-24",
+      "dateLabel": "11月24日 · 近7日补充",
+      "eventDate": "2026-11-24",
+      "sourcePublishedAt": "2026-11-24",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://nijijourney.com/blog/niji-8",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "bonsai25-27b",
+      "title": "Ternary Bonsai 2.5 27B 将模型权重压到约 5.9 GB",
+      "titleId": "bonsai25-27b-title",
+      "paragraphs": [
+        {
+          "text": "PrismML 基于 Qwen3.8 发布 Apache 2.0 权重；支持 NVIDIA／Intel 上的 llama.cpp 和 Apple MLX。厂商称其测评中的重复推理少于上代。",
+          "variant": ""
+        },
+        {
+          "text": "5.9 GB 是权重体积，不是运行显存；缓存及框架另占空间，厂商测评也不能保证所有任务都减少重复。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-24",
+      "dateLabel": "11月24日 · 近7日补充",
+      "eventDate": "2026-11-24",
+      "sourcePublishedAt": "2026-11-24",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://prismml.com/news/bonsai-2-5-27b",
+          "icon": false
+        }
+      ]
+    }
+  ]
+}
