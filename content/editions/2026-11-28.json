@@ -1,0 +1,447 @@
+{
+  "id": "2026-11-28",
+  "editionDate": "2026-11-28",
+  "status": "published",
+  "title": "计算机热点日报 · 2026年11月28日",
+  "description": "15条精选：Tripo 可打印性检查、Godot 4.8 RC1、Trainium3 视频实验和 Drupal 安全更新。",
+  "editionLabel": "2026年11月28日 · 精选15条",
+  "dateBasis": "edition-publication-date",
+  "introduction": [
+    "本期15条：5条在11月27日（UTC）发布或更新，另补10条11月25日至26日未报道的进展。已对照近7期去重。",
+    "刊载日按东八区。正式版、预览、研究结果和安全更新分别标注。"
+  ],
+  "overview": [
+    {
+      "id": "tripo-h35-print-check",
+      "title": "Tripo H3.5 预览版可按目标尺寸检查模型能否打印",
+      "category": "3D 打印"
+    },
+    {
+      "id": "godot48rc1",
+      "title": "Godot 4.8 RC1 修复同名文件和 Windows 跨屏偏移",
+      "category": "游戏开发"
+    },
+    {
+      "id": "trainium3-ltx-video",
+      "title": "Hugging Face 在 Trainium3 上测试 LTX‑2.5 音视频生成",
+      "category": "算力"
+    },
+    {
+      "id": "drupal-core019-update",
+      "title": "Drupal 核心发布安全修复，项目方称已发现利用",
+      "category": "安全维护"
+    }
+  ],
+  "items": [
+    {
+      "id": "tripo-h35-print-check",
+      "title": "Tripo H3.5 预览版可按目标尺寸检查模型能否打印",
+      "titleId": "tripo-h35-print-check-title",
+      "paragraphs": [
+        {
+          "text": "Tripo 更新 H3.5 Preview 公告；其 Studio 工作流可按目标尺寸标出薄壁、孔洞和非流形几何。官方样例在 150 毫米时有薄壁提示，改为 200 毫米后通过该项检查。",
+          "variant": ""
+        },
+        {
+          "text": "适合在进切片软件前筛查参考图生成的模型。免费额度可生成并检查，导出需付费；通过检查不等于实际打印必然成功。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-27",
+      "dateLabel": "11月27日 · 产品预览",
+      "eventDate": "2026-11-27",
+      "sourcePublishedAt": "2026-11-27",
+      "sources": [
+        {
+          "label": "原始公告",
+          "url": "https://www.tripo3d.ai/blog/tripo-h3-5",
+          "icon": false
+        },
+        {
+          "label": "官方教程",
+          "url": "https://www.tripo3d.ai/tutorials/reference-image-to-3d-print-figurine-h3-5",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "godot48rc1",
+      "title": "Godot 4.8 RC1 修复同名文件和 Windows 跨屏偏移",
+      "titleId": "godot48rc1-title",
+      "paragraphs": [
+        {
+          "text": "Godot 4.8 第一个候选版自 beta 5 以来收录 22 项修复，包括编辑器误选同名文件，以及 Windows 全屏窗口被外部移动到另一台显示器时出现的偏移。",
+          "variant": ""
+        },
+        {
+          "text": "适合多显示器和已有项目回归测试，仍不是正式版。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-27",
+      "dateLabel": "11月27日 · 候选版",
+      "eventDate": "2026-11-27",
+      "sourcePublishedAt": "2026-11-27",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://godotengine.org/article/release-candidate-godot-4-8-rc-1/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "trainium3-ltx-video",
+      "title": "Hugging Face 在 Trainium3 上测试 LTX‑2.5 音视频生成",
+      "titleId": "trainium3-ltx-video-title",
+      "paragraphs": [
+        {
+          "text": "Hugging Face 报告使用 32 个 NeuronCore，模型加载后用 22–23 秒生成一段带音频的 10 秒、2048×1024 视频。",
+          "variant": ""
+        },
+        {
+          "text": "这是特定模型和加速器配置的结果，可作为云端视频工作流的参考，不是与 CUDA 或商用 API 的同条件对照。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-27",
+      "dateLabel": "11月27日 · 工程实验",
+      "eventDate": "2026-11-27",
+      "sourcePublishedAt": "2026-11-27",
+      "sources": [
+        {
+          "label": "原始实验",
+          "url": "https://huggingface.co/blog/video-trainium3",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "cloudflare-sigv4-hmac",
+      "title": "Cloudflare Rules 增加私有源站签名所需的 HMAC 等函数",
+      "titleId": "cloudflare-sigv4-hmac-title",
+      "paragraphs": [
+        {
+          "text": "Cloudflare 的请求头转换规则加入 HMAC、SigV4 相关能力和 UTC 日期格式化，可用于构造发往私有 S3 或 GCS 源站的签名请求。",
+          "variant": ""
+        },
+        {
+          "text": "开发者仍须按服务要求构造规范请求，适合减少单独维护签名中间层的工作。HMAC 和 SigV4 相关功能面向 Pro 及以上，UTC 日期格式化适用于所有套餐。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-27",
+      "dateLabel": "11月27日 · 平台更新",
+      "eventDate": "2026-11-27",
+      "sourcePublishedAt": "2026-11-27",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://developers.cloudflare.com/changelog/post/2026-11-27-sigv4-hmac-date-functions/",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "llamaswap-v277-basic",
+      "title": "llama-swap v277 加固浏览器认证并修复 NVIDIA 温度显示",
+      "titleId": "llamaswap-v277-basic-title",
+      "paragraphs": [
+        {
+          "text": "v277 加固浏览器 Basic 认证下的跨站请求防护，并恢复新版 NVIDIA 驱动输出小数温度时的监控读数。",
+          "variant": ""
+        },
+        {
+          "text": "用浏览器登录管理面的用户应更新。Bearer、API key 和非浏览器客户端保持原有行为。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-27",
+      "dateLabel": "11月27日 · 安全更新",
+      "eventDate": "2026-11-27",
+      "sourcePublishedAt": "2026-11-27",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/mostlygeek/llama-swap/releases/tag/v277",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "gigachat4-open-weights",
+      "title": "GigaChat4 开放两种 MoE 权重，发布许可不同",
+      "titleId": "gigachat4-open-weights-title",
+      "paragraphs": [
+        {
+          "text": "GigaChat4 的 708B‑A41B 总参数 708B、每次激活约 41B，采用 MIT；37B‑A4B 总参数 37B、激活约 4B，采用面向个人的非商业许可证。",
+          "variant": ""
+        },
+        {
+          "text": "规划本地部署应按完整权重、量化和运行时内存估算，不能只看激活参数；商用前尤其应区分两套许可。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-26",
+      "dateLabel": "11月26日 · 模型权重 · 近7日补充",
+      "eventDate": "2026-11-26",
+      "sourcePublishedAt": "2026-11-26",
+      "sources": [
+        {
+          "label": "原始报告",
+          "url": "https://giga.chat/blog/en/posts/gigachat-4-tech-report",
+          "icon": false
+        },
+        {
+          "label": "708B 模型卡",
+          "url": "https://huggingface.co/ai-sage/GigaChat4-708B-A41B",
+          "icon": false
+        },
+        {
+          "label": "37B 模型卡",
+          "url": "https://huggingface.co/ai-sage/GigaChat4-37B-A4B",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "headscale-0298-peer",
+      "title": "Headscale 0.29.8 修复新旧客户端混用",
+      "titleId": "headscale-0298-peer-title",
+      "paragraphs": [
+        {
+          "text": "Headscale 改为按对等节点处理客户端能力，修复 Tailscale 1.106 与较旧客户端混用时的兼容问题；其最低受支持客户端仍是 1.80.0。",
+          "variant": ""
+        },
+        {
+          "text": "分批升级的自托管组网可先更新控制服务器，再拿新旧客户端一起回归测试。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-26",
+      "dateLabel": "11月26日 · 维护版 · 近7日补充",
+      "eventDate": "2026-11-26",
+      "sourcePublishedAt": "2026-11-26",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/juanfont/headscale/releases/tag/v0.29.8",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "talos-11313-maintenance",
+      "title": "Talos 1.13.13 更新内核并修复镜像拉取",
+      "titleId": "talos-11313-maintenance-title",
+      "paragraphs": [
+        {
+          "text": "Talos Linux 1.13.13 更新到 Linux 6.18.65，遮蔽 SideroLink 加入令牌，并修复 HTTP/1.1 镜像拉取。",
+          "variant": ""
+        },
+        {
+          "text": "使用相关镜像仓库或节点接入流程的运维人员可以先在少量节点更新，验证拉取和集群加入。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-26",
+      "dateLabel": "11月26日 · 维护版 · 近7日补充",
+      "eventDate": "2026-11-26",
+      "sourcePublishedAt": "2026-11-26",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/siderolabs/talos/releases/tag/v1.13.13",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "wrkflw090-local-ci",
+      "title": "wrkflw 0.9.0 为本地 CI 提供结构化反馈",
+      "titleId": "wrkflw090-local-ci-title",
+      "paragraphs": [
+        {
+          "text": "wrkflw 向编码代理提供结构化本地 CI 结果，可与同提交、同触发事件的已完成 GitHub Actions 运行对照。存在覆盖缺口时标记 partial，没有作业执行时标记 nothing_checked。",
+          "variant": ""
+        },
+        {
+          "text": "提交前可用它更快定位失败，但依赖远端环境、权限或执行器的结果仍应以远端 CI 为准。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-26",
+      "dateLabel": "11月26日 · 工具更新 · 近7日补充",
+      "eventDate": "2026-11-26",
+      "sourcePublishedAt": "2026-11-26",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/bahdotsh/wrkflw/releases/tag/v0.9.0",
+          "icon": false
+        },
+        {
+          "label": "版本文档",
+          "url": "https://github.com/bahdotsh/wrkflw/blob/v0.9.0/AGENTS.md",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "orca-godot110-providers",
+      "title": "Godot 插件 Orca 1.10 接入 Qwen 与 Claude",
+      "titleId": "orca-godot110-providers-title",
+      "paragraphs": [
+        {
+          "text": "Orca 加入专用 Qwen、Claude 服务配置，并改善 Blender 工作流中被拒参数的纠正和暂停后恢复。",
+          "variant": ""
+        },
+        {
+          "text": "兼容性检查不等于实际任务表现，也不授予编辑权限；向 Godot 导入和放置资产仍需要批准。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-26",
+      "dateLabel": "11月26日 · 插件更新 · 近7日补充",
+      "eventDate": "2026-11-26",
+      "sourcePublishedAt": "2026-11-26",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://www.aiorca.dev/changelog/#v1.10.0",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "drupal-core019-update",
+      "title": "Drupal 核心发布安全修复，项目方称已发现利用",
+      "titleId": "drupal-core019-update-title",
+      "paragraphs": [
+        {
+          "text": "Drupal 公告 SA‑CORE‑2026‑019 确认 CVE‑2026‑136716 已有利用，并为受维护分支提供 10.6.23、11.3.23 和 11.4.14 修复。",
+          "variant": ""
+        },
+        {
+          "text": "管理员应按所用分支更新并运行 update.php，复查日志里的异常管理操作。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-25",
+      "dateLabel": "11月25日 · 安全公告 · 近7日补充",
+      "eventDate": "2026-11-25",
+      "sourcePublishedAt": "2026-11-25",
+      "sources": [
+        {
+          "label": "厂商公告",
+          "url": "https://www.drupal.org/sa-core-2026-019",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "lmstudio0429classic",
+      "title": "LM Studio Classic 0.4.29 支持按模型配置推理引擎",
+      "titleId": "lmstudio0429classic-title",
+      "paragraphs": [
+        {
+          "text": "Build 2 的加载设置可按模型选择推理引擎及版本，方便做 A/B 对照；同版修正 Inkling 的推理内容和工具调用解析，macOS 上兼容的 GGUF 和 MLX 模型新增 Splash 支持。",
+          "variant": ""
+        },
+        {
+          "text": "可以单独调整有问题的模型，不必影响其他模型；能选的引擎和版本仍取决于平台及模型支持。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-25",
+      "dateLabel": "11月25日 · 软件更新 · 近7日补充",
+      "eventDate": "2026-11-25",
+      "sourcePublishedAt": "2026-11-25",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://lmstudio.ai/changelog/lmstudio/lmstudio-v0.4.29",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "vscode1148-keep-awake",
+      "title": "VS Code 1.148 预览让运行中的 Agent Host 保持唤醒",
+      "titleId": "vscode1148-keep-awake-title",
+      "paragraphs": [
+        {
+          "text": "VS Code 1.148 正式版新增保持唤醒预览：受支持的 Agent Host 正在工作时，关掉窗口后也可以继续抑制系统自动休眠。",
+          "variant": ""
+        },
+        {
+          "text": "默认只在接通电源时启用，不等于电脑关机或手动休眠后任务仍能运行。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-25",
+      "dateLabel": "11月25日 · 正式版中的预览功能 · 近7日补充",
+      "eventDate": "2026-11-25",
+      "sourcePublishedAt": "2026-11-25",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://code.visualstudio.com/updates/v1_148",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "openwebui0135-folders",
+      "title": "Open WebUI 0.13.5 为项目文件夹加入会话规则",
+      "titleId": "openwebui0135-folders-title",
+      "paragraphs": [
+        {
+          "text": "项目文件夹可以作为工作区，新会话可加载 AGENTS.md 或 CLAUDE.md。与计算机连接的技能需要 Open Terminal 0.18 或更高版本。",
+          "variant": ""
+        },
+        {
+          "text": "适合给不同项目隔离规则。官方在 130 MB 聊天记录的 PostgreSQL 测试中，服务端接收一条新消息从 10.9 秒降至 0.32 秒，不代表模型推理加速。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-25",
+      "dateLabel": "11月25日 · 软件更新 · 近7日补充",
+      "eventDate": "2026-11-25",
+      "sourcePublishedAt": "2026-11-25",
+      "sources": [
+        {
+          "label": "原始来源",
+          "url": "https://github.com/open-webui/open-webui/releases/tag/v0.13.5",
+          "icon": false
+        }
+      ]
+    },
+    {
+      "id": "anthropic-rust-migration",
+      "title": "Anthropic 复盘 Messages API 迁移到 Rust 的验证方法",
+      "titleId": "anthropic-rust-migration-title",
+      "paragraphs": [
+        {
+          "text": "Anthropic 回顾 9 月完成的流量切换：模型只执行一次，再把同一输出回放给 Rust 实现，并在各处理阶段对比，定位最早的分歧。",
+          "variant": ""
+        },
+        {
+          "text": "团队先用合成数据复现差异并写回归测试，经人工审查的补丁再用影子流量验证。这是可借鉴的迁移做法，不是 11 月 25 日新切流。",
+          "variant": "takeaway"
+        }
+      ],
+      "sourceDate": "2026-11-25",
+      "dateLabel": "11月25日 · 工程复盘 · 近7日补充",
+      "eventDate": null,
+      "sourcePublishedAt": "2026-11-25",
+      "sources": [
+        {
+          "label": "原始报告",
+          "url": "https://www.anthropic.com/research/migrating-api-to-rust",
+          "icon": false
+        }
+      ]
+    }
+  ]
+}
